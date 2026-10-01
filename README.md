@@ -2,13 +2,13 @@
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
-**Installer 0.3.1 / launcher 0.3.0 / pack 1.5.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Installer 0.4.0 / launcher 0.4.0 / pack 1.5.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Players: install and play
 
-Download [HolyLoisSetup.exe](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.3.1/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First installation creates Holy Lois Reborn shortcuts on your Desktop and in your Start menu. Deleting either shortcut is respected on later launches and updates. Existing players should run installer 0.3.1 once to replace the older installer; their pack and settings stay in place.
+Download [HolyLoisSetup.exe](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.4.0/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
 
-1. Choose **Minecraft Launcher** or **SKlauncher** in Holy Lois.
+1. On first setup, choose **Minecraft Launcher** or **SKlauncher**, choose your shortcuts, and click **Continue**.
 2. Click **Install Holy Lois**.
 3. Open your chosen launcher and select **Holy Lois: Reborn**.
 4. Join the server already saved in Multiplayer.
@@ -25,7 +25,9 @@ English is the default language. **Русский** and **Latviešu** are availa
 
 ## Updates and settings
 
-Holy Lois checks on opening, every two minutes while open, and before installing. Close Minecraft and its launcher before updating.
+The small startup checker verifies and installs launcher updates before the main window opens. The signed main app also replaces its startup checker, so future launcher updates do not need another installer run. Opening the main EXE directly follows the same update check. A verified installed version can open if the release service is unavailable. Invalid signatures or changed content under the same version are rejected.
+
+Modpack updates are separate: Holy Lois checks on opening, every two minutes while open, and before installing. Close Minecraft and its launcher before updating the pack.
 
 Pack 1.5.0 has 49 client mods, four resource packs and seven optional shaders. Chat Animation was added from the owner's successful practice install. **What changed** shows version history and added/removed/updated content.
 
@@ -62,6 +64,6 @@ GitHub content is English and uses simple hyphens. Translated in-app UI strings 
 
 ## Build
 
-Use the .NET 10 SDK and `build.ps1 -Publish -Public -PublishFolder publish/public-release-0.3.0`. Build the native installer with `bootstrap/build-bootstrap.ps1` and the official llvm-mingw toolchain. `private/release-private.pem` stays private and is required only for owner signing.
+Use the .NET 10 SDK and `build.ps1 -Publish -Public -PublishFolder publish/public-release-0.4.0`. The build script first builds the native checker with the official llvm-mingw toolchain, then embeds it in the app. `private/release-private.pem` stays private and is required only for owner signing.
 
 Developer verification accepts `--data-dir ISOLATED_FOLDER --verify-install`, `--verify-recovery` and `--render-preview`. Add `--check-online` only when the signed public feed matches the current release. Owner mode uses `--owner-root PRIVATE_DEVELOPMENT_FOLDER`.

@@ -163,3 +163,13 @@ DH fog is set to start later and be lighter: start 0.75, end 1.4, density 1.0. C
 Join with a non-operator account, try home/TPA/RTP, claim protection and shops. Test Visual Workbench with another player, the advancements screen and plaque popup, inventory shortcuts, resource-pack reloading and shader gameplay with an enchanted item. Confirm a new completed backup and verify the update on both a fresh and an existing client installation.
 
 Avoid adding more rendering or world-generation systems until this release is stable. spark and Ledger are already installed for diagnosis and rollback. New world-generation mods affect new chunks and must be chosen before any further pregeneration.
+
+## Launcher 0.4.0 startup and first setup
+
+The public catalog stays `holylois-app-v1` so installed 0.3.x checkers can upgrade without a replacement installer. Every new main app embeds its matching native checker. Before showing the main window, it installs those trusted bytes atomically, waiting briefly if the previous checker still holds its executable open. A direct main-app launch hands off to the checker, which checks the signed catalog and starts the verified app. Owner arguments survive this handoff.
+
+Downloads are bounded HTTPS streams and verified by pinned RSA-PSS and SHA-256. Numeric version rollback and replacement content under the same version are refused. A network/service failure may use the last locally signed catalog; signature failure on an available release is not treated as an offline fallback. Cached application bytes are checked again before execution.
+
+The new checker never creates shortcuts. First setup records the player's launcher and separate Desktop/Start menu choices in `setup-completed.json`. An old shortcut marker or existing player settings migrates without creating missing links. Cancelling setup writes no completed receipt. Later launches never recreate deleted or customized links.
+
+Setup includes the owner-supplied launcher artwork, English default, Russian and Latvian, and a centered dark window. Launcher authentication remains in Minecraft Launcher or SKlauncher. Source builds require the official llvm-mingw toolchain before WPF compilation because the checker is an embedded resource.
