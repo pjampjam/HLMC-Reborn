@@ -1,6 +1,6 @@
 # Holy Lois: Reborn
 
-> **Distribution paused:** Defender detects installer 0.4.0 as `Trojan:Win32/Wacatac.C!ml`. Do not run or share it, restore quarantined files, or disable antivirus. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). Microsoft review is pending; a false positive is not confirmed.
+> **Distribution paused:** Defender detects installer 0.4.0 as `Trojan:Win32/Wacatac.C!ml`. Do not run or share it, restore quarantined files, or disable antivirus. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). The exact sample was submitted to Microsoft on 2026-10-01; its final determination is pending. A false positive is not confirmed.
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
@@ -69,3 +69,7 @@ GitHub content is English and uses simple hyphens. Translated in-app UI strings 
 Use the .NET 10 SDK and `build.ps1 -Publish -Public -PublishFolder publish/public-release-0.4.0`. The build script first builds the native checker with the official llvm-mingw toolchain, then embeds it in the app. `private/release-private.pem` stays private and is required only for owner signing.
 
 Developer verification accepts `--data-dir ISOLATED_FOLDER --verify-install`, `--verify-recovery` and `--render-preview`. Add `--check-online` only when the signed public feed matches the current release. Owner mode uses `--owner-root PRIVATE_DEVELOPMENT_FOLDER`.
+
+## Launcher release safety checks
+
+Public executable publishing is paused while SECURITY-NOTICE.md is present. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
