@@ -1,6 +1,6 @@
 # Holy Lois: Reborn - owner test
 
-Keep Windows Defender enabled. The original launcher and installer passed the local scan with definitions 1.459.503.0 on October 1. Microsoft reports no positive detection, but the final determination is still pending. The owner chose to keep public launcher and installer downloads paused until Microsoft's final result. Use the existing Minecraft Launcher or SKlauncher for these tests.
+Keep Windows Defender enabled. The original launcher and installer passed the local scan with definitions 1.459.505.0 on October 1. Microsoft reports no positive detection, but the final determination is still pending. The owner explicitly approved restoring the exact checked original 0.4.0 files after the current clean scans. Do not bypass any threat detection on another PC. Both Minecraft Launcher and SKlauncher can be used for these tests.
 
 ## Premium account
 

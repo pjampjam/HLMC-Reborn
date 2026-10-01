@@ -1,22 +1,17 @@
-# Distribution paused - Microsoft Defender review
+# Original downloads restored - Microsoft review update
 
-Do not download, run or share HolyLoisSetup.exe 0.4.0 while this notice is present. Do not restore quarantined copies, add antivirus exclusions or disable protection.
+On 2026-10-01, the owner explicitly approved restoring the exact original HolyLoisSetup.exe 0.4.0 and HolyLoisReborn.exe 0.4.0 to the public GitHub release after the current scan checks. No binaries were rebuilt, modified or repackaged to avoid detection.
 
-On 2026-10-01, Microsoft Defender Antivirus detected the published installer as Trojan:Win32/Wacatac.C!ml. Defender also blocked the original local installer copies. Its reported status is inactive and not executed. The source audit has not identified malicious behavior, but a false positive is not yet confirmed. Vendor review is required.
+Defender previously flagged the installer as Trojan:Win32/Wacatac.C!ml. The original installer and launcher now pass local custom scans with Defender antivirus and real-time protection enabled, Normal mode and updated definitions 1.459.505.0. Microsoft reports no current cloud/client detection. Its analyst found no positive scanner result or telemetry indicator and says the case will close without further action. The portal's formal final determination still reads Pending, so this is not a final vendor clearance or a guarantee for every PC.
 
-The 0.4.0 public installer and main app downloads have been withdrawn. Signed app catalog files stay available for installed clients; no replacement executable has been published to evade this detection. Existing Minecraft profiles, worlds and the game server are unaffected by this distribution hold. You can open Minecraft through your usual Minecraft Launcher or SKlauncher rather than the blocked Holy Lois checker.
+Public files downloaded again after restoration match the scanned originals:
 
-Affected installer:
-- Version: 0.4.0
-- Size: 979456 bytes
-- SHA-256 recorded before the detection and on the GitHub asset: de1c39ea80fc8369168c07a767c46ee507cb84ca722414d09b077794de68a542
-- Detection: Trojan:Win32/Wacatac.C!ml
-- Microsoft review: submitted on 2026-10-01. Final determination is pending; no clearance exists.
+- HolyLoisSetup.exe: 979456 bytes; SHA-256 de1c39ea80fc8369168c07a767c46ee507cb84ca722414d09b077794de68a542
+- HolyLoisReborn.exe: 66898158 bytes; SHA-256 26731e55b040147b5609cc9b96d587d03e1fc2e8206efe7d674df1c2c6448d26
 
-Microsoft's developer guidance requires submitting the detected file and waiting for a final determination: https://learn.microsoft.com/en-us/defender-xdr/developer-faq
+Both files remain unsigned. Keep antivirus enabled. If a threat is detected, leave the file blocked and report the detection and Defender definition version. Do not add exclusions, restore quarantined files or disable protection. The diagnostic instructions in Microsoft's reply apply if detection can be reproduced with current definitions; no private diagnostic data has been collected or submitted here.
 
-## Review update on 2026-10-01
+The owner's approval is limited to these exact checked release files. The build guard continues to block publishing newly built public executables while this notice exists. Future builds require their own checks and a separate decision about the guard. Pack updates remain signed and independent of the launcher executable.
 
-Microsoft's portal currently reports no positive detection in cloud/client scanning. The analyst message says no positive scanner result or telemetry indicator was found. The portal still shows In progress and Final determination Pending; this is not a final clearance.
-
-The exact original installer and main app also passed local Defender custom scans with protection enabled and definitions 1.459.503.0. They remain unsigned. No exclusion or protection disabling was used. The owner explicitly chose to keep public executable downloads paused until the final result. Pack/source updates are separate and do not replace the withdrawn binaries.
+Review: https://www.microsoft.com/en-us/wdsi/filesubmission
+Public release: https://github.com/pjampjam/HLMC-Reborn/releases/tag/v0.4.0

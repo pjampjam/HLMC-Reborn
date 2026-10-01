@@ -1,6 +1,6 @@
 # Holy Lois: Reborn
 
-> **Distribution paused:** Defender previously flagged installer 0.4.0 as `Trojan:Win32/Wacatac.C!ml`. Do not run or share it, restore quarantined files, or disable antivirus. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). The exact sample was submitted to Microsoft on 2026-10-01; its final determination is pending. Current local scans are clean and Microsoft reports no positive detection, but its final determination remains Pending. Public downloads stay paused at the owner's request.
+> **Downloads restored:** The exact original 0.4.0 installer and launcher passed current Defender scans and were restored with explicit owner approval. Microsoft reports no current detection, but its formal final result remains Pending. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). Keep antivirus enabled; leave any detected file blocked.
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
@@ -8,7 +8,7 @@ A Windows launcher companion, Minecraft Fabric pack updater and private owner pu
 
 ## Players: install and play
 
-The 0.4.0 installer download is temporarily withdrawn pending Microsoft review. The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
+[Download HolyLoisSetup.exe 0.4.0](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.4.0/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
 
 1. On first setup, choose **Minecraft Launcher** or **SKlauncher**, choose your shortcuts, and click **Continue**.
 2. Click **Install Holy Lois**.
@@ -72,7 +72,7 @@ Developer verification accepts `--data-dir ISOLATED_FOLDER --verify-install`, `-
 
 ## Launcher release safety checks
 
-Public executable publishing is paused while SECURITY-NOTICE.md is present. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
+The exact checked 0.4.0 files are public again. Publishing newly built public executables remains blocked while SECURITY-NOTICE.md is present. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
 
 ## Pack 1.5.2 testing
 
