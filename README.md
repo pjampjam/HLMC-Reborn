@@ -1,6 +1,6 @@
 # Holy Lois: Reborn
 
-> **Distribution paused:** Defender detects installer 0.4.0 as `Trojan:Win32/Wacatac.C!ml`. Do not run or share it, restore quarantined files, or disable antivirus. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). The exact sample was submitted to Microsoft on 2026-10-01; its final determination is pending. A false positive is not confirmed.
+> **Distribution paused:** Defender previously flagged installer 0.4.0 as `Trojan:Win32/Wacatac.C!ml`. Do not run or share it, restore quarantined files, or disable antivirus. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). The exact sample was submitted to Microsoft on 2026-10-01; its final determination is pending. Current local scans are clean and Microsoft reports no positive detection, but its final determination remains Pending. Public downloads stay paused at the owner's request.
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
@@ -21,7 +21,7 @@ If you deleted the SK pack, Holy Lois now clears a missing folder link instead o
 
 Microsoft Store and desktop Minecraft Launcher installs are detected. Store users do not need to locate an EXE. For unusual desktop installs, **Find launcher** accepts an EXE or shortcut.
 
-Offline players register in Minecraft chat: `/register PASSWORD PASSWORD` once, then `/login PASSWORD`. Passwords need at least five characters and no spaces. Never enter a Minecraft password in Holy Lois. Press V in-game to choose your own microphone/output devices.
+The 1.5.1 candidate adds a centered, masked server-account form. Offline players register once with a password of at least five characters and no spaces. Existing same-IP sessions are remembered for 24 hours; verified premium accounts skip the form. Older clients retain `/register PASSWORD PASSWORD` and `/login PASSWORD` as chat fallback. Never enter a Minecraft password in Holy Lois. Press V in-game to choose your own microphone/output devices.
 
 English is the default language. **Русский** and **Latviešu** are available from the language selector. Your selection is saved. Launcher branding, profile images and desktop icons use the owner's high-resolution crown artwork.
 
@@ -31,7 +31,7 @@ The small startup checker verifies and installs launcher updates before the main
 
 Modpack updates are separate: Holy Lois checks on opening, every two minutes while open, and before installing. Close Minecraft and its launcher before updating the pack.
 
-Pack 1.5.0 has 49 client mods, four resource packs and seven optional shaders. Chat Animation was added from the owner's successful practice install. **What changed** shows version history and added/removed/updated content.
+Stable pack 1.5.0 has 49 client mods. Candidate 1.5.1 has 50 client mods, four resource packs and seven optional shaders. Chat Animation was added from the owner's successful practice install. **What changed** shows version history and added/removed/updated content.
 
 From pack 1.5.0, changed published shared settings apply during each new-version installation before the next game launch. JSON/options/properties merge changed values and keep unrelated preferences. Changed TOML/JSON5/other reviewed shared files are replaced as whole files. Keybind changes in options.txt, voice devices, account files, worlds and caches stay personal. Repairing the same version does not repeatedly reset settings. Updates retain the previous settings in their recovery backup.
 
@@ -56,7 +56,7 @@ The admin tool is local to the owner development folder. Friends receive no priv
 
 ## Verification and limits
 
-All 14 shared client/server mods matched by SHA-256. The audit found 49 client mods and 29 server mods, with no client-only mod on the server. Dependencies were inspected including bundled Fabric libraries. These checks establish metadata and file consistency, not a guarantee that every mod feature is bug-free.
+All 14 shared client/server mods matched by SHA-256. The latest audit found 50 candidate client mods and 29 server mods, with no client-only mod on the server. Dependencies were inspected including bundled Fabric libraries. These checks establish metadata and file consistency, not a guarantee that every mod feature is bug-free.
 
 The updater tests cover bad signatures/downloads, rollback, interrupted commits, cancellation, private-file protection, personal-file preservation, shared-setting migration and same-version behavior. Fresh installation, deleted-instance recovery and linked updates are checked before release.
 
@@ -73,3 +73,9 @@ Developer verification accepts `--data-dir ISOLATED_FOLDER --verify-install`, `-
 ## Launcher release safety checks
 
 Public executable publishing is paused while SECURITY-NOTICE.md is present. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
+
+## Candidate 1.5.1 testing
+
+The new login form, first-registration arrival screen, valid-bed handling, opt-in inventory slot locks and silent low-durability alerts are ready for owner testing. Server helper 1.2.0 is running; both normal launchers already have the candidate client helper on the owner's PC. The signed candidate is separate from the stable feed until the real account test succeeds. See [TEST-GUIDE.md](TEST-GUIDE.md).
+
+Registration/login/arrival/Escape screens were rendered using the full client pack. Fourteen auth-policy checks passed. Full and differential backups restored into a separate location with all manifest hashes verified. These checks do not replace testing actual premium and offline accounts.

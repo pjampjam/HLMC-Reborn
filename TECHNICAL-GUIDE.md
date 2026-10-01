@@ -135,7 +135,7 @@ Run only the command you need. `Ctrl+C` leaves a live journal view without stopp
 
 ## Backups and disk space
 
-JEB is configured for partial backups every 10 minutes and full backups every six hours, with 36 partial and four full retained, an approximately 8 GB budget, a 2 GB free-space reserve and scheduled idle skipping. Required dependency chains are retained. A size limit can stop new backups when removing old data would break a chain.
+JEB is configured for differential backups every 10 minutes and full backups every six hours, with twelve differential and two full retained, an approximately 8 GB budget, a 2 GB free-space reserve and scheduled idle skipping. Required dependency chains are retained. A size limit can stop new backups when removing old data would break a chain.
 
 Old backups are rotated, but storage can still fill through world exploration, DH caches, logs, manual archives or uploads. Check `df -h /` periodically and confirm completed backups with `/jeb list`. The maintenance tool's complete archives have a separate two-archive retention. Copy important complete archives off the VM. Never distribute them to players because they include authentication and other private server data.
 
@@ -173,3 +173,15 @@ Downloads are bounded HTTPS streams and verified by pinned RSA-PSS and SHA-256. 
 The new checker never creates shortcuts. First setup records the player's launcher and separate Desktop/Start menu choices in `setup-completed.json`. An old shortcut marker or existing player settings migrates without creating missing links. Cancelling setup writes no completed receipt. Later launches never recreate deleted or customized links.
 
 Setup includes the owner-supplied launcher artwork, English default, Russian and Latvian, and a centered dark window. Launcher authentication remains in Minecraft Launcher or SKlauncher. Source builds require the official llvm-mingw toolchain before WPF compilation because the checker is an embedded resource.
+
+## Auth UI and server helper 1.2.0
+
+Candidate pack 1.5.1 contains the client-only `holylois-auth-ui-1.0.0+26.3.jar`. The server-only onboarding helper sends an authoritative S2C status only to clients advertising that channel. Password submission uses the existing EasyAuth Brigadier command and its packet policy; no custom C2S auth bypass is installed. The payload contains a mode and minimum length, never an account password, hash or IP.
+
+The form masks text and narration, clears input on submit/exit/state changes and never writes credentials. Each distinct screen state gets a new Screen instance to invalidate Minecraft's GUI draw cache. Arrival is a plain black screen with centered text. EasyAuth's server-side restrictions also protect clients without the UI; those clients retain chat commands.
+
+First-registration placement retains a 30-tick black-screen hold after teleport and a 100-tick temporary damage guard. No-bed death respawns are queued from AFTER_RESPAWN only when vanilla clears the respawn config. Valid beds/anchors and living End returns retain vanilla behavior. The existing EasyAuth 86400-second session was preserved.
+
+Sources live in `addons/auth-ui` and `addons/onboarding`. Compile against the exact Minecraft 26.3, Java 25, Fabric Loader 0.19.5 and Fabric API classpath. Onboarding also requires EasyAuth 3.4.4. These addons are specific to those installed APIs. Deployment must stop the service and preserve the complete backup first.
+
+Rebuildable DH SQLite, WAL and SHM caches are excluded from scheduled backups for all three vanilla dimensions. The full and differential integrity/restore checks verified 286 files in a separate folder. The live world was not replaced. Off-VM backup copies are still an owner task.

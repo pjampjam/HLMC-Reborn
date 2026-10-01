@@ -108,16 +108,30 @@ For an unusual desktop install, **Find launcher** accepts its EXE or a Windows s
 
 ## Backups and space
 
-Scheduled world backups: partial every 10 minutes, full every six hours, with retention and an approximately 8 GB budget. Automatic idle backups are skipped. Complete maintenance backups have a separate two-archive retention. Historical manual archives and uploads are not deleted automatically.
+Scheduled world backups: differential every 10 minutes and full every six hours. Keep twelve differential and two full backups within an approximately 8 GB budget, with a 2 GB free-space reserve. Each differential depends on its full backup; JEB keeps required bases. Automatic idle backups are skipped. Complete maintenance backups have a separate two-archive retention. Historical manual archives and uploads are not deleted automatically.
 
 Old backups rotate, but worlds, DH data, logs and manual archives can still fill the disk. Check `df -h /` and successful backups with `/jeb list`. Copy important complete archives off the VM. They include private server data, so do not send them to friends.
 
 ## Current pack and tests
 
-Pack 1.5.0: 49 client mods, four resource packs and seven optional shaders. The server has 29 mods. All 14 shared mods match by hash. Required dependency metadata, including bundled Fabric libraries, was checked on both sides.
+Stable pack 1.5.0 has 49 client mods. The 1.5.1 candidate has 50 client mods, four resource packs and seven optional shaders. The server has 29 mods. All 14 shared mods match by hash. Required dependency metadata, including bundled Fabric libraries, was checked on both sides.
 
 The shader helper addresses the supplied Iris enchanted-glint crash. The owner tested shaders successfully afterward. Brief coarse DH terrain and terrain-download retries are separate issues, not certified fully fixed.
 
 The normal launcher defaults to English, with Russian and Latvian selectable. GitHub notes and owner documentation remain English. The native installer remains under 1 MB and does not need a separate .NET install. Windows Authenticode signing is still absent, so SmartScreen warnings remain possible.
 
 Keep your SSH key and `private/release-private.pem` private. Friends receive only the public installer and signed downloads. More implementation detail is in [TECHNICAL-GUIDE.md](TECHNICAL-GUIDE.md).
+
+## Login, arrival and inventory defaults
+
+The owner is testing candidate 1.5.1 through the existing Minecraft Launcher and SKlauncher. Public launcher and installer downloads stay paused until Microsoft's final review result. Candidate pack assets are separate from the stable feed until the real-account tests pass.
+
+The centered form uses the existing EasyAuth account database and does not store a password on the client. Premium verification and the 24-hour same-IP session stay enabled. Before authentication, EasyAuth blocks movement, combat, inventory actions and damage. Escape in the form offers Back and Disconnect.
+
+First registration uses safe RTP inside the pregenerated Overworld, followed by a 1.5-second black arrival screen. Returning players keep their position. A death respawn uses RTP only when vanilla finds no usable bed or anchor; leaving the End alive does not count as death. Brief arrival damage protection is temporary.
+
+Inventory Profiles Next sorting remains available. Slot locking is opt-in; failed-replacement and low-durability visual/sound alerts are off. Friends on older settings can open R + C to disable those options immediately.
+
+The old chained backup schedule reached its size cap and stopped making new backups. It was replaced by the schedule above, and a full plus differential backup was restored and hash-checked separately. Rebuildable Distant Horizons SQLite caches are excluded from scheduled world backups; terrain and player data are included. Complete stopped-server maintenance backups still protect authentication, permissions, claims and configs outside the world. Other files can still fill storage, so verify completed backups and disk usage periodically.
+
+Use [TEST-GUIDE.md](TEST-GUIDE.md) for the premium, offline, respawn, voice and non-operator checks. No additional server mods are required for this release. Test the existing features before adding more systems.

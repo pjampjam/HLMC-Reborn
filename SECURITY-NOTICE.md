@@ -14,3 +14,9 @@ Affected installer:
 - Microsoft review: submitted on 2026-10-01. Final determination is pending; no clearance exists.
 
 Microsoft's developer guidance requires submitting the detected file and waiting for a final determination: https://learn.microsoft.com/en-us/defender-xdr/developer-faq
+
+## Review update on 2026-10-01
+
+Microsoft's portal currently reports no positive detection in cloud/client scanning. The analyst message says no positive scanner result or telemetry indicator was found. The portal still shows In progress and Final determination Pending; this is not a final clearance.
+
+The exact original installer and main app also passed local Defender custom scans with protection enabled and definitions 1.459.503.0. They remain unsigned. No exclusion or protection disabling was used. The owner explicitly chose to keep public executable downloads paused until the final result. Pack/source updates are separate and do not replace the withdrawn binaries.
