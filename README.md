@@ -2,11 +2,11 @@
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
-**Launcher 0.3.0 / pack 1.5.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Installer 0.3.1 / launcher 0.3.0 / pack 1.5.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Players: install and play
 
-Download [HolyLoisSetup.exe](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.3.0/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. Setup creates Holy Lois Reborn shortcuts on your Desktop and in your Start menu.
+Download [HolyLoisSetup.exe](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.3.1/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First installation creates Holy Lois Reborn shortcuts on your Desktop and in your Start menu. Deleting either shortcut is respected on later launches and updates. Existing players should run installer 0.3.1 once to replace the older installer; their pack and settings stay in place.
 
 1. Choose **Minecraft Launcher** or **SKlauncher** in Holy Lois.
 2. Click **Install Holy Lois**.

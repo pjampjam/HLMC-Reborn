@@ -2,6 +2,8 @@
 
 Your CurseForge profile is where you edit and test. The Holy Lois Admin app publishes your tested changes. Friends use the normal Holy Lois app to install them.
 
+Installer 0.3.1 creates player shortcuts only on the first installation. Deleted Desktop or Start menu shortcuts stay deleted when Holy Lois opens or updates. Existing players run the new small installer once to receive this fix. Your Admin shortcuts are separate and are not recreated by the player updater.
+
 ## Add a mod, resource pack or shader
 
 1. Close Minecraft.
