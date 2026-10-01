@@ -4,7 +4,7 @@
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
-**Installer 0.4.0 / launcher 0.4.0 / pack 1.5.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Installer 0.4.0 / launcher 0.4.0 / pack 1.5.2 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Players: install and play
 
@@ -21,7 +21,7 @@ If you deleted the SK pack, Holy Lois now clears a missing folder link instead o
 
 Microsoft Store and desktop Minecraft Launcher installs are detected. Store users do not need to locate an EXE. For unusual desktop installs, **Find launcher** accepts an EXE or shortcut.
 
-The 1.5.1 candidate adds a centered, masked server-account form. Offline players register once with a password of at least five characters and no spaces. Existing same-IP sessions are remembered for 24 hours; verified premium accounts skip the form. Older clients retain `/register PASSWORD PASSWORD` and `/login PASSWORD` as chat fallback. Never enter a Minecraft password in Holy Lois. Press V in-game to choose your own microphone/output devices.
+The 1.5.2 release adds a centered, masked server-account form. Offline players register once with a password of at least five characters and no spaces. Existing same-IP sessions are remembered for 24 hours; verified premium accounts skip the form. Older clients retain `/register PASSWORD PASSWORD` and `/login PASSWORD` as chat fallback. Never enter a Minecraft password in Holy Lois. Press V in-game to choose your own microphone/output devices.
 
 English is the default language. **Русский** and **Latviešu** are available from the language selector. Your selection is saved. Launcher branding, profile images and desktop icons use the owner's high-resolution crown artwork.
 
@@ -31,7 +31,7 @@ The small startup checker verifies and installs launcher updates before the main
 
 Modpack updates are separate: Holy Lois checks on opening, every two minutes while open, and before installing. Close Minecraft and its launcher before updating the pack.
 
-Stable pack 1.5.0 has 49 client mods. Candidate 1.5.1 has 50 client mods, four resource packs and seven optional shaders. Chat Animation was added from the owner's successful practice install. **What changed** shows version history and added/removed/updated content.
+Pack 1.5.2 has 50 client mods, four resource packs and seven optional shaders. Chat Animation was added from the owner's successful practice install. **What changed** shows version history and added/removed/updated content.
 
 From pack 1.5.0, changed published shared settings apply during each new-version installation before the next game launch. JSON/options/properties merge changed values and keep unrelated preferences. Changed TOML/JSON5/other reviewed shared files are replaced as whole files. Keybind changes in options.txt, voice devices, account files, worlds and caches stay personal. Repairing the same version does not repeatedly reset settings. Updates retain the previous settings in their recovery backup.
 
@@ -56,7 +56,7 @@ The admin tool is local to the owner development folder. Friends receive no priv
 
 ## Verification and limits
 
-All 14 shared client/server mods matched by SHA-256. The latest audit found 50 candidate client mods and 29 server mods, with no client-only mod on the server. Dependencies were inspected including bundled Fabric libraries. These checks establish metadata and file consistency, not a guarantee that every mod feature is bug-free.
+All 14 shared client/server mods matched by SHA-256. The latest audit found 50 client mods and 29 server mods, with no client-only mod on the server. Dependencies were inspected including bundled Fabric libraries. These checks establish metadata and file consistency, not a guarantee that every mod feature is bug-free.
 
 The updater tests cover bad signatures/downloads, rollback, interrupted commits, cancellation, private-file protection, personal-file preservation, shared-setting migration and same-version behavior. Fresh installation, deleted-instance recovery and linked updates are checked before release.
 
@@ -74,8 +74,8 @@ Developer verification accepts `--data-dir ISOLATED_FOLDER --verify-install`, `-
 
 Public executable publishing is paused while SECURITY-NOTICE.md is present. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
 
-## Candidate 1.5.1 testing
+## Pack 1.5.2 testing
 
-The new login form, first-registration arrival screen, valid-bed handling, opt-in inventory slot locks and silent low-durability alerts are ready for owner testing. Server helper 1.2.0 is running; both normal launchers already have the candidate client helper on the owner's PC. The signed candidate is separate from the stable feed until the real account test succeeds. See [TEST-GUIDE.md](TEST-GUIDE.md).
+Server helper 1.2.0 is running, and the final client helper is installed in all three owner profiles. The login form, first-registration arrival screen, opt-in inventory slot locks and silent low-durability alerts are included. The owner confirmed offline registration/RTP and premium joins with preserved inventory/location. The signed 1.5.2 pack is published to the stable feed. See [TEST-GUIDE.md](TEST-GUIDE.md).
 
-Registration/login/arrival/Escape screens were rendered using the full client pack. Fourteen auth-policy checks passed. Full and differential backups restored into a separate location with all manifest hashes verified. These checks do not replace testing actual premium and offline accounts.
+Registration/login/arrival/Escape screens were rendered using the full client pack. Twenty auth-policy checks passed. Full and differential backups restored into a separate location with all manifest hashes verified. Premium and offline joins were confirmed by the owner; death/bed and two-player acoustic checks remain in the test guide.

@@ -176,7 +176,7 @@ Setup includes the owner-supplied launcher artwork, English default, Russian and
 
 ## Auth UI and server helper 1.2.0
 
-Candidate pack 1.5.1 contains the client-only `holylois-auth-ui-1.0.0+26.3.jar`. The server-only onboarding helper sends an authoritative S2C status only to clients advertising that channel. Password submission uses the existing EasyAuth Brigadier command and its packet policy; no custom C2S auth bypass is installed. The payload contains a mode and minimum length, never an account password, hash or IP.
+Pack 1.5.2 contains the client-only `holylois-auth-ui-1.0.1+26.3.jar`. The server-only onboarding helper sends an authoritative S2C status only to clients advertising that channel. Password submission uses the existing EasyAuth Brigadier command and its packet policy; no custom C2S auth bypass is installed. The payload contains a mode and minimum length, never an account password, hash or IP.
 
 The form masks text and narration, clears input on submit/exit/state changes and never writes credentials. Each distinct screen state gets a new Screen instance to invalidate Minecraft's GUI draw cache. Arrival is a plain black screen with centered text. EasyAuth's server-side restrictions also protect clients without the UI; those clients retain chat commands.
 
@@ -185,3 +185,5 @@ First-registration placement retains a 30-tick black-screen hold after teleport 
 Sources live in `addons/auth-ui` and `addons/onboarding`. Compile against the exact Minecraft 26.3, Java 25, Fabric Loader 0.19.5 and Fabric API classpath. Onboarding also requires EasyAuth 3.4.4. These addons are specific to those installed APIs. Deployment must stop the service and preserve the complete backup first.
 
 Rebuildable DH SQLite, WAL and SHM caches are excluded from scheduled backups for all three vanilla dimensions. The full and differential integrity/restore checks verified 286 files in a separate folder. The live world was not replaced. Off-VM backup copies are still an owner task.
+
+The client mixin cancels only the `download.pack.title` progress toast on Holy Lois. The `download.pack.failed` toast remains visible. Routine EasyAuth reminders and the repeated insecure-server popup are suppressed only on Holy Lois; authentication errors, welcome text and chat validation remain active. Full-pack runtime checks verified progress suppression, visible failures and unchanged progress on other servers.

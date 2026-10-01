@@ -55,3 +55,7 @@ Check `/jeb list` and `/jeb next`. A budget can still stop backups when protecte
 Slot locking is off by default; inventory sorting remains enabled. Low-durability and failed-replacement alerts are disabled visually and audibly. The purple refill indicators remain hidden. If a friend has not updated yet, open Inventory Profiles Next with R + C and turn off Enable Lock Slots, Visual Alert on Failed Replace and Sound Alert on Failed Replace. The default lock gesture in this build is Alt plus left-click, not an ordinary click. A remembered lock-configuration mode or a changed binding can make clicks behave differently.
 
 These choices apply on the next pack-version update. Friends can enable locking later if they want it. Server permissions do not control this client-side inventory feature.
+
+The owner confirmed new registration and RTP in SKlauncher. The 1.5.2 helper suppresses routine authentication reminders before the form opens, keeping only the welcome/command tips after login. Wrong-password feedback is preserved. The owner also confirmed premium joins and preserved player data. Valid/invalid-bed death checks still need an in-game test.
+
+Pack 1.5.2 hides routine auth chat, native resource-pack progress and the repeated unverified-chat popup only on Holy Lois. Real download failures still show. Runtime tests verified that progress on other servers remains visible. The owner confirmed both premium and offline joins.

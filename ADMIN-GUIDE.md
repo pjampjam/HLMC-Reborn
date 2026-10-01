@@ -29,7 +29,7 @@ The app checks mod dependencies and official download metadata before preparing 
 Open **Holy Lois Admin** on your Desktop or Start menu. Friends get **Holy Lois Reborn** in both places when they install.
 
 1. **Choose folder**: select your tested CurseForge profile folder, the one containing `mods`, `config` and `options.txt`.
-2. Enter a new version such as **1.5.1** and a short description of your changes.
+2. Enter a new version such as **1.5.3** and a short description of your changes.
 3. Review **Shared settings**. Existing reviewed files start checked. New config files start unchecked so you can choose what players should receive. Never select account, voice-device or personal map files.
 4. Tick the box confirming that you tested the profile and closed Minecraft.
 5. Click **Prepare update**. The app checks files, captures the selected settings and creates a signed release.
@@ -44,7 +44,7 @@ A new release applies changed shared settings as part of installation, before th
 
 Starting graphics stay at render distance 12, DH distance 64, shaders off. Resource-pack activation follows the shared Minecraft options. Adding a shader does not turn shaders on.
 
-If you make a mistake, prepare a **higher** version containing the last good content. For example, fix 1.5.1 by publishing 1.5.2. Never edit an already released version or lower its number.
+If you make a mistake, prepare a **higher** version containing the last good content. For example, fix 1.5.3 by publishing 1.5.4. Never edit an already released version or lower its number.
 
 ## Update the server
 
@@ -114,7 +114,7 @@ Old backups rotate, but worlds, DH data, logs and manual archives can still fill
 
 ## Current pack and tests
 
-Stable pack 1.5.0 has 49 client mods. The 1.5.1 candidate has 50 client mods, four resource packs and seven optional shaders. The server has 29 mods. All 14 shared mods match by hash. Required dependency metadata, including bundled Fabric libraries, was checked on both sides.
+Pack 1.5.2 has 50 client mods, four resource packs and seven optional shaders. The server has 29 mods. All 14 shared mods match by hash. Required dependency metadata, including bundled Fabric libraries, was checked on both sides.
 
 The shader helper addresses the supplied Iris enchanted-glint crash. The owner tested shaders successfully afterward. Brief coarse DH terrain and terrain-download retries are separate issues, not certified fully fixed.
 
@@ -124,7 +124,7 @@ Keep your SSH key and `private/release-private.pem` private. Friends receive onl
 
 ## Login, arrival and inventory defaults
 
-The owner is testing candidate 1.5.1 through the existing Minecraft Launcher and SKlauncher. Public launcher and installer downloads stay paused until Microsoft's final review result. Candidate pack assets are separate from the stable feed until the real-account tests pass.
+The owner confirmed pack 1.5.2 joins through the existing Minecraft Launcher and SKlauncher. Public launcher and installer downloads stay paused until Microsoft's final review result. The owner confirmed offline registration/RTP and premium joins; 1.5.2 is the stable pack.
 
 The centered form uses the existing EasyAuth account database and does not store a password on the client. Premium verification and the 24-hour same-IP session stay enabled. Before authentication, EasyAuth blocks movement, combat, inventory actions and damage. Escape in the form offers Back and Disconnect.
 
