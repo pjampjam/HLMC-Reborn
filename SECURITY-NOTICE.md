@@ -1,17 +1,18 @@
-# Original downloads restored - Microsoft review update
+# Distribution paused again - browser download detection reproduced
 
-On 2026-10-01, the owner explicitly approved restoring the exact original HolyLoisSetup.exe 0.4.0 and HolyLoisReborn.exe 0.4.0 to the public GitHub release after the current scan checks. No binaries were rebuilt, modified or repackaged to avoid detection.
+On 2026-10-01 at 22:18 Europe/Riga, Windows Defender removed the original HolyLoisSetup.exe downloaded through the browser from GitHub. Detection: Trojan:Win32/Wacatac.C!ml, threat ID 2147749372, definitions 1.459.505.0. Both public 0.4.0 executable assets have been withdrawn again. Do not use earlier installer download links or ask friends to whitelist them.
 
-Defender previously flagged the installer as Trojan:Win32/Wacatac.C!ml. The original installer and launcher now pass local custom scans with Defender antivirus and real-time protection enabled, Normal mode and updated definitions 1.459.505.0. Microsoft reports no current cloud/client detection. Its analyst found no positive scanner result or telemetry indicator and says the case will close without further action. The portal's formal final determination still reads Pending, so this is not a final vendor clearance or a guarantee for every PC.
+Local custom scans previously reported no threats for the same bytes. That did not establish browser-download safety. The machine currently also has a non-remediating Allow rule for this threat ID; its creation time is not established, so earlier clean scans cannot settle this issue. The strengthened release check refuses to report success while explicit non-remediating threat rules are present. No protection settings were changed by the agent.
 
-Public files downloaded again after restoration match the scanned originals:
+Microsoft's submitted-sample page reports no positive cloud/client detection, but its formal final result is still Pending. The reproduced download event is contrary evidence requiring the requested diagnostic follow-up. The suspected false positive remains unconfirmed. Trusted Authenticode signing can help Microsoft identify the publisher, but it does not guarantee that this detection disappears.
 
-- HolyLoisSetup.exe: 979456 bytes; SHA-256 de1c39ea80fc8369168c07a767c46ee507cb84ca722414d09b077794de68a542
-- HolyLoisReborn.exe: 66898158 bytes; SHA-256 26731e55b040147b5609cc9b96d587d03e1fc2e8206efe7d674df1c2c6448d26
+The 0.4.0 files were restored briefly with explicit owner approval after clean local checks and then withdrawn when browser detection recurred. No binaries were rebuilt, renamed, rehosted or repackaged to avoid detection. Signed pack/source updates and the game server are independent of this hold. Existing Minecraft Launcher and SKlauncher profiles can still be used.
 
-Both files remain unsigned. Keep antivirus enabled. If a threat is detected, leave the file blocked and report the detection and Defender definition version. Do not add exclusions, restore quarantined files or disable protection. The diagnostic instructions in Microsoft's reply apply if detection can be reproduced with current definitions; no private diagnostic data has been collected or submitted here.
+Next step: remove the Allow rule using Windows Security, collect the Defender MPSupportFiles.cab in an administrator terminal, and submit it privately to Microsoft referencing submission <PRIVATE_SUPPORT_CASE>. The diagnostic CAB can contain machine details, file paths, detection history and logs. It must not be uploaded to GitHub or sent to friends. Collection was attempted locally but administrator privileges are required; nothing was collected or transmitted.
 
-The owner's approval is limited to these exact checked release files. The build guard continues to block publishing newly built public executables while this notice exists. Future builds require their own checks and a separate decision about the guard. Pack updates remain signed and independent of the launcher executable.
+Affected installer: version 0.4.0, 979456 bytes, SHA-256 de1c39ea80fc8369168c07a767c46ee507cb84ca722414d09b077794de68a542.
+Accompanying launcher: version 0.4.0, 66898158 bytes, SHA-256 26731e55b040147b5609cc9b96d587d03e1fc2e8206efe7d674df1c2c6448d26.
+Both are unsigned. Keep antivirus and cloud protection enabled. Leave quarantined copies blocked.
 
+Official developer guidance: https://learn.microsoft.com/en-us/defender-xdr/developer-faq
 Review: https://www.microsoft.com/en-us/wdsi/filesubmission
-Public release: https://github.com/pjampjam/HLMC-Reborn/releases/tag/v0.4.0

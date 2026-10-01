@@ -1,6 +1,6 @@
 # Holy Lois: Reborn - owner test
 
-Keep Windows Defender enabled. The original launcher and installer passed the local scan with definitions 1.459.505.0 on October 1. Microsoft reports no positive detection, but the final determination is still pending. The owner explicitly approved restoring the exact checked original 0.4.0 files after the current clean scans. Do not bypass any threat detection on another PC. Both Minecraft Launcher and SKlauncher can be used for these tests.
+Keep Windows Defender enabled. Browser downloading the original installer reproduced Trojan:Win32/Wacatac.C!ml with definitions 1.459.505.0 on October 1 at 22:18 Europe/Riga. Clean local scans did not resolve it. Both public executable downloads are withdrawn again; use existing Minecraft Launcher or SKlauncher profiles for these pack tests. Do not whitelist the installer. See SECURITY-NOTICE.md.
 
 ## Premium account
 

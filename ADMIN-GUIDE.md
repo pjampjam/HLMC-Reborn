@@ -124,7 +124,7 @@ Keep your SSH key and `private/release-private.pem` private. Friends receive onl
 
 ## Login, arrival and inventory defaults
 
-The owner confirmed pack 1.5.2 joins through the existing Minecraft Launcher and SKlauncher. The original 0.4.0 downloads were restored with explicit owner approval after clean current Defender scans. Microsoft's formal final result remains Pending; see SECURITY-NOTICE.md. The owner confirmed offline registration/RTP and premium joins; 1.5.2 is the stable pack.
+The owner confirmed pack 1.5.2 joins through the existing Minecraft Launcher and SKlauncher. The original 0.4.0 downloads were withdrawn again after browser detection recurred. Microsoft diagnostic follow-up is required; see SECURITY-NOTICE.md. The owner confirmed offline registration/RTP and premium joins; 1.5.2 is the stable pack.
 
 The centered form uses the existing EasyAuth account database and does not store a password on the client. Premium verification and the 24-hour same-IP session stay enabled. Before authentication, EasyAuth blocks movement, combat, inventory actions and damage. Escape in the form offers Back and Disconnect.
 

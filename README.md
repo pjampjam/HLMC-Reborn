@@ -1,6 +1,6 @@
 # Holy Lois: Reborn
 
-> **Downloads restored:** The exact original 0.4.0 installer and launcher passed current Defender scans and were restored with explicit owner approval. Microsoft reports no current detection, but its formal final result remains Pending. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). Keep antivirus enabled; leave any detected file blocked.
+> **Distribution paused again:** Browser downloading the original installer reproduced the Defender detection on 2026-10-01. Public installer and launcher executable assets are withdrawn. Keep protection enabled and do not whitelist them. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md).
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
@@ -8,7 +8,7 @@ A Windows launcher companion, Minecraft Fabric pack updater and private owner pu
 
 ## Players: install and play
 
-[Download HolyLoisSetup.exe 0.4.0](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.4.0/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
+The 0.4.0 installer download is withdrawn again because browser download detection persists. The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
 
 1. On first setup, choose **Minecraft Launcher** or **SKlauncher**, choose your shortcuts, and click **Continue**.
 2. Click **Install Holy Lois**.
@@ -72,7 +72,7 @@ Developer verification accepts `--data-dir ISOLATED_FOLDER --verify-install`, `-
 
 ## Launcher release safety checks
 
-The exact checked 0.4.0 files are public again. Publishing newly built public executables remains blocked while SECURITY-NOTICE.md is present. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
+Public executable publishing is blocked while SECURITY-NOTICE.md is present. A clean custom scan does not resolve the reproduced browser detection; explicit non-remediating threat rules also invalidate the local release check. Future public builds run maintainer/Check-Windows-Release.ps1 with Defender enabled, check that artifacts remain available after scanning, record hashes and Authenticode status, and reject detections. Trusted publisher signing can be required with -RequireTrustedPublisher. This local check does not replace vendor review or real browser-download verification and cannot guarantee absence of all antivirus detections.
 
 ## Pack 1.5.2 testing
 
