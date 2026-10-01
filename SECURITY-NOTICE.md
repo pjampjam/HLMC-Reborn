@@ -8,7 +8,7 @@ Microsoft's submitted-sample page reports no positive cloud/client detection, bu
 
 The 0.4.0 files were restored briefly with explicit owner approval after clean local checks and then withdrawn when browser detection recurred. No binaries were rebuilt, renamed, rehosted or repackaged to avoid detection. Signed pack/source updates and the game server are independent of this hold. Existing Minecraft Launcher and SKlauncher profiles can still be used.
 
-Next step: remove the Allow rule using Windows Security, collect the Defender MPSupportFiles.cab in an administrator terminal, and submit it privately to Microsoft referencing submission <PRIVATE_SUPPORT_CASE>. The diagnostic CAB can contain machine details, file paths, detection history and logs. It must not be uploaded to GitHub or sent to friends. Collection was attempted locally but administrator privileges are required; nothing was collected or transmitted.
+The owner removed the Allow rule and generated Defender MPSupportFiles.cab in an administrator terminal. With explicit owner approval, the diagnostics and follow-up report were submitted privately to Microsoft at 22:35 Europe/Riga on 2026-10-01, referencing the original case. The follow-up is Submitted with a Pending result. The diagnostic file was not uploaded to GitHub or sent to friends. Public executable distribution remains paused while the reproduced browser detection is investigated.
 
 Affected installer: version 0.4.0, 979456 bytes, SHA-256 de1c39ea80fc8369168c07a767c46ee507cb84ca722414d09b077794de68a542.
 Accompanying launcher: version 0.4.0, 66898158 bytes, SHA-256 26731e55b040147b5609cc9b96d587d03e1fc2e8206efe7d674df1c2c6448d26.
