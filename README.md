@@ -1,12 +1,14 @@
 # Holy Lois: Reborn
 
+> **Distribution paused:** Defender detects installer 0.4.0 as `Trojan:Win32/Wacatac.C!ml`. Do not run or share it, restore quarantined files, or disable antivirus. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md). Microsoft review is pending; a false positive is not confirmed.
+
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
 **Installer 0.4.0 / launcher 0.4.0 / pack 1.5.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Players: install and play
 
-Download [HolyLoisSetup.exe](https://github.com/pjampjam/HLMC-Reborn/releases/download/v0.4.0/HolyLoisSetup.exe). The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
+The 0.4.0 installer download is temporarily withdrawn pending Microsoft review. The installer is under 1 MB and downloads the complete app. You do not need a separate .NET installation. First setup lets you choose Minecraft Launcher or SKlauncher and select Desktop and Start menu shortcuts separately. You can select neither. Deleted shortcuts stay deleted after launches, updates and installer reruns. Existing installations keep their choices.
 
 1. On first setup, choose **Minecraft Launcher** or **SKlauncher**, choose your shortcuts, and click **Continue**.
 2. Click **Install Holy Lois**.
