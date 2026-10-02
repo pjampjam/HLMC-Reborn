@@ -1,6 +1,21 @@
 # Holy Lois: Reborn
 
-> **Distribution paused again:** Browser downloading the original installer reproduced the Defender detection on 2026-10-01. Public installer and launcher executable assets are withdrawn. Keep protection enabled and do not whitelist them. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md).
+## Current public launcher
+
+[Download HolyLoisReborn.exe 0.8.0](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v0.8.0/HolyLoisReborn.exe) - one self-contained Windows x64 app, about 67 MB. No separate installer or .NET installation is needed.
+
+The new edition is available for friend testing. It uses the tested HolyLoisRebornLab application folder and separate official-launcher profile. Choose your launcher and optional shortcuts, install the pack, then use Play beneath the logo. Existing preview users can close and reopen their installed app to update from its signed app-stable channel.
+
+The new app uses the existing signed modpack channel from this repository. Its launcher updates and source live in [Packaging Lab](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab). [Setup and test guide](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/blob/main/RESET-AND-TEST.md).
+
+The 0.8.0 artifact passed a local Defender scan and update/rollback tests, but has no Windows publisher certificate. SmartScreen may show Unknown publisher, and other antivirus results can differ. The withdrawn older installers are not restored by this release.
+
+## Legacy installer and production source
+
+The sections below describe the original 0.4.0 application and the shared modpack/admin tooling. For current player downloads and launcher setup, use the public 0.8.0 link above.
+
+
+> **Original installers remain paused:** Browser downloading the original installer reproduced the Defender detection on 2026-10-01. The original installer and launcher executable assets in this repository are withdrawn. Keep protection enabled and do not whitelist them. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md).
 
 A Windows launcher companion, Minecraft Fabric pack updater and private owner publishing tool.
 
