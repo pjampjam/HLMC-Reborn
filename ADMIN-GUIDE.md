@@ -93,14 +93,13 @@ Closing SSH does not stop the server. `/rtp`, `/tpa NAME` and other player comma
 
 ## If a friend's SK pack was deleted
 
-Open Holy Lois and choose SKlauncher. A missing link is now cleared instead of blocking startup.
+Close Minecraft and SKlauncher, then reopen Holy Lois so it updates to launcher 1.0.3 or newer.
 
-1. Click **Install Holy Lois** or **Repair / check files**.
-2. Open SKlauncher: **Library > Import > Official launcher**. Import only **Holy Lois: Reborn**.
-3. Close SKlauncher. In Holy Lois, click **Link SK game folder** and choose that imported game's folder.
-4. Click **Repair / check files**, then open SKlauncher and play.
+1. Choose **SKlauncher** and click **Install Holy Lois** or **Repair / check files**.
+2. Click **Play** in Holy Lois. Open **Library > Holy Lois: Reborn** in SKlauncher.
+3. If SKlauncher shows **Install**, click it once to prepare Minecraft and Java, then **Play**.
 
-The updater restores pack files. SKlauncher's own library entry must be reimported through SKlauncher if you deleted it there.
+The updater installs directly into SKlauncher's own instance folder and restores a deleted Library entry automatically. Manual import and folder linking are no longer needed. Personal files and unrelated instances are preserved.
 
 ## Official Minecraft Launcher
 
