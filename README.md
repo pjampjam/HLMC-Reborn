@@ -2,17 +2,17 @@
 
 ## Current public launcher
 
-[Download HolyLoisReborn.exe 1.0.1](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.0.1/HolyLoisReborn.exe) - one self-contained Windows x64 app, about 67 MB. No separate installer or .NET installation is needed.
+[Download HolyLoisReborn.exe 1.0.2](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.0.2/HolyLoisReborn.exe) - one self-contained Windows x64 app, about 67 MB. No separate installer or .NET installation is needed.
 
 The full release uses the standard HolyLoisReborn application folder and clean Holy Lois: Reborn profile and shortcut names. Existing preview installations migrate with their data, while an older destination installation is retained as a backup. Choose your launcher and optional shortcuts, install the pack, then use Play beneath the logo. Existing users can close Minecraft and its launcher, then reopen Holy Lois to update and migrate through its signed app-stable channel.
 
 The new app uses the existing signed modpack channel from this repository. Its launcher updates and source live in [Packaging Lab](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab). [Setup and test guide](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/blob/main/RESET-AND-TEST.md).
 
-The 1.0.1 artifact passed a local Defender scan and update/rollback tests, but has no Windows publisher certificate. SmartScreen may show Unknown publisher, and other antivirus results can differ. The withdrawn older installers are not restored by this release.
+The 1.0.2 artifact passed a local Defender scan and update/rollback tests, but has no Windows publisher certificate. SmartScreen may show Unknown publisher, and other antivirus results can differ. The withdrawn older installers are not restored by this release.
 
 ## Legacy installer and production source
 
-The sections below describe the original 0.4.0 application and the shared modpack/admin tooling. For current player downloads and launcher setup, use the public 1.0.1 link above.
+The sections below describe the original 0.4.0 application and the shared modpack/admin tooling. For current player downloads and launcher setup, use the public 1.0.2 link above.
 
 
 > **Original installers remain paused:** Browser downloading the original installer reproduced the Defender detection on 2026-10-01. The original installer and launcher executable assets in this repository are withdrawn. Keep protection enabled and do not whitelist them. See [SECURITY-NOTICE.md](SECURITY-NOTICE.md).

@@ -1,0 +1,5 @@
+private/
+*.cab
+*.key
+*.pdb
+__pycache__/

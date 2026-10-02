@@ -48,6 +48,8 @@ If you make a mistake, prepare a **higher** version containing the last good con
 
 ## Update the server
 
+All paths below are examples. Keep your real SSH host, username and key location private. Configure `HOLYLOIS_SSH_HOST` and `HOLYLOIS_SSH_USER` locally, or pass `-HostName`, `-User`, `-Key` and `-Stage` to Server-Admin.ps1.
+
 The server is separate from the client release. Your survival world is kept.
 
 1. Close Minecraft. Put only the new **server-compatible JARs**, plus dependencies, in:

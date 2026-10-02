@@ -6,6 +6,8 @@ Your CurseForge profile is the workshop. GitHub Releases are the delivery point.
 
 ## Your folders
 
+Example paths use `%USERPROFILE%`. Configure your SSH host and user privately, never in published source.
+
 | Purpose | Location |
 | --- | --- |
 | Edit and test the client pack | `%USERPROFILE%\curseforge\minecraft\Instances\Holy Lois Reborn` |
