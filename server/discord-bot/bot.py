@@ -18,7 +18,7 @@ TOKEN = Path("/etc/holylois/discord-bot-token").read_text().strip()
 STATE = Path("/var/lib/holylois/discord-bot.json")
 FIFO = "/run/minecraft-console.fifo"
 ADDRESS, WEBSITE, MAP = "play.holylois.com", "https://holylois.com", "https://map.holylois.com"
-CATEGORY, STATUS_CHANNEL, CHAT_CHANNEL, RULES_CHANNEL = "Holy Lois Server", "server-status", "minecraft-chat", "rules"
+CATEGORY, STATUS_CHANNEL, CHAT_CHANNEL, RULES_CHANNEL, WELCOME_CHANNEL = "📌 INFO", "server-status", "minecraft-chat", "rules", "welcome"
 RULES_FILE = Path("/opt/holylois-bot/RULES.md")
 GOLD, GREEN, RED = 0xF4C542, 0x34D27B, 0xC2362F
 
@@ -129,6 +129,7 @@ class HolyLoisBot(discord.Client):
         guild = self.guilds[0]
         self.status_channel, self.chat_channel = await self.ensure_channels(guild)
         await self.post_rules(guild)
+        await self.post_welcome(guild)
         self.tree.copy_global_to(guild=guild)
         await self.tree.sync(guild=guild)
         print(f"Ready in {guild.name}: #{self.status_channel.name}, #{self.chat_channel.name}")
@@ -149,6 +150,41 @@ class HolyLoisBot(discord.Client):
         chat = discord.utils.get(guild.text_channels, name=CHAT_CHANNEL) or await guild.create_text_channel(
             CHAT_CHANNEL, category=category, topic="Talk with players in game. Messages here appear in Minecraft chat.")
         return status, chat
+
+    async def post_welcome(self, guild):
+        """One start-here message in #welcome: what the server is, how to join and every link."""
+        embed = discord.Embed(title="Welcome to Holy Lois: Reborn", color=GOLD, url=WEBSITE,
+            description="A cozy modded Minecraft survival world for friends: cooking and furniture, dungeons with real loot, "
+                        "a boombox radio, daily gifts, an auction house and proximity voice chat with cave echo.")
+        embed.add_field(name="How to join", inline=False, value=(
+            f"1. Download the launcher from **{WEBSITE}**\n"
+            "2. Open it and click **Install Holy Lois**\n"
+            f"3. Start Minecraft and join **{ADDRESS}**"))
+        embed.add_field(name="Links", inline=False, value=(
+            f"[Website and download]({WEBSITE}) - [Live map]({MAP}) - [Rules]({WEBSITE}/rules) - [How to play]({WEBSITE}/guide)"))
+        embed.add_field(name="Around here", inline=False, value=(
+            "#rules - read before playing\n#server-status - live status and who is online\n"
+            "#minecraft-chat - talk with players in game\n#help - launcher or game problems\n#suggestions - ideas for the server"))
+        embed.add_field(name="Bot commands", inline=False, value="/status - /players - /ip - /map")
+        embed.set_footer(text="Holy Lois: Reborn")
+        channel = discord.utils.get(guild.text_channels, name=WELCOME_CHANNEL)
+        if channel is None:
+            category = discord.utils.get(guild.categories, name=CATEGORY)
+            overwrites = {guild.default_role: discord.PermissionOverwrite(send_messages=False), guild.me: discord.PermissionOverwrite(send_messages=True)}
+            try:
+                channel = await guild.create_text_channel(WELCOME_CHANNEL, category=category, overwrites=overwrites, position=0,
+                                                          topic="Start here: what Holy Lois is, how to join and every link")
+            except discord.Forbidden:
+                channel = await guild.create_text_channel(WELCOME_CHANNEL, category=category, position=0,
+                                                          topic="Start here: what Holy Lois is, how to join and every link")
+        message = None
+        if self.state.get("welcome_message"):
+            try: message = await channel.fetch_message(self.state["welcome_message"])
+            except discord.NotFound: message = None
+        if message: await message.edit(embed=embed)
+        else:
+            message = await channel.send(embed=embed)
+            self.state["welcome_message"] = message.id; save_state(self.state)
 
     async def post_rules(self, guild):
         """Keeps one read-only #rules message in sync with RULES.md (edited in place when the file changes)."""
