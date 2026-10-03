@@ -1,0 +1,10 @@
+# /etc/fail2ban/jail.d/holylois-sshd.local
+# Key-only SSH already blocks bots; this just stops repeat knockers. Bans grow for repeat offenders.
+[sshd]
+enabled = true
+backend = systemd
+maxretry = 5
+findtime = 10m
+bantime = 1h
+bantime.increment = true
+bantime.maxtime = 1w

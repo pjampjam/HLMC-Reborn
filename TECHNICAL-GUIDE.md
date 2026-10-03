@@ -141,6 +141,10 @@ JEB is configured for differential backups every 10 minutes and full backups eve
 
 Old backups are rotated, but storage can still fill through world exploration, DH caches, logs, manual archives or uploads. Check `df -h /` periodically and confirm completed backups with `/jeb list`. The maintenance tool's complete archives have a separate two-archive retention. Copy important complete archives off the VM. Never distribute them to players because they include authentication and other private server data.
 
+## Keybinds from new mods (launcher 1.2.0)
+
+`options.txt` keybinds stay personal on update. Launcher 1.2.0 adds one exception: a `key_` line that first appears in this release's shared `config/yosbr/options.txt` is added to a player's options once, only if they have no line for that control and no other control already uses the key. Pack 1.6.0 uses this for Xaero's map keys. Keys already used by F3 debug combos count as taken.
+
 ## Current server behavior
 
 - Real player cap: 20. Server-list display: online players plus one available spot. This display does not increase server capacity.

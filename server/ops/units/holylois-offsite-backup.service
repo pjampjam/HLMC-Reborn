@@ -1,0 +1,11 @@
+[Unit]
+Description=Holy Lois off-site backup to Google Drive
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/offsite-backup.py
+Nice=10
+IOSchedulingClass=idle
+TimeoutStartSec=6h

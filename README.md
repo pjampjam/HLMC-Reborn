@@ -2,11 +2,11 @@
 
 A Minecraft modpack for our friends, with a Windows launcher that installs the pack and keeps it updated.
 
-**Launcher 1.1.0 / pack 1.5.4 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.0 / pack 1.6.1 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
-[Download HolyLoisReborn.exe 1.1.0](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.1.0/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
+[Download HolyLoisReborn.exe 1.2.0](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.2.0/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
 
 1. Open the EXE. Choose **Minecraft Launcher** or **SKlauncher** and your optional Desktop and Start menu shortcuts.
 2. Close Minecraft and your Minecraft launcher, then click **Install Holy Lois**.
@@ -15,7 +15,16 @@ A Minecraft modpack for our friends, with a Windows launcher that installs the p
 
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
-See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, homes, teleporting, claims and shops.
+See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.6.x
+
+- **Farmer's Delight** cooking: knife, cutting board, cooking pot, burgers, sushi rolls, pumpkin slices and new crops.
+- **Macaw's Furniture**: chairs you can sit on, tables, drawers, wardrobes and kitchen cabinets.
+- **Xaero's Minimap and World Map** (J opens the map, M stays voice mute) and **Jade** block info.
+- **Dungeons and Taverns** and **Towns and Towers** in newly explored land, with Runeforged loot in their chests.
+- **Custom music discs** with `/audioplayer`, played through voice chat.
+- Hold **Tab** for live server stats, Latvian name days, the bot wall and the quote of the day. Right-click ripe crops to harvest and replant. One sleeping player skips the night.
 
 ## Updates
 

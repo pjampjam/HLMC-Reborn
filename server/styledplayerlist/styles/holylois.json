@@ -1,0 +1,90 @@
+{
+  "style_name": "Holy Lois",
+  "update_tick_time": 20,
+  "list_header": [
+    "",
+    "<gr #F5EF42 #FFAD42><bold>✦ Holy Lois: Reborn ✦</bold></gr>",
+    "<gray>Build</gray> <gold>•</gold> <gray>Trade</gray> <gold>•</gold> <gray>Adventure</gray>",
+    "",
+    "<color #5a5a5a><strikethrough>              </strikethrough></color> <white>%server:online%</white><dark_gray>/</dark_gray><gray>%server:max_players%</gray> <gray>online</gray> <color #5a5a5a><strikethrough>              </strikethrough></color>",
+    ""
+  ],
+  "list_footer": {
+    "change_rate": 7,
+    "values": [
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<red>❤</red> <white>%player:health%</white>   <gold>Food</gold> <white>%player:hunger%</white>   <aqua>Played</aqua> <white>%player:playtime%</white>",
+        "<gray>Mob kills</gray> <white>%player:statistic mob_kills%</white>   <gray>Deaths</gray> <white>%player:statistic deaths%</white>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<yellow>☀</yellow> <gray>Day</gray> <white>%world:day%</white>   <gray>Time</gray> <white>%world:time%</white>   <gray>Weather</gray> <white>%world:weather%</white>",
+        "<gray>You are in</gray> <white>%player:biome%</white>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<aqua>⚑</aqua> <gray>Server in</gray> <white>Stockholm, Sweden</white> <dark_gray>(EU North)</dark_gray>",
+        "<gray>RAM</gray> <white>%server:used_ram gb%</white><dark_gray>/</dark_gray><gray>%server:max_ram gb% GB</gray>   <gray>MSPT</gray> %server:mspt_colored%",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<italic><color #e8d9b0>\"%holylois:quote%\"</color></italic>",
+        "<color #8a7a55>- %holylois:quote_author%</color>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<light_purple>✿</light_purple> <gray>Vārda dienas:</gray> <white>%holylois:nameday%</white>",
+        "<color #c9a0dc>Daudz laimes! Happy name day!</color>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<gray>Tip:</gray> <yellow>/home set base</yellow> <dark_gray>•</dark_gray> <yellow>/tpa NAME</yellow> <dark_gray>•</dark_gray> <yellow>/rtp</yellow>",
+        "<yellow>V</yellow> <gray>voice settings</gray> <dark_gray>•</dark_gray> <yellow>Caps Lock</yellow> <gray>talk</gray>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<red>☠</red> <gray>Bots that knocked today:</gray> <white>%holylois:bots_today%</white> <dark_gray>•</dark_gray> <gray>tried</gray> <white>%holylois:bots_latest%</white>",
+        "<gray>None got in. Key-only door, fail2ban bouncer.</gray>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<gray>Hungry? Craft a</gray> <yellow>knife</yellow> <gray>and a</gray> <yellow>cutting board</yellow><gray>.</gray>",
+        "<gray>Burgers, sushi rolls and pies are on the menu.</gray>",
+        ""
+      ],
+      [
+        "",
+        "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
+        "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
+        "<gray>Decorate with</gray> <yellow>Macaw's Furniture</yellow><gray>:</gray>",
+        "<gray>sit on chairs, open drawers, fill wardrobes.</gray>",
+        ""
+      ]
+    ]
+  },
+  "hidden_in_commands": false
+}

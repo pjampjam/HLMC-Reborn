@@ -1,0 +1,10 @@
+[Unit]
+Description=Run the Holy Lois terrain expansion step every two minutes
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=2min
+AccuracySec=15s
+
+[Install]
+WantedBy=timers.target

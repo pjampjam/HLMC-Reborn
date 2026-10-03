@@ -1,0 +1,6 @@
+[Unit]
+Description=Holy Lois server monitor (Discord alerts)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/discord-alert.py check

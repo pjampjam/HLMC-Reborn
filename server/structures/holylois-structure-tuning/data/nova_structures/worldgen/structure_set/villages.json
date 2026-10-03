@@ -1,0 +1,30 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 10387312,
+    "separation": 20,
+    "spacing": 68
+  },
+  "structures": [
+    {
+      "structure": "nova_structures:village_birch",
+      "weight": 1
+    },
+    {
+      "structure": "nova_structures:village_jungle",
+      "weight": 1
+    },
+    {
+      "structure": "nova_structures:village_swamp",
+      "weight": 1
+    },
+    {
+      "structure": "nova_structures:village_dappled",
+      "weight": 19
+    },
+    {
+      "structure": "nova_structures:dappled_townhall",
+      "weight": 1
+    }
+  ]
+}

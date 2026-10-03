@@ -113,6 +113,24 @@ Scheduled world backups: differential every 10 minutes and full every six hours.
 
 Old backups rotate, but worlds, DH data, logs and manual archives can still fill the disk. Check `df -h /` and successful backups with `/jeb list`. Copy important complete archives off the VM. They include private server data, so do not send them to friends.
 
+## Server release for pack 1.6.1
+
+`server/deploy-release-161.py` installed Farmer's Delight and Macaw's Furniture (required on both sides), and the server-only Styled Player List, RightClickHarvest with Jamlib, Krypton, Alternate Current, Dungeons and Taverns, Towns and Towers with Cristel Lib, AudioPlayer and onboarding 1.4.0. It refuses while players are online, makes a complete verified backup under `/opt/minecraft-backups/maintenance/release161-*` and restores the previous files if startup fails.
+
+- **Player list:** `server/styledplayerlist/` holds the Tab header and footer (`config/styledplayerlist` on the server). Edit `styles/holylois.json` and run `/styledplayerlist reload` as an operator.
+- **Quote of the day:** edit `/opt/minecraft/config/holylois-quotes.txt` (`quote | author`, one per line). Changes apply without a restart. The welcome message and `%holylois:quote%` share it.
+- **Java:** `/etc/systemd/system/minecraft.service.d/jvm.conf` sets a fixed 6 GB heap with Aikar's G1 flags. If the VM is resized to 4 OCPU / 24 GB (the Oracle Always Free limit), raise both -Xms and -Xmx to 10G and run `sudo systemctl daemon-reload && sudo systemctl restart minecraft` while nobody is online.
+- **Backups:** the JEB budget is 12 GB so two full backups of the larger world still fit. Watch `df -h /`.
+- **Structures:** Dungeons and Taverns and Towns and Towers appear only in newly generated land. `world/datapacks/holylois-structure-tuning` spaces their extra villages to 68 chunks so villages are about 1.5x vanilla, not 2x. Their 223 chest loot tables are linked to Runeforged tiers in `config/runeforged-monsters.json` (vaults and bosses T1, dungeons T2, houses and camps T3).
+- **Sleep:** `players_sleeping_percentage` is 1, so one sleeping player skips the night.
+- **Terrain:** `holylois-terrain-expansion.timer` runs while the server is empty. It pregenerates a 4,000-block square while the server is empty, then raises RTP to 3,500. See `server/terrain/README.md`.
+
+## Monitoring, bots and off-site backups
+
+- **Discord alerts:** create a webhook in Discord (channel settings > Integrations > Webhooks > New Webhook > Copy Webhook URL), then on the server run `sudo nano /etc/holylois/discord-webhook`, paste it, save, and run `sudo chmod 600 /etc/holylois/discord-webhook && sudo python3 /usr/local/lib/holylois/discord-alert.py test`. The monitor checks every 2 minutes, reports crashes with the crash report and log tail, and says when the server is back. Planned deploys create `/run/holylois-maintenance` to stay quiet.
+- **Bot wall:** `holylois-botwall.timer` counts the usernames SSH bots try (no IPs) for the Tab list and the operator command `/botwall`. fail2ban bans repeat knockers for an hour, longer for repeat offenders. SSH stays key-only.
+- **Google Drive:** run `sudo rclone config` once: `n` (new remote), name `gdrive`, storage `drive`, leave client id/secret empty, scope `3` (drive.file: rclone sees only its own files), no advanced config, and answer `n` to auto config. It prints a `rclone authorize "drive" ...` command: run that on your PC (install rclone with `winget install Rclone.Rclone`), sign in to Google in the browser, and paste the result back. Then `sudo systemctl start holylois-offsite-backup` uploads the first copy. Nightly at 04:30 Riga it uploads only new world backups and changed server settings into `Holy Lois Backups`, and above 500 GB deletes the oldest while always keeping the newest 7 of each kind.
+
 ## Current pack and tests
 
 Pack 1.5.2 has 50 client mods, four resource packs and seven optional shaders. The server has 29 mods. All 14 shared mods match by hash. Required dependency metadata, including bundled Fabric libraries, was checked on both sides.

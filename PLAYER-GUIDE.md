@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-For pack 1.5.4 and launcher 1.1.0. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
+For pack 1.6.1 and launcher 1.2.0. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
 
 ## Joining
 
@@ -15,6 +15,12 @@ On your first registration, wait for the arrival screen to finish while the serv
 | **V** | Choose your microphone, output device and voice settings. |
 | **Hold Caps Lock** | Talk to nearby players. |
 | **Page Down** | Show or hide your body in first person. |
+| **Tab** | Player list with your ping, server TPS and uptime, playtime, the day, server location, Latvian name days, the bot wall and the quote of the day. |
+| **J** | Open the world map. |
+| **Y** / **U** / **Z** | Minimap settings, waypoint list, larger minimap. |
+| **M** | Mute your microphone (unchanged). |
+
+Map keys are added only where the key was free. If one does nothing, set it in **Options > Controls > Key Binds**. Jade shows a small label for whatever you look at, including crop growth.
 
 If your body clips through the view, press **Page Down** to use the simpler view while keeping animated arms. Shaders start off; choose a supplied shader in Minecraft's video settings when ready. **Disable shaders** in Holy Lois is available if rendering causes trouble.
 
@@ -62,6 +68,28 @@ Craft a **Trade Shop** with **4 planks, 1 wool and 1 iron ingot**. Put the ingre
 | Plank | Iron ingot | Plank |
 
 Place the Trade Shop against the **top or side of a chest**. Its settings open so you can choose what you sell and what buyers pay. Fill the chest with your stock. Buyers click the shop and select the offered item. The official [Universal Shops guide](https://github.com/Patbox/UniversalShops#using-trade-shops) explains the item and price settings.
+
+## Cooking and furniture
+
+**Farmer's Delight** adds real meals. Start with a **knife** (a stick plus flint, iron, gold or diamond) and a **cutting board** (planks and sticks). Place an ingredient on the cutting board, then right-click it with the knife to slice it: pumpkins become pumpkin slices, cabbages become leaves, fish become sushi ingredients. A **cooking pot** over a campfire or **stove** makes soups and stews; a **skillet** fries. Try hamburgers, salmon and cod rolls (sushi), pies and stuffed pumpkins. Wild cabbages, tomatoes, onions and rice grow in newly explored land. Your recipe book shows every recipe once you hold the ingredients.
+
+**Macaw's Furniture** adds chairs and benches you can sit on (right-click), tables, desks, drawers, wardrobes and kitchen cabinets. Most pieces are made from planks or logs of the wood you want; drawers and wardrobes store items like chests.
+
+Right-click a fully grown crop to harvest it and replant automatically. One player sleeping in a bed is enough to skip the night.
+
+## Explore
+
+Newly explored land has **Dungeons and Taverns** (taverns, crypts, illager camps and manors, shrines, wells and more) and **Towns and Towers** (new village styles and towers). Their chests can roll Runeforged stones and gear: vaults and boss rooms give the best rewards. Areas you already explored stay as they are.
+
+## Your own music
+
+Put your own songs on music discs and goat horns. They play through voice chat, so other players hear them nearby and caves echo.
+
+1. Type `/audioplayer`, click **Upload audio via Filebin**, and follow the link to upload an MP3 or WAV (up to 20 MB, 5 minutes).
+2. Back in game, click the confirm message. Hold a music disc or goat horn and click **put on item**.
+3. Play the disc in a jukebox. `/audioplayer volume` changes your own listening volume.
+
+Only upload music you are allowed to share.
 
 ## After death
 

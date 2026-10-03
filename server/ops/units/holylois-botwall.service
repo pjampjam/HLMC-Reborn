@@ -1,0 +1,7 @@
+[Unit]
+Description=Holy Lois SSH bot wall snapshot
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/botwall.py
+Nice=10

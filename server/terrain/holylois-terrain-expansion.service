@@ -1,0 +1,9 @@
+[Unit]
+Description=Holy Lois terrain expansion step (Chunky, empty server only)
+After=minecraft.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/expand-terrain.py
+Nice=10
+TimeoutStartSec=300
