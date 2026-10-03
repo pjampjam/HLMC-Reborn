@@ -125,6 +125,8 @@ Old backups rotate, but worlds, DH data, logs and manual archives can still fill
 - **Economy**: EconomyCraft with the admin shop and sidebar scoreboard off (`config/economycraft/config.json`). Item prices are in `prices.json`.
 - **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once.
 - **BlueMap**: renders only while nobody is online and serves on 127.0.0.1:8100. It becomes public once the domain tunnel points `map.` at it.
+- **Live map branding**: `bluemap/web/index.html` title and `assets/favicon-*.png` were replaced with the Holy Lois crown. A BlueMap update can restore its defaults; re-apply if the tab says BlueMap again.
+- **Discord**: the bot (`holylois-discord-bot`) keeps #server-status, #minecraft-chat and #rules in sync; #rules comes from `/opt/holylois-bot/RULES.md` (copy of RULES.md), refreshed on bot restart.
 - **Vein mining**: shapeless only; the add-on forces it on the server and Holy Lois Extras removes shape switching on clients.
 
 ## Server release for pack 1.6.1

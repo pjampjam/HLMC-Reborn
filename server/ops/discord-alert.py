@@ -31,7 +31,7 @@ def post(title, description, color, fields=()):
     embed = {"title": title, "description": description[:3900], "color": color,
              "fields": [{"name": n, "value": v[:1000] or "-", "inline": False} for n, v in fields],
              "footer": {"text": "Holy Lois: Reborn server monitor"}}
-    body = json.dumps({"username": "Holy Lois Server", "embeds": [embed]}).encode()
+    body = json.dumps({"username": "Holy Lois Server", "avatar_url": "https://holylois.com/apple-touch-icon.png", "embeds": [embed]}).encode()
     request = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "User-Agent": "HolyLoisMonitor/1.0"})
     urllib.request.urlopen(request, timeout=15).read()
 
