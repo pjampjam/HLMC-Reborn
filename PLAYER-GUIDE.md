@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-For pack 1.7.0 and launcher 1.2.1. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
+For pack 1.7.1 and launcher 1.2.2. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
 
 ## Joining
 

@@ -2,11 +2,11 @@
 
 A Minecraft modpack for our friends, with a Windows launcher that installs the pack and keeps it updated.
 
-**Launcher 1.2.1 / pack 1.7.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.2 / pack 1.7.1 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
-[Download HolyLoisReborn.exe 1.2.1](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.2.1/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
+[Download HolyLoisReborn.exe](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/latest/download/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
 
 1. Open the EXE. Choose **Minecraft Launcher** or **SKlauncher** and your optional Desktop and Start menu shortcuts.
 2. Close Minecraft and your Minecraft launcher, then click **Install Holy Lois**.

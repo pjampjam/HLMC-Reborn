@@ -18,7 +18,8 @@ TOKEN = Path("/etc/holylois/discord-bot-token").read_text().strip()
 STATE = Path("/var/lib/holylois/discord-bot.json")
 FIFO = "/run/minecraft-console.fifo"
 ADDRESS, WEBSITE, MAP = "play.holylois.com", "https://holylois.com", "https://map.holylois.com"
-CATEGORY, STATUS_CHANNEL, CHAT_CHANNEL = "Holy Lois Server", "server-status", "minecraft-chat"
+CATEGORY, STATUS_CHANNEL, CHAT_CHANNEL, RULES_CHANNEL = "Holy Lois Server", "server-status", "minecraft-chat", "rules"
+RULES_FILE = Path("/opt/holylois-bot/RULES.md")
 GOLD, GREEN, RED = 0xF4C542, 0x34D27B, 0xC2362F
 
 CHAT = re.compile(r"\]: (?:\[Not Secure\] )?<([A-Za-z0-9_]{3,16})> (.+)$")
@@ -127,6 +128,7 @@ class HolyLoisBot(discord.Client):
             return
         guild = self.guilds[0]
         self.status_channel, self.chat_channel = await self.ensure_channels(guild)
+        await self.post_rules(guild)
         self.tree.copy_global_to(guild=guild)
         await self.tree.sync(guild=guild)
         print(f"Ready in {guild.name}: #{self.status_channel.name}, #{self.chat_channel.name}")
@@ -147,6 +149,37 @@ class HolyLoisBot(discord.Client):
         chat = discord.utils.get(guild.text_channels, name=CHAT_CHANNEL) or await guild.create_text_channel(
             CHAT_CHANNEL, category=category, topic="Talk with players in game. Messages here appear in Minecraft chat.")
         return status, chat
+
+    async def post_rules(self, guild):
+        """Keeps one read-only #rules message in sync with RULES.md (edited in place when the file changes)."""
+        if not RULES_FILE.exists(): return
+        lines = RULES_FILE.read_text(encoding="utf-8").splitlines()
+        if lines and lines[0].startswith("# "): lines = lines[1:]
+        # Markdown headings become bold lines; Discord embeds do not render "##".
+        lines = ["**" + l[3:].strip() + "**" if l.startswith("## ") else l for l in lines]
+        merged = []
+        for line in lines:
+            # Rejoin hard-wrapped Markdown so sentences are not broken in the embed.
+            if merged and merged[-1] and line.strip() and not re.match(r"^(\d+\.|- |\*\*)", line.strip()):
+                merged[-1] += " " + line.strip()
+            else:
+                merged.append(line.strip())
+        lines = merged
+        embed = discord.Embed(title="Holy Lois: Reborn - Server rules", description="\n".join(lines).strip()[:4000], color=GOLD)
+        embed.set_footer(text=f"Short version in game: /rules  |  {WEBSITE}/rules")
+        channel = discord.utils.get(guild.text_channels, name=RULES_CHANNEL)
+        if channel is None:
+            category = discord.utils.get(guild.categories, name=CATEGORY)
+            overwrites = {guild.default_role: discord.PermissionOverwrite(send_messages=False), guild.me: discord.PermissionOverwrite(send_messages=True)}
+            channel = await guild.create_text_channel(RULES_CHANNEL, category=category, overwrites=overwrites, topic="Read before playing", position=0)
+        message = None
+        if self.state.get("rules_message"):
+            try: message = await channel.fetch_message(self.state["rules_message"])
+            except discord.NotFound: message = None
+        if message: await message.edit(embed=embed)
+        else:
+            message = await channel.send(embed=embed)
+            self.state["rules_message"] = message.id; save_state(self.state)
 
     def status_embed(self):
         result = ping()
