@@ -2,20 +2,34 @@
 
 A Minecraft modpack for our friends, with a Windows launcher that installs the pack and keeps it updated.
 
-**Launcher 1.2.0 / pack 1.6.1 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.1 / pack 1.7.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
-[Download HolyLoisReborn.exe 1.2.0](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.2.0/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
+[Download HolyLoisReborn.exe 1.2.1](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/download/v1.2.1/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
 
 1. Open the EXE. Choose **Minecraft Launcher** or **SKlauncher** and your optional Desktop and Start menu shortcuts.
 2. Close Minecraft and your Minecraft launcher, then click **Install Holy Lois**.
 3. Click **Play** beneath the logo. Select **Holy Lois: Reborn** in your chosen launcher. In SKlauncher, click **Install** there once to prepare Minecraft and Java, then **Play**.
-4. Open Multiplayer and join the saved Holy Lois server.
+4. Open Multiplayer and join the saved Holy Lois server (**play.holylois.com**). Website: https://holylois.com, Discord: https://discord.gg/FzBJSZwY2c
 
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.7.0
+
+- **Boombox**: a portable speaker that plays internet radio to everyone nearby through voice chat.
+- **Daily gifts**: a small gift every day you log in, and a **Holy Lootbox** every 7th day in a row.
+- **Achievements**: a Holy Lois advancement tab with secret challenges such as Grand Tour and Five-Star Chef.
+- **Auction house**: `/ah`, `/sell`, orders and `/pay` with server coins.
+- **Recipe lookup** with Roughly Enough Items, and descriptions for every modded enchantment.
+- **Macaw's Holidays**: Christmas trees, lights, garlands, candy canes and Halloween decorations, plus gifts and fireworks on Latvian holidays.
+- **Tab leaderboards**: diamonds, ancient debris, playtime, mob kills, blocks mined and more, a new board each time the page comes round.
+- **Discoveries**: the first visit to a big structure (Ancient City, Tavern, Illager Manor and many more) is announced to everyone.
+- **After death**: chat shows where you died, and the minimap death point disappears when you get there.
+- **Looks**: framed rarity tooltips, held torches light up the area, falling leaves, connected glass, effect timer bars and shulker box previews.
+- **Fixes**: J opens the world map again, no more chest flicker with shaders, no key clashes, and real chunks load further out before the distant view takes over.
 
 ## What's new in pack 1.6.x
 
@@ -24,7 +38,7 @@ See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, 
 - **Xaero's Minimap and World Map** (J opens the map, M stays voice mute) and **Jade** block info.
 - **Dungeons and Taverns** and **Towns and Towers** in newly explored land, with Runeforged loot in their chests.
 - **Custom music discs** with `/audioplayer`, played through voice chat.
-- Hold **Tab** for live server stats, Latvian name days, the bot wall and the quote of the day. Right-click ripe crops to harvest and replant. One sleeping player skips the night.
+- Hold **Tab** for live server stats, Latvian name days and leaderboards. Right-click ripe crops to harvest and replant. One sleeping player skips the night.
 
 ## Updates
 

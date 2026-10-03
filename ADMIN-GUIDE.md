@@ -113,6 +113,20 @@ Scheduled world backups: differential every 10 minutes and full every six hours.
 
 Old backups rotate, but worlds, DH data, logs and manual archives can still fill the disk. Check `df -h /` and successful backups with `/jeb list`. Copy important complete archives off the VM. They include private server data, so do not send them to friends.
 
+## Server release for pack 1.7.0
+
+`server/deploy-release-170.py` (run as root from `~/hl-170`) adds Macaw's Holidays and onboarding 1.5.0, installs the cleaner Tab style, removes the old tagline from the server list, raises `view-distance` to 12, updates the Discord monitor and enables the weekly recap. It refuses while players are online, backs up the complete server first and rolls back if the server does not start. Afterwards it posts the update notes to Discord.
+
+- **Leaderboards** come from the vanilla stats files, refreshed every two minutes off the main thread.
+- **Discoveries** are stored in `world/holylois/discoveries.json`. Delete an entry there to let a structure be announced again.
+- **Weekly recap**: `holylois-weekly-recap.timer` posts on Sundays at 19:00 Riga time. A week with no play posts nothing.
+- **Restart call**: every restart, planned or not, is announced once in Discord with "Maaarek nahhul!".
+- **Daily gifts and events**: `world/holylois/daily.json` (streaks) and `world/holylois/events.json` (holiday gifts, day counter). Time and weather pause while the server is empty, so the day counter follows real play.
+- **Economy**: EconomyCraft with the admin shop and sidebar scoreboard off (`config/economycraft/config.json`). Item prices are in `prices.json`.
+- **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once.
+- **BlueMap**: renders only while nobody is online and serves on 127.0.0.1:8100. It becomes public once the domain tunnel points `map.` at it.
+- **Vein mining**: shapeless only; the add-on forces it on the server and Holy Lois Extras removes shape switching on clients.
+
 ## Server release for pack 1.6.1
 
 `server/deploy-release-161.py` installed Farmer's Delight and Macaw's Furniture (required on both sides), and the server-only Styled Player List, RightClickHarvest with Jamlib, Krypton, Alternate Current, Dungeons and Taverns, Towns and Towers with Cristel Lib, AudioPlayer and onboarding 1.4.0. It refuses while players are online, makes a complete verified backup under `/opt/minecraft-backups/maintenance/release161-*` and restores the previous files if startup fails.

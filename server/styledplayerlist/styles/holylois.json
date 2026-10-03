@@ -4,7 +4,6 @@
   "list_header": [
     "",
     "<gr #F5EF42 #FFAD42><bold>✦ Holy Lois: Reborn ✦</bold></gr>",
-    "<gray>Build</gray> <gold>•</gold> <gray>Trade</gray> <gold>•</gold> <gray>Adventure</gray>",
     "",
     "<color #5a5a5a><strikethrough>              </strikethrough></color> <white>%server:online%</white><dark_gray>/</dark_gray><gray>%server:max_players%</gray> <gray>online</gray> <color #5a5a5a><strikethrough>              </strikethrough></color>",
     ""
@@ -32,16 +31,16 @@
         "",
         "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
         "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
-        "<aqua>⚑</aqua> <gray>Server in</gray> <white>Stockholm, Sweden</white> <dark_gray>(EU North)</dark_gray>",
-        "<gray>RAM</gray> <white>%server:used_ram gb%</white><dark_gray>/</dark_gray><gray>%server:max_ram gb% GB</gray>   <gray>MSPT</gray> %server:mspt_colored%",
+        "<gold>★</gold> <gray>Top</gray> <yellow>%holylois:top title%</yellow>",
+        "<color #F4C542>1.</color> <white>%holylois:top 1%</white>   <color #C9CCD1>2.</color> <white>%holylois:top 2%</white>   <color #C98A4B>3.</color> <white>%holylois:top 3%</white>",
         ""
       ],
       [
         "",
         "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
         "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
-        "<italic><color #e8d9b0>\"%holylois:quote%\"</color></italic>",
-        "<color #8a7a55>- %holylois:quote_author%</color>",
+        "<aqua>⚑</aqua> <gray>Server in</gray> <white>Stockholm, Sweden</white> <dark_gray>(EU North)</dark_gray>",
+        "<gray>RAM</gray> <white>%server:used_ram gb%</white><dark_gray>/</dark_gray><gray>%server:max_ram gb% GB</gray>   <gray>MSPT</gray> %server:mspt_colored%",
         ""
       ],
       [
@@ -56,16 +55,16 @@
         "",
         "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
         "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
-        "<gray>Tip:</gray> <yellow>/home set base</yellow> <dark_gray>•</dark_gray> <yellow>/tpa NAME</yellow> <dark_gray>•</dark_gray> <yellow>/rtp</yellow>",
-        "<yellow>V</yellow> <gray>voice settings</gray> <dark_gray>•</dark_gray> <yellow>Caps Lock</yellow> <gray>talk</gray>",
+        "<gold>★</gold> <gray>Top</gray> <yellow>%holylois:top title%</yellow>",
+        "<color #F4C542>1.</color> <white>%holylois:top 1%</white>   <color #C9CCD1>2.</color> <white>%holylois:top 2%</white>   <color #C98A4B>3.</color> <white>%holylois:top 3%</white>",
         ""
       ],
       [
         "",
         "<color #5a5a5a><strikethrough>              </strikethrough></color><color #5a5a5a><strikethrough>              </strikethrough></color>",
         "<gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>",
-        "<red>☠</red> <gray>Bots that knocked today:</gray> <white>%holylois:bots_today%</white> <dark_gray>•</dark_gray> <gray>tried</gray> <white>%holylois:bots_latest%</white>",
-        "<gray>None got in. Key-only door, fail2ban bouncer.</gray>",
+        "<gray>Tip:</gray> <yellow>/home set base</yellow> <dark_gray>•</dark_gray> <yellow>/tpa NAME</yellow> <dark_gray>•</dark_gray> <yellow>/rtp</yellow>",
+        "<yellow>V</yellow> <gray>voice settings</gray> <dark_gray>•</dark_gray> <yellow>Caps Lock</yellow> <gray>talk</gray>",
         ""
       ],
       [

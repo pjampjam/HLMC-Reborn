@@ -1,0 +1,7 @@
+[Unit]
+Description=Holy Lois weekly Discord recap
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/weekly-recap.py
+Nice=10

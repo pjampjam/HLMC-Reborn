@@ -1,0 +1,9 @@
+[Unit]
+Description=Holy Lois weekly Discord recap, Sunday 19:00 Riga time
+
+[Timer]
+OnCalendar=Sun *-*-* 19:00:00 Europe/Riga
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-For pack 1.6.1 and launcher 1.2.0. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
+For pack 1.7.0 and launcher 1.2.1. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
 
 ## Joining
 
@@ -15,12 +15,14 @@ On your first registration, wait for the arrival screen to finish while the serv
 | **V** | Choose your microphone, output device and voice settings. |
 | **Hold Caps Lock** | Talk to nearby players. |
 | **Page Down** | Show or hide your body in first person. |
-| **Tab** | Player list with your ping, server TPS and uptime, playtime, the day, server location, Latvian name days, the bot wall and the quote of the day. |
+| **Tab** | Player list with your ping, server TPS and uptime, playtime, the day, server location, Latvian name days and leaderboards. |
 | **J** | Open the world map. |
 | **Y** / **U** / **Z** | Minimap settings, waypoint list, larger minimap. |
 | **M** | Mute your microphone (unchanged). |
+| **C** | Zoom. |
+| **Hold `** (left of 1) | Mine the whole ore vein or tree while breaking a block. The HUD shows how many blocks will break. |
 
-Map keys are added only where the key was free. If one does nothing, set it in **Options > Controls > Key Binds**. Jade shows a small label for whatever you look at, including crop growth.
+Map keys are added only where the key was free, and Holy Lois fixes known clashes when the pack updates. If one does nothing, open **Options > Controls > Key Binds**: the search bar and the conflict filter show what shares a key. Jade shows a small label for whatever you look at, including crop growth.
 
 If your body clips through the view, press **Page Down** to use the simpler view while keeping animated arms. Shaders start off; choose a supplied shader in Minecraft's video settings when ready. **Disable shaders** in Holy Lois is available if rendering causes trouble.
 
@@ -59,15 +61,9 @@ The request and random-teleport commands come from [Essential Commands](https://
 
 See Flan's official [claiming guide](https://github.com/Flemmli97/BlazingDocs/blob/main/docs/flan/user_guides/Getting-Started.md) and [menu command](https://github.com/Flemmli97/BlazingDocs/blob/main/docs/flan/user_guides/Commands.md).
 
-## Make a shop
+## Sell to other players
 
-Craft a **Trade Shop** with **4 planks, 1 wool and 1 iron ingot**. Put the ingredients in these two rows of a crafting table:
-
-| Plank | Wool | Plank |
-| --- | --- | --- |
-| Plank | Iron ingot | Plank |
-
-Place the Trade Shop against the **top or side of a chest**. Its settings open so you can choose what you sell and what buyers pay. Fill the chest with your stock. Buyers click the shop and select the offered item. The official [Universal Shops guide](https://github.com/Patbox/UniversalShops#using-trade-shops) explains the item and price settings.
+List items on the auction house with `/ah`, or post a buy request with `/orders`. See **Money and the auction house** below.
 
 ## Cooking and furniture
 
@@ -75,11 +71,15 @@ Place the Trade Shop against the **top or side of a chest**. Its settings open s
 
 **Macaw's Furniture** adds chairs and benches you can sit on (right-click), tables, desks, drawers, wardrobes and kitchen cabinets. Most pieces are made from planks or logs of the wood you want; drawers and wardrobes store items like chests.
 
+**Macaw's Holidays** adds Christmas trees, string lights, garlands, wreaths, candy canes, presents and Halloween pumpkins and decorations.
+
 Right-click a fully grown crop to harvest it and replant automatically. One player sleeping in a bed is enough to skip the night.
 
 ## Explore
 
 Newly explored land has **Dungeons and Taverns** (taverns, crypts, illager camps and manors, shrines, wells and more) and **Towns and Towers** (new village styles and towers). Their chests can roll Runeforged stones and gear: vaults and boss rooms give the best rewards. Areas you already explored stay as they are.
+
+The first time anyone walks into a big structure, the whole server sees who discovered it. Villages, wells, camps and small ruins stay quiet. Hold **Tab** to see the leaderboards; each time the page comes round it shows another one, from diamonds and ancient debris to playtime and fish caught.
 
 ## Your own music
 
@@ -91,9 +91,25 @@ Put your own songs on music discs and goat horns. They play through voice chat, 
 
 Only upload music you are allowed to share.
 
+## Daily gifts and the Holy Lootbox
+
+Log in once a day (Riga time) for a small gift: food, ores, books or rockets. Every 7th day in a row you get a **Holy Lootbox**, a gold present; right-click it to open. Lootboxes hold diamonds, Runeforged stones, golden apples and more, and sometimes a named tool or weapon with your name on it. Each finished week raises the lootbox tier, up to tier 3. Missing a day starts the streak again. Holidays such as Christmas, New Year, Jāņi, Halloween and 18 November bring their own greeting and gift.
+
+## Money and the auction house
+
+Everyone starts with 250 coins. `/sell` turns spare items into coins, `/ah` opens the auction house to buy and list items, `/orders` lets you ask for items at your price, `/pay NAME AMOUNT` sends coins and `/bal` shows your balance. `/daily` adds a few coins each day.
+
+## Boombox
+
+Craft a boombox from string (top), iron ingot + jukebox + iron ingot (middle) and amethyst shard + redstone + amethyst shard (bottom). Hold it in either hand and right-click to play internet radio: everyone within 24 blocks hears it through voice chat, and it follows you. Right-click again for the next station, sneak + right-click to stop. The song title shows above your hotbar. Voice chat settings (V) have a separate Boombox volume slider. `/boombox stations` lists the stations.
+
+## Achievements and recipes
+
+Press **L** and open the **Holy Lois** tab. Some goals are hidden until you get close, such as visiting every kind of dungeon or eating every Farmer's Delight meal. In your inventory, hover an item and press **R** for its recipe or **U** for what it is used in.
+
 ## After death
 
-Your dropped items stay protected for your own pickup for **30 minutes of loaded-world time**. Time does not advance while the area is unloaded. Recover them promptly: **fire, lava and the void can still destroy items**. This protection does not make drops indestructible.
+Chat tells you where you died, and the minimap marks the spot until you reach it. Your dropped items stay protected for your own pickup for **30 minutes of loaded-world time**. Time does not advance while the area is unloaded. Recover them promptly: **fire, lava and the void can still destroy items**. This protection does not make drops indestructible.
 
 ## Keep your pack updated
 
