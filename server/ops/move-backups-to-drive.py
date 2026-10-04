@@ -6,7 +6,7 @@ Anything that fails to upload or verify stays on the disk. Just Enough Backups k
 newest differential locally, because the next differential is built against them (both are on Drive already).
 The terrain job's state folder (/opt/minecraft-backups/terrain-expansion) is not a backup and stays.
 """
-import json, subprocess, sys
+import json, subprocess, sys, time
 from pathlib import Path
 
 REMOTE = "gdrive:Holy Lois Backups"
@@ -46,7 +46,8 @@ def main():
     diffs = sorted(JEB.glob("differential-*.zip"), key=lambda p: p.stat().st_mtime)
     keep = set(fulls[-1:] + diffs[-1:])
     for item in sorted(JEB.iterdir()):
-        if item not in keep and item.is_file():
+        # skip archives JEB may still be writing
+        if item not in keep and item.is_file() and time.time() - item.stat().st_mtime > 600:
             freed += move(item, f"{REMOTE}/world/{item.name}")
     print(json.dumps({"freed_gb": round(freed / 1024**3, 2), "kept_locally": sorted(p.name for p in keep)}))
 
