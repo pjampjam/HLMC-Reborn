@@ -29,7 +29,8 @@ ALERT = "/usr/local/lib/holylois/discord-alert.py"
 
 
 def rclone(*args, capture=False):
-    return subprocess.run(["rclone", *args], check=True, capture_output=capture, text=True)
+    # 256M chunks: rclone's shared Google client is rate limited, so fewer requests per file
+    return subprocess.run(["rclone", *args, "--drive-chunk-size", "256M", "--tpslimit", "4"], check=True, capture_output=capture, text=True)
 
 
 def remote_ready():

@@ -10,12 +10,14 @@ import json, subprocess, sys, time
 from pathlib import Path
 
 REMOTE = "gdrive:Holy Lois Backups"
+# rclone's shared Google client is rate limited worldwide: big chunks mean few requests
+TUNING = ["--drive-chunk-size", "256M", "--tpslimit", "4", "-v", "--log-file", "/var/log/holylois-move-backups.log"]
 BACKUPS = Path("/opt/minecraft-backups")
 JEB = Path("/opt/minecraft/backups/world")
 
 
 def rclone(*args):
-    return subprocess.run(["rclone", *args], check=True, capture_output=True, text=True)
+    return subprocess.run(["rclone", *args, *TUNING], check=True, capture_output=True, text=True)
 
 
 def move(local, remote):
@@ -27,17 +29,17 @@ def move(local, remote):
             rclone("copyto", str(local), remote)
             rclone("check", str(local.parent), remote.rsplit("/", 1)[0], "--one-way", "--include", "/" + local.name)
     except subprocess.CalledProcessError as error:
-        print(f"KEPT {local}: {error.stderr.strip()[:200]}")
+        print(f"KEPT {local}: rclone exit {error.returncode}, see the log", flush=True)
         return 0
     size = sum(f.stat().st_size for f in local.rglob("*") if f.is_file()) if local.is_dir() else local.stat().st_size
     subprocess.run(["rm", "-rf", "--", str(local)], check=True)
-    print(f"moved {local} ({size / 1024**3:.2f} GB)")
+    print(f"moved {local} ({size / 1024**3:.2f} GB)", flush=True)
     return size
 
 
 def main():
     freed = 0
-    for item in sorted((BACKUPS / "maintenance").iterdir()):
+    for item in sorted((BACKUPS / "maintenance").iterdir(), reverse=True):  # newest first: release173 is on Drive already
         freed += move(item, f"{REMOTE}/maintenance/{item.name}")
     for item in sorted(BACKUPS.iterdir()):
         if item.name not in ("maintenance", "terrain-expansion"):  # terrain-expansion is the terrain job's live state
