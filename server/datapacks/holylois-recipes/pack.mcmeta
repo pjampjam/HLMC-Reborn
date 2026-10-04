@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "description": "Holy Lois recipe tweaks: no recovery compass (the minimap marks your death point)",
+    "min_format": [
+      121,
+      0
+    ],
+    "max_format": [
+      121,
+      0
+    ]
+  }
+}
