@@ -1,11 +1,11 @@
 """Public server stats for holylois.com, written as one JSON file (read-only on the world).
 
 Sources: vanilla stats and advancement files, usercache.json, the Holy Lois datapack (titles), discoveries, daily
-streaks and EconomyCraft balances. Only usernames and game numbers leave the server: no UUIDs, IPs or coordinates.
+streaks, EconomyCraft balances and the published pack changelog. Only usernames and game numbers leave the server: no UUIDs, IPs or coordinates.
 Names with slurs, and names listed in /etc/holylois/stats-hidden.txt, never appear.
 Usage: python3 make-stats.py [SERVER_ROOT] OUTPUT_JSON
 """
-import datetime, json, os, re, sys, tempfile
+import datetime, json, os, re, sys, tempfile, urllib.request
 from pathlib import Path
 
 ROOT = Path(sys.argv[1]) if len(sys.argv) > 2 else Path('/opt/minecraft')
@@ -14,6 +14,7 @@ WORLD = ROOT / 'world'
 HIDDEN_FILE = Path('/etc/holylois/stats-hidden.txt')
 SLURS = re.compile(r'n[i1!]gg|f[a@]gg?[o0]t|f[a@]g$|r[e3]t[a@]rd|p[i1]d[o0a]r|п[иі]д[оа]р|k[i1]ke|ch[i1]nk|tr[a@]nny', re.I)
 TOP = 5
+PACK_FEED = 'https://github.com/pjampjam/HLMC-Reborn/releases/download/pack-stable/pack.json'
 
 
 def read(path, default=None):
@@ -109,8 +110,17 @@ def main():
                        'date': datetime.datetime.fromtimestamp(entry.get('time', 0), datetime.timezone.utc).date().isoformat()})
     firsts.sort(key=lambda f: f['date'], reverse=True)
 
+    # The live pack's own changelog, so the website's update list follows each release by itself.
+    pack = (read(OUT, {}) or {}).get('pack')
+    try:
+        manifest = json.loads(urllib.request.urlopen(PACK_FEED, timeout=15).read())
+        pack = {'version': manifest['version'], 'history': manifest.get('history', [])[:8]}
+    except Exception:
+        pass
+
     everyone = list(stats)
     report = {
+        'pack': pack,
         'generated': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
         'server': {'address': 'play.holylois.com', 'players': len(people), 'world_day': read(WORLD / 'holylois/events.json', {}).get('lastDay')},
         'totals': {

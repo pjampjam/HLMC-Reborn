@@ -3,7 +3,7 @@
 Onboarding 1.6.0 (daily coin [Claim] button and streak bar, /support, new achievement hooks), Holy Lois Extras 1.1.0
 (boombox you can set down, music pause signal, instant stop when dropped; both sides) and the updated achievement
 datapack. The server list line announces the update. The owner allowed a restart with players online after a
-countdown (2026-10-04), so online players get a five-minute warning instead of a refusal. A complete verified backup
+countdown (2026-10-04), so online players get a one-minute warning instead of a refusal. A complete verified backup
 comes first and the previous files return automatically if the server does not start.
 """
 import datetime, json, os, re, shutil, subprocess, sys, time
@@ -22,27 +22,60 @@ EXTRAS_NEW = Path('/home/ubuntu/holylois-extras-110/holylois-extras-1.1.0+26.3.j
 ADVANCEMENTS = ROOT / 'world/datapacks/holylois-advancements'
 FIFO = Path('/run/minecraft-console.fifo')
 MOTD = ROOT / 'config/MiniMOTD/main.conf'
+STYLE = ROOT / 'config/styledplayerlist/styles/holylois.json'
 MAINTENANCE = Path('/run/holylois-maintenance')
 ALERT = Path('/usr/local/lib/holylois/discord-alert.py')
 # Server list line under the name: always the newest exciting change.
 HEADLINE = '<#FFAD42>✦ New:</#FFAD42> <white>set your boombox down and party!</white>'
-WARNINGS = [(300, '5 minutes'), (120, '2 minutes'), (60, '1 minute'), (30, '30 seconds'), (10, '10 seconds')]
+COUNTDOWN = 60  # seconds; the owner asked for one minute on 2026-10-04
+RULE = '<color #5a5a5a><strikethrough>{}</strikethrough></color>'
+
+
+def wider_tab(style):
+    """Tab list: longer divider lines and a little padding, so text no longer touches the edges."""
+    def line(text):
+        if 'strikethrough' in text:
+            return text.replace(RULE.format(' ' * 14) + RULE.format(' ' * 14), RULE.format(' ' * 64)).replace(RULE.format(' ' * 14), RULE.format(' ' * 22))
+        return '    ' + text + '    ' if text else text
+    style['list_header'] = [line(x) for x in style['list_header']]
+    style['list_footer']['values'] = [[line(x) for x in page] for page in style['list_footer']['values']]
+    return style
+
+
+def console(*commands):
+    with FIFO.open('w') as stream:
+        for command in commands: stream.write(command + '\n')
 
 
 def say(text):
-    line = json.dumps([{'text': '[Holy Lois] ', 'color': 'gold', 'bold': True}, {'text': text, 'color': 'yellow', 'bold': False}])
-    with FIFO.open('w') as stream: stream.write('tellraw @a ' + line + '\n')
+    console('tellraw @a ' + json.dumps([{'text': '[Holy Lois] ', 'color': 'gold', 'bold': True}, {'text': text, 'color': 'yellow', 'bold': False}]))
 
 
 def countdown():
+    """A boss bar at the top of the screen counts down; chat reminders at the start, 30 s and 10 s; big numbers for the last 10 s."""
     if online_players() == 0: return
-    start = time.monotonic(); total = WARNINGS[0][0]
-    for left, label in WARNINGS:
-        time.sleep(max(0, total - left - (time.monotonic() - start)))
-        say(f'Server restarts in {label} for a quick update (boombox you can set down, achievement tab fix). '
-            'Afterwards close Minecraft and open the Holy Lois launcher to update.')
-        if online_players() == 0: return
-    time.sleep(max(0, total - (time.monotonic() - start)))
+    bar = 'holylois:restart'
+    console(f'bossbar remove {bar}', f'bossbar add {bar} ' + json.dumps({'text': 'Server restart for an update'}),
+            f'bossbar set {bar} max {COUNTDOWN}', f'bossbar set {bar} value {COUNTDOWN}', f'bossbar set {bar} color yellow',
+            f'bossbar set {bar} style notched_10', f'bossbar set {bar} players @a', 'title @a times 0 25 5')
+    start = time.monotonic()
+    for left in range(COUNTDOWN, 0, -1):
+        time.sleep(max(0, COUNTDOWN - left - (time.monotonic() - start)))
+        label = f'{left} second{"s" if left != 1 else ""}'
+        commands = [f'bossbar set {bar} value {left}', f'bossbar set {bar} players @a',
+                    f'bossbar set {bar} name ' + json.dumps({'text': f'Server restarting in {label} - update after with the launcher', 'color': 'yellow' if left > 10 else 'red'})]
+        if left == 10: commands.append(f'bossbar set {bar} color red')
+        if left <= 10:
+            commands += ['title @a subtitle ' + json.dumps({'text': 'Then open the Holy Lois launcher and click Update', 'color': 'yellow'}),
+                         'title @a title ' + json.dumps({'text': str(left), 'color': 'gold', 'bold': True}),
+                         'execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 ' + ('2' if left <= 3 else '1')]
+        console(*commands)
+        if left in (COUNTDOWN, 30, 10):
+            say(f'Server restarts in {label} for an update: boomboxes you can set down, achievement tabs fixed, daily coin button. '
+                'Afterwards close Minecraft and open the Holy Lois launcher to update.')
+    console('title @a title ' + json.dumps({'text': 'Maaarek nahhul!', 'color': 'gold', 'bold': True}),
+            'title @a subtitle ' + json.dumps({'text': 'Back in a few minutes', 'color': 'yellow'}))
+    time.sleep(2)
 
 
 def main():
@@ -62,7 +95,7 @@ def main():
     MAINTENANCE.touch()
     run('systemctl', 'stop', 'minecraft-console.socket', 'minecraft.service')
     installed = []
-    saved = [*old_onboarding, *old_extras, MOTD]
+    saved = [*old_onboarding, *old_extras, MOTD, STYLE]
     try:
         archive = backup / 'complete-server.tar.gz'
         run('tar', '--exclude=minecraft/backups', '-czf', str(archive), '-C', '/opt', 'minecraft')
@@ -83,6 +116,9 @@ def main():
         motd, count = re.subn(r'(?m)^(\s*line2=).*$', lambda m: m.group(1) + json.dumps(HEADLINE, ensure_ascii=False), MOTD.read_text(encoding='utf-8'), count=1)
         assert count == 1, 'MOTD line2 not found'
         MOTD.write_text(motd, encoding='utf-8')
+        style = json.loads(STYLE.read_text(encoding='utf-8'))
+        if RULE.format(' ' * 64) not in json.dumps(style, ensure_ascii=False):
+            STYLE.write_text(json.dumps(wider_tab(style), indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
 
         since = time.strftime('%Y-%m-%d %H:%M:%S')
         run('systemctl', 'start', 'minecraft-console.socket', 'minecraft.service')
