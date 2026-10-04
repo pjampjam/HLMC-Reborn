@@ -67,9 +67,14 @@ def countdown():
         if left in (COUNTDOWN, 30, 10):
             say(f'Server restarts in {label} for a quick fix: achievement tabs and the placed boombox. '
                 'Afterwards close Minecraft and open the Holy Lois launcher to update.')
-    console(f'bossbar remove {BAR}', 'gamerule send_command_feedback true',
-            'title @a title ' + json.dumps({'text': 'Maaarek nahhul!', 'color': 'gold', 'bold': True}),
-            'title @a subtitle ' + json.dumps({'text': 'Back in a few minutes', 'color': 'yellow'}))
+    # The goodbye title stays up until everyone is kicked with the same message (owner request), instead of the bare
+    # "Server closed" screen a stop would show.
+    console(f'bossbar remove {BAR}', 'gamerule send_command_feedback true', 'title @a times 0 200 0',
+            'title @a subtitle ' + json.dumps({'text': 'Back in a few minutes', 'color': 'yellow'}),
+            'title @a title ' + json.dumps({'text': 'Maaarek nahhul!', 'color': 'gold', 'bold': True}))
+    time.sleep(3)
+    console('kick @a Maaarek nahhul! The server is updating, back in a few minutes. '
+            'Open the Holy Lois launcher and click Update before you rejoin.')
     time.sleep(2)
 
 
