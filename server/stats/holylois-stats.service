@@ -1,0 +1,7 @@
+[Unit]
+Description=Holy Lois public stats (stats.holylois.com)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/make-stats.py /opt/minecraft /var/lib/holylois-stats/stats.json
+Nice=10

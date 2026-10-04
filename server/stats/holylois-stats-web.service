@@ -1,0 +1,16 @@
+[Unit]
+Description=Holy Lois public stats web endpoint (127.0.0.1:8101)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/lib/holylois/stats-web.py
+DynamicUser=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+ReadOnlyPaths=/var/lib/holylois-stats
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
