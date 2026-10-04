@@ -8,7 +8,7 @@ to these rules. In game, type `/rules` to see the short version.
 1. **Be kind.** No harassment, threats, hate speech, slurs or discrimination: not in chat, voice, signs, books,
    names, skins or builds.
 2. **No griefing or stealing.** Do not break, take, move or change anything other players made or own, claimed or
-   not. Claim your land on the world map (press M, right-click a chunk); `/claims` shows how much you have.
+   not. Claim your land on the world map (press J, right-click a chunk); `/claims` shows how much you have.
 3. **No cheating.** No hacked clients, x-ray (mods, resource packs or shaders), item duplication, or abusing bugs and
    exploits. Report bugs to pjampjam instead. The visual and performance mods that come with the launcher are fine.
 4. **No lag machines.** Huge redstone clocks, giant mob farms and anything that keeps hundreds of entities loaded slow

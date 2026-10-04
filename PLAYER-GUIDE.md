@@ -56,9 +56,11 @@ The request commands come from [Essential Commands](https://github.com/John-Paul
 
 Land is claimed in whole chunks (16 x 16 blocks, from bedrock to sky) with **Open Parties and Claims**.
 
-1. Press **M** for the world map, right-click a chunk near you and choose **Claim**. Drag over several chunks to claim an area. You can also stand in a chunk and type `/oclaims claim`.
+1. Press **J** for the world map, right-click a chunk near you and choose **Claim**. Drag over several chunks to claim an area. You can also stand in a chunk and type `/oclaims claim`.
 2. Claimed land shows on the minimap and world map in your colour. Other players cannot build, break, open chests or hurt animals there.
-3. Give your land a name and colour with the **'** key (OPAC menu), or `/opac`.
+3. Give your land a name and colour: press **'** (OPAC menu), open your player config and set **Claimed Area Name** and the claim colour. The zone title then shows "Name (Owner)".
+
+You don't need a team to claim. Everyone, admins included, claims under the same limits.
 
 **How much land?** Everyone gets **16 chunks free**, earns **1 more for every 2 hours played** (up to 48), and can buy more with coins: `/claims` shows your numbers, `/claims buy` buys the next chunk (500 coins, each next one 15% more) and `/claims sell` sells one back for half price.
 

@@ -19,7 +19,7 @@ See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, 
 
 ## What's new in pack 1.7.4
 
-- **Land on the map**: press **M**, right-click a chunk and claim it (Open Parties and Claims replaces Flan). 16 chunks are free, playtime earns more and `/claims buy` adds extra ones for coins. Teams with `/oparties`.
+- **Land on the map**: press **J** for the world map, right-click a chunk and claim it (Open Parties and Claims replaces Flan). 16 chunks are free, playtime earns more and `/claims buy` adds extra ones for coins. Teams with `/oparties`.
 - **Zone titles**: entering a new biome or someone's land shows its name at the top of the screen, or Wilderness.
 - **Fair fights**: logging out mid-fight kills you; PvP deaths leave the loot for the winner with no death marker. `/rtp` never drops you into or next to someone's land.
 - **Help**: `/support MESSAGE` reaches the owner on Discord right away, `/report PLAYER REASON` for player problems, `/donate` for the wallets.
