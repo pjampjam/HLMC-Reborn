@@ -29,6 +29,10 @@ TOUR = {
     "nether_keep": [f"{NS}:nether_keep"], "piglin_donjon": [f"{NS}:piglin_donjon"], "nether_port": [f"{NS}:nether_port"],
     "end_castle": [f"{NS}:end_castle"], "end_ship": [f"{NS}:end_ship"],
 }
+# Epic Dungeons: underground dungeons in three biome styles and three sizes, plus the surface obelisks.
+EPIC = {size: [f"epic:{size}_{style}_dungeon" if size != "large" or style != "plains" else "epic:large_dungeon" for style in ["plains", "ice", "sand"]] for size in ["small", "medium", "large"]}
+EPIC_ALL = [s for group in EPIC.values() for s in group]
+OBELISKS = [f"epic:{style}_obelisk" for style in ["plains", "ice", "sand"]]
 FD = "farmersdelight"
 MEALS = ["apple_cider", "apple_pie_slice", "bacon_and_eggs", "bacon_sandwich", "baked_cod_stew", "beef_stew", "cabbage_rolls",
          "chicken_sandwich", "chicken_soup", "chocolate_pie_slice", "cod_roll", "dumplings", "egg_sandwich", "fish_stew", "fried_egg",
@@ -81,6 +85,12 @@ adv("explore/crypt_keeper", "explore/off_the_map", "minecraft:skeleton_skull", "
 adv("explore/lord_of_the_manor", "explore/off_the_map", "minecraft:totem_of_undying", "Lord of the Manor", "Find an illager manor", {"any": location(TOUR["illager_manor"])}, frame="goal")
 adv("explore/grand_tour", "explore/lord_of_the_manor", "minecraft:filled_map", "Grand Tour", "Visit every kind of dungeon, tavern and keep, in all three dimensions",
     {name: location(sites) for name, sites in TOUR.items()}, frame="challenge", hidden=True, xp=500)
+
+adv("explore/dungeon_delver", "explore/off_the_map", "minecraft:iron_sword", "Dungeon Delver", "Step into an underground dungeon", {"any": location(EPIC_ALL)})
+adv("explore/deeper_still", "explore/dungeon_delver", "minecraft:deepslate_bricks", "Deeper Still", "Find a large dungeon, the kind with a dozen rooms", {"any": location(EPIC["large"])}, frame="goal")
+adv("explore/dungeon_master", "explore/deeper_still", "minecraft:totem_of_undying", "Dungeon Master", "Enter every dungeon: plains, ice and sand, small, medium and large",
+    {s.split(":")[1]: location([s]) for s in EPIC_ALL}, frame="challenge", hidden=True, xp=500)
+adv("explore/odd_pillar", "explore/dungeon_delver", "minecraft:chiseled_stone_bricks", "Odd Pillar", "Find an obelisk standing alone in the wild", {"any": location(OBELISKS)})
 
 adv("food/burger_time", "root", f"{FD}:hamburger", "Burger Time", "Eat a hamburger", {"ate": eat(f"{FD}:hamburger")})
 adv("food/sushi_night", "food/burger_time", f"{FD}:salmon_roll", "Sushi Night", "Eat a salmon, cod or kelp roll",

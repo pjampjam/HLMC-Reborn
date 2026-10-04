@@ -118,6 +118,16 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Server release for pack 1.7.6
+
+`server/deploy-release-176.py` (run as root from `~/hl-176`) installs onboarding 1.7.2 and Holy Lois Extras 1.3.1. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails. The pack minimum stays 1.7.5 because nothing new is registered.
+
+- **Discoveries**: all Epic Dungeons (`epic:*`, 9 dungeons and 3 obelisks) and the small undead and creeping crypts are announced. Other `small_` structures stay quiet. A large plains dungeon is `epic:large_dungeon`.
+- **Achievements**: datapack `holylois-advancements` gained Dungeon Delver, Deeper Still, Dungeon Master (hidden, all 9 dungeons) and Odd Pillar (`server/advancements/make-advancements.py`).
+- **Runeforged**: `server/structures/runeforged-epic-additions.json` adds the 17 `epic:chests/*` tables to `config/runeforged-monsters.json` (treasure tier 1, magic, scary, mineral, library, potions and the weapon tables tier 2, the rest tier 3). Epic dungeons are jigsaw structures that pick random rooms, so a dungeon may have no treasure room at all.
+- **Boombox range**: `range(volume)` runs from 16 blocks (volume 1) to 48 (volume 10); `distance` in the config is no longer used.
+- **Server list line** shortened to fit.
+
 ## Server release for pack 1.7.5
 
 `server/deploy-release-175.py` (run as root from `~/hl-175`) installs onboarding 1.7.1 and Holy Lois Extras 1.3.0. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails.

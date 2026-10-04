@@ -17,6 +17,14 @@ SKlauncher profiles are added automatically. Microsoft Store and desktop Minecra
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## What's new in pack 1.7.6
+
+- **Dungeons**: every underground dungeon (small, medium and large, in plains, ice and sand styles) and every obelisk is announced when someone first finds it, with new achievements: Dungeon Delver, Deeper Still, Dungeon Master and Odd Pillar. Their chests can drop Runeforged runes.
+- **Boombox**: it now reaches from 16 blocks on volume 1 up to 48 blocks on volume 10.
+- **Tools**: a broken tool is replaced by an unenchanted spare of the same kind, lowest material first. Your enchanted tools are never swapped in for you.
+- **Fixes**: **R** on an empty slot sorts without opening a recipe, the first-person body steps forward when a wall is behind you and hides while you sleep, and with a shader pack on torches light yellow (dynamic lights pause while shaders are on).
+- **Mods**: all Holy Lois mods now show the logo, author and links in Mod Menu.
+
 ## What's new in pack 1.7.5
 
 - **Boombox**: sneak + scroll changes its volume (1-10, louder reaches further), music notes float while it plays, and six new stations: dubstep, drum and bass, trap, lo-fi, hardstyle and techno.
@@ -54,7 +62,7 @@ See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, 
 - **Recipe lookup** with Roughly Enough Items, and descriptions for every modded enchantment.
 - **Macaw's Holidays**: Christmas trees, lights, garlands, candy canes and Halloween decorations, plus gifts and fireworks on Latvian holidays.
 - **Tab leaderboards**: diamonds, ancient debris, playtime, mob kills, blocks mined and more, a new board each time the page comes round.
-- **Discoveries**: the first visit to a big structure (Ancient City, Tavern, Illager Manor and many more) is announced to everyone.
+- **Discoveries**: the first visit to a big structure (Ancient City, Tavern, Illager Manor, any dungeon and many more) is announced to everyone.
 - **After death**: chat shows where you died, and the minimap death point disappears when you get there.
 - **Looks**: framed rarity tooltips, held torches light up the area, falling leaves, connected glass, effect timer bars and shulker box previews.
 - **Fixes**: J opens the world map again, no more chest flicker with shaders, no key clashes, and real chunks load further out before the distant view takes over.

@@ -1,0 +1,70 @@
+[
+ {
+  "loot_table": "epic:chests/dungeon_all",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/dungeon_poop1",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/dungeon_poop2",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/dungeon_random",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/dungeon_sand",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/dungeon_snow",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/dungeon_zombie",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/dye",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/fish",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/food",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/library",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/magic",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/mineral",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/potions",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/scary",
+  "tier_id": "t2"
+ },
+ {
+  "loot_table": "epic:chests/tnt",
+  "tier_id": "t3"
+ },
+ {
+  "loot_table": "epic:chests/treasure",
+  "tier_id": "t1"
+ }
+]
