@@ -123,6 +123,6 @@ for path, data in ADV.items():
     target = out / "data/holylois/advancement" / (path + ".json")
     target.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
-    assert "—" not in text
+    assert "\u2014" not in text
     target.write_text(text, encoding="utf-8")
 print(len(ADV), "advancements,", len(TOUR), "Grand Tour sites,", len(MEALS), "meals")

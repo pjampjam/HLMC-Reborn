@@ -2,7 +2,7 @@
 
 Sources: vanilla stats and advancement files, usercache.json, the Holy Lois datapack (titles), discoveries, daily
 streaks, EconomyCraft balances and the published pack changelog. Only usernames and game numbers leave the server: no UUIDs, IPs or coordinates.
-Names with slurs, and names listed in /etc/holylois/stats-hidden.txt, never appear.
+Names with slurs are masked (first letter + stars, the row stays); names listed in /etc/holylois/stats-hidden.txt never appear.
 Usage: python3 make-stats.py [SERVER_ROOT] OUTPUT_JSON
 """
 import datetime, json, os, re, sys, tempfile, urllib.request
@@ -22,13 +22,43 @@ def read(path, default=None):
     except (OSError, ValueError): return default
 
 
+def mask(name):
+    """Keep the row but never the word: 'N*****'. Fixed length, so the mask does not hint at the original."""
+    return name[0].upper() + '*****'
+
+
 def names():
     hidden = {line.strip().lower() for line in HIDDEN_FILE.read_text().splitlines() if line.strip()} if HIDDEN_FILE.exists() else set()
-    result = {}
+    result, raw = {}, {}
     for entry in read(ROOT / 'usercache.json', []):
         name = entry.get('name', '')
-        if name and not SLURS.search(name) and name.lower() not in hidden: result[entry['uuid']] = name
-    return result
+        if not name or name.lower() in hidden: continue
+        shown = mask(name) if SLURS.search(name) else name
+        while shown in result.values(): shown += '*'
+        result[entry['uuid']] = shown; raw[name] = shown
+    return result, raw
+
+
+def online_now():
+    """Players online right now, from a status ping to the local server (None if it does not answer)."""
+    import socket, struct
+    def varint(n):
+        out = b''
+        while True:
+            byte, n = n & 0x7f, n >> 7
+            out += bytes([byte | (0x80 if n else 0)])
+            if not n: return out
+    try:
+        with socket.create_connection(('127.0.0.1', 25565), 5) as s:
+            hello = b'\x00' + varint(770) + varint(9) + b'localhost' + struct.pack('>H', 25565) + varint(1)
+            s.sendall(varint(len(hello)) + hello + b'\x01\x00')
+            data = b''
+            while chunk := s.recv(65536):
+                data += chunk
+                try: return json.loads(data[data.index(b'{'):].decode())['players']['online']
+                except ValueError: continue
+    except (OSError, KeyError):
+        return None
 
 
 def holylois_advancements():
@@ -50,7 +80,7 @@ def when(text):
 
 
 def main():
-    people = names()
+    people, shown_as = names()
     stats, done = {}, {}
     for file in (WORLD / 'players/stats').glob('*.json'):
         if file.stem in people: stats[file.stem] = read(file, {}).get('stats', {})
@@ -106,7 +136,7 @@ def main():
     firsts = []
     for entry in read(WORLD / 'holylois/discoveries.json', {}).get('found', []):
         name = entry.get('player', '')
-        firsts.append({'what': entry.get('name', ''), 'player': name if name in people.values() else 'Someone',
+        firsts.append({'what': entry.get('name', ''), 'player': shown_as.get(name, 'Someone'),
                        'date': datetime.datetime.fromtimestamp(entry.get('time', 0), datetime.timezone.utc).date().isoformat()})
     firsts.sort(key=lambda f: f['date'], reverse=True)
 
@@ -122,7 +152,8 @@ def main():
     report = {
         'pack': pack,
         'generated': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
-        'server': {'address': 'play.holylois.com', 'players': len(people), 'world_day': read(WORLD / 'holylois/events.json', {}).get('lastDay')},
+        # 'players' is everyone who has joined (kept for old readers); 'online' is a live ping at generation time.
+        'server': {'address': 'play.holylois.com', 'players': len(people), 'registered_players': len(people), 'online': online_now(), 'world_day': read(WORLD / 'holylois/events.json', {}).get('lastDay')},
         'totals': {
             'hours_played': round(sum(custom(u, 'play_time') for u in everyone) / 72000),
             'km_travelled': round(sum(distance(u) for u in everyone)),

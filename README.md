@@ -17,6 +17,11 @@ SKlauncher profiles are added automatically. Microsoft Store and desktop Minecra
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## What's new in pack 1.7.3
+
+- **Hotfix**: achievement tabs switch with a left click (1.7.2 broke them), a placed boombox shows its real texture instead of a pink cube.
+- **Text**: game and mod text uses plain hyphens; `/support` lists TRON, labels Bitcoin SegWit and explains each network on hover.
+
 ## What's new in pack 1.7.2
 
 - **Boombox**: set it down on any block and it keeps playing for everyone nearby. Game music pauses while one plays near you.
