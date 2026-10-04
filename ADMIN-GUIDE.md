@@ -118,6 +118,19 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Server release for pack 1.7.5
+
+`server/deploy-release-175.py` (run as root from `~/hl-175`) installs onboarding 1.7.1 and Holy Lois Extras 1.3.0. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails.
+
+- **Pack check**: `config/holylois-pack.json` holds `{"minimum": "1.7.5"}`. Joining clients send their pack version during login; an older pack gets a friendly EN/RU/LV "update in the Holy Lois launcher" message instead of registry errors. No file means no check. Raise `minimum` with every release that both sides need.
+- **World border**: 20,000 blocks wide (10,000 from 0,0). `server/bluemap/set-render-bounds.py BORDER` keeps BlueMap inside it (the Nether gets 1/8). The old radius-4,000 terrain task and job state were moved into the release backup.
+- **Terrain**: `expand-terrain.py` with `BORDER = 20000` pregenerates all 1,565,001 chunks inside the border while nobody is online (about 12 hours of empty server) and raises `/rtp` to 5,000 only after every chunk is proven `Status=full`.
+- **Homes**: `/home` with several homes uses the one named `home` in any capitals; names that differ only in capitals are refused; `/Home` is an alias.
+- **Portals**: a player who walks back into the portal they arrived at (within 16 blocks) returns to the portal they left from, if it still exists. In memory only, so a restart forgets it.
+- **Recipes**: datapack `world/datapacks/holylois-recipes` removes the recovery compass recipe (copy in `server/datapacks/`).
+- **Boombox stations**: the six new stations were appended to the live `config/holylois-boombox.json` (13 in total, the boombox cycles through at most 16).
+- **Tab list**: `%holylois:slots%` shows online + 1, like the server list.
+
 ## Server release for pack 1.7.4
 
 `server/deploy-release-174.py` (run as root from `~/hl-174`) replaces Flan with Open Parties and Claims 0.31.6 and installs onboarding 1.7.0 and Holy Lois Extras 1.2.0. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails. Afterwards it sets the world border, updates the Discord bot and the off-site backup job.
@@ -163,7 +176,7 @@ Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 - **Backups:** the JEB budget is 12 GB so two full backups of the larger world still fit. Watch `df -h /`.
 - **Structures:** Dungeons and Taverns and Towns and Towers appear only in newly generated land. `world/datapacks/holylois-structure-tuning` spaces their extra villages to 68 chunks so villages are about 1.5x vanilla, not 2x. Their 223 chest loot tables are linked to Runeforged tiers in `config/runeforged-monsters.json` (vaults and bosses T1, dungeons T2, houses and camps T3).
 - **Sleep:** `players_sleeping_percentage` is 1, so one sleeping player skips the night.
-- **Terrain:** `holylois-terrain-expansion.timer` runs while the server is empty. It pregenerates a 4,000-block square while the server is empty, then raises RTP to 3,500. See `server/terrain/README.md`.
+- **Terrain:** `holylois-terrain-expansion.timer` runs while the server is empty. Since 1.7.5 it pregenerates everything inside the 20,000 world border while the server is empty, then raises RTP to 5,000. See `server/terrain/README.md`.
 
 ## Monitoring, bots and off-site backups
 

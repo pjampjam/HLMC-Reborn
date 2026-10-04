@@ -2,7 +2,7 @@
 
 A Minecraft modpack for our friends, with a Windows launcher that installs the pack and keeps it updated.
 
-**Launcher 1.2.2 / pack 1.7.4 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.3 / pack 1.7.5 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -16,6 +16,15 @@ A Minecraft modpack for our friends, with a Windows launcher that installs the p
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.7.5
+
+- **Boombox**: sneak + scroll changes its volume (1-10, louder reaches further), music notes float while it plays, and six new stations: dubstep, drum and bass, trap, lo-fi, hardstyle and techno.
+- **Smarter keys**: **R** on an item shows its recipe, **R** on an empty slot sorts. A broken tool is replaced by the same kind, cheapest first, with a soft chime. Enchantment descriptions show while you hold Shift.
+- **Homes and portals**: with several homes, `/home` goes to the one named `home`; `/Home` works too. Walking back through a Nether portal takes you to the portal you came from. Clicking a command in chat runs it without the confirm screen.
+- **Bigger world**: the border is 20,000 blocks wide. New land is prepared while the server is empty, and `/structures` tells you what you are standing in.
+- **Polish**: no flickering lines between glass blocks with shaders, a crown window icon, 30 FPS in the background, and a launcher that shows new updates in a gold card with an Update now button.
+- **Correction**: the world map opens with **J** (the 1.7.4 notes said M).
 
 ## What's new in pack 1.7.4
 
