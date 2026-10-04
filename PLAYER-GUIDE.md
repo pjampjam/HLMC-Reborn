@@ -48,18 +48,23 @@ Replace `NAME` with the player's name.
 | `/tpa NAME` | Ask to visit a player. |
 | `/tpaccept NAME` | Accept that player's request. |
 | `/tpdeny NAME` | Decline that player's request. |
-| `/rtp` | Find a safe new place. The server uses a five-minute cooldown. |
+| `/rtp` | Find a safe new place, never in or next to someone's land. Stand still for 3 seconds; five-minute cooldown. |
 
-The request and random-teleport commands come from [Essential Commands](https://github.com/John-Paul-R/Essential-Commands#commands). `/rtp` stays within the server's prepared area.
+The request commands come from [Essential Commands](https://github.com/John-Paul-R/Essential-Commands#commands); `/rtp` is Holy Lois's own and stays within the server's prepared area. Teleports do not work during a fight (see **Fights** below).
 
 ## Protect your land
 
-1. Hold a **golden hoe**.
-2. Right-click a block at one corner of your land, then another block at the opposite corner.
-3. Check the server's confirmation that the claim was created.
-4. Stand inside your claim and use `/flan menu` to manage permissions and access for friends.
+Land is claimed in whole chunks (16 x 16 blocks, from bedrock to sky) with **Open Parties and Claims**.
 
-See Flan's official [claiming guide](https://github.com/Flemmli97/BlazingDocs/blob/main/docs/flan/user_guides/Getting-Started.md) and [menu command](https://github.com/Flemmli97/BlazingDocs/blob/main/docs/flan/user_guides/Commands.md).
+1. Press **M** for the world map, right-click a chunk near you and choose **Claim**. Drag over several chunks to claim an area. You can also stand in a chunk and type `/oclaims claim`.
+2. Claimed land shows on the minimap and world map in your colour. Other players cannot build, break, open chests or hurt animals there.
+3. Give your land a name and colour with the **'** key (OPAC menu), or `/opac`.
+
+**How much land?** Everyone gets **16 chunks free**, earns **1 more for every 2 hours played** (up to 48), and can buy more with coins: `/claims` shows your numbers, `/claims buy` buys the next chunk (500 coins, each next one 15% more) and `/claims sell` sells one back for half price.
+
+**Teams:** `/oparties create`, then `/oparties invite NAME`. Team members can build on each other's land. When you walk into someone's land, the zone title at the top of the screen says whose it is; outside claims it says **Wilderness**.
+
+See the [Open Parties and Claims wiki](https://github.com/thexaero/open-parties-and-claims/wiki) for every option.
 
 ## Sell to other players
 
@@ -114,7 +119,17 @@ Press **L**; the **Holy Lois** tab comes first. Some goals are hidden until you 
 
 ## After death
 
-Chat tells you where you died, and the minimap marks the spot until you reach it. Your dropped items stay protected for your own pickup for **30 minutes of loaded-world time**. Time does not advance while the area is unloaded. Recover them promptly: **fire, lava and the void can still destroy items**. This protection does not make drops indestructible.
+Chat tells you where you died, and the minimap marks the spot until you reach it. Your dropped items stay for **30 minutes of loaded-world time**, and only you can pick them up for the first 5 minutes. Time does not advance while the area is unloaded. Recover them promptly: **fire, lava and the void can still destroy items**.
+
+## Fights
+
+Hitting another player, or being hit by one, puts you both **in combat for 20 seconds** (a red counter above the hotbar). While in combat, `/rtp`, `/home`, `/tpa`, `/spawn` and `/back` do not work, and **logging out kills you**. A PvP death drops your loot unlocked for the winner, with no coordinates in chat and no minimap marker. Getting hit by a monster only blocks teleports for 5 seconds. PvP still needs both players' consent (rule 5).
+
+## Help, reports and donations
+
+- `/support MESSAGE`: pjampjam gets it on Discord right away and replies in game. Start with `bug`, `help` or `grief` if it fits.
+- `/report NAME REASON`: report a player privately.
+- `/donate`: crypto wallets if you want to help pay for the server. Donations never buy anything in game.
 
 ## Keep your pack updated
 

@@ -109,9 +109,27 @@ For an unusual desktop install, **Find launcher** accepts its EXE or a Windows s
 
 ## Backups and space
 
-Scheduled world backups: differential every 10 minutes and full every six hours. Keep twelve differential and two full backups within an approximately 8 GB budget, with a 2 GB free-space reserve. Each differential depends on its full backup; JEB keeps required bases. Automatic idle backups are skipped. Complete maintenance backups have a separate two-archive retention. Historical manual archives and uploads are not deleted automatically.
+Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner decision, 2026-10-04). Since release 1.7.4:
 
-Old backups rotate, but worlds, DH data, logs and manual archives can still fill the disk. Check `df -h /` and successful backups with `/jeb list`. Copy important complete archives off the VM. They include private server data, so do not send them to friends.
+- **World (JEB)**: differential every 30 minutes, full every 3 hours, at most one full and two differentials locally within 6 GB. The off-site job uploads the newest of each.
+- **Release backups**: each deploy still makes a complete stopped-server backup under `/opt/minecraft-backups/maintenance/` first (rollback needs it locally). The off-site job uploads it, checks every file's size and MD5 against Drive and only then deletes the local copy. Release folders without `receipt.json` (deploy not finished) wait.
+- **One-time move**: `server/ops/move-backups-to-drive.py` moved the older maintenance folders, legacy archives and old JEB files to `maintenance/`, `legacy/` and `world/` on Drive, each verified before deletion. `/opt/minecraft-backups/terrain-expansion` is the terrain job's state, not a backup, and stays.
+- **Restore**: `sudo rclone copy "gdrive:Holy Lois Backups/maintenance/NAME" /opt/restore/NAME`, then restore with the server stopped. The archives include private server data, so never send them to friends.
+
+Check `df -h /` now and then; the world and BlueMap tiles are what grows.
+
+## Server release for pack 1.7.4
+
+`server/deploy-release-174.py` (run as root from `~/hl-174`) replaces Flan with Open Parties and Claims 0.31.6 and installs onboarding 1.7.0 and Holy Lois Extras 1.2.0. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails. Afterwards it sets the world border, updates the Discord bot and the off-site backup job.
+
+- **Claims (OPAC)**: `config/openpartiesandclaims-server.toml` (copy in `server/opac/`). Permissions through LuckPerms, 16 free chunks, 2 force-loaded chunks, OPAC's own welcome messages off because Holy Lois Extras draws the zone titles. Players claim on the map (M, right-click) or with `/oclaims`; teams with `/oparties`. Admins: `/opac` and `/oclaims` server claims.
+- **Extra chunks**: `config/holylois-claims.json`. One earned chunk per 2 hours played (up to 48), bought chunks cost 500 coins for the first and 15% more each (up to 64), selling refunds half. Purchases are stored in `world/holylois/claims.json`; the add-on sets OPAC's bonus claim count to earned + bought every five minutes and at login.
+- **/rtp**: handled by the add-on now (Essential Commands' rtp is off). Overworld only, 5-minute cooldown, 3 seconds standing still, and never within one chunk of a claim. First-join and bed-less respawn spots use the same rule.
+- **Combat tag**: a PvP hit tags both players for 20 s, a mob hit only delays teleports for 5 s. Logging out while PvP-tagged kills the player and drops the loot. Teleport commands (rtp, home, tpa, spawn, back, warp) are refused while tagged.
+- **Deaths**: normal deaths keep the drops for 30 minutes, owner-only for the first 5. PvP deaths get no coordinates, no pickup lock and no minimap death point.
+- **/support and /report**: logged as `HOLYLOIS-SUPPORT {json}`; the Discord bot posts them to #support under STAFF with an owner ping and two buttons ("On my way", "Solved") that message the player in game. Five-minute cooldown each.
+- **/donate**: the wallet list moved here from the old `/support`; addresses are in `DonateCommand.java`.
+- **World border**: 14,000 blocks wide (7,000 from spawn), warning at 64 blocks. Raise it later with `worldborder set`; never lower it below land people live on.
 
 ## Server release for pack 1.7.0
 
@@ -125,7 +143,7 @@ Old backups rotate, but worlds, DH data, logs and manual archives can still fill
 - **Economy**: EconomyCraft with the admin shop and sidebar scoreboard off (`config/economycraft/config.json`). Item prices are in `prices.json`.
 - **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once (held and placed together). Placed boomboxes that are switched on are listed in `world/holylois/boomboxes.json`.
 - **Server list line**: `line2` in `config/MiniMOTD/main.conf` always announces the newest exciting change; update it with every release.
-- **/support**: the wallet addresses and the hover help per network live in `SupportCommand.java` (onboarding add-on); keep holylois.com/support in sync. Donations never buy anything in game (Minecraft server rules).
+- **/donate** (named `/support` before 1.7.4): the wallet addresses and the hover help per network live in `DonateCommand.java` (onboarding add-on); keep holylois.com/donate in sync. Donations never buy anything in game (Minecraft server rules).
 - **Restart countdown**: release scripts show a one-minute boss bar when players are online. Custom boss bars are saved in the world, so the scripts remove `holylois:restart` before stopping; if one is ever stuck, run `bossbar remove holylois:restart`.
 - **Public stats**: `server/stats/make-stats.py` (installed in `/usr/local/lib/holylois/`). Names matching the slur filter are masked as first letter plus stars; names listed in `/etc/holylois/stats-hidden.txt` are left out entirely. `server.online` is a live count at generation time.
 - **Removing old profiles**: release 1.7.3 moved test and duplicate accounts into `removed-profiles/` inside its backup folder (player data, stats, advancements, claims, homes), dropped them from `usercache.json` and onboarding, and removed their logins with `auth remove NAME`. Move the files back to restore one.
@@ -151,7 +169,7 @@ Old backups rotate, but worlds, DH data, logs and manual archives can still fill
 
 - **Discord alerts:** create a webhook in Discord (channel settings > Integrations > Webhooks > New Webhook > Copy Webhook URL), then on the server run `sudo nano /etc/holylois/discord-webhook`, paste it, save, and run `sudo chmod 600 /etc/holylois/discord-webhook && sudo python3 /usr/local/lib/holylois/discord-alert.py test`. The monitor checks every 2 minutes, reports crashes with the crash report and log tail, and says when the server is back. Planned deploys create `/run/holylois-maintenance` to stay quiet.
 - **Bot wall:** `holylois-botwall.timer` counts the usernames SSH bots try (no IPs) for the Tab list and the operator command `/botwall`. fail2ban bans repeat knockers for an hour, longer for repeat offenders. SSH stays key-only.
-- **Google Drive:** run `sudo rclone config` once: `n` (new remote), name `gdrive`, storage `drive`, leave client id/secret empty, scope `3` (drive.file: rclone sees only its own files), no advanced config, and answer `n` to auto config. It prints a `rclone authorize "drive" ...` command: run that on your PC (install rclone with `winget install Rclone.Rclone`), sign in to Google in the browser, and paste the result back. Then `sudo systemctl start holylois-offsite-backup` uploads the first copy. Nightly at 04:30 Riga it uploads only new world backups and changed server settings into `Holy Lois Backups`, and above 500 GB deletes the oldest while always keeping the newest 7 of each kind.
+- **Google Drive:** run `sudo rclone config` once: `n` (new remote), name `gdrive`, storage `drive`, leave client id/secret empty, scope `3` (drive.file: rclone sees only its own files), no advanced config, and answer `n` to auto config. It prints a `rclone authorize "drive" ...` command: run that on your PC (install rclone with `winget install Rclone.Rclone`), sign in to Google in the browser, and paste the result back. Then `sudo systemctl start holylois-offsite-backup` uploads the first copy. Every 3 hours it uploads new world backups, changed server settings and finished release backups into `Holy Lois Backups` (release backups are then removed from the VM), and above 500 GB deletes the oldest while always keeping the newest 30 of each kind.
 
 ## Current pack and tests
 

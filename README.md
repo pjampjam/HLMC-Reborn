@@ -2,7 +2,7 @@
 
 A Minecraft modpack for our friends, with a Windows launcher that installs the pack and keeps it updated.
 
-**Launcher 1.2.2 / pack 1.7.1 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.2 / pack 1.7.4 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -16,6 +16,13 @@ A Minecraft modpack for our friends, with a Windows launcher that installs the p
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.7.4
+
+- **Land on the map**: press **M**, right-click a chunk and claim it (Open Parties and Claims replaces Flan). 16 chunks are free, playtime earns more and `/claims buy` adds extra ones for coins. Teams with `/oparties`.
+- **Zone titles**: entering a new biome or someone's land shows its name at the top of the screen, or Wilderness.
+- **Fair fights**: logging out mid-fight kills you; PvP deaths leave the loot for the winner with no death marker. `/rtp` never drops you into or next to someone's land.
+- **Help**: `/support MESSAGE` reaches the owner on Discord right away, `/report PLAYER REASON` for player problems, `/donate` for the wallets.
 
 ## What's new in pack 1.7.3
 

@@ -8,7 +8,7 @@ to these rules. In game, type `/rules` to see the short version.
 1. **Be kind.** No harassment, threats, hate speech, slurs or discrimination: not in chat, voice, signs, books,
    names, skins or builds.
 2. **No griefing or stealing.** Do not break, take, move or change anything other players made or own, claimed or
-   not. Claim your land with a golden hoe and manage it with `/flan menu`.
+   not. Claim your land on the world map (press M, right-click a chunk); `/claims` shows how much you have.
 3. **No cheating.** No hacked clients, x-ray (mods, resource packs or shaders), item duplication, or abusing bugs and
    exploits. Report bugs to pjampjam instead. The visual and performance mods that come with the launcher are fine.
 4. **No lag machines.** Huge redstone clocks, giant mob farms and anything that keeps hundreds of entities loaded slow
@@ -30,4 +30,4 @@ restored from logs and backups where possible. pjampjam has the final say.
 - Game chat, joins, leaves, deaths and advancements are also shown in the Holy Lois Discord (#minecraft-chat).
 - Voice chat is not recorded. Nothing is sold or shared with anyone.
 
-Questions or a ban appeal: message pjampjam on Discord (https://discord.gg/FzBJSZwY2c).
+Questions or a ban appeal: `/support MESSAGE` in game, or message pjampjam on Discord (https://discord.gg/FzBJSZwY2c).

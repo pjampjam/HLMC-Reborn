@@ -22,6 +22,9 @@ CATEGORY, STATUS_CHANNEL, CHAT_CHANNEL, RULES_CHANNEL, WELCOME_CHANNEL = "📌 I
 RULES_FILE = Path("/opt/holylois-bot/RULES.md")
 GOLD, GREEN, RED = 0xF4C542, 0x34D27B, 0xC2362F
 
+STAFF_CATEGORY, SUPPORT_CHANNEL = "🛠 STAFF", "support"
+# Written by the onboarding add-on for /support and /report (one JSON object per line).
+SUPPORT = re.compile(r"\]: HOLYLOIS-SUPPORT (\{.*\})$")
 CHAT = re.compile(r"\]: (?:\[Not Secure\] )?<([A-Za-z0-9_]{3,16})> (.+)$")
 LOGIN = re.compile(r"\]: ([A-Za-z0-9_]{3,16})\[/[^\]]+\] logged in with entity id")
 SYSTEM = re.compile(r"\]: System chat: (.+)$")
@@ -83,6 +86,17 @@ def tellraw(name, text):
         pass
 
 
+def tell_player(name, parts):
+    """Private in-game message to one player (JSON text, so nothing can inject commands)."""
+    if not NAME.match(name or ""): return
+    try:
+        fd = os.open(FIFO, os.O_WRONLY | os.O_NONBLOCK)
+        try: os.write(fd, (f"tellraw {name} " + json.dumps(parts, ensure_ascii=False) + "\n").encode("utf-8"))
+        finally: os.close(fd)
+    except OSError:
+        pass
+
+
 def load_state():
     try: return json.loads(STATE.read_text())
     except (OSError, ValueError): return {}
@@ -100,7 +114,7 @@ class HolyLoisBot(discord.Client):
         super().__init__(intents=intents)
         self.tree = app_commands.CommandTree(self)
         self.state = load_state()
-        self.status_channel = self.chat_channel = None
+        self.status_channel = self.chat_channel = self.support_channel = None
         self.online = set()
 
     async def setup_hook(self):
@@ -128,6 +142,7 @@ class HolyLoisBot(discord.Client):
             return
         guild = self.guilds[0]
         self.status_channel, self.chat_channel = await self.ensure_channels(guild)
+        self.support_channel = await self.ensure_support(guild)
         await self.post_rules(guild)
         await self.post_welcome(guild)
         self.tree.copy_global_to(guild=guild)
@@ -150,6 +165,53 @@ class HolyLoisBot(discord.Client):
         chat = discord.utils.get(guild.text_channels, name=CHAT_CHANNEL) or await guild.create_text_channel(
             CHAT_CHANNEL, category=category, topic="Talk with players in game. Messages here appear in Minecraft chat.")
         return status, chat
+
+    async def ensure_support(self, guild):
+        """Private #support in the STAFF category: in-game /support and /report land here."""
+        channel = discord.utils.get(guild.text_channels, name=SUPPORT_CHANNEL)
+        staff = discord.utils.get(guild.categories, name=STAFF_CATEGORY)
+        if channel is None and staff is not None:
+            channel = await guild.create_text_channel(SUPPORT_CHANNEL, category=staff, topic="Help requests and reports from in game (/support, /report)")
+        return channel
+
+    async def post_support(self, data):
+        """One embed per request, pinging the server owner, with buttons that answer the player in game."""
+        if self.support_channel is None: return
+        player, kind = str(data.get("player", "")), data.get("kind", "help")
+        if not NAME.match(player): return
+        safe = lambda text: discord.utils.escape_mentions(discord.utils.escape_markdown(str(text)))[:1000]
+        report = kind == "report"
+        embed = discord.Embed(title=("🚩 Report about " + safe(data.get("target", "?"))) if report else "🆘 Help request",
+                              description=safe(data.get("message", "")) or "(no message)", color=RED if report else GOLD)
+        embed.add_field(name="From", value=player)
+        embed.add_field(name="Where", value=f"{safe(data.get('dimension', '?'))} {data.get('x')}, {data.get('y')}, {data.get('z')}")
+        if data.get("category"): embed.add_field(name="Type", value=safe(data["category"]))
+        view = discord.ui.View(timeout=None)
+        view.add_item(discord.ui.Button(label="On my way", style=discord.ButtonStyle.primary, custom_id=f"hl-support:onway:{player}"))
+        view.add_item(discord.ui.Button(label="Solved", style=discord.ButtonStyle.success, custom_id=f"hl-support:solved:{player}"))
+        owner = self.support_channel.guild.owner_id
+        await self.support_channel.send(content=f"<@{owner}>" if owner else None, embed=embed, view=view,
+                                        allowed_mentions=discord.AllowedMentions(users=True))
+
+    async def on_interaction(self, interaction):
+        custom = (interaction.data or {}).get("custom_id", "") if interaction.type == discord.InteractionType.component else ""
+        if not custom.startswith("hl-support:"): return
+        _, action, player = custom.split(":", 2)
+        helper = interaction.user.display_name[:24]
+        if action == "onway":
+            tell_player(player, [{"text": "[Holy Lois] ", "color": "gold", "bold": True}, {"text": f"{helper} saw your request and will help you soon.", "color": "yellow", "bold": False}])
+            note, done = f"🟡 {helper} is on it", False
+        else:
+            tell_player(player, [{"text": "[Holy Lois] ", "color": "gold", "bold": True}, {"text": f"{helper} marked your request as solved. Thanks!", "color": "green", "bold": False}])
+            note, done = f"✅ Solved by {helper}", True
+        embed = interaction.message.embeds[0] if interaction.message and interaction.message.embeds else None
+        if embed is not None:
+            embed.set_footer(text=note)
+            if done: embed.color = GREEN
+        view = discord.ui.View(timeout=None)
+        if not done:
+            view.add_item(discord.ui.Button(label="Solved", style=discord.ButtonStyle.success, custom_id=f"hl-support:solved:{player}"))
+        await interaction.response.edit_message(embed=embed, view=view)
 
     async def post_welcome(self, guild):
         """One start-here message in #welcome: what the server is, how to join and every link."""
@@ -264,6 +326,10 @@ class HolyLoisBot(discord.Client):
             await asyncio.sleep(5)
 
     async def forward(self, line):
+        if match := SUPPORT.search(line):
+            try: await self.post_support(json.loads(match.group(1)))
+            except ValueError: pass
+            return
         if self.chat_channel is None: return
         safe = discord.utils.escape_mentions
         if match := CHAT.search(line):

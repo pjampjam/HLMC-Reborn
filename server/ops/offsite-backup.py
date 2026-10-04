@@ -4,8 +4,11 @@
            when they are new. JEB makes backups only while players are online, so no play means no upload.
 - server/: a small archive of configs, permissions, login data, claims settings and mods, uploaded only
            when its content changed.
+- maintenance/: complete release backups from /opt/minecraft-backups/maintenance. Each folder is uploaded, checked
+           against Drive's checksums and only then deleted from the VM (owner decision 2026-10-04: backups live
+           on Google Drive, not on the server disk).
 - Retention: when the remote folder passes 500 GB, the oldest files are deleted first, always keeping the
-  newest 7 of each kind.
+  newest 30 of each kind.
 
 The owner creates the remote once with `sudo rclone config` (Google Drive, scope "drive.file"), so no
 Google credentials pass through anyone else. Without the remote the job exits quietly.
@@ -17,8 +20,9 @@ REMOTE = "gdrive:Holy Lois Backups"
 ROOT = Path("/opt/minecraft")
 JEB = ROOT / "backups" / "world"
 STATE = Path("/var/lib/holylois/offsite-backup.json")
+MAINTENANCE = Path("/opt/minecraft-backups/maintenance")
 CAP_BYTES = 500 * 1024**3
-KEEP = 7
+KEEP = 30
 SERVER_PATHS = ["config", "EasyAuth", "mods", "defaultconfigs", "server.properties", "ops.json", "whitelist.json",
                 "banned-players.json", "banned-ips.json", "usercache.json", "eula.txt", "server-icon.png"]
 ALERT = "/usr/local/lib/holylois/discord-alert.py"
@@ -78,6 +82,22 @@ def upload_server(files, stamp):
     return name
 
 
+def offload_maintenance():
+    """Upload finished release backups, verify them on Drive, then free the VM disk. A folder still being written
+    (anything modified in the last 10 minutes) or one without a receipt (deploy not finished) waits for the next run."""
+    moved = []
+    for folder in sorted(p for p in MAINTENANCE.iterdir() if p.is_dir()) if MAINTENANCE.is_dir() else []:
+        newest = max((f.stat().st_mtime for f in folder.rglob("*") if f.is_file()), default=0)
+        if time.time() - newest < 600 or not (folder / "receipt.json").exists() and folder.name.startswith("release"):
+            continue
+        target = f"{REMOTE}/maintenance/{folder.name}"
+        rclone("copy", str(folder), target)
+        rclone("check", str(folder), target, "--one-way")  # sizes and MD5 against Drive; raises on any mismatch
+        subprocess.run(["rm", "-rf", "--", str(folder)], check=True)
+        moved.append(folder.name)
+    return moved
+
+
 def enforce_cap():
     listing = json.loads(rclone("lsjson", "-R", "--files-only", REMOTE, capture=True).stdout or "[]")
     total = sum(item["Size"] for item in listing)
@@ -114,6 +134,7 @@ def main():
     if fingerprint != state.get("server_hash"):
         uploaded.append(upload_server(files, time.strftime("%Y-%m-%d_%H-%M", time.gmtime())))
         state["server_hash"] = fingerprint
+    uploaded += [f"maintenance/{name}" for name in offload_maintenance()]
     total, removed = enforce_cap()
     state.update(last_run=time.time(), remote_bytes=total)
     STATE.parent.mkdir(mode=0o700, parents=True, exist_ok=True)

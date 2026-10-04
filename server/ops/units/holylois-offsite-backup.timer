@@ -1,8 +1,8 @@
 [Unit]
-Description=Nightly Holy Lois off-site backup
+Description=Holy Lois off-site backup every 3 hours
 
 [Timer]
-OnCalendar=*-*-* 04:30 Europe/Riga
+OnCalendar=*-*-* 00/3:20
 Persistent=true
 RandomizedDelaySec=10min
 
