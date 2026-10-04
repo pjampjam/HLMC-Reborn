@@ -101,10 +101,20 @@ adv("travel/around_the_world", "travel/long_way_home", "minecraft:elytra", "Arou
     {"done": impossible()}, frame="challenge", hidden=True, xp=300)
 adv("time/regular", "root", "minecraft:clock", "Regular", "Play for 24 hours on Holy Lois", {"done": impossible()})
 adv("time/resident", "time/regular", "minecraft:red_bed", "Resident", "Play for 100 hours on Holy Lois", {"done": impossible()}, frame="goal", hidden=True)
-adv("daily/seven_days", "root", "mcwholidays:yellow_present", "Seven Days of Lois", "Log in seven days in a row", {"done": impossible()})
+adv("daily/pocket_money", "root", "minecraft:gold_nugget", "Pocket Money", "Claim your daily coins with /daily", {"done": impossible()})
+adv("daily/seven_days", "daily/pocket_money", "mcwholidays:yellow_present", "Seven Days of Lois", "Log in seven days in a row", {"done": impossible()})
 adv("daily/unboxed", "daily/seven_days", "minecraft:chest", "Unboxed", "Open a Holy Lootbox", {"done": impossible()})
+adv("daily/jackpot", "daily/unboxed", "minecraft:golden_pickaxe", "Jackpot!", "Find a named tool in a Holy Lootbox", {"done": impossible()}, frame="goal", hidden=True)
 adv("daily/devoted", "daily/unboxed", "minecraft:nether_star", "Devoted", "Log in 28 days in a row", {"done": impossible()}, frame="challenge", hidden=True, xp=300)
-adv("music/dj_lois", "root", "minecraft:jukebox", "DJ Lois", "Play music for your friends with the boombox", {"done": impossible()})
+adv("music/pocket_speaker", "root", "holylois:boombox", "Pocket Speaker", "Craft a boombox",
+    {"crafted": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": "holylois:boombox"}]}}})
+adv("music/dj_lois", "music/pocket_speaker", "minecraft:jukebox", "DJ Lois", "Play music for your friends with the boombox", {"done": impossible()})
+adv("music/house_party", "music/dj_lois", "minecraft:note_block", "House Party", "Set a boombox down somewhere",
+    {"placed": {"trigger": "minecraft:placed_block", "conditions": {"location": {"type": "minecraft:match_block", "blocks": "holylois:boombox"}}}})
+adv("music/surround_sound", "music/house_party", "minecraft:amethyst_shard", "Surround Sound", "Stand where two boomboxes play at once",
+    {"done": impossible()}, frame="goal", hidden=True)
+adv("fun/night_owl", "root", "minecraft:phantom_membrane", "Night Owl", "Still playing at 3 in the morning (Riga time)", {"done": impossible()}, hidden=True)
+adv("fun/name_day", "root", "minecraft:cake", "Vārda diena", "Log in on your Latvian name day", {"done": impossible()}, hidden=True)
 
 if out.exists(): shutil.rmtree(out)
 (out / "data/holylois/advancement").mkdir(parents=True)

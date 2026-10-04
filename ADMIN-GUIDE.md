@@ -123,7 +123,9 @@ Old backups rotate, but worlds, DH data, logs and manual archives can still fill
 - **Restart call**: every restart, planned or not, is announced once in Discord with "Maaarek nahhul!".
 - **Daily gifts and events**: `world/holylois/daily.json` (streaks) and `world/holylois/events.json` (holiday gifts, day counter). Time and weather pause while the server is empty, so the day counter follows real play.
 - **Economy**: EconomyCraft with the admin shop and sidebar scoreboard off (`config/economycraft/config.json`). Item prices are in `prices.json`.
-- **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once.
+- **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once (held and placed together). Placed boomboxes that are switched on are listed in `world/holylois/boomboxes.json`.
+- **Server list line**: `line2` in `config/MiniMOTD/main.conf` always announces the newest exciting change; update it with every release.
+- **/support**: the wallet addresses live in `SupportCommand.java` (onboarding add-on). Donations never buy anything in game (Minecraft server rules).
 - **BlueMap**: renders only while nobody is online and serves on 127.0.0.1:8100. It becomes public once the domain tunnel points `map.` at it.
 - **Live map branding**: `bluemap/web/index.html` title and `assets/favicon-*.png` were replaced with the Holy Lois crown. A BlueMap update can restore its defaults; re-apply if the tab says BlueMap again.
 - **Discord**: the bot (`holylois-discord-bot`) keeps #server-status, #minecraft-chat and #rules in sync; #rules comes from `/opt/holylois-bot/RULES.md` (copy of RULES.md), refreshed on bot restart.

@@ -97,15 +97,20 @@ Log in once a day (Riga time) for a small gift: food, ores, books or rockets. Ev
 
 ## Money and the auction house
 
-Everyone starts with 250 coins. `/sell` turns spare items into coins, `/ah` opens the auction house to buy and list items, `/orders` lets you ask for items at your price, `/pay NAME AMOUNT` sends coins and `/bal` shows your balance. `/daily` adds a few coins each day.
+Everyone starts with 250 coins. `/sell` turns spare items into coins, `/ah` opens the auction house to buy and list items, `/orders` lets you ask for items at your price, `/pay NAME AMOUNT` sends coins and `/bal` shows your balance. `/daily` adds 100 coins each day; when you log in, the daily gift message has a **[Claim]** button for them.
 
 ## Boombox
 
-Craft a boombox from string (top), iron ingot + jukebox + iron ingot (middle) and amethyst shard + redstone + amethyst shard (bottom). Hold it in either hand and right-click to play internet radio: everyone within 24 blocks hears it through voice chat, and it follows you. Right-click again for the next station, sneak + right-click to stop. The song title shows above your hotbar. Voice chat settings (V) have a separate Boombox volume slider. `/boombox stations` lists the stations.
+Craft a boombox from string (top), iron ingot + jukebox + iron ingot (middle) and amethyst shard + redstone + amethyst shard (bottom).
+
+- **Carry it**: hold it in either hand and right-click the air to play internet radio. Everyone within 24 blocks hears it through voice chat, and it follows you. Right-click again for the next station, sneak + right-click to stop. It stops when you drop it or put it away.
+- **Set it down**: right-click a block with it. Right-click the placed boombox to play or switch stations; sneak with an empty hand and right-click to turn it off. It keeps playing while anyone is nearby, even after a restart. Break it to pick it up again.
+
+The song title shows above your hotbar, and the game's own music pauses while a boombox plays near you. Your own Boombox volume slider is in the voice chat settings (press V, then the volume button). `/boombox stations` lists the stations.
 
 ## Achievements and recipes
 
-Press **L** and open the **Holy Lois** tab. Some goals are hidden until you get close, such as visiting every kind of dungeon or eating every Farmer's Delight meal. In your inventory, hover an item and press **R** for its recipe or **U** for what it is used in.
+Press **L**; the **Holy Lois** tab comes first. Some goals are hidden until you get close, such as visiting every kind of dungeon or eating every Farmer's Delight meal. In your inventory, hover an item and press **R** for its recipe or **U** for what it is used in.
 
 ## After death
 

@@ -17,6 +17,13 @@ SKlauncher profiles are added automatically. Microsoft Store and desktop Minecra
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## What's new in pack 1.7.2
+
+- **Boombox**: set it down on any block and it keeps playing for everyone nearby. Game music pauses while one plays near you.
+- **Fixes**: achievement tabs switch again with Num Lock on, Holy Lois comes first, one enchantment description instead of two.
+- **Daily coins** get a [Claim] button at login, seven new achievements, and `/support`.
+- **Defaults**: the recipe list shows only while you search, plain tools are used until they break, the first-person body sits a bit further back.
+
 ## What's new in pack 1.7.0
 
 - **Boombox**: a portable speaker that plays internet radio to everyone nearby through voice chat.
