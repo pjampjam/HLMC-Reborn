@@ -6,6 +6,8 @@ Launcher 0.4.0 updates itself and its small startup checker before opening. Play
 
 ## Add a mod, resource pack or shader
 
+**Mods also need the mod check.** The server only lets in the mod ids listed in `config/holylois-mods.json` (see **Mod check** below). A new mod has to be added there (`work/make-mod-allowlist.py`, or its fabric.mod.json ids including nested jars) before the pack that ships it goes live, or everyone who updates is turned away.
+
 1. Close Minecraft.
 2. Open your **Holy Lois: Reborn** CurseForge profile and choose **Open Folder**.
 3. Put the download in the right folder:
@@ -117,6 +119,14 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 - **Restore**: `sudo rclone copy "gdrive:Holy Lois Backups/maintenance/NAME" /opt/restore/NAME`, then restore with the server stopped. The archives include private server data, so never send them to friends.
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
+
+## Server release for pack 1.7.8
+
+`server/deploy-release-178.py` (run as root from `~/hl-178`) installs Holy Lois Extras 1.4.0, `config/holylois-mods.json`, the advancement texts and `server-icon.png`. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails (the mod list is removed again on rollback). The pack minimum stays 1.7.5.
+
+- **Mod check**: `config/holylois-mods.json` is `{"mode": "enforce" | "warn" | "off", "missing": "warn" | "kick", "legacy": "allow" | "block", "exempt": ["name"], "allowed": ["modid"]}`. It is read on every join, so changes need no restart. In `enforce`, a client with a mod id that is not allowed is kicked with an EN/RU/LV message naming the mods. Missing pack mods are only logged unless `missing` is `kick`. Clients too old to answer (extras before 1.4.0) get in while `legacy` is `allow`. `exempt` names skip the check (the owner). The list holds every id of the pack including libraries nested in jars. If friends are locked out by mistake: set `"mode": "off"` and tell the owner. It stops accidents and casual extras, not a cheat client that fakes its list.
+- **Launcher 1.2.4**: Play moves foreign jars from `mods/` to `state/quarantine/<time>` (never deletes), repairs changed pack mods and re-enables the pack resource packs.
+- **Window icon**: crown icons drawn pixel-perfect for 16 to 64 px (`work/make-brand.py`). **Server icon**: new 64 px crown.
 
 ## Server release for pack 1.7.6
 

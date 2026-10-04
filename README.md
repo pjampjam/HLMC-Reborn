@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.2.3 / pack 1.7.7 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.4 / pack 1.7.8 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -16,6 +16,13 @@ A cozy modded Minecraft survival server for friends: claim land on the map, delv
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.7.8
+
+- **One pack for everyone**: the server checks the mod list when you join. Extra mods are turned away with a message that says how to fix it; shaders, resource packs and your own settings stay yours. The launcher's **Play** button moves extra mods out of the Holy Lois folder (kept in a quarantine folder, never deleted), repairs changed pack files and switches the pack's resource packs back on.
+- **New crown icon**: the Minecraft window and taskbar icon is the Holy Lois crown, crisp at every size, and the server list has a new icon.
+- **Clearer achievements**: new texts for Discoverer, Dungeon Delver, Deeper Still and Odd Pillar.
+- The server restarts once (a one-minute countdown first).
 
 ## What's new in pack 1.7.7
 

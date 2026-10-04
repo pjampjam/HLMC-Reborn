@@ -136,6 +136,10 @@ Hitting another player, or being hit by one, puts you both **in combat for 20 se
 - `/report NAME REASON`: report a player privately.
 - `/donate`: crypto wallets if you want to help pay for the server. Donations never buy anything in game.
 
+## Only the Holy Lois mods
+
+The server checks your mod list when you join. If you added mods of your own, you are turned away with a message that names them. Open the Holy Lois launcher and press **Play** (or **Repair / check files**): extra mods are moved out of the game folder (not deleted, you find them in the launcher's quarantine folder) and the pack's files and resource packs are put back. Shaders, resource packs, keybinds and settings are yours and are not checked.
+
 ## Keep your pack updated
 
 You can launch the saved pack directly from Minecraft Launcher or SKlauncher after installation. Open Holy Lois periodically to check for updates. Before updating, close Minecraft and its launcher, install the update in Holy Lois, then open your launcher again.
