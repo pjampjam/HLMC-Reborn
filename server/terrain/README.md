@@ -1,11 +1,11 @@
 # Terrain expansion job
 
-Pregenerates the Overworld from radius 2,000 to a 4,000-block square around 0,0 with Chunky 1.5.3, then raises `/rtp` and first-join placement to 3,500 blocks.
+Pregenerates the whole Overworld inside the world border (20,000 wide, so a radius-10,000 square around 0,0) with Chunky 1.5.3, then raises `/rtp` and first-join placement to 5,000 blocks.
 
 - `expand-terrain.py` runs one short step per timer tick. It generates only while no players are online and at least 6 GB is free, and pauses Chunky as soon as someone joins.
-- RTP changes only after Chunky reports natural completion of the job's own task **and** all 251,001 chunks in the square are stored with matching coordinates and `Status=full`. MCA files or headers alone are never treated as proof.
+- RTP changes only after Chunky reports natural completion of the job's own task **and** all 1,565,001 chunks in the square are stored with matching coordinates and `Status=full`. MCA files or headers alone are never treated as proof.
 - Any unexpected state blocks the job and disables its timer. It never trims or deletes terrain.
-- `test-expand-terrain.py` holds 20 synthetic tests. It never touches a real server.
+- `test-expand-terrain.py` holds 21 synthetic tests. It never touches a real server.
 
 ## Install (server stopped)
 
