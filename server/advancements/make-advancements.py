@@ -78,7 +78,7 @@ ADV["root"] = root
 
 all_sites = sorted({s for group in TOUR.values() for s in group})
 adv("explore/off_the_map", "root", "minecraft:compass", "Off the Map", "Step into a dungeon, tavern or ruin from Dungeons and Taverns", {"any": location(all_sites)})
-adv("explore/discoverer", "explore/off_the_map", "minecraft:spyglass", "Discoverer", "Be the first player to find a structure", {"done": impossible()})
+adv("explore/discoverer", "explore/off_the_map", "minecraft:spyglass", "Discoverer", "Be the first on the server to walk into a structure, and everyone hears your name", {"done": impossible()})
 adv("explore/last_call", "explore/off_the_map", "minecraft:honey_bottle", "Last Call", "Walk into a tavern", {"any": location(TOUR["tavern"])})
 adv("explore/crypt_keeper", "explore/off_the_map", "minecraft:skeleton_skull", "Crypt Keeper", "Enter a crypt or the catacombs",
     {"any": location(TOUR["undead_crypt"] + TOUR["creeping_crypt"] + TOUR["catacomb"])})
@@ -86,11 +86,11 @@ adv("explore/lord_of_the_manor", "explore/off_the_map", "minecraft:totem_of_undy
 adv("explore/grand_tour", "explore/lord_of_the_manor", "minecraft:filled_map", "Grand Tour", "Visit every kind of dungeon, tavern and keep, in all three dimensions",
     {name: location(sites) for name, sites in TOUR.items()}, frame="challenge", hidden=True, xp=500)
 
-adv("explore/dungeon_delver", "explore/off_the_map", "minecraft:iron_sword", "Dungeon Delver", "Step into an underground dungeon", {"any": location(EPIC_ALL)})
-adv("explore/deeper_still", "explore/dungeon_delver", "minecraft:deepslate_bricks", "Deeper Still", "Find a large dungeon, the kind with a dozen rooms", {"any": location(EPIC["large"])}, frame="goal")
+adv("explore/dungeon_delver", "explore/off_the_map", "minecraft:iron_sword", "Dungeon Delver", "Step inside an underground dungeon, mossy, icy or sandy", {"any": location(EPIC_ALL)})
+adv("explore/deeper_still", "explore/dungeon_delver", "minecraft:deepslate_bricks", "Deeper Still", "Find a large dungeon, a maze of many rooms", {"any": location(EPIC["large"])}, frame="goal")
 adv("explore/dungeon_master", "explore/deeper_still", "minecraft:totem_of_undying", "Dungeon Master", "Enter every dungeon: plains, ice and sand, small, medium and large",
     {s.split(":")[1]: location([s]) for s in EPIC_ALL}, frame="challenge", hidden=True, xp=500)
-adv("explore/odd_pillar", "explore/dungeon_delver", "minecraft:chiseled_stone_bricks", "Odd Pillar", "Find an obelisk standing alone in the wild", {"any": location(OBELISKS)})
+adv("explore/odd_pillar", "explore/dungeon_delver", "minecraft:chiseled_stone_bricks", "Odd Pillar", "Find a lone obelisk standing in the wild", {"any": location(OBELISKS)})
 
 adv("food/burger_time", "root", f"{FD}:hamburger", "Burger Time", "Eat a hamburger", {"ate": eat(f"{FD}:hamburger")})
 adv("food/sushi_night", "food/burger_time", f"{FD}:salmon_roll", "Sushi Night", "Eat a salmon, cod or kelp roll",

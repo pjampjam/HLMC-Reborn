@@ -1,8 +1,8 @@
 # Holy Lois: Reborn
 
-A Minecraft modpack for our friends, with a Windows launcher that installs the pack and keeps it updated.
+A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.2.3 / pack 1.7.5 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.3 / pack 1.7.7 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -16,6 +16,12 @@ A Minecraft modpack for our friends, with a Windows launcher that installs the p
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.7.7
+
+- **Fixes from the 1.7.6 test**: the first-person body may sink into a wall a little, the camera is lifted in bed so your eyes are not inside your head, and the tool swap line reads "Switched to ...".
+- **Dynamic lights follow your shader setting**: with a shader pack on, the shader lights what you hold and dropped torches and mobs still glow; with shaders off, dynamic lights are fully on again.
+- No server restart for this one.
 
 ## What's new in pack 1.7.6
 
