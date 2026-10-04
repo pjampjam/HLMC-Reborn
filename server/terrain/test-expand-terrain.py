@@ -269,11 +269,26 @@ class TerrainJobTests(unittest.TestCase):
             job.finish(state, task(chunks=0), self.region)
             command.assert_called_once_with('essentialcommands config reload')
             disable.assert_called_once()
-        self.assertEqual(cfg.read_text(), 'rtp_radius=3500\nother=true\n')
-        self.assertEqual(json.loads(rules.read_text()), {'rtpRadius': 3500, 'other': True})
+        self.assertEqual(cfg.read_text(), f'rtp_radius={job.RTP_RADIUS}\nother=true\n')
+        self.assertEqual(json.loads(rules.read_text()), {'rtpRadius': job.RTP_RADIUS, 'other': True})
         self.assertEqual(state['full_chunks_verified'], 9)
         self.assertTrue(state['complete'])
         self.assertTrue((self.job_directory / 'holylois-server-before.json').exists())
+
+    def test_promotion_without_essential_commands_rtp_updates_only_the_addon(self):
+        self.populated()
+        state = {'started': True, 'running': False, 'phase': 'verifying'}
+        self.verified(state)
+        write_task(self.task_path, task(chunks=0))
+        cfg, rules = self.config_files()
+        cfg.write_text('enable_rtp=false\nother=true\n', encoding='utf-8')
+        with mock.patch.object(job, 'command') as command, mock.patch.object(job, 'disable_timer'):
+            job.finish(state, task(chunks=0), self.region)
+            command.assert_not_called()
+        self.assertEqual(cfg.read_text(), 'enable_rtp=false\nother=true\n')
+        self.assertEqual(json.loads(rules.read_text())['rtpRadius'], job.RTP_RADIUS)
+        self.assertFalse((self.job_directory / 'EssentialCommands-before.properties').exists())
+        self.assertTrue(state['complete'])
 
     def test_resume_or_incomplete_coverage_never_changes_radius(self):
         cfg, rules = self.config_files()

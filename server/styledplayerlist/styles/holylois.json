@@ -5,7 +5,7 @@
     "",
     "<gr #F5EF42 #FFAD42><bold>✦ Holy Lois: Reborn ✦</bold></gr>",
     "",
-    "<color #5a5a5a><strikethrough>              </strikethrough></color> <white>%server:online%</white><dark_gray>/</dark_gray><gray>%server:max_players%</gray> <gray>online</gray> <color #5a5a5a><strikethrough>              </strikethrough></color>",
+    "<color #5a5a5a><strikethrough>              </strikethrough></color> <white>%server:online%</white><dark_gray>/</dark_gray><gray>%holylois:slots%</gray> <gray>online</gray> <color #5a5a5a><strikethrough>              </strikethrough></color>",
     ""
   ],
   "list_footer": {

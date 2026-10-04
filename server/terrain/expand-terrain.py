@@ -25,8 +25,10 @@ STATE = JOB / 'job.json'
 TASK = ROOT / 'config/chunky/tasks/minecraft/overworld.properties'
 WORLD = 'minecraft:overworld'
 TIMER = 'holylois-terrain-expansion.timer'
-GENERATION_RADIUS = 4000
-RTP_RADIUS = 3500
+# The whole area inside the world border is pregenerated (border width / 2 from 0,0); /rtp then reaches RTP_RADIUS.
+BORDER = 20000
+GENERATION_RADIUS = BORDER // 2
+RTP_RADIUS = 5000
 MIN_FREE_BYTES = 6 * 1024**3
 CHECKPOINT_TIMEOUT = 8
 CHECKPOINT_DEADLINE = 120
@@ -503,14 +505,20 @@ def finish(state, task, directory):
     rules = ROOT / 'config/holylois-server.json'
     if cfg.is_symlink() or rules.is_symlink():
         raise RuntimeError('Unexpected configuration symlink')
-    source, old_rules = cfg.read_text(encoding='utf-8'), rules.read_text(encoding='utf-8')
+    # Since onboarding 1.7.0 the add-on owns /rtp (Essential Commands rtp is off); a legacy rtp_radius line is kept in step.
+    source = cfg.read_text(encoding='utf-8') if cfg.exists() else None
+    old_rules = rules.read_text(encoding='utf-8')
     pattern = r'(?m)^rtp_radius=\d+\s*$'
-    if len(re.findall(pattern, source)) != 1:
+    matches = len(re.findall(pattern, source)) if source is not None else 0
+    if matches > 1:
         raise IOError('Unexpected RTP configuration')
+    essential = matches == 1
     values = json.loads(old_rules)
     if not isinstance(values, dict) or 'rtpRadius' not in values:
         raise IOError('Unexpected automatic placement configuration')
     for path, name in ((cfg, 'EssentialCommands-before.properties'), (rules, 'holylois-server-before.json')):
+        if path == cfg and not essential:
+            continue
         backup = JOB / name
         if backup.is_symlink():
             raise RuntimeError('Unexpected backup symlink')
@@ -519,18 +527,22 @@ def finish(state, task, directory):
             backup.chmod(0o600)
     values['rtpRadius'] = RTP_RADIUS
     try:
-        atomic_text(cfg, re.sub(pattern, f'rtp_radius={RTP_RADIUS}', source))
+        if essential:
+            atomic_text(cfg, re.sub(pattern, f'rtp_radius={RTP_RADIUS}', source))
         atomic_text(rules, json.dumps(values, indent=2) + '\n')
-        command('essentialcommands config reload')
+        if essential:
+            command('essentialcommands config reload')
         state.update(complete=True, phase='complete', rtp_radius=RTP_RADIUS,
                      full_chunks_verified=expected_chunks(), completed_at=time.time())
         save(state)
     except Exception:
         state.update(complete=False, phase='verifying')
-        atomic_text(cfg, source)
+        if essential:
+            atomic_text(cfg, source)
         atomic_text(rules, old_rules)
         try:
-            command('essentialcommands config reload')
+            if essential:
+                command('essentialcommands config reload')
         except OSError:
             pass
         raise
