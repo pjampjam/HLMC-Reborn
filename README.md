@@ -2,25 +2,32 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.2.7 / pack 1.7.11 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.3.0 / pack 1.7.11 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
 [Download HolyLoisReborn.exe](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/releases/latest/download/HolyLoisReborn.exe) - about 67 MB, for Windows x64. Its runtime is included, so no separate .NET installation is needed.
 
-1. Open the EXE. Choose **Minecraft Launcher** or **SKlauncher** and your optional Desktop and Start menu shortcuts.
+1. Open the EXE. Choose **Player name** (type the name you want in the game) or **Minecraft account** (you bought Minecraft), and your optional Desktop and Start menu shortcuts.
 2. Close Minecraft and your Minecraft launcher, then click **Install Holy Lois**.
-3. Click **Play** beneath the logo. Select **Holy Lois: Reborn** in your chosen launcher. In SKlauncher, click **Install** there once to prepare Minecraft and Java, then **Play**.
-4. In the game, open Multiplayer and join the saved Holy Lois server (**play.holylois.com**, **mc.holylois.com** works too). Website: https://holylois.com, Discord: https://discord.gg/FzBJSZwY2c
+3. Click **Play** beneath the logo. With a player name, **fast start** opens Minecraft straight from the Holy Lois launcher (the first start downloads Java and Minecraft once) and the game joins Holy Lois by itself. With a Minecraft account, Minecraft Launcher opens: select **Holy Lois: Reborn** and press Play, and the game joins Holy Lois by itself too.
+4. The server is **play.holylois.com** (**mc.holylois.com** works too) and is already saved in Multiplayer. Website: https://holylois.com, Discord: https://discord.gg/FzBJSZwY2c
 
-SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
+SKlauncher is no longer needed. Players who already use it keep their name, worlds and settings, and **Settings** can switch Play back to opening SKlauncher. **Settings** also has the player name with its history, **Join Holy Lois on start** (turn it off for singleplayer) and **Help and reports** for a crash report to send on Discord. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in launcher 1.3.0
+
+- **Fast start**: press Play and Minecraft opens straight from the Holy Lois launcher with your player name. No SKlauncher. Java 25, Minecraft and Fabric come from Mojang and Fabric, are checked by hash and are reused from another launcher on the PC when it already has them. A start window shows each step; if the game crashes, the launcher comes back with a report you can copy.
+- **Join Holy Lois on start** for everyone, also for bought accounts in Minecraft Launcher. Turn it off in Settings for singleplayer.
+- **Player names** with history: a new name is a new player on the server, so the launcher warns first, keeps every earlier name one click away and allows three new names a day. A name that belongs to a bought Minecraft account is refused.
+- Pack stays 1.7.11, no server restart.
 
 ## What's new in pack 1.7.11
 
 - **Quick Play is removed.** In testing it never joined the server by itself, so Play did the same as the old way. **Launcher 1.2.7** drops the setting: Play opens your Minecraft launcher, then you join from Multiplayer (singleplayer works as before). Holy Lois Extras 1.5.1 no longer contains the Quick Play part.
-- **Coming later**: Integrated start, where the Holy Lois launcher starts the game itself with its own Microsoft sign-in.
+- ~~Coming later: Integrated start~~ (arrived as fast start in launcher 1.3.0).
 - No server restart for this release.
 
 ## What's new in pack 1.7.10
