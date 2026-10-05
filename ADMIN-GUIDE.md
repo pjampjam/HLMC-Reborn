@@ -120,6 +120,16 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Server release for pack 1.7.10
+
+`server/deploy-release-1710.py` (run as root from `~/hl-1710`; `--check` only runs the pre-checks) installs onboarding 1.8.0, Holy Lois Extras 1.5.0, `config/holylois-daily.secret`, the datapack with its logo, the new server icon, `max-tick-time=120000`, the AFK-free Tab playtime, the pack-only rule in `rules.txt`, MOTD, then (after the server is up) the Discord bot, `make-stats.py`, `weekly-recap.py` and the lag-guard terrain job, and resumes the terrain job from its Chunky checkpoint. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails.
+
+- **Quiet names**: `config/holylois-quiet.json` is `{"names": ["pjampjam"]}`, re-read when the file changes. Join, leave, AFK, advancement and discovery broadcasts about these names are not sent; death messages still are. The Discord bot reads the same file (hidden from the Players field, status and the join/leave lines; deaths never reach Discord for them).
+- **AFK ledger**: `world/holylois/afk.json` adds one second per AFK second (Essential Commands decides, `auto_afk_time` is 15 minutes, `/afk` too). Playtime for achievements, claims, leaderboards, stats, recap and Tab is vanilla `play_time` minus the ledger, counted from this release on. If Essential Commands is missing the ledger waits and nothing is subtracted.
+- **Secret code**: `/redeem CODE`. The code is HMAC-SHA256 of the UTC date with `config/holylois-daily.secret`, the same as the website (`docs/DAILY-CODE.md` in the website repo; Worker secrets `CODE_SECRET` and `DAILY_CODE=on`). Yesterday's code works until 01:00 UTC. One redeem per UUID per UTC day (`world/holylois/redeem.json`), 5 wrong tries per hour, prize rolled from player and date (coins 50%, lootbox 25%, diamonds 13%, rune find 11.5%, legendary 0.5%). The secret lives in `private/holylois-daily.secret`; never put it in a repository or chat. Rotating it changes every code from that moment.
+- **Terrain job**: slices of 15 minutes with 10 minute rests, 20 minutes when the log shows 100 or more ticks behind (`server/terrain/README.md`). Test with `server/terrain/test-expand-terrain.py` (23 tests).
+- **Launcher 1.2.6**: Play mode in Settings (`holylois-quickplay.json` is written into the game folder for Extras; it is valid for 3 minutes and only for play.holylois.com or mc.holylois.com, removed in Standard mode). Update asks before closing Minecraft and its launcher.
+
 ## Server release for pack 1.7.8
 
 `server/deploy-release-178.py` (run as root from `~/hl-178`) installs Holy Lois Extras 1.4.0, `config/holylois-mods.json`, the advancement texts and `server-icon.png`. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails (the mod list is removed again on rollback). The pack minimum stays 1.7.5.

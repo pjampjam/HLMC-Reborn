@@ -1,6 +1,8 @@
 # Playing Holy Lois: Reborn
 
-For pack 1.7.1 and launcher 1.2.2. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer.
+For pack 1.7.10 and launcher 1.2.6. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+
+With **Quick Play** (the launcher default) you do not need Multiplayer: click Play in the Holy Lois launcher and the game joins by itself once the title screen shows. Choose **Standard** in the launcher **Settings** if you would rather pick the server yourself.
 
 ## Joining
 
@@ -103,7 +105,7 @@ Only upload music you are allowed to share.
 
 ## Daily gifts and the Holy Lootbox
 
-Log in once a day (Riga time) for a small gift: food, ores, books or rockets. Every 7th day in a row you get a **Holy Lootbox**, a gold present; right-click it to open. Lootboxes hold diamonds, Runeforged stones, golden apples and more, and sometimes a named tool or weapon with your name on it. Each finished week raises the lootbox tier, up to tier 3. Missing a day starts the streak again. Holidays such as Christmas, New Year, Jāņi, Halloween and 18 November bring their own greeting and gift.
+Log in once a day (Riga time) for a small gift: food, ores, books or rockets. Every 7th day in a row you get a **Holy Lootbox**, a gold present; right-click it to open. Lootboxes hold diamonds, Runeforged stones, golden apples and more, and sometimes a named tool or weapon with your name on it. Each finished week raises the lootbox tier, up to tier 3. Missing a day starts the streak again. A **secret code** of the day hides somewhere on holylois.com: type `/redeem CODE` in game for one prize per player per day (coins, a lootbox, diamonds, a Runeforged find, and very rarely a legendary weapon). Holidays such as Christmas, New Year, Jāņi, Halloween and 18 November bring their own greeting and gift.
 
 ## Money and the auction house
 
@@ -120,7 +122,7 @@ The song title shows above your hotbar, music notes float from a playing boombox
 
 ## Achievements and recipes
 
-Press **L**; the **Holy Lois** tab comes first. Some goals are hidden until you get close, such as visiting every kind of dungeon or eating every Farmer's Delight meal. In your inventory, hover an item and press **R** for its recipe or **U** for what it is used in. **R** over an empty slot sorts your inventory instead.
+Press **L**; the **Holy Lois** tab comes first. Time spent AFK does not count towards playtime goals, land claims, leaderboards or stats. Some goals are hidden until you get close, such as visiting every kind of dungeon or eating every Farmer's Delight meal. In your inventory, hover an item and press **R** for its recipe or **U** for what it is used in. **R** over an empty slot sorts your inventory instead.
 
 ## After death
 
@@ -142,7 +144,7 @@ The server checks your mod list when you join. If you added mods of your own, yo
 
 ## Keep your pack updated
 
-You can launch the saved pack directly from Minecraft Launcher or SKlauncher after installation. Open Holy Lois periodically to check for updates. Before updating, close Minecraft and its launcher, install the update in Holy Lois, then open your launcher again.
+You can launch the saved pack directly from Minecraft Launcher or SKlauncher after installation. Open Holy Lois periodically to check for updates. When an update needs Minecraft or its launcher closed, Holy Lois asks first (press **Agree**) and closes them for you; then open your launcher again.
 
 If the SKlauncher entry was deleted or moved, close both Minecraft and SKlauncher and use **Repair / check files** in Holy Lois. It restores the managed files and adds the Holy Lois profile automatically.
 

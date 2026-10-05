@@ -15,7 +15,7 @@
         "",
         "<color #5a5a5a><strikethrough>                                                                </strikethrough></color>",
         "    <gray>Ping</gray> %player:ping_colored%<dark_gray>ms</dark_gray>   <gray>TPS</gray> %server:tps_colored%   <gray>Up</gray> <white>%server:uptime%</white>    ",
-        "    <red>❤</red> <white>%player:health%</white>   <gold>Food</gold> <white>%player:hunger%</white>   <aqua>Played</aqua> <white>%player:playtime%</white>    ",
+        "    <red>❤</red> <white>%player:health%</white>   <gold>Food</gold> <white>%player:hunger%</white>   <aqua>Played</aqua> <white>%holylois:playtime%</white>    ",
         "    <gray>Mob kills</gray> <white>%player:statistic mob_kills%</white>   <gray>Deaths</gray> <white>%player:statistic deaths%</white>    ",
         ""
       ],

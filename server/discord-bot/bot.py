@@ -29,6 +29,29 @@ CHAT = re.compile(r"\]: (?:\[Not Secure\] )?<([A-Za-z0-9_]{3,16})> (.+)$")
 LOGIN = re.compile(r"\]: ([A-Za-z0-9_]{3,16})\[/[^\]]+\] logged in with entity id")
 SYSTEM = re.compile(r"\]: System chat: (.+)$")
 NAME = re.compile(r"^[A-Za-z0-9_]{3,16}$")
+# Names from the add-on's config/holylois-quiet.json: no joins, leaves, advancements, discoveries or deaths in Discord, and not in the player list.
+QUIET_FILE = Path("/opt/minecraft/config/holylois-quiet.json")
+_quiet = {"stamp": None, "names": {"pjampjam"}}
+
+
+def quiet_names():
+    try:
+        stamp = QUIET_FILE.stat().st_mtime
+        if stamp != _quiet["stamp"]:
+            _quiet["names"] = {n.lower() for n in json.loads(QUIET_FILE.read_text()).get("names", []) if isinstance(n, str)}
+            _quiet["stamp"] = stamp
+    except (OSError, ValueError):
+        pass  # keep the last known names
+    return _quiet["names"]
+
+
+def visible(result):
+    """ping() result without the quiet players: (count, names, version) or None."""
+    if result is None: return None
+    count, names, version = result
+    hidden = quiet_names()
+    shown = [n for n in names if n.lower() not in hidden]
+    return max(0, count - (len(names) - len(shown))), shown, version
 
 
 def varint(value):
@@ -124,7 +147,7 @@ class HolyLoisBot(discord.Client):
 
         @self.tree.command(name="players", description="Who is playing right now?")
         async def players(interaction: discord.Interaction):
-            result = ping()
+            result = visible(ping())
             text = "The server is offline." if result is None else ("Nobody is online." if not result[0] else f"{result[0]} online: " + ", ".join(result[1]))
             await interaction.response.send_message(text)
 
@@ -280,7 +303,7 @@ class HolyLoisBot(discord.Client):
             self.state["rules_message"] = message.id; save_state(self.state)
 
     def status_embed(self):
-        result = ping()
+        result = visible(ping())
         if result is None:
             embed = discord.Embed(title="Holy Lois: Reborn is offline", description="It may be restarting or updating. Check back in a few minutes.", color=RED)
         else:
@@ -308,7 +331,7 @@ class HolyLoisBot(discord.Client):
                 else:
                     message = await self.status_channel.send(embed=embed)
                     self.state["status_message"] = message.id; save_state(self.state)
-                result = ping()
+                result = visible(ping())
                 activity = discord.Game(f"{result[0]} on {ADDRESS}" if result else "server offline")
                 await self.change_presence(activity=activity)
             except Exception as error:
@@ -338,11 +361,15 @@ class HolyLoisBot(discord.Client):
             await self.chat_channel.send(f"**{name}**: {safe(discord.utils.escape_markdown(text))}"[:1900])
         elif match := LOGIN.search(line):
             self.online.add(match.group(1))
+            if match.group(1).lower() in quiet_names(): return
             await self.chat_channel.send(f"➕ **{match.group(1)}** joined the server")
         elif match := SYSTEM.search(line):
             text = match.group(1).lstrip("✦ ").strip()
             first = text.split(" ", 1)[0]
             if text.startswith("[") or not NAME.match(first): return
+            if first.lower() in quiet_names():
+                if text.endswith("left the game"): self.online.discard(first)
+                return
             if text.endswith("left the game"):
                 self.online.discard(first)
                 await self.chat_channel.send(f"➖ **{first}** left the server")

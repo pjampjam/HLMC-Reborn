@@ -129,6 +129,8 @@ adv("fun/name_day", "root", "minecraft:cake", "Vārda diena", "Log in on your La
 if out.exists(): shutil.rmtree(out)
 (out / "data/holylois/advancement").mkdir(parents=True)
 (out / "pack.mcmeta").write_text(json.dumps({"pack": {"description": "Holy Lois advancements", "min_format": [121, 0], "max_format": [121, 0]}}, indent=2) + "\n")
+logo = Path(__file__).with_name("pack.png")  # shown in the datapack list
+if logo.exists(): shutil.copy2(logo, out / "pack.png")
 for path, data in ADV.items():
     target = out / "data/holylois/advancement" / (path + ".json")
     target.parent.mkdir(parents=True, exist_ok=True)

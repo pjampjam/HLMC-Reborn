@@ -5,7 +5,7 @@ Pregenerates the whole Overworld inside the world border (20,000 wide, so a radi
 - `expand-terrain.py` runs one short step per timer tick. It generates only while no players are online and at least 6 GB is free, and pauses Chunky as soon as someone joins.
 - RTP changes only after Chunky reports natural completion of the job's own task **and** all 1,565,001 chunks in the square are stored with matching coordinates and `Status=full`. MCA files or headers alone are never treated as proof.
 - Any unexpected state blocks the job and disables its timer. It never trims or deletes terrain.
-- `test-expand-terrain.py` holds 21 synthetic tests. It never touches a real server.
+- `test-expand-terrain.py` holds 23 synthetic tests. It never touches a real server.
 
 ## Install (server stopped)
 
@@ -14,3 +14,10 @@ Pregenerates the whole Overworld inside the world border (20,000 wide, so a radi
 3. Start Minecraft, then `systemctl daemon-reload` and `systemctl enable --now holylois-terrain-expansion.timer`.
 
 Check progress with `sudo journalctl -u holylois-terrain-expansion -n 20 --no-pager` and `sudo cat /opt/minecraft-backups/terrain-expansion/job.json`.
+
+## Slices and lag guard (since 1.7.10)
+
+The 2026-10-05 watchdog crash came after minutes of growing "ticks behind" while Chunky ran. Generation now runs in slices of 15 minutes and
+rests 10 minutes between them, and a "Can't keep up ... N ticks behind" warning of 100 or more in the last three minutes pauses it for 20 minutes
+(`LAG_TICKS`, `RUN_SECONDS`, `REST_SECONDS`, `LAG_REST_SECONDS` in `expand-terrain.py`). `server.properties` also gets `max-tick-time=120000` so a long
+chunk burst is not mistaken for a hang.

@@ -10,6 +10,7 @@ ROOT = Path("/opt/minecraft")
 STATS = ROOT / "world/players/stats"
 USERS = ROOT / "usercache.json"
 DISCOVERIES = ROOT / "world/holylois/discoveries.json"
+AFK = ROOT / "world/holylois/afk.json"  # AFK seconds per player (onboarding add-on): not counted as played time
 SNAPSHOT = Path("/var/lib/holylois/weekly-stats.json")
 
 spec = importlib.util.spec_from_file_location("alert", "/usr/local/lib/holylois/discord-alert.py")
@@ -17,10 +18,10 @@ alert = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(alert)
 
 
-def numbers(stats):
+def numbers(stats, afk_seconds=0):
     custom, mined = stats.get("minecraft:custom", {}), stats.get("minecraft:mined", {})
     return {
-        "hours": custom.get("minecraft:play_time", 0) / 72000,
+        "hours": max(0.0, custom.get("minecraft:play_time", 0) / 72000 - afk_seconds / 3600),
         "kills": custom.get("minecraft:mob_kills", 0),
         "deaths": custom.get("minecraft:deaths", 0),
         "diamonds": mined.get("minecraft:diamond_ore", 0) + mined.get("minecraft:deepslate_diamond_ore", 0),
@@ -32,10 +33,13 @@ def numbers(stats):
 
 def current():
     names = {u["uuid"]: u["name"] for u in json.loads(USERS.read_text())} if USERS.exists() else {}
+    afk = {}
+    try: afk = json.loads(AFK.read_text()).get("seconds", {}) if AFK.exists() else {}
+    except ValueError: pass
     result = {}
     for file in STATS.glob("*.json"):
         try:
-            result[names.get(file.stem, file.stem[:8])] = numbers(json.loads(file.read_text()).get("stats", {}))
+            result[names.get(file.stem, file.stem[:8])] = numbers(json.loads(file.read_text()).get("stats", {}), afk.get(file.stem, 0))
         except ValueError:
             continue
     return result

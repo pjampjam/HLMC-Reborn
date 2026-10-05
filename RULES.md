@@ -10,7 +10,7 @@ to these rules. In game, type `/rules` to see the short version.
 2. **No griefing or stealing.** Do not break, take, move or change anything other players made or own, claimed or
    not. Claim your land on the world map (press J, right-click a chunk); `/claims` shows how much you have.
 3. **No cheating.** No hacked clients, x-ray (mods, resource packs or shaders), item duplication, or abusing bugs and
-   exploits. Report bugs to pjampjam instead. The visual and performance mods that come with the launcher are fine.
+   exploits. Report bugs to pjampjam instead. Play with the mods that come with the launcher and nothing else: the server checks your mod list when you join and turns extra mods away. Shaders and resource packs are your choice as long as they are not x-ray.
 4. **No lag machines.** Huge redstone clocks, giant mob farms and anything that keeps hundreds of entities loaded slow
    the server down for everyone. Ask pjampjam before building something big.
 5. **PvP and pranks only with consent.** Fighting, trapping or pranking someone who did not agree is griefing.

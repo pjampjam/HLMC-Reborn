@@ -36,6 +36,12 @@ COMPLETION_GRACE = 120
 VERIFY_CHUNKS = 4096
 VERIFY_SECONDS = 6
 MAX_NBT_BYTES = 32 * 1024**2
+# Pregeneration must never starve the server thread (the 2026-10-05 watchdog crash came after minutes of growing "ticks behind").
+# Generation runs in slices: it pauses when the server reports lag, or after RUN_SECONDS, and rests before the next slice.
+LAG_TICKS = 100
+RUN_SECONDS = 15 * 60
+REST_SECONDS = 10 * 60
+LAG_REST_SECONDS = 20 * 60
 
 
 class ChunkNotFull(IOError):
@@ -217,6 +223,27 @@ def generation_allowed(state):
         print('Generation held while players are online or free space is below 6 GB.')
         return False
     return True
+
+
+def recent_lag():
+    """Largest "N ticks behind" warning in the last three minutes of the server log, 0 when quiet or unreadable."""
+    try:
+        done = subprocess.run(['journalctl', '-u', 'minecraft', '--since', '-3min', '-o', 'cat', '--no-pager'],
+                              capture_output=True, text=True, timeout=30)
+        return max([int(n) for n in re.findall(r'or (\d+) ticks behind', getattr(done, 'stdout', '') or '')] or [0])
+    except (OSError, subprocess.SubprocessError):
+        return 0
+
+
+def rest_needed(state, now, lag):
+    """Seconds to rest now, or 0: lag wins over the slice length. Only while generation is running."""
+    if not state.get('running', True) or not state.get('started'):
+        return 0
+    if lag >= LAG_TICKS:
+        return LAG_REST_SECONDS
+    if now - state.get('resumed_at', now) >= RUN_SECONDS:
+        return REST_SECONDS
+    return 0
 
 
 def checkpoint(state):
@@ -560,10 +587,20 @@ def run_job(state):
         return
     if not generation_allowed(state):
         return
+    if time.time() < state.get('rest_until', 0):
+        print(f'Resting until {time.strftime("%H:%M", time.localtime(state["rest_until"]))} to let the server catch up.')
+        return
+    pause_for = rest_needed(state, time.time(), recent_lag())
+    if pause_for:
+        request_pause(state)
+        state['rest_until'] = time.time() + pause_for
+        save(state)
+        print(f'Generation paused for {pause_for // 60} minutes (server lag or end of a slice).')
+        return
     if not state.get('started'):
         if TASK.exists():
             raise RuntimeError('Archive the previous Chunky task while Minecraft is stopped, then restart before enabling this timer')
-        state.update(started=True, running=True, phase='running', started_at=time.time(),
+        state.update(started=True, running=True, phase='running', started_at=time.time(), resumed_at=time.time(),
                      generation_radius=GENERATION_RADIUS,
                      selection={'world': WORLD, 'center': [0, 0], 'shape': 'square', 'pattern': 'region'})
         save(state)
@@ -578,7 +615,7 @@ def run_job(state):
         return
     state['checkpoint_chunks'] = int(task['chunks'])
     if task['cancelled'] != 'true':
-        state.update(running=True, pause_pending=False, phase='running')
+        state.update(running=True, pause_pending=False, phase='running', resumed_at=time.time())
         save(state)
         command('chunky continue ' + WORLD)
         print(f'Generation resumed: saved {task["chunks"]}/{expected_chunks()} chunks. RTP radius is unchanged.')

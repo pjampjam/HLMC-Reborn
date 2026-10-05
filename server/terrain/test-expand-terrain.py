@@ -333,6 +333,27 @@ class TerrainJobTests(unittest.TestCase):
                 self.assertFalse(job.generation_allowed({'started': True}))
             self.assertEqual(pause.call_count, 3)
 
+    def test_rest_needed_after_lag_or_a_long_slice_only_while_running(self):
+        now = 100000
+        self.assertEqual(job.rest_needed({'started': True, 'running': True, 'resumed_at': now - 60}, now, 0), 0)
+        self.assertEqual(job.rest_needed({'started': True, 'running': True, 'resumed_at': now - 60}, now, job.LAG_TICKS), job.LAG_REST_SECONDS)
+        self.assertEqual(job.rest_needed({'started': True, 'running': True, 'resumed_at': now - job.RUN_SECONDS}, now, 0), job.REST_SECONDS)
+        self.assertEqual(job.rest_needed({'started': True, 'running': False, 'resumed_at': now - 99999}, now, 999), 0)
+        self.assertEqual(job.rest_needed({'started': False}, now, 999), 0)
+
+    def test_lag_is_read_from_the_log_and_rest_holds_generation(self):
+        log = "[01:50:07] Can't keep up! Is the server overloaded? Running 5733ms or 114 ticks behind" + chr(10) + "[01:50:28] Can't keep up! Running 5138ms or 102 ticks behind" + chr(10)
+        with mock.patch.object(job.subprocess, 'run', return_value=SimpleNamespace(stdout=log)):
+            self.assertEqual(job.recent_lag(), 114)
+        with mock.patch.object(job.subprocess, 'run', return_value=SimpleNamespace(stdout='')):
+            self.assertEqual(job.recent_lag(), 0)
+        state = {'started': True, 'running': True, 'rest_until': job.time.time() + 600}
+        with mock.patch.object(job.subprocess, 'run', return_value=SimpleNamespace(returncode=0)):
+            with mock.patch.object(job, 'generation_allowed', return_value=True):
+                with mock.patch.object(job, 'command') as command:
+                    job.run_job(state)
+                    command.assert_not_called()
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

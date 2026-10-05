@@ -84,6 +84,11 @@ def main():
     stats, done = {}, {}
     for file in (WORLD / 'players/stats').glob('*.json'):
         if file.stem in people: stats[file.stem] = read(file, {}).get('stats', {})
+    # AFK time does not count as played (ledger of the onboarding add-on, 20 ticks per AFK second).
+    afk = read(WORLD / 'holylois/afk.json', {}).get('seconds', {})
+    for uuid, mine in stats.items():
+        played = mine.get('minecraft:custom', {})
+        if uuid in afk and 'minecraft:play_time' in played: played['minecraft:play_time'] = max(0, played['minecraft:play_time'] - afk[uuid] * 20)
     for file in (WORLD / 'players/advancements').glob('*.json'):
         if file.stem not in people: continue
         mine = {}

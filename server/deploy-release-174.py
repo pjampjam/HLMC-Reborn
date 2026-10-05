@@ -74,8 +74,8 @@ def countdown():
                     f'bossbar set {BAR} name ' + json.dumps({'text': f'Server restarting in {label} - update after with the launcher', 'color': 'yellow' if left > 10 else 'red'})]
         if left == 10: commands.append(f'bossbar set {BAR} color red')
         if left <= 10:
-            commands += ['title @a subtitle ' + json.dumps({'text': 'Then open the Holy Lois launcher and click Update', 'color': 'yellow'}),
-                         'title @a title ' + json.dumps({'text': str(left), 'color': 'gold', 'bold': True}),
+            commands += ['title @a subtitle ' + json.dumps({'text': 'After the restart: close Minecraft, open the Holy Lois launcher and click Update', 'color': 'yellow'}),
+                         'title @a title ' + json.dumps({'text': f'Restarting in {left}', 'color': 'gold', 'bold': True}),
                          'execute as @a at @s run playsound minecraft:block.note_block.hat master @s ~ ~ ~ 1 ' + ('2' if left <= 3 else '1')]
         console(*commands)
         if left in (COUNTDOWN, 30, 10):
@@ -84,7 +84,7 @@ def countdown():
     # The goodbye title stays up until everyone is kicked with the same message (owner request), instead of the bare
     # "Server closed" screen a stop would show.
     console(f'bossbar remove {BAR}', 'gamerule send_command_feedback true', 'title @a times 0 200 0',
-            'title @a subtitle ' + json.dumps({'text': 'Back in a few minutes', 'color': 'yellow'}),
+            'title @a subtitle ' + json.dumps({'text': 'Updating, back in a few minutes. Open the Holy Lois launcher and click Update', 'color': 'yellow'}),
             'title @a title ' + json.dumps({'text': 'Maaarek nahhul!', 'color': 'gold', 'bold': True}))
     time.sleep(3)
     console('kick @a Maaarek nahhul! The server is updating, back in a few minutes. '
