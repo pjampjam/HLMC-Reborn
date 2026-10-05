@@ -1,0 +1,155 @@
+{
+  "chestChance": 0.012,
+  "chestTables": [
+    "*:chests/*"
+  ],
+  "crateTables": [
+    "*:*crate*"
+  ],
+  "crateChance": 0.05,
+  "treasureChance": 0.3,
+  "treasure": {
+    "bottle": 6,
+    "map": 3,
+    "legend": 1
+  },
+  "bottles": [
+    "If you are reading this, the sea kept its promise.",
+    "Day 40. The crown was never gold. Tell no one.",
+    "The bell rang under the water again tonight.",
+    "Whoever finds the hammer: do not finish the blade.",
+    "I buried what I could not carry, east of the drowned tower.",
+    "Holy Lois remembers every name. Even yours."
+  ],
+  "legends": [
+    {
+      "id": "wanderer",
+      "name": "The Crowned Wanderer",
+      "color": "gold",
+      "items": [
+        {
+          "id": "circlet_of_the_wanderer",
+          "item": "minecraft:golden_helmet",
+          "name": "Circlet of the Wanderer",
+          "lore": [
+            "A crown worn thin by roads, not by years.",
+            "You feel divine power flow within you when you hold this."
+          ],
+          "where": "chests",
+          "weight": 2,
+          "light": true
+        },
+        {
+          "id": "wanderers_last_map",
+          "item": "treasure_map",
+          "name": "Wanderer's Last Map",
+          "lore": [
+            "The ink stops in the middle of the sea."
+          ],
+          "where": "fishing",
+          "weight": 2
+        },
+        {
+          "id": "staff_of_quiet_roads",
+          "item": "minecraft:stick",
+          "name": "Staff of Quiet Roads",
+          "lore": [
+            "It points home. It never says whose."
+          ],
+          "where": "chests",
+          "weight": 3,
+          "enchantments": {
+            "minecraft:knockback": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "drowned_bell",
+      "name": "Lois of the Drowned Bell",
+      "color": "aqua",
+      "items": [
+        {
+          "id": "drowned_bell_clapper",
+          "item": "minecraft:iron_sword",
+          "name": "Drowned Bell Clapper",
+          "lore": [
+            "The inscription reads: ring once for the lost, twice for the found."
+          ],
+          "where": "chests",
+          "weight": 2,
+          "enchantments": {
+            "minecraft:sharpness": 2
+          }
+        },
+        {
+          "id": "loiss_lantern",
+          "item": "minecraft:lantern",
+          "name": "Lois's Lantern",
+          "lore": [
+            "Still warm. Nobody remembers lighting it."
+          ],
+          "where": "chests",
+          "weight": 3,
+          "light": true
+        },
+        {
+          "id": "bell_keepers_hook",
+          "item": "minecraft:fishing_rod",
+          "name": "Bell-Keeper's Hook",
+          "lore": [
+            "Pulled up more bells than fish."
+          ],
+          "where": "fishing",
+          "weight": 2,
+          "enchantments": {
+            "minecraft:luck_of_the_sea": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "ember_smith",
+      "name": "The Ember Smith",
+      "color": "red",
+      "items": [
+        {
+          "id": "first_rune_hammer",
+          "item": "minecraft:iron_axe",
+          "name": "First Rune Hammer",
+          "lore": [
+            "Every rune you will ever find was struck here first."
+          ],
+          "where": "chests",
+          "weight": 2,
+          "enchantments": {
+            "minecraft:efficiency": 3
+          }
+        },
+        {
+          "id": "smiths_apron_scrap",
+          "item": "minecraft:leather_chestplate",
+          "name": "Smith's Apron Scrap",
+          "lore": [
+            "Smells of iron and old songs."
+          ],
+          "where": "chests",
+          "weight": 3,
+          "enchantments": {
+            "minecraft:fire_protection": 2
+          }
+        },
+        {
+          "id": "unfinished_blade",
+          "item": "minecraft:stone_sword",
+          "name": "Unfinished Blade",
+          "lore": [
+            "The smith stopped one strike short. Why?"
+          ],
+          "where": "chests",
+          "weight": 3
+        }
+      ]
+    }
+  ]
+}

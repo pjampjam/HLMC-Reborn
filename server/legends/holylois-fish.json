@@ -1,0 +1,79 @@
+{
+  "enabled": true,
+  "tables": [
+    "minecraft:gameplay/fishing"
+  ],
+  "tags": [
+    "minecraft:fishes"
+  ],
+  "namespaces": [
+    "fishofthieves"
+  ],
+  "skip": [
+    "cooked",
+    "bucket"
+  ],
+  "fallback": [
+    0.3,
+    6.0
+  ],
+  "curve": 2.5,
+  "species": {
+    "minecraft:cod": [
+      0.4,
+      12.0
+    ],
+    "minecraft:salmon": [
+      0.8,
+      25.0
+    ],
+    "minecraft:tropical_fish": [
+      0.05,
+      1.2
+    ],
+    "minecraft:pufferfish": [
+      0.2,
+      3.5
+    ],
+    "fishofthieves:splashtail": [
+      0.3,
+      4.0
+    ],
+    "fishofthieves:pondie": [
+      0.2,
+      3.0
+    ],
+    "fishofthieves:islehopper": [
+      0.3,
+      5.0
+    ],
+    "fishofthieves:ancientscale": [
+      0.5,
+      8.0
+    ],
+    "fishofthieves:plentifin": [
+      0.3,
+      4.0
+    ],
+    "fishofthieves:wildsplash": [
+      0.4,
+      6.0
+    ],
+    "fishofthieves:devilfish": [
+      0.8,
+      9.0
+    ],
+    "fishofthieves:battlegill": [
+      0.6,
+      7.0
+    ],
+    "fishofthieves:wrecker": [
+      1.0,
+      12.0
+    ],
+    "fishofthieves:stormfish": [
+      2.0,
+      20.0
+    ]
+  }
+}

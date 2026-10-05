@@ -95,6 +95,14 @@ Newly explored land has **Dungeons and Taverns** (taverns, crypts, illager camps
 
 The first time anyone walks into a big structure, the whole server sees who discovered it. Villages, wells, camps and small ruins stay quiet, but every underground dungeon (small, medium or large, in plains, ice and sand styles) and every lone obelisk is announced and earns achievements. Each dungeon is built from random rooms, so one may have a treasure room and the next none; the treasure rooms hold the best loot and Runeforged runes. Type `/structures` to see which structure you are standing in. Hold **Tab** to see the leaderboards; each time the page comes round it shows another one, from diamonds and ancient debris to playtime and fish caught.
 
+## Fishing, legends and treasure
+
+**Fish of Thieves** adds ten kinds of fish in many colours; some live only in certain waters, at night or in storms. Every fish you catch has a size: **Common**, **Uncommon**, **Rare**, **Epic** or **Legendary**. Common fish stay plain and stack as always, Uncommon ones get a green name. Rare and better keep their weight in kg and your name and do not stack, so they work as trophies. A Legendary catch is announced to everyone. Luck of the Sea makes big fish more likely.
+
+Now and then a loot crate comes up on the hook (**Fishing Loot Crates**). Fishing treasure can also be a **message in a bottle** or a **map to buried treasure**.
+
+**Legends**: rare named items hide in dungeon, tavern and town chests, each with an old inscription in grey. Every item belongs to a legend, and more of the same legend are out there; some only come from the sea. Finding one earns Touched by Legend, a whole set earns that legend's own achievement.
+
 ## Your own music
 
 Put your own songs on music discs and goat horns. They play through voice chat, so other players hear them nearby and caves echo.

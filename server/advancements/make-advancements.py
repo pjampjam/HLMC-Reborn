@@ -1,7 +1,8 @@
 """Generate the Holy Lois advancement tab (world datapack holylois-advancements).
 
 Vanilla triggers cover structures, food and holiday blocks. Seats, distance, playtime, streaks, lootboxes and
-first discoveries use "minecraft:impossible" criteria that the onboarding add-on awards.
+first discoveries use "minecraft:impossible" criteria that the onboarding add-on awards. Legend items, bottle messages and fish
+trophies (Holy Lois Extras 1.6.0) are found by their custom_data; the legends come from ../legends/holylois-legends.json.
 Usage: python make-advancements.py OUTPUT_DIR
 """
 import json, shutil, sys
@@ -126,6 +127,35 @@ adv("music/surround_sound", "music/house_party", "minecraft:amethyst_shard", "Su
 adv("fun/night_owl", "root", "minecraft:phantom_membrane", "Night Owl", "Still playing at 3 in the morning (Riga time)", {"done": impossible()}, hidden=True)
 adv("fun/name_day", "root", "minecraft:cake", "Vārda diena", "Log in on your Latvian name day", {"done": impossible()}, hidden=True)
 
+
+
+def holding(snbt):
+    """Any item whose custom_data contains this SNBT (partial match, as vanilla does)."""
+    return {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"predicates": {"minecraft:custom_data": snbt}}]}}
+
+
+LEGENDS = json.loads((Path(__file__).resolve().parent.parent / "legends" / "holylois-legends.json").read_text(encoding="utf-8"))
+PIECES = [(legend, piece) for legend in LEGENDS["legends"] for piece in legend["items"]]
+
+
+def icon_of(piece):
+    return "minecraft:filled_map" if piece["item"] == "treasure_map" else piece["item"]
+
+
+adv("legends/touched_by_legend", "root", "minecraft:bell", "Touched by Legend",
+    "Find an item that once belonged to a legend. More of its kind are out there", {p["id"]: holding("{holylois_legend:%s}" % json.dumps(p["id"])) for _, p in PIECES},
+    frame="goal", any_of=True)
+for legend in LEGENDS["legends"]:
+    count = len(legend["items"])
+    adv("legends/" + legend["id"], "legends/touched_by_legend", icon_of(legend["items"][0]), legend["name"],
+        f"Find all {count} pieces of the legend of {legend['name']}", {p["id"]: holding("{holylois_legend:%s}" % json.dumps(p["id"])) for p in legend["items"]},
+        frame="challenge", hidden=True, xp=300)
+adv("fishing/message_in_a_bottle", "root", "minecraft:paper", "Message in a Bottle", "Fish up a message someone sent to sea", {"found": holding("{holylois_bottle:1b}")})
+adv("fishing/fish_story", "root", "minecraft:cod", "Fish Story", "Catch a Rare fish or better: it keeps its weight forever",
+    {r: holding("{holylois_fish:{rarity:%s}}" % json.dumps(r)) for r in ["rare", "epic", "legendary"]}, any_of=True)
+adv("fishing/the_big_one", "fishing/fish_story", "minecraft:salmon", "The One That Didn't Get Away", "Catch a Legendary fish",
+    {"caught": holding('{holylois_fish:{rarity:"legendary"}}')}, frame="challenge", hidden=True, xp=300)
+
 if out.exists(): shutil.rmtree(out)
 (out / "data/holylois/advancement").mkdir(parents=True)
 (out / "pack.mcmeta").write_text(json.dumps({"pack": {"description": "Holy Lois advancements", "min_format": [121, 0], "max_format": [121, 0]}}, indent=2) + "\n")
@@ -137,4 +167,4 @@ for path, data in ADV.items():
     text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
     assert "\u2014" not in text
     target.write_text(text, encoding="utf-8")
-print(len(ADV), "advancements,", len(TOUR), "Grand Tour sites,", len(MEALS), "meals")
+print(len(ADV), "advancements,", len(TOUR), "Grand Tour sites,", len(MEALS), "meals,", len(LEGENDS["legends"]), "legends")

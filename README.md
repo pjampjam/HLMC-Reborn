@@ -17,6 +17,15 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## What's new in pack 1.8.0 ("Fisch on Holy Lois")
+
+- **Fish of Thieves**: ten kinds of fish in many colours, each with its own waters (biomes, night, storms).
+- **Fishing Loot Crates**: now and then a crate comes up on the hook.
+- **Every fish has a size**: Common, Uncommon, Rare, Epic or Legendary. Rare and better keep their weight in kg and the angler's name and do not stack, so they are trophies. A Legendary catch is announced to everyone; Luck of the Sea makes big fish more likely.
+- **Legends**: rare named items with old inscriptions in dungeon, tavern and town chests. Each belongs to a legend with more pieces out there, some only from the sea. Achievements: Touched by Legend, one per complete legend, Message in a Bottle, Fish Story, The One That Didn't Get Away.
+- **Fishing treasure** can be a message in a bottle or a map to buried treasure.
+- Holy Lois Extras 1.6.0 on both sides. The server restarts for this release and needs pack 1.8.0: open the launcher and click Update.
+
 ## What's new in launcher 1.3.0
 
 - **Fast start**: press Play and Minecraft opens straight from the Holy Lois launcher with your player name. No SKlauncher. Java 25, Minecraft and Fabric come from Mojang and Fabric, are checked by hash and are reused from another launcher on the PC when it already has them. A start window shows each step; if the game crashes, the launcher comes back with a report you can copy.

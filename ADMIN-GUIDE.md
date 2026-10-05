@@ -120,6 +120,16 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Server release for pack 1.8.0
+
+`server/deploy-release-180.py` (run as root from `~/hl-180`; `--check` only runs the pre-checks) installs Fish of Thieves, Fishing Loot Crates and any required library the server does not run yet (jars and SHA-512 from `new-mods.json`, made by `make-pack-180.py` from Modrinth), Holy Lois Extras 1.6.0, `config/holylois-legends.json`, `config/holylois-fish.json`, the advancements (legends and fishing), the new mod ids in `config/holylois-mods.json`, pack minimum 1.8.0 and the MOTD. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails. Test first with `server/stage-and-test-180.py` (loopback copy on port 25566 that checks its own log and stops).
+
+- **Legends** (`server/legends/holylois-legends.json`): each legend has an id, a name, a chat colour and items. An item has an id, a base item (`treasure_map` for a real buried treasure map), a name, lore lines, `where` (`chests`, `fishing` or `both`), a weight, optional enchantments and an optional `light`. `chestChance` (1.2%) is per structure chest (`chestTables`, `*:chests/*`), `crateChance` (5%) per fished loot crate (`crateTables`), `treasureChance` (30%) per vanilla fishing treasure catch, which then becomes a bottle, a map or a fishing legend item by `treasure` weights. Edit the file and run `/legends reload`; run `python server/advancements/make-advancements.py` too when items or legends change, because the achievements are made from the same file.
+- **Fish weights** (`server/legends/holylois-fish.json`): lightest and heaviest kg per species; other edible items in `#minecraft:fishes` or the `fishofthieves` namespace use `fallback`. `curve` 2.5 gives about 76% Common, 13% Uncommon, 7% Rare, 3% Epic and 1% Legendary.
+- **Commands** (operators): `/legends list`, `/legends reload`, `/legends give <item id | bottle | map | fish>`.
+- **Mod check**: Fabric Loader's own built-ins (java, minecraft, fabricloader, mixinextras) are always allowed now, so the hotfix `allow-loader-mods.py` is no longer needed for new lists.
+- Held legend items with `light` glow through LambDynamicLights (`assets/holylois/dynamiclights/item/legend_light.json` in the Extras jar); this is an owner check in game.
+
 ## Server release for pack 1.7.11
 
 `server/deploy-release-1711.py` (run as root from `~/hl-1711`; `--check` only runs the pre-checks). Pack 1.7.11 removes Quick Play: Holy Lois Extras 1.5.1 drops `QuickPlayClient`, launcher 1.2.7 drops the setting and deletes a leftover `holylois-quickplay.json` on Play. The server keeps extras 1.5.0 (the removed part was client-only, so the server behaves the same) and does not restart. The step replaces the MOTD headline that still promised Quick Play, runs `minimotd reload`, puts the old `main.conf` back if the reload fails, and posts the Discord note. Next server release installs extras 1.5.1 or newer with its other changes.
