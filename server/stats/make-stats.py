@@ -74,6 +74,35 @@ def holylois_advancements():
     return found
 
 
+def visible_advancements():
+    """Ids of advancements that show in the advancement screen: definitions with a display block, read from the vanilla jar,
+    the mod jars and the world datapacks. Many mods add display-less advancements as hidden triggers and every tab has a
+    root that is granted on join; counting those made "All advancements" far higher than what players can see.
+    Returns an empty set if no definitions were found, so the caller can fall back to counting everything."""
+    import zipfile
+    pattern = re.compile(r'^data/([a-z0-9_.-]+)/advancements?/(.+)\.json$')
+    found = set()
+
+    def take(name, load):
+        match = pattern.match(name)
+        if not match: return
+        try: data = json.loads(load())
+        except (ValueError, UnicodeDecodeError, OSError, KeyError): return
+        if isinstance(data, dict) and isinstance(data.get('display'), dict): found.add(match.group(1) + ':' + match.group(2))
+
+    packs = WORLD / 'datapacks'
+    archives = [*(ROOT / 'mods').glob('*.jar'), *(ROOT / 'versions').rglob('*.jar'), *(packs.glob('*.zip') if packs.is_dir() else [])]
+    for archive in archives:
+        try:
+            with zipfile.ZipFile(archive) as z:
+                for name in z.namelist(): take(name, lambda n=name: z.read(n))
+        except (OSError, zipfile.BadZipFile): continue
+    for pack in (packs.iterdir() if packs.is_dir() else []):
+        if pack.is_dir():
+            for file in pack.rglob('*.json'): take(file.relative_to(pack).as_posix(), file.read_bytes)
+    return found
+
+
 def when(text):
     try: return datetime.datetime.strptime(text, '%Y-%m-%d %H:%M:%S %z').astimezone(datetime.timezone.utc)
     except (TypeError, ValueError): return None
@@ -89,11 +118,13 @@ def main():
     for uuid, mine in stats.items():
         played = mine.get('minecraft:custom', {})
         if uuid in afk and 'minecraft:play_time' in played: played['minecraft:play_time'] = max(0, played['minecraft:play_time'] - afk[uuid] * 20)
+    visible = visible_advancements()
     for file in (WORLD / 'players/advancements').glob('*.json'):
         if file.stem not in people: continue
         mine = {}
         for key, value in read(file, {}).items():
-            if isinstance(value, dict) and value.get('done') and not key.startswith('minecraft:recipes/') and '/recipes/' not in key:
+            if not (isinstance(value, dict) and value.get('done')): continue
+            if (key in visible) if visible else (not key.startswith('minecraft:recipes/') and '/recipes/' not in key):
                 times = [t for t in map(when, value.get('criteria', {}).values()) if t]
                 mine[key] = max(times) if times else None
         done[file.stem] = mine
