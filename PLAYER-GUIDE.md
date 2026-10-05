@@ -1,8 +1,8 @@
 # Playing Holy Lois: Reborn
 
-For pack 1.7.10 and launcher 1.2.6. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+For pack 1.7.11 and launcher 1.2.7. Start with the [download and setup steps](README.md#download-and-play), then select **Holy Lois: Reborn** in Minecraft Launcher or SKlauncher. The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
 
-With **Quick Play** (the launcher default) you do not need Multiplayer: click Play in the Holy Lois launcher and the game joins by itself once the title screen shows. Choose **Standard** in the launcher **Settings** if you would rather pick the server yourself.
+Click Play in the Holy Lois launcher, start the game from your Minecraft launcher, then open **Multiplayer** and join Holy Lois. Quick Play from launcher 1.2.6 is gone: it never joined by itself. A real one-click start, where the Holy Lois launcher starts the game itself, is coming later.
 
 ## Joining
 

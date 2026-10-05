@@ -120,6 +120,10 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Server release for pack 1.7.11
+
+`server/deploy-release-1711.py` (run as root from `~/hl-1711`; `--check` only runs the pre-checks). Pack 1.7.11 removes Quick Play: Holy Lois Extras 1.5.1 drops `QuickPlayClient`, launcher 1.2.7 drops the setting and deletes a leftover `holylois-quickplay.json` on Play. The server keeps extras 1.5.0 (the removed part was client-only, so the server behaves the same) and does not restart. The step replaces the MOTD headline that still promised Quick Play, runs `minimotd reload`, puts the old `main.conf` back if the reload fails, and posts the Discord note. Next server release installs extras 1.5.1 or newer with its other changes.
+
 ## Server release for pack 1.7.10
 
 `server/deploy-release-1710.py` (run as root from `~/hl-1710`; `--check` only runs the pre-checks) installs onboarding 1.8.0, Holy Lois Extras 1.5.0, `config/holylois-daily.secret`, the datapack with its logo, the new server icon, `max-tick-time=120000`, the AFK-free Tab playtime, the pack-only rule in `rules.txt`, MOTD, then (after the server is up) the Discord bot, `make-stats.py`, `weekly-recap.py` and the lag-guard terrain job, and resumes the terrain job from its Chunky checkpoint. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails.
@@ -128,7 +132,7 @@ Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 - **AFK ledger**: `world/holylois/afk.json` adds one second per AFK second (Essential Commands decides, `auto_afk_time` is 15 minutes, `/afk` too). Playtime for achievements, claims, leaderboards, stats, recap and Tab is vanilla `play_time` minus the ledger, counted from this release on. If Essential Commands is missing the ledger waits and nothing is subtracted.
 - **Secret code**: `/redeem CODE`. The code is HMAC-SHA256 of the UTC date with `config/holylois-daily.secret`, the same as the website (`docs/DAILY-CODE.md` in the website repo; Worker secrets `CODE_SECRET` and `DAILY_CODE=on`). Yesterday's code works until 01:00 UTC. One redeem per UUID per UTC day (`world/holylois/redeem.json`), 5 wrong tries per hour, prize rolled from player and date (coins 50%, lootbox 25%, diamonds 13%, rune find 11.5%, legendary 0.5%). The secret lives in `private/holylois-daily.secret`; never put it in a repository or chat. Rotating it changes every code from that moment.
 - **Terrain job**: slices of 15 minutes with 10 minute rests, 20 minutes when the log shows 100 or more ticks behind (`server/terrain/README.md`). Test with `server/terrain/test-expand-terrain.py` (23 tests).
-- **Launcher 1.2.6**: Play mode in Settings (`holylois-quickplay.json` is written into the game folder for Extras; it is valid for 3 minutes and only for play.holylois.com or mc.holylois.com, removed in Standard mode). Update asks before closing Minecraft and its launcher.
+- **Launcher 1.2.6**: Play mode in Settings (Quick Play, removed again in 1.2.7). Update asks before closing Minecraft and its launcher.
 
 ## Server release for pack 1.7.8
 

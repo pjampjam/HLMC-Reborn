@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.2.6 / pack 1.7.10 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.2.7 / pack 1.7.11 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -11,15 +11,21 @@ A cozy modded Minecraft survival server for friends: claim land on the map, delv
 1. Open the EXE. Choose **Minecraft Launcher** or **SKlauncher** and your optional Desktop and Start menu shortcuts.
 2. Close Minecraft and your Minecraft launcher, then click **Install Holy Lois**.
 3. Click **Play** beneath the logo. Select **Holy Lois: Reborn** in your chosen launcher. In SKlauncher, click **Install** there once to prepare Minecraft and Java, then **Play**.
-4. With **Quick Play** (the default, see Settings) the game joins Holy Lois by itself once the title screen appears. With **Standard**, open Multiplayer and join the saved Holy Lois server (**play.holylois.com**, **mc.holylois.com** works too). Website: https://holylois.com, Discord: https://discord.gg/FzBJSZwY2c
+4. In the game, open Multiplayer and join the saved Holy Lois server (**play.holylois.com**, **mc.holylois.com** works too). Website: https://holylois.com, Discord: https://discord.gg/FzBJSZwY2c
 
 SKlauncher profiles are added automatically. Microsoft Store and desktop Minecraft Launcher installations are detected automatically too; **Settings** has a manual launcher choice if needed. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## What's new in pack 1.7.11
+
+- **Quick Play is removed.** In testing it never joined the server by itself, so Play did the same as the old way. **Launcher 1.2.7** drops the setting: Play opens your Minecraft launcher, then you join from Multiplayer (singleplayer works as before). Holy Lois Extras 1.5.1 no longer contains the Quick Play part.
+- **Coming later**: Integrated start, where the Holy Lois launcher starts the game itself with its own Microsoft sign-in.
+- No server restart for this release.
+
 ## What's new in pack 1.7.10
 
-- **Quick Play**: click Play and the game joins Holy Lois by itself from the title screen, for premium and offline accounts. **Settings** in the launcher has the choice: Quick Play (default), Standard (you pick the server yourself) and Integrated (coming later).
+- ~~Quick Play~~ (removed in 1.7.11, it never joined by itself).
 - **Launcher 1.2.6** closes Minecraft and its launcher for you when an update needs it, after you press **Agree**. Greener Play button, new icons for the launcher and the Minecraft window.
 - **AFK time no longer counts as playing**: achievements, land claims, leaderboards, stats and the Tab list skip it (Essential Commands decides who is AFK; it starts counting from this release).
 - **Secret code**: a code of the day hides somewhere on holylois.com. `/redeem CODE` in game gives one prize per player per day.
