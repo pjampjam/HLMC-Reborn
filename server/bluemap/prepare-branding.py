@@ -27,4 +27,8 @@ if f'"{hook}"' not in text:
     conf.write_text(text)
 (web / 'index.html').write_text(incoming)
 shutil.copy2(args.overlay / 'assets/logo.png', web / 'assets/logo.png')
+if (args.overlay / 'server-icon.png').exists():
+    shutil.copy2(args.overlay / 'server-icon.png', root / 'server-icon.png')
+    override = root / 'config/MiniMOTD/icons/holy-lois.png'
+    if override.exists(): shutil.copy2(args.overlay / 'server-icon.png', override)
 print('Isolated branding overlay prepared:', root)
