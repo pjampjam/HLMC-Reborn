@@ -19,6 +19,8 @@ See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, 
 
 ## What's new in pack 1.8.1
 
+Owner/test automated events are quiet: no join/leave, advancement, discovery or death notices in Discord. Typed chat still forwards.
+
 - Placed relics keep their name, lore and item data when recovered, including after a restart.
 - Fishing Crates give their intended enchanted rewards and stack sizes. Combat teleport checks cover aliases, accepted requests and delayed moves.
 - Login/register screens quiet world audio. First-person aiming, live maps and fishing lines work with the visible body; fishing also follows the rendered rod in third person.

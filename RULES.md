@@ -27,7 +27,7 @@ restored from logs and backups where possible. pjampjam has the final say.
 - Your Minecraft name and account ID, and the IP address you connect from (to protect logins and enforce bans).
 - Server logs, including chat and commands, and a log of block changes and container use (to investigate griefing).
 - World backups, stored on the server and in the owner's private cloud storage.
-- Game chat, joins, leaves, deaths and advancements are also shown in the Holy Lois Discord (#minecraft-chat).
+- Game chat and player events are also shown in Holy Lois Discord (#minecraft-chat). Owner/test automatic join, leave, advancement, discovery and death notices are omitted; typed chat remains shared.
 - Voice chat is not recorded. Nothing is sold.
 - Public statistics show game numbers and head images from selected server skins. Owner/test and configured hidden accounts are excluded; game progress is kept. Player privacy commands remain planned.
 

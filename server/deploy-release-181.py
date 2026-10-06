@@ -13,6 +13,7 @@ HEADLINE='<#FFAD42>✦ New:</#FFAD42> <white>Relics restored, smoother adventure
 MOTD=ROOT/'config/MiniMOTD/main.conf'
 MINIMUM=ROOT/'config/holylois-pack.json'
 HIDDEN=ROOT/'config/holylois-stats-hidden.json'
+QUIET=ROOT/'config/holylois-quiet.json'
 STATS=Path('/usr/local/lib/holylois/make-stats.py')
 RULES=ROOT/'config/essentialcommands/rules.txt'
 BOT_RULES=Path('/opt/holylois-bot/RULES.md')
@@ -40,6 +41,9 @@ def main():
     hidden=json.loads(HIDDEN.read_text()) if HIDDEN.exists() else {'names':[]}
     assert isinstance(hidden.get('names'),list)
     hidden['names']=sorted(set(hidden['names'])|set(defaults))
+    quiet=json.loads(QUIET.read_text()) if QUIET.exists() else {'names':[]}
+    assert isinstance(quiet.get('names'),list)
+    quiet['names']=sorted(set(quiet['names'])|set(json.loads((KIT/'holylois-quiet.json').read_text())['names']))
     print('Online players:',previous.online_players(),flush=True)
     if sys.argv[1:]==['--check']:
         print('All pre-checks passed; nothing changed.',flush=True);return
@@ -50,7 +54,7 @@ def main():
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     backup=Path('/opt/minecraft-backups/maintenance')/('release181-'+stamp);backup.mkdir(mode=0o700)
     archive=backup/'complete-server.tar'
-    saved=[*(old for _,old in pairs),MOTD,MINIMUM,HIDDEN,STATS,RULES,BOT_RULES]
+    saved=[*(old for _,old in pairs),MOTD,MINIMUM,HIDDEN,QUIET,STATS,RULES,BOT_RULES]
     existed={p:p.exists() for p in saved}; installed=[]
     timer_active=subprocess.run(['systemctl','is-active','--quiet','holylois-stats.timer']).returncode==0
     MAINTENANCE.touch()
@@ -77,10 +81,11 @@ def main():
         run('install','-o','minecraft','-g','minecraft','-m','644',str(KIT/'rules.txt'),str(RULES))
         run('install','-m','644',str(KIT/'RULES.md'),str(BOT_RULES))
         HIDDEN.write_text(json.dumps(hidden,indent=2)+'\n')
+        QUIET.write_text(json.dumps(quiet,indent=2)+'\n')
         MINIMUM.write_text(json.dumps({'minimum':'1.8.1'})+'\n')
         text,count=re.subn(r'(?m)^(\s*line2=).*$',lambda m:m[1]+json.dumps(HEADLINE,ensure_ascii=False),MOTD.read_text(),count=1)
         assert count==1;MOTD.write_text(text)
-        run('chown','minecraft:minecraft',str(HIDDEN),str(MINIMUM),str(MOTD))
+        run('chown','minecraft:minecraft',str(HIDDEN),str(QUIET),str(MINIMUM),str(MOTD))
         since=datetime.datetime.now(datetime.timezone.utc).isoformat()
         run('systemctl','start','minecraft-console.socket','minecraft.service')
         log=previous.wait_for_start(since)

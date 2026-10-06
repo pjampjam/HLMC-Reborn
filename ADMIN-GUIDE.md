@@ -122,6 +122,8 @@ Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
 ## Server release for pack 1.8.1
 
+`config/holylois-quiet.json` includes pjampjam and pjamtest. The existing hot-reload suppresses join/leave, AFK, advancement and discovery broadcasts. Discord also omits their automatic death notices and status-list entries. Typed chat still forwards; in-game death messages retain the previous policy. Existing additional quiet names are preserved. The follow-up config was tested in the isolated copy and against synthetic Discord events, then applied with exact restore bytes from the verified 1.8.1 backup; no further restart.
+
 `server/deploy-release-181.py` installs Extras 1.6.1 and onboarding 1.8.1, statistics exports/visibility defaults, pack minimum 1.8.1 and the MOTD. Auth UI 1.0.4 is client-only. The loopback regression probe covers relic recovery/restart, crate rewards, combat teleports, protected mob damage/push and radio controls/caps. Deployment takes a full verified backup and restores changed files automatically if startup fails. Keep launcher/app-stable 1.3.1 unchanged and move pack-stable immediately after a healthy server start.
 
 Owner/test exclusions merge with `/etc/holylois/stats-hidden.txt` and `config/holylois-stats-hidden.json`; they remove public rankings, totals, discoveries and head exports without deleting game progress. SkinsRestorer remains the skin store. The bridge exports only vetted Mojang texture URLs to `world/holylois/skin-textures.json`, with no authentication data. Personal privacy commands, nickname migration and password recovery grants are not implemented in this patch.

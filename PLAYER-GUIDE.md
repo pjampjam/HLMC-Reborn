@@ -164,6 +164,8 @@ Sorting remains available in your inventory. Profile overlays, matching-item hov
 
 ## Pack 1.8.1 fixes
 
+Owner/test join, leave, advancement and discovery broadcasts are suppressed. Discord also omits their automatic death messages and status entries. Typed chat stays visible; in-game death messages keep their previous behaviour.
+
 Placed relics keep their full item data when recovered. Fishing Crates retain intended enchantments and stack counts. Combat protection also checks accepted and delayed teleports. Login/register screens quiet world audio without changing your volume settings. First-person bow aiming and filled maps are compatible with the visible-body view, and fishing lines follow the actual rod pose in either camera.
 
 Other players' claim overlays appear only after the map has cached terrain there; your own claims remain visible. Untrusted players cannot directly push or deal player-attributed damage to mobs inside protected claims. This is not immunity to every environmental hazard or other mod.
