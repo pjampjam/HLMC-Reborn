@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.3.0 / pack 1.7.11 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.3.1 / pack 1.8.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -25,6 +25,10 @@ See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, 
 - **Legends**: rare named items with old inscriptions in dungeon, tavern and town chests. Each belongs to a legend with more pieces out there, some only from the sea. Achievements: Touched by Legend, one per complete legend, Message in a Bottle, Fish Story, The One That Didn't Get Away.
 - **Fishing treasure** can be a message in a bottle or a map to buried treasure.
 - Holy Lois Extras 1.6.0 on both sides. The server restarts for this release and needs pack 1.8.0: open the launcher and click Update.
+
+## What's new in launcher 1.3.1
+
+- Handmade server-list icon, matching the refreshed website and BlueMap branding. No gameplay changes.
 
 ## What's new in launcher 1.3.0
 
