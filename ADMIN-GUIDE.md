@@ -120,6 +120,12 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Server release for pack 1.8.1
+
+`server/deploy-release-181.py` installs Extras 1.6.1 and onboarding 1.8.1, statistics exports/visibility defaults, pack minimum 1.8.1 and the MOTD. Auth UI 1.0.4 is client-only. The loopback regression probe covers relic recovery/restart, crate rewards, combat teleports, protected mob damage/push and radio controls/caps. Deployment takes a full verified backup and restores changed files automatically if startup fails. Keep launcher/app-stable 1.3.1 unchanged and move pack-stable immediately after a healthy server start.
+
+Owner/test exclusions merge with `/etc/holylois/stats-hidden.txt` and `config/holylois-stats-hidden.json`; they remove public rankings, totals, discoveries and head exports without deleting game progress. SkinsRestorer remains the skin store. The bridge exports only vetted Mojang texture URLs to `world/holylois/skin-textures.json`, with no authentication data. Personal privacy commands, nickname migration and password recovery grants are not implemented in this patch.
+
 ## Server release for pack 1.8.0
 
 `server/deploy-release-180.py` (run as root from `~/hl-180`; `--check` only runs the pre-checks) installs Fish of Thieves, Fishing Loot Crates and any required library the server does not run yet (jars and SHA-512 from `new-mods.json`, made by `make-pack-180.py` from Modrinth), Holy Lois Extras 1.6.0, `config/holylois-legends.json`, `config/holylois-fish.json`, the advancements (legends and fishing), the new mod ids in `config/holylois-mods.json`, pack minimum 1.8.0 and the MOTD. Same safety as earlier releases: 0 players or a one-minute countdown, complete verified backup, rollback if startup fails. Test first with `server/stage-and-test-180.py` (loopback copy on port 25566 that checks its own log and stops).
@@ -200,7 +206,7 @@ Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 - **Restart call**: every restart, planned or not, is announced once in Discord with "Maaarek nahhul!".
 - **Daily gifts and events**: `world/holylois/daily.json` (streaks) and `world/holylois/events.json` (holiday gifts, day counter). Time and weather pause while the server is empty, so the day counter follows real play.
 - **Economy**: EconomyCraft with the admin shop and sidebar scoreboard off (`config/economycraft/config.json`). Item prices are in `prices.json`.
-- **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once (held and placed together). Placed boomboxes that are switched on are listed in `world/holylois/boomboxes.json`.
+- **Boombox stations**: `config/holylois-boombox.json`, then `/boombox reload`. Plain MP3 streams only; at most 6 play at once (held and placed together), and at most 2 placed speakers per chunk by default (`maxPlayingPerChunk`). Controls follow effective OPAC access. Placed boomboxes that are switched on are listed in `world/holylois/boomboxes.json`.
 - **Server list line**: `line2` in `config/MiniMOTD/main.conf` always announces the newest exciting change; update it with every release.
 - **/donate** (named `/support` before 1.7.4): the wallet addresses and the hover help per network live in `DonateCommand.java` (onboarding add-on); keep holylois.com/donate in sync. Donations never buy anything in game (Minecraft server rules).
 - **Restart countdown**: release scripts show a one-minute boss bar when players are online. Custom boss bars are saved in the world, so the scripts remove `holylois:restart` before stopping; if one is ever stuck, run `bossbar remove holylois:restart`.

@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.3.1 / pack 1.8.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.3.1 / pack 1.8.1 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -16,6 +16,17 @@ A cozy modded Minecraft survival server for friends: claim land on the map, delv
 SKlauncher is no longer needed. Players who already use it keep their name, worlds and settings, and **Settings** can switch Play back to opening SKlauncher. **Settings** also has the player name with its history, **Join Holy Lois on start** (turn it off for singleplayer) and **Help and reports** for a crash report to send on Discord. English is the default, with Russian and Latvian available on the main screen.
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
+
+## What's new in pack 1.8.1
+
+- Placed relics keep their name, lore and item data when recovered, including after a restart.
+- Fishing Crates give their intended enchanted rewards and stack sizes. Combat teleport checks cover aliases, accepted requests and delayed moves.
+- Login/register screens quiet world audio. First-person aiming, live maps and fishing lines work with the visible body; fishing also follows the rendered rod in third person.
+- Claims protect placed-radio controls and prevent untrusted players from pushing or dealing player-attributed damage to mobs inside them. Protection messages are shorter.
+- At most two placed boomboxes play per chunk, with six total streams server-wide. Other players' claim overlays appear only over explored map terrain.
+- Owner/test accounts stay out of public stats and rankings. Stats head images use the skin saved through `/skin` or `/skins`.
+- Singleplayer preparation avoids the installed REI tag-cache race. The window icon uses its largest handmade image.
+- Shader water and Distant Horizons settings retain their previous behaviour. Launcher 1.3.1 stays unchanged.
 
 ## What's new in pack 1.8.0 ("Fisch on Holy Lois")
 

@@ -6,6 +6,8 @@ The game connection address and this public GitHub account are intentionally pub
 
 Before publishing, run `python scripts/check_public_data.py`. To check a prepared archive, run `python scripts/check_public_data.py path/to/archive.zip`. The check also examines nested archives and prints filenames without printing matching secret values. This is a bounded check, not a guarantee against every possible disclosure.
 
+Public statistics omit owner/test and configured hidden accounts. Selected server skins may publish a vetted Mojang texture URL for the head image; no skin signatures or authentication data are exported. Player privacy/disguise commands remain planned.
+
 GitHub secret scanning and push protection remain enabled. Public release builds omit debug symbols to avoid embedding local build paths. Review new configs and images before sharing. Never upload the entire game or server directory.
 
 Existing downloads, clones, forks and GitHub caches cannot be erased by editing the repository. If a credential was published, revoke it immediately and contact GitHub Support if additional cache removal is needed.

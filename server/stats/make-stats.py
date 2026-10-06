@@ -12,6 +12,7 @@ ROOT = Path(sys.argv[1]) if len(sys.argv) > 2 else Path('/opt/minecraft')
 OUT = Path(sys.argv[-1])
 WORLD = ROOT / 'world'
 HIDDEN_FILE = Path('/etc/holylois/stats-hidden.txt')
+HIDDEN_CONFIG = ROOT / 'config/holylois-stats-hidden.json'
 SLURS = re.compile(r'n[i1!]gg|f[a@]gg?[o0]t|f[a@]g$|r[e3]t[a@]rd|p[i1]d[o0a]r|п[иі]д[оа]р|k[i1]ke|ch[i1]nk|tr[a@]nny', re.I)
 TOP = 5
 PACK_FEED = 'https://github.com/pjampjam/HLMC-Reborn/releases/download/pack-stable/pack.json'
@@ -27,8 +28,15 @@ def mask(name):
     return name[0].upper() + '*****'
 
 
-def names():
+def hidden_names():
     hidden = {line.strip().lower() for line in HIDDEN_FILE.read_text().splitlines() if line.strip()} if HIDDEN_FILE.exists() else set()
+    hidden.update({'pjampjam', 'pjamtest'})
+    hidden.update(name.lower() for name in read(HIDDEN_CONFIG, {}).get('names', []) if isinstance(name, str))
+    return hidden
+
+
+def names():
+    hidden = hidden_names()
     result, raw = {}, {}
     for entry in read(ROOT / 'usercache.json', []):
         name = entry.get('name', '')
@@ -170,8 +178,10 @@ def main():
     rarest = sorted(earned, key=lambda a: (a['earned_by'], a['first']['date'] or ''))[:3]
 
     firsts = []
+    hidden = hidden_names()
     for entry in read(WORLD / 'holylois/discoveries.json', {}).get('found', []):
         name = entry.get('player', '')
+        if name.lower() in hidden: continue
         firsts.append({'what': entry.get('name', ''), 'player': shown_as.get(name, 'Someone'),
                        'date': datetime.datetime.fromtimestamp(entry.get('time', 0), datetime.timezone.utc).date().isoformat()})
     firsts.sort(key=lambda f: f['date'], reverse=True)
@@ -185,6 +195,7 @@ def main():
         pass
 
     everyone = list(stats)
+    skin_textures = read(WORLD / 'holylois/skin-textures.json', {})
     report = {
         'pack': pack,
         'generated': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
@@ -201,6 +212,9 @@ def main():
             'cake_slices': sum(custom(u, 'eat_cake_slice') for u in everyone),
             'achievements_earned': sum(a['earned_by'] for a in achievements),
         },
+        'heads': {name: texture for uid, name in people.items()
+                  for texture in [skin_textures.get(uid)]
+                  if isinstance(texture, str) and re.fullmatch(r'https://textures\.minecraft\.net/texture/[a-fA-F0-9]{32,128}', texture) and not SLURS.search(name)},
         'leaderboards': leaderboards,
         'achievements': {'total': len(defined), 'rarest': rarest, 'list': achievements},
         'world_firsts': firsts[:20],

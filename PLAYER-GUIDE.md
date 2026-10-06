@@ -128,6 +128,8 @@ Craft a boombox from string (top), iron ingot + jukebox + iron ingot (middle) an
 - **Carry it**: hold it in either hand and right-click the air to play internet radio. Everyone in earshot hears it through voice chat (16 blocks at volume 1, about 30 at the default 5, 48 at volume 10), and it follows you. Right-click again for the next station, sneak + right-click to stop. Sneak + scroll while holding it, or while looking at a placed one, sets its volume from 1 to 10; louder also reaches further. It stops when you drop it or put it away.
 - **Set it down**: right-click a block with it. Right-click the placed boombox to play or switch stations; sneak with an empty hand and right-click to turn it off. It keeps playing while anyone is nearby, even after a restart. Break it to pick it up again.
 
+Placed radio controls follow claim permissions. At most two placed boomboxes can play in one chunk; at most six streams play server-wide, including held radios.
+
 The song title shows above your hotbar, music notes float from a playing boombox, and the game's own music pauses while a boombox plays near you. Your own Boombox volume slider is in the voice chat settings (press V, then the volume button). `/boombox stations` lists the stations.
 
 ## Achievements and recipes
@@ -159,3 +161,11 @@ You can launch the saved pack directly from Minecraft Launcher or SKlauncher aft
 If the SKlauncher entry was deleted or moved, close both Minecraft and SKlauncher and use **Repair / check files** in Holy Lois. It restores the managed files and adds the Holy Lois profile automatically.
 
 Sorting remains available in your inventory. Profile overlays, matching-item hover highlights, slot locking, continuous crafting and failed-replacement alerts are off by default. Tools and armor show quiet remaining/max durability numbers in their tooltips. When a tool breaks, an unenchanted spare of the same kind from your inventory takes its place (lowest material first, then the most worn), with a soft chime. Enchanted tools are never swapped in for you. Enchantment descriptions show while you hold Shift over an item.
+
+## Pack 1.8.1 fixes
+
+Placed relics keep their full item data when recovered. Fishing Crates retain intended enchantments and stack counts. Combat protection also checks accepted and delayed teleports. Login/register screens quiet world audio without changing your volume settings. First-person bow aiming and filled maps are compatible with the visible-body view, and fishing lines follow the actual rod pose in either camera.
+
+Other players' claim overlays appear only after the map has cached terrain there; your own claims remain visible. Untrusted players cannot directly push or deal player-attributed damage to mobs inside protected claims. This is not immunity to every environmental hazard or other mod.
+
+Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Owner and test accounts are excluded from statistics and rankings. Personal privacy toggles and account rename/recovery forms remain planned.

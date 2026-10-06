@@ -28,6 +28,7 @@ restored from logs and backups where possible. pjampjam has the final say.
 - Server logs, including chat and commands, and a log of block changes and container use (to investigate griefing).
 - World backups, stored on the server and in the owner's private cloud storage.
 - Game chat, joins, leaves, deaths and advancements are also shown in the Holy Lois Discord (#minecraft-chat).
-- Voice chat is not recorded. Nothing is sold or shared with anyone.
+- Voice chat is not recorded. Nothing is sold.
+- Public statistics show game numbers and head images from selected server skins. Owner/test and configured hidden accounts are excluded; game progress is kept. Player privacy commands remain planned.
 
 Questions or a ban appeal: `/support MESSAGE` in game, or message pjampjam on Discord (https://discord.gg/FzBJSZwY2c).
