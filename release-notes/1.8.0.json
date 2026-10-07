@@ -1,0 +1,36 @@
+{
+  "version": "1.8.0",
+  "date": "2026-10-06",
+  "locales": {
+    "en": {
+      "summary": "New fish, trophy catches and hidden relics.",
+      "teaser": "Fishing and hidden relics",
+      "changes": [
+        "Catch ten kinds of fish in different waters, weather and times of day.",
+        "Fish range from Common to Legendary in size. Rare catches keep their weight and your name as trophies.",
+        "Reel in loot crates, messages in bottles and buried treasure maps.",
+        "Find named relics in dungeon, tavern and town chests. Complete their sets to earn achievements."
+      ]
+    },
+    "ru": {
+      "summary": "Новые рыбы, трофейные уловы и скрытые реликвии.",
+      "teaser": "Рыбалка и реликвии",
+      "changes": [
+        "Ловите десять видов рыб в разных водоёмах, при разной погоде и в разное время суток.",
+        "Размеры рыб варьируются от обычных до легендарных. Редкие уловы сохраняют вес и ваше имя как трофеи.",
+        "Вылавливайте ящики с добычей, послания в бутылках и карты сокровищ.",
+        "Находите именные реликвии в сундуках подземелий, таверн и городов. Собирайте наборы для достижений."
+      ]
+    },
+    "lv": {
+      "summary": "Jaunas zivis, trofeju lomi un paslēptas relikvijas.",
+      "teaser": "Makšķerēšana un relikvijas",
+      "changes": [
+        "Ķeriet desmit zivju veidus dažādos ūdeņos, laikapstākļos un diennakts laikos.",
+        "Zivju izmēri ir no parasta līdz leģendāram. Reti lomi saglabā svaru un jūsu vārdu kā trofejas.",
+        "Izvelciet laupījuma kastes, vēstules pudelēs un aprakto dārgumu kartes.",
+        "Atrodiet nosauktas relikvijas pazemes, tavernu un pilsētu lādēs. Savāciet komplektus, lai iegūtu sasniegumus."
+      ]
+    }
+  }
+}

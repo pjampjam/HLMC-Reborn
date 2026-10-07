@@ -1,4 +1,4 @@
-"""Holy Lois server release for pack 1.8.0 "Fisch on Holy Lois". Run as root on the server from ~/hl-180.
+"""Holy Lois server release for pack 1.8.0 "Fishing and hidden relics". Run as root on the server from ~/hl-180.
 
 - Fish of Thieves and Fishing Loot Crates (both sides), plus any required library the server does not run yet. The jars and their
   SHA-512 come from new-mods.json (make-pack-180.py on the owner's PC, straight from Modrinth).
@@ -151,7 +151,7 @@ def main():
 
     console(f'bossbar remove {BAR}', 'gamerule send_command_feedback true')
     MAINTENANCE.unlink(missing_ok=True)
-    message = ("**Holy Lois 1.8.0 is live: Fisch on Holy Lois!** Close Minecraft, open the launcher and click Update.\n"
+    message = ("**Holy Lois 1.8.0 is live: Fishing and hidden relics!** Close Minecraft, open the launcher and click Update.\n"
                "- Fish of Thieves: ten new kinds of fish with colour variants, each with its own waters (biomes, night, storms)\n"
                "- Fishing Loot Crates: now and then a crate comes up on the hook\n"
                "- Every fish has a size now. Rare, Epic and Legendary catches keep their weight in kg and your name: trophies. "

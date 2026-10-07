@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, delve into dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.3.1 / pack 1.8.1 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.3.1 / pack 1.8.2 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -17,31 +17,30 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
-## Next candidate: pack 1.8.2
+## What's new in pack 1.8.2
 
-Party-friendly combat, an optional health/food HUD and private expiring rally points; clearer daily reward delivery; bounded voice reconnect help; and simpler localized website release notes. Prepared and tested in isolation, not deployed. The current live version above remains1.8.1.
+- Party members are protected from friendly fire, with an optional health and food panel.
+- Use /rally to share a meeting point with your party for 90 seconds.
+- Daily supplies appear in a clear reward card, with daily coins claimed through their existing reward system.
+- Voice chat can recover its connection after login; /voicefix requests another attempt.
+- Cleaner login messages and matching release news across the website and launcher.
 
 ## What's new in pack 1.8.1
 
-Owner/test automated events are quiet: no join/leave, advancement, discovery or death notices in Discord. Typed chat still forwards.
+- Placed relics keep their name and lore.
+- Fishing crates give their proper enchanted rewards.
+- Bows, maps and fishing rods work better with the first-person body view.
+- Combat teleports and land protection behave more reliably.
+- Login and registration quiet world sounds.
+- At most two placed boomboxes play per chunk, with six streams across the server.
+- Your selected server skin appears on your statistics head.
 
-- Placed relics keep their name, lore and item data when recovered, including after a restart.
-- Fishing Crates give their intended enchanted rewards and stack sizes. Combat teleport checks cover aliases, accepted requests and delayed moves.
-- Login/register screens quiet world audio. First-person aiming, live maps and fishing lines work with the visible body; fishing also follows the rendered rod in third person.
-- Claims protect placed-radio controls and prevent untrusted players from pushing or dealing player-attributed damage to mobs inside them. Protection messages are shorter.
-- At most two placed boomboxes play per chunk, with six total streams server-wide. Other players' claim overlays appear only over explored map terrain.
-- Owner/test accounts stay out of public stats and rankings. Stats head images use the skin saved through `/skin` or `/skins`.
-- Singleplayer preparation avoids the installed REI tag-cache race. The window icon uses its largest handmade image.
-- Shader water and Distant Horizons settings retain their previous behaviour. Launcher 1.3.1 stays unchanged.
+## What's new in pack 1.8.0
 
-## What's new in pack 1.8.0 ("Fisch on Holy Lois")
-
-- **Fish of Thieves**: ten kinds of fish in many colours, each with its own waters (biomes, night, storms).
-- **Fishing Loot Crates**: now and then a crate comes up on the hook.
-- **Every fish has a size**: Common, Uncommon, Rare, Epic or Legendary. Rare and better keep their weight in kg and the angler's name and do not stack, so they are trophies. A Legendary catch is announced to everyone; Luck of the Sea makes big fish more likely.
-- **Legends**: rare named items with old inscriptions in dungeon, tavern and town chests. Each belongs to a legend with more pieces out there, some only from the sea. Achievements: Touched by Legend, one per complete legend, Message in a Bottle, Fish Story, The One That Didn't Get Away.
-- **Fishing treasure** can be a message in a bottle or a map to buried treasure.
-- Holy Lois Extras 1.6.0 on both sides. The server restarts for this release and needs pack 1.8.0: open the launcher and click Update.
+- Catch ten kinds of fish in different waters, weather and times of day.
+- Fish range from Common to Legendary in size. Rare catches keep their weight and your name as trophies.
+- Reel in loot crates, messages in bottles and buried treasure maps.
+- Find named relics in dungeon, tavern and town chests. Complete their sets to earn achievements.
 
 ## What's new in launcher 1.3.1
 

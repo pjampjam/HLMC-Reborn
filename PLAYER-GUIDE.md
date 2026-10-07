@@ -162,9 +162,9 @@ If the SKlauncher entry was deleted or moved, close both Minecraft and SKlaunche
 
 Sorting remains available in your inventory. Profile overlays, matching-item hover highlights, slot locking, continuous crafting and failed-replacement alerts are off by default. Tools and armor show quiet remaining/max durability numbers in their tooltips. When a tool breaks, an unenchanted spare of the same kind from your inventory takes its place (lowest material first, then the most worn), with a soft chime. Enchanted tools are never swapped in for you. Enchantment descriptions show while you hold Shift over an item.
 
-## Prepared for pack 1.8.2: adventuring together
+## Adventuring together (pack 1.8.2)
 
-This section describes the candidate, not the current live server. Create a party with `/oparties create`, invite a friend with `/oparties invite NAME`, and use the existing OPAC party interface (press '). Membership is shared with claims; there is no second party account/database.
+Create a party with `/oparties create`, invite a friend with `/oparties invite NAME`, and use the existing OPAC party interface (press '). Membership is shared with claims; there is no second party account/database.
 
 Party members are protected from player-attributed damage and harmful effects. Healing still works. This covers normal melee, attributed projectiles and harmful potion effects, not every environmental trap or effect from another mod. Leave the party before an agreed PvP duel.
 
@@ -178,10 +178,8 @@ Voice recovery retries the existing mod handshake after authentication when ther
 
 ## Pack 1.8.1 fixes
 
-Owner/test join, leave, advancement and discovery broadcasts are suppressed. Discord also omits their automatic death messages and status entries. Typed chat stays visible; in-game death messages keep their previous behaviour.
-
 Placed relics keep their full item data when recovered. Fishing Crates retain intended enchantments and stack counts. Combat protection also checks accepted and delayed teleports. Login/register screens quiet world audio without changing your volume settings. First-person bow aiming and filled maps are compatible with the visible-body view, and fishing lines follow the actual rod pose in either camera.
 
 Other players' claim overlays appear only after the map has cached terrain there; your own claims remain visible. Untrusted players cannot directly push or deal player-attributed damage to mobs inside protected claims. This is not immunity to every environmental hazard or other mod.
 
-Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Owner and test accounts are excluded from statistics and rankings. Personal privacy toggles and account rename/recovery forms remain planned.
+Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles and account rename/recovery forms remain planned.
