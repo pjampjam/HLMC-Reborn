@@ -17,6 +17,12 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## Prepared next: pack 1.8.3 and launcher 1.3.2
+
+Saved skins on rejoin, simpler `/party` and `/group` commands, selected skin markers on BlueMap, clearer guides and tidier head/copy-button layouts. Launcher startup windows use the compact crowned HL icon; its sidebar keeps one wordmark with REBORN below.
+
+Not deployed. Homes and rally travel remain the following feature batch; `/rally` currently marks a meeting point without teleporting.
+
 ## What's new in pack 1.8.2
 
 - Party members are protected from friendly fire, with an optional health and food panel.

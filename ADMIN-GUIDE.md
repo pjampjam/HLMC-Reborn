@@ -120,6 +120,16 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Prepared server candidate 1.8.3
+
+Onboarding 1.8.3 carries `/party` and `/group` redirects to native OPAC, installed after command registration and after successful datapack reloads. Existing command roots are preserved. Membership, permissions and claim access remain native; no migration.
+
+The SkinsRestorer 15.12.6/Fabric 26.3 compatibility hook carries the returned skin profile into vanilla's `authenticatedProfile` field before login finishes. It checks the same UUID and activates only for installed version 15.12.6. Upstream issue 2162 / PR 2163 describes the fix; remove the workaround after verifying a released upstream fix.
+
+BlueMap gets a selected-skin provider through its supported API. Skin URLs are vetted Mojang textures; downloads are bounded and redirects rejected. No signatures/authentication records are exported. Native skin fallback, icon factory, player visibility and marker refresh timing remain. Launcher head previews are not implemented. Native map render consumers remain disabled in the isolated probe; real marker appearance is an owner check.
+
+Published channels and live server remain 1.8.2 until a separately approved deployment. The launcher 1.3.2 candidate is local; its Defender custom scan could not complete and must not be recorded as passed.
+
 ## Server release for pack 1.8.2
 
 Extras 1.6.2, onboarding 1.8.2 and client Auth UI 1.0.5 are live. Party membership comes from OPAC; snapshots require authenticated exact-party membership. No allied-party/outsider health or rally delivery. One transient mark per party,90sec expiry,10sec sender cooldown, cleared on sender departure or server stop. HUD updates every10ticks, with bounded64-member payloads. No passive member coordinates in this payload; OPAC's pre-existing location settings remain separate.

@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-For pack 1.7.11 and launcher 1.3.0. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+Guide for candidate pack 1.8.3 and launcher 1.3.2. Live remains pack 1.8.2 / launcher 1.3.1 until deployment. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
 
 Click **Play** in the Holy Lois launcher. With a player name, Minecraft opens straight from the launcher and joins Holy Lois by itself. With a bought Minecraft account, Minecraft Launcher opens: pick **Holy Lois: Reborn**, press Play, and the game joins by itself too. For singleplayer, turn off **Join Holy Lois on start** in Settings.
 
@@ -18,10 +18,13 @@ On your first registration, wait for the arrival screen to finish while the serv
 | --- | --- |
 | **V** | Choose your microphone, output device and voice settings. |
 | **Hold Caps Lock** | Talk to nearby players. |
-| **Page Down** | Show or hide your body in first person. |
+| **Page Down** | Switch between full-body and classic hand view. |
 | **Tab** | Player list with your ping, server TPS and uptime, playtime, the day, server location, Latvian name days and leaderboards. |
 | **J** | Open the world map. |
-| **Y** / **U** / **Z** | Minimap settings, waypoint list, larger minimap. |
+| **Y** / **Z** | Minimap settings / larger minimap. |
+| **U** | Uses for the hovered item in inventory; waypoint list in the world. |
+| **R** | Recipes for the hovered item; sort inventory on an empty slot. |
+| **'** | Party and claims menu. |
 | **M** | Mute your microphone (unchanged). |
 | **C** | Zoom. |
 | **Hold `** (left of 1) | Mine the whole ore vein or tree while breaking a block. The HUD shows how many blocks will break. |
@@ -71,7 +74,7 @@ You don't need a team to claim. Everyone, admins included, claims under the same
 
 **How much land?** Everyone gets **16 chunks free**, earns **1 more for every 2 hours played** (up to 48), and can buy more with coins: `/claims` shows your numbers, `/claims buy` buys the next chunk (500 coins, each next one 15% more) and `/claims sell` sells one back for half price.
 
-**Teams:** `/oparties create`, then `/oparties invite NAME`. Team members can build on each other's land. When you walk into someone's land, the zone title at the top of the screen says whose it is; outside claims it says **Wilderness**.
+**Teams:** `/party create`, then `/party invite NAME`. Team members can build on each other's land. When you walk into someone's land, the zone title at the top of the screen says whose it is; outside claims it says **Wilderness**.
 
 See the [Open Parties and Claims wiki](https://github.com/thexaero/open-parties-and-claims/wiki) for every option.
 
@@ -164,7 +167,7 @@ Sorting remains available in your inventory. Profile overlays, matching-item hov
 
 ## Adventuring together (pack 1.8.2)
 
-Create a party with `/oparties create`, invite a friend with `/oparties invite NAME`, and use the existing OPAC party interface (press '). Membership is shared with claims; there is no second party account/database.
+Create a party with `/party create`, invite a friend with `/party invite NAME`, and use the existing OPAC party interface (press '). Membership is shared with claims; there is no second party account/database.
 
 Party members are protected from player-attributed damage and harmful effects. Healing still works. This covers normal melee, attributed projectiles and harmful potion effects, not every environmental trap or effect from another mod. Leave the party before an agreed PvP duel.
 
@@ -183,3 +186,7 @@ Placed relics keep their full item data when recovered. Fishing Crates retain in
 Other players' claim overlays appear only after the map has cached terrain there; your own claims remain visible. Untrusted players cannot directly push or deal player-attributed damage to mobs inside protected claims. This is not immunity to every environmental hazard or other mod.
 
 Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles and account rename/recovery forms remain planned.
+
+## Candidate 1.8.3: skins and simpler commands
+
+`/party` and `/group` are aliases of the existing party commands; `/oparties` remains supported. These share membership, permissions and land access. Your saved `/skin` choice is restored on rejoin. BlueMap uses that selection when its marker refreshes; the current marker design stays the same.
