@@ -17,6 +17,10 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
+## Next candidate: pack 1.8.2
+
+Party-friendly combat, an optional health/food HUD and private expiring rally points; clearer daily reward delivery; bounded voice reconnect help; and simpler localized website release notes. Prepared and tested in isolation, not deployed. The current live version above remains1.8.1.
+
 ## What's new in pack 1.8.1
 
 Owner/test automated events are quiet: no join/leave, advancement, discovery or death notices in Discord. Typed chat still forwards.

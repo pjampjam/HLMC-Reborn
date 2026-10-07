@@ -162,6 +162,20 @@ If the SKlauncher entry was deleted or moved, close both Minecraft and SKlaunche
 
 Sorting remains available in your inventory. Profile overlays, matching-item hover highlights, slot locking, continuous crafting and failed-replacement alerts are off by default. Tools and armor show quiet remaining/max durability numbers in their tooltips. When a tool breaks, an unenchanted spare of the same kind from your inventory takes its place (lowest material first, then the most worn), with a soft chime. Enchanted tools are never swapped in for you. Enchantment descriptions show while you hold Shift over an item.
 
+## Prepared for pack 1.8.2: adventuring together
+
+This section describes the candidate, not the current live server. Create a party with `/oparties create`, invite a friend with `/oparties invite NAME`, and use the existing OPAC party interface (press '). Membership is shared with claims; there is no second party account/database.
+
+Party members are protected from player-attributed damage and harmful effects. Healing still works. This covers normal melee, attributed projectiles and harmful potion effects, not every environmental trap or effect from another mod. Leave the party before an agreed PvP duel.
+
+The optional party HUD shows member health, absorption and food, including offline/other-dimension status. `/partyhud on` and `/partyhud off` control your panel. `*` means another dimension. The panel shows a compact subset when space is short.
+
+`/rally` deliberately shares your current position with authenticated party members for90seconds. It has a10second cooldown. `/rally clear` removes your mark; the party owner can also clear it. The HUD shows a direction arrow, distance and time remaining. Pings never teleport anyone or publish a point to website stats/BlueMap. Leaving/kicking the sender revokes the mark. `/partyhud pings off` hides notifications locally; it does not change membership or delivery to other party members.
+
+Daily item gifts remain once per Riga day. Coins use EconomyCraft's own daily claim operation and native daily ledger/reset schedule, without a second deposit. A corner card and short chat receipt show delivered rewards. The seventh-day lootbox keeps its central celebration. `/daily` remains available for status/manual recovery; it cannot pay twice for the same native reward day.
+
+Voice recovery retries the existing mod handshake after authentication when there is no active native connection. `/voicefix` requests another attempt, with a short cooldown. It does not unmute your microphone or change volume settings. If voice stays unavailable, use V to check the setup and contact support.
+
 ## Pack 1.8.1 fixes
 
 Owner/test join, leave, advancement and discovery broadcasts are suppressed. Discord also omits their automatic death messages and status entries. Typed chat stays visible; in-game death messages keep their previous behaviour.

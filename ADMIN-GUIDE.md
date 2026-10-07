@@ -120,6 +120,14 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Prepared 1.8.2 candidate
+
+Extras1.6.2, onboarding1.8.2 and client Auth UI1.0.5 are prepared. Party membership comes from OPAC; snapshots require authenticated exact-party membership. No allied-party/outsider health or rally delivery. One transient mark per party,90sec expiry,10sec sender cooldown, cleared on sender departure or server stop. HUD updates every10ticks, with bounded64-member payloads. No passive member coordinates in this payload; OPAC's pre-existing location settings remain separate.
+
+Friendly-fire guards use server damage attribution and harmful-effect application; healing and unrelated PvP/environment damage remain. They do not provide immunity from arbitrary environmental traps/modded hazards. Daily coins use `EconomyManager.claimDaily(UUID)` and its original ledger/calendar. Do not add a separate raw coin payment or reset that ledger.
+
+The candidate passed isolated real-membership/damage/effect/privacy/rally/daily retry tests and existing reliability regressions. The test-only probe jar is never a public/release asset. Owner HUD/reward/network visuals still need real play checks. No1.8.2 live deployment or immutable publication has been authorised yet. See the private current handoff for artifact/check locations.
+
 ## Server release for pack 1.8.1
 
 `config/holylois-quiet.json` includes pjampjam and pjamtest. The existing hot-reload suppresses join/leave, AFK, advancement and discovery broadcasts. Discord also omits their automatic death notices and status-list entries. Typed chat still forwards; in-game death messages retain the previous policy. Existing additional quiet names are preserved. The follow-up config was tested in the isolated copy and against synthetic Discord events, then applied with exact restore bytes from the verified 1.8.1 backup; no further restart.

@@ -1,0 +1,36 @@
+{
+  "version": "1.8.1",
+  "date": "2026-10-07",
+  "locales": {
+    "en": {
+      "summary": "Relics, fishing and first-person fixes.",
+      "teaser": "Relics and fishing fixes",
+      "changes": [
+        "Placed relics keep their name and lore.",
+        "Fishing crates give their proper enchanted rewards.",
+        "Bows, maps and fishing rods work better with the first-person body view.",
+        "Combat teleports and land protection behave more reliably."
+      ]
+    },
+    "ru": {
+      "summary": "Исправления реликвий, рыбалки и вида от первого лица.",
+      "teaser": "Реликвии и рыбалка",
+      "changes": [
+        "Установленные реликвии сохраняют имя и описание.",
+        "Рыболовные ящики дают положенные зачарованные награды.",
+        "Лук, карты и удочка лучше работают с видом от первого лица с телом.",
+        "Телепортация в бою и защита земли работают надёжнее."
+      ]
+    },
+    "lv": {
+      "summary": "Relikviju, makšķerēšanas un pirmās personas skata labojumi.",
+      "teaser": "Relikvijas un makšķerēšana",
+      "changes": [
+        "Novietotas relikvijas saglabā nosaukumu un aprakstu.",
+        "Makšķerēšanas kastes dod paredzētās apburtās balvas.",
+        "Loks, kartes un makšķere labāk darbojas ar redzamu ķermeni pirmās personas skatā.",
+        "Teleportācija kaujā un zemes aizsardzība darbojas drošāk."
+      ]
+    }
+  }
+}

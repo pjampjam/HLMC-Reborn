@@ -1,0 +1,39 @@
+{
+  "version": "1.8.2",
+  "date": "2026-10-07",
+  "locales": {
+    "en": {
+      "summary": "Party up, find your friends, and get back to the adventure.",
+      "teaser": "Better adventures together",
+      "changes": [
+        "Party members are protected from friendly fire, with an optional health and food panel.",
+        "Use /rally to share a meeting point with your party for 90 seconds.",
+        "Daily supplies appear in a clear reward card, with daily coins claimed through their existing reward system.",
+        "Voice chat can recover its connection after login; /voicefix requests another attempt.",
+        "Cleaner login messages and matching release news across the website and launcher."
+      ]
+    },
+    "ru": {
+      "summary": "Соберите группу, найдите друзей и возвращайтесь к приключениям.",
+      "teaser": "Приключения лучше вместе",
+      "changes": [
+        "Участники группы защищены от дружеского огня; здоровье и еду можно видеть на небольшой панели.",
+        "/rally показывает вашей группе точку сбора на 90 секунд.",
+        "Ежедневные подарки видны на карточке награды; монеты выдаются через существующую систему ежедневных наград.",
+        "Голосовой чат может восстановить связь после входа; /voicefix повторяет попытку.",
+        "Меньше лишних сообщений при входе и согласованные новости на сайте и в лаунчере."
+      ]
+    },
+    "lv": {
+      "summary": "Izveido komandu, atrodi draugus un atgriezies piedzīvojumos.",
+      "teaser": "Piedzīvojumi ir labāki kopā",
+      "changes": [
+        "Komandas biedri ir pasargāti no draudzīgās uguns; veselību un ēdienu rāda neliels, izvēles panelis.",
+        "/rally kopīgo pulcēšanās punktu ar komandu uz 90 sekundēm.",
+        "Dienas dāvanas rāda atlīdzības kartīte; monētas saņem caur esošo dienas atlīdzības sistēmu.",
+        "Balss čats var atjaunot savienojumu pēc pieteikšanās; /voicefix mēģina vēlreiz.",
+        "Mazāk lieku ziņu pieslēdzoties, un vienādi jaunumi vietnē un palaidējā."
+      ]
+    }
+  }
+}
