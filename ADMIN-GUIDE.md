@@ -128,7 +128,7 @@ The SkinsRestorer 15.12.6/Fabric 26.3 compatibility hook carries the returned sk
 
 BlueMap gets a selected-skin provider through its supported API. Skin URLs are vetted Mojang textures; downloads are bounded and redirects rejected. No signatures/authentication records are exported. Native skin fallback, icon factory, player visibility and marker refresh timing remain. Launcher head previews are not implemented. Native map render consumers remain disabled in the isolated probe; real marker appearance is an owner check.
 
-Published channels and live server remain 1.8.2 until a separately approved deployment. The launcher 1.3.2 candidate is local; its Defender custom scan could not complete and must not be recorded as passed.
+Published channels and live server remain 1.8.2 until a separately approved deployment. The launcher 1.3.2 candidate is local. Automatic custom scans failed with 0x80508023. The owner then completed a manual Defender scan with zero threats and reported VirusTotal 0/69 for the exact matching final EXE SHA-256. Record that as owner scan evidence, not an automatic scan pass or antivirus guarantee.
 
 ## Server release for pack 1.8.2
 
