@@ -16,7 +16,8 @@
         "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts.",
         "Celebration fireworks from events, daily gifts and secret codes look and sound the same but never hurt anyone.",
         "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first).",
-        "The world map no longer shows teleport options that only admins can use."
+        "The world map no longer shows teleport options that only admins can use.",
+        "Your death marker on the map disappears by itself once all the items you dropped are picked up or gone."
       ]
     },
     "ru": {
@@ -33,7 +34,8 @@
         "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее.",
         "Праздничные фейерверки событий, ежедневных подарков и секретных кодов выглядят и звучат как прежде, но никого не ранят.",
         "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего).",
-        "Карта мира больше не показывает варианты телепорта, доступные только администраторам."
+        "Карта мира больше не показывает варианты телепорта, доступные только администраторам.",
+        "Метка смерти на карте исчезает сама, когда все выпавшие предметы подобраны или пропали."
       ]
     },
     "lv": {
@@ -50,7 +52,8 @@
         "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki.",
         "Svētku uguņošana no notikumiem, dienas dāvanām un slepenajiem kodiem izskatās un skan kā agrāk, bet nevienu nesavaino.",
         "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā).",
-        "Pasaules karte vairs nerāda teleportēšanās iespējas, kas pieejamas tikai administratoriem."
+        "Pasaules karte vairs nerāda teleportēšanās iespējas, kas pieejamas tikai administratoriem.",
+        "Nāves atzīme kartē pazūd pati, kad visas izkritušās lietas ir paceltas vai pazudušas."
       ]
     }
   }
