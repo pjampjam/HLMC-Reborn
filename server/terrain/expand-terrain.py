@@ -585,6 +585,14 @@ def run_job(state):
     if subprocess.run(['systemctl', 'is-active', '--quiet', 'minecraft'], timeout=10).returncode:
         print('Generation held because the Minecraft service is stopped.')
         return
+    if (JOB / 'hold').exists():
+        # Owner hold (e.g. waiting for structure mods, which only reach new chunks): pause through the normal
+        # checkpointed path and start nothing. Delete the hold file to resume where Chunky stopped.
+        if state.get('started') and state.get('running', True):
+            request_pause(state)
+            checkpoint(state)
+        print('Generation held by the owner (hold file). Delete it to resume.')
+        return
     if not generation_allowed(state):
         return
     if time.time() < state.get('rest_until', 0):

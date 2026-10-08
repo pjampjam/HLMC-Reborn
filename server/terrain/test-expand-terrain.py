@@ -354,6 +354,23 @@ class TerrainJobTests(unittest.TestCase):
                     job.run_job(state)
                     command.assert_not_called()
 
+    def test_owner_hold_pauses_running_generation_and_starts_nothing(self):
+        (self.job_directory / 'hold').touch()
+        running = {'started': True, 'running': True}
+        with mock.patch.object(job.subprocess, 'run', return_value=SimpleNamespace(returncode=0)), \
+                mock.patch.object(job, 'command') as command, mock.patch.object(job, 'save'), \
+                mock.patch.object(job, 'checkpoint', return_value={'chunks': '5'}) as checkpoint:
+            job.run_job(running)
+            command.assert_called_once_with('chunky pause minecraft:overworld')
+            checkpoint.assert_called_once()
+            command.reset_mock(); checkpoint.reset_mock()
+            fresh = {'version': 2, 'started': False, 'complete': False}
+            job.run_job(fresh)
+            self.assertFalse(fresh['started'])
+            paused = {'started': True, 'running': False}
+            job.run_job(paused)
+            command.assert_not_called(); checkpoint.assert_not_called()
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
