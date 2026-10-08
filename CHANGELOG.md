@@ -125,4 +125,3 @@ Historical player notes, retained from the README. Current setup and play instru
 - **Dungeons and Taverns** and **Towns and Towers** in newly explored land, with Runeforged loot in their chests.
 - **Custom music discs** with `/audioplayer`, played through voice chat.
 - Hold **Tab** for live server stats, Latvian name days and leaderboards. Right-click ripe crops to harvest and replant. One sleeping player skips the night.
-

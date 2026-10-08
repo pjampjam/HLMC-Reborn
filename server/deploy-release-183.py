@@ -1,5 +1,5 @@
 """Pack 1.8.3: verified full backup, existing countdown, changed-file rollback and health checks.
-Run as root from ~/hl-183; --check validates only. Client-only Auth UI stays out of the server.
+Run as root from ~/hl-182; --check validates only. Client-only Auth UI stays out of the server.
 """
 from pathlib import Path
 from importlib import util
@@ -9,7 +9,7 @@ spec=util.spec_from_file_location('previous','/home/ubuntu/hl-174/deploy-release
 previous=util.module_from_spec(spec);spec.loader.exec_module(previous)
 ROOT=Path('/opt/minecraft'); KIT=Path(__file__).resolve().parent
 MAINTENANCE=Path('/run/holylois-maintenance')
-HEADLINE='<#FFAD42>✦ New:</#FFAD42> <white>Homes, parties and relic powers!</white>'
+HEADLINE='<#FFAD42>✦ New:</#FFAD42> <white>Your name, your progress!</white>'
 MOTD=ROOT/'config/MiniMOTD/main.conf'
 MINIMUM=ROOT/'config/holylois-pack.json'
 HIDDEN=ROOT/'config/holylois-stats-hidden.json'
@@ -17,7 +17,6 @@ QUIET=ROOT/'config/holylois-quiet.json'
 STATS=Path('/usr/local/lib/holylois/make-stats.py')
 RULES=ROOT/'config/essentialcommands/rules.txt'
 BOT_RULES=Path('/opt/holylois-bot/RULES.md')
-RADIO=ROOT/'config/holylois-boombox.json'
 def run(*args,**kwargs):return subprocess.run(args,check=True,**kwargs)
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 
@@ -45,20 +44,17 @@ def main():
     quiet=json.loads(QUIET.read_text()) if QUIET.exists() else {'names':[]}
     assert isinstance(quiet.get('names'),list)
     quiet['names']=sorted(set(quiet['names'])|set(json.loads((KIT/'holylois-quiet.json').read_text())['names']))
-    radio=json.loads(RADIO.read_text()) if RADIO.exists() else {}
-    radio['maxPlayingPerChunk']=6
-    radio['maxPlaying']=min(6,max(1,int(radio.get('maxPlaying',6))))
     print('Online players:',previous.online_players(),flush=True)
     if sys.argv[1:]==['--check']:
         print('All pre-checks passed; nothing changed.',flush=True);return
     original=previous.say
-    previous.say=lambda text:original(text.replace('land claims on the map, zone titles, /support','homes, parties, relics and boombox fixes'))
+    previous.say=lambda text:original(text.replace('land claims on the map, zone titles, /support','private account recovery and launcher setup fixes'))
     try:previous.countdown()
     finally:previous.say=original
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     backup=Path('/opt/minecraft-backups/maintenance')/('release183-'+stamp);backup.mkdir(mode=0o700)
     archive=backup/'complete-server.tar'
-    saved=[*(old for _,old in pairs),MOTD,MINIMUM,HIDDEN,QUIET,STATS,RULES,BOT_RULES,RADIO]
+    saved=[*(old for _,old in pairs),MOTD,MINIMUM,HIDDEN,QUIET,STATS,RULES,BOT_RULES]
     existed={p:p.exists() for p in saved}; installed=[]
     timer_active=subprocess.run(['systemctl','is-active','--quiet','holylois-stats.timer']).returncode==0
     MAINTENANCE.touch()
@@ -86,11 +82,10 @@ def main():
         run('install','-m','644',str(KIT/'RULES.md'),str(BOT_RULES))
         HIDDEN.write_text(json.dumps(hidden,indent=2)+'\n')
         QUIET.write_text(json.dumps(quiet,indent=2)+'\n')
-        RADIO.write_text(json.dumps(radio,indent=2)+'\n')
         MINIMUM.write_text(json.dumps({'minimum':'1.8.3'})+'\n')
         text,count=re.subn(r'(?m)^(\s*line2=).*$',lambda m:m[1]+json.dumps(HEADLINE,ensure_ascii=False),MOTD.read_text(),count=1)
         assert count==1;MOTD.write_text(text)
-        run('chown','minecraft:minecraft',str(HIDDEN),str(QUIET),str(MINIMUM),str(MOTD),str(RADIO))
+        run('chown','minecraft:minecraft',str(HIDDEN),str(QUIET),str(MINIMUM),str(MOTD))
         since=datetime.datetime.now(datetime.timezone.utc).isoformat()
         run('systemctl','start','minecraft-console.socket','minecraft.service')
         log=previous.wait_for_start(since)

@@ -3,34 +3,43 @@
   "date": "2026-10-08",
   "locales": {
     "en": {
-      "summary": "Keep your name and progress, with private account recovery.",
+      "summary": "Keep your name and progress, with smoother login and inventory controls.",
+      "teaser": "Your name, your progress",
       "changes": [
-        "Quick start accepts valid player names without checking who owns them in Minecraft. Existing Holy Lois accounts still need their server password.",
-        "Reach every shortcut option during launcher setup, including while entering your name.",
-        "When an admin requests it, choose a new name while keeping your inventory, homes and progress. Previous names stay protected.",
-        "Recover your server password through a private form and an admin-issued recovery code."
-      ],
-      "teaser": "Your name, your progress"
+        "Quick start accepts valid names without a Minecraft ownership check. Existing Holy Lois accounts still need their server password.",
+        "Launcher setup keeps every shortcut option reachable while you enter your name.",
+        "Admin-requested name changes keep your inventory, homes and progress. Previous names stay protected.",
+        "Recover a server password through a private form and one-use code from an admin.",
+        "Login no longer triggers false flying kicks, and account changes cannot bypass combat restrictions.",
+        "R sorts from an empty slot without opening a recipe when an item moves under the cursor.",
+        "Matching runestones stack more reliably when taken from chests. Different special variants stay separate."
+      ]
     },
     "ru": {
-      "summary": "Сохраняй имя и прогресс с личным восстановлением аккаунта.",
+      "summary": "Сохраняй имя и прогресс с удобным входом и управлением инвентарём.",
+      "teaser": "Твоё имя, твой прогресс",
       "changes": [
-        "Быстрый старт принимает допустимые имена без проверки владельца в Minecraft. Для существующего аккаунта Holy Lois нужен пароль сервера.",
-        "Все настройки ярлыков доступны при установке, в том числе во время ввода имени.",
-        "По запросу админа выбери новое имя, сохранив инвентарь, дома и прогресс. Старые имена останутся защищены.",
-        "Восстанови пароль сервера в личной форме с кодом от админа."
-      ],
-      "teaser": "Твоё имя, твой прогресс"
+        "Быстрый старт принимает допустимые имена без проверки владельца Minecraft. Для существующего аккаунта Holy Lois нужен пароль сервера.",
+        "Все настройки ярлыков доступны при установке, даже во время ввода имени.",
+        "По запросу админа смени имя, сохранив инвентарь, дома и прогресс. Старые имена останутся защищены.",
+        "Восстанови пароль сервера в личной форме с одноразовым кодом от админа.",
+        "Вход больше не вызывает ложное отключение за полёт. Смена данных аккаунта не обходит ограничения боя.",
+        "R сортирует на пустом слоте и не открывает рецепт, если под курсором появился предмет.",
+        "Одинаковые рунные камни надёжнее объединяются при переносе из сундука. Разные особые варианты остаются отдельно."
+      ]
     },
     "lv": {
-      "summary": "Saglabā vārdu un progresu ar privātu konta atkopšanu.",
+      "summary": "Saglabā vārdu un progresu ar ērtāku pieteikšanos un inventāra vadību.",
+      "teaser": "Tavs vārds, tavs progress",
       "changes": [
-        "Ātrais starts pieņem derīgus vārdus, nepārbaudot Minecraft īpašnieku. Esošam Holy Lois kontam vajadzīga servera parole.",
+        "Ātrais starts pieņem derīgus vārdus bez Minecraft īpašnieka pārbaudes. Esošam Holy Lois kontam vajadzīga servera parole.",
         "Visas saīsņu izvēles instalācijā ir sasniedzamas arī vārda ievades laikā.",
-        "Pēc administratora pieprasījuma izvēlies jaunu vārdu, saglabājot inventāru, mājas un progresu. Iepriekšējie vārdi paliek aizsargāti.",
-        "Atjauno servera paroli privātā formā ar administratora izsniegtu kodu."
-      ],
-      "teaser": "Tavs vārds, tavs progress"
+        "Pēc administratora pieprasījuma maini vārdu, saglabājot inventāru, mājas un progresu. Iepriekšējie vārdi paliek aizsargāti.",
+        "Atjauno servera paroli privātā formā ar vienreizēju administratora kodu.",
+        "Pieteikšanās vairs neizraisa kļūdainu atvienošanu par lidošanu. Konta izmaiņas neapiet kaujas ierobežojumus.",
+        "R kārto no tukša lauciņa, neatverot recepti, ja zem kursora parādās priekšmets.",
+        "Vienādi rūnu akmeņi drošāk apvienojas, pārvietojot tos no lādes. Atšķirīgi īpašie varianti paliek atsevišķi."
+      ]
     }
   }
 }

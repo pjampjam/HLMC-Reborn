@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, explore dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.3.1 / pack 1.8.2 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.3.2 / pack 1.8.3 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -17,11 +17,11 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
-## Prepared hotfix: pack 1.8.3 and launcher 1.3.2
+## Latest update: pack 1.8.3 and launcher 1.3.2
 
 Launcher setup keeps shortcut options reachable while entering your name. Quick start accepts valid player names without a Mojang ownership lookup; existing Holy Lois names still need their server password. Admin-requested private forms let players change names without losing progress or recover a forgotten server password.
 
-Not deployed. The larger homes, party-management, rally-travel and equipment batch is planned for 1.8.4. Live `/rally` still marks a meeting point without teleporting.
+The larger homes, party-management, rally-travel and equipment batch is planned for 1.8.4. Live `/rally` still marks a meeting point without teleporting.
 
 ## Release history
 
@@ -39,7 +39,7 @@ Updates preserve worlds, personal voice-device choices and extra client mods or 
 
 Use **Holy Lois Admin** to choose your tested CurseForge profile, prepare a new version, deploy server-required changes and publish the update. Follow the [admin guide](ADMIN-GUIDE.md); use [technical notes](TECHNICAL-GUIDE.md) for the detailed workflow and [test guide](TEST-GUIDE.md) before promotion. The trusted-friends setup does not need an additional anti-cheat addon.
 
-This repository holds the signed pack channel and admin documentation. Current launcher source and app releases live in the [launcher repository](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab). Its [setup and reset guide](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/blob/main/RESET-AND-TEST.md) covers clean installation tests and app removal. Use the launcher repository to build the current player app. The legacy companion source archive is staged for the next [versioned release](https://github.com/pjampjam/HLMC-Reborn/releases), rather than kept in the working source tree. Its bytes are preserved; Git history is unchanged.
+This repository holds the signed pack channel and admin documentation. Current launcher source and app releases live in the [launcher repository](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab). Its [setup and reset guide](https://github.com/pjampjam/HLMC-Reborn-Packaging-Lab/blob/main/RESET-AND-TEST.md) covers clean installation tests and app removal. Use the launcher repository to build the current player app. The legacy companion source archive remains historical; current launcher and add-on source lives in the launcher repository.
 
 ## Release and privacy notes
 
