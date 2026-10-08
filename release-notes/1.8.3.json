@@ -1,38 +1,44 @@
 {
   "version": "1.8.3",
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "locales": {
     "en": {
-      "summary": "Saved skins and simpler party commands.",
-      "teaser": "Your skin, your party",
+      "summary": "Keep your name and progress, with smoother login and inventory controls.",
+      "teaser": "Your name, your progress",
       "changes": [
-        "Your saved skin returns when you rejoin.",
-        "Use /party or /group for the existing party commands.",
-        "BlueMap uses your selected server skin when it refreshes your marker.",
-        "Clearer guides explain the login form, item recipes and uses, and the body-view toggle.",
-        "Statistics heads have consistent square frames, and the server-address copy button is easier to read."
+        "Quick start accepts valid names without a Minecraft ownership check. Existing Holy Lois accounts still need their server password.",
+        "Launcher setup keeps every shortcut option reachable while you enter your name.",
+        "Admin-requested name changes keep your inventory, homes and progress. Previous names stay protected.",
+        "Recover a server password through a private form and one-use code from an admin.",
+        "Login no longer triggers false flying kicks, and account changes cannot bypass combat restrictions.",
+        "R sorts from an empty slot without opening a recipe when an item moves under the cursor.",
+        "Matching runestones stack more reliably when taken from chests. Different special variants stay separate."
       ]
     },
     "ru": {
-      "summary": "Сохранённые скины и более простые команды группы.",
-      "teaser": "Ваш скин, ваша группа",
+      "summary": "Сохраняй имя и прогресс с удобным входом и управлением инвентарём.",
+      "teaser": "Твоё имя, твой прогресс",
       "changes": [
-        "Сохранённый скин восстанавливается при повторном входе.",
-        "Используйте /party или /group для существующих команд группы.",
-        "BlueMap использует выбранный серверный скин при обновлении вашей отметки.",
-        "Руководство объясняет форму входа, рецепты и применения предметов, переключение вида с телом.",
-        "Рамки голов в статистике стали одинаковыми; кнопку копирования адреса сервера легче читать."
+        "Быстрый старт принимает допустимые имена без проверки владельца Minecraft. Для существующего аккаунта Holy Lois нужен пароль сервера.",
+        "Все настройки ярлыков доступны при установке, даже во время ввода имени.",
+        "По запросу админа смени имя, сохранив инвентарь, дома и прогресс. Старые имена останутся защищены.",
+        "Восстанови пароль сервера в личной форме с одноразовым кодом от админа.",
+        "Вход больше не вызывает ложное отключение за полёт. Смена данных аккаунта не обходит ограничения боя.",
+        "R сортирует на пустом слоте и не открывает рецепт, если под курсором появился предмет.",
+        "Одинаковые рунные камни надёжнее объединяются при переносе из сундука. Разные особые варианты остаются отдельно."
       ]
     },
     "lv": {
-      "summary": "Saglabāti izskati un vienkāršākas komandas grupai.",
-      "teaser": "Tavs izskats, tava komanda",
+      "summary": "Saglabā vārdu un progresu ar ērtāku pieteikšanos un inventāra vadību.",
+      "teaser": "Tavs vārds, tavs progress",
       "changes": [
-        "Saglabātais izskats atjaunojas, kad pieslēdzies atkārtoti.",
-        "Izmanto /party vai /group esošajām komandas darbībām.",
-        "BlueMap izmanto izvēlēto servera izskatu, kad atjauno tavu atzīmi.",
-        "Pamācība izskaidro pieteikšanās formu, receptes un priekšmetu lietojumus, ķermeņa skata pārslēgšanu.",
-        "Galvām statistikā ir vienādi kvadrātveida rāmji; servera adreses kopēšanas poga ir vieglāk lasāma."
+        "Ātrais starts pieņem derīgus vārdus bez Minecraft īpašnieka pārbaudes. Esošam Holy Lois kontam vajadzīga servera parole.",
+        "Visas saīsņu izvēles instalācijā ir sasniedzamas arī vārda ievades laikā.",
+        "Pēc administratora pieprasījuma maini vārdu, saglabājot inventāru, mājas un progresu. Iepriekšējie vārdi paliek aizsargāti.",
+        "Atjauno servera paroli privātā formā ar vienreizēju administratora kodu.",
+        "Pieteikšanās vairs neizraisa kļūdainu atvienošanu par lidošanu. Konta izmaiņas neapiet kaujas ierobežojumus.",
+        "R kārto no tukša lauciņa, neatverot recepti, ja zem kursora parādās priekšmets.",
+        "Vienādi rūnu akmeņi drošāk apvienojas, pārvietojot tos no lādes. Atšķirīgi īpašie varianti paliek atsevišķi."
       ]
     }
   }

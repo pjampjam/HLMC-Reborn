@@ -45,7 +45,7 @@ Use a name such as `base` for a saved location. Replace it with your own home na
 | `/home delete base` | Remove that saved home. |
 | `/home` | Go to your only home. With several, it goes to the one named `home` (save it with `/home set home`), otherwise it lists them to click. |
 
-Home names that differ only in capitals (`Home` and `home`) count as the same name, and `/Home` works like `/home`. Clicking a command in chat, such as a home in that list or a tpa accept, runs it right away. These are the pack's [Essential Commands home commands](https://github.com/John-Paul-R/Essential-Commands#commands).
+Home names that differ only in capitals (`Home` and `home`) count as the same name. Clicking a command in chat, such as a home in that list or a tpa accept, runs it right away. These are the pack's [Essential Commands home commands](https://github.com/John-Paul-R/Essential-Commands#commands).
 
 ## Teleporting
 
@@ -185,8 +185,34 @@ Placed relics keep their full item data when recovered. Fishing Crates retain in
 
 Other players' claim overlays appear only after the map has cached terrain there; your own claims remain visible. Untrusted players cannot directly push or deal player-attributed damage to mobs inside protected claims. This is not immunity to every environmental hazard or other mod.
 
-Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles and account rename/recovery forms remain planned.
+Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles remain planned. Account forms are described below.
 
-## Candidate 1.8.3: skins and simpler commands
+## Candidate 1.8.4: homes, parties and equipment
 
-`/party` and `/group` are aliases of the existing party commands; `/oparties` remains supported. These share membership, permissions and land access. Your saved `/skin` choice is restored on rejoin. BlueMap uses that selection when its marker refreshes; the current marker design stays the same.
+This section describes the prepared update, not the current live 1.8.2 server.
+
+`/homes` opens your three starter home slots. Save your current spot, rename a home or confirm its deletion. Selecting a saved home uses the usual teleport checks. Existing extra homes are retained; no new purchase or play-time unlock is offered yet. Plain `/home` still goes to your only home or the one named `home`.
+
+`/party` or `/group` opens party management and the health/food roster. Create a party, invite a friend by name, accept an invitation using an online member's name, or leave with confirmation. The owner sees Disband party instead of Leave party; disbanding requires confirmation and ends shared party access. Membership and shared land access remain OPAC's; `/oparties` and the apostrophe menu still work.
+
+Use `/rally` to share a point for 90 seconds. Open chat to click its card, request travel to the author, or collapse it. Click the compact card to reopen it, or use `/rally menu`. Travel uses the normal `/tpa` acceptance flow to the author's current location, with combat and destination checks. Clearing/expiry or the author leaving the party revokes the point.
+
+Lois's Lantern gives +10% mining speed while held. Placed, it heals eligible nearby players by half a heart every five seconds within four blocks, with a clear path and outside combat. The Staff of Quiet Roads gives +8% movement speed while held. The Circlet of the Wanderer gives +1 luck on your head. Copies do not stack; the original items and metadata stay intact.
+
+Rare fish catches have a personal card and chime. `/catchcards off` disables both; `/catchcards on` restores them. Rarity and coin rewards are unchanged.
+
+Boomboxes support waterlogging. A held eating/drinking press cannot become an off-hand radio click after it finishes; release and press again to control the radio. Six placed boxes can be powered per chunk, while six streams remain the server-wide limit. Unheard placed boxes can wait for listeners; the current audio system does not share station decoders or select only the nearest three sources.
+
+Launcher Settings offers optional 3D armor, off by default. Close Minecraft before changing it. Gameplay and inventory icons stay the same; the preview changes worn models. Mob armor, saddles, 32x and Curios support advertised as planned by the project are not promises of this version.
+
+Your saved skin returns on rejoin, and BlueMap uses it when refreshing your marker. Skins, guide keys and statistics head layouts retain the earlier prepared fixes.
+
+## Account help (pack 1.8.3)
+
+Quick start accepts a valid player name without checking Minecraft ownership. Names already claimed on Holy Lois still need their server password.
+
+If an admin requests a name change, log in and click the private reminder or type `/account rename`. Choose an available name. Your inventory, homes and progress stay with you; your previous name remains protected. Reconnect when the form finishes. You can use your new name or your saved previous name for the same profile.
+
+For a forgotten server password, contact support. After ownership is verified, an admin can issue a one-use recovery code. Open `/account password` and enter the code and your new password in the private form. Never post either in chat. The recovery request expires after one hour; five incorrect codes cancel it. Reconnect and log in with your new password after it changes.
+
+`/logout` and account changes are blocked during combat. Wait for the combat cooldown before using the account form; disconnecting during a PvP fight still triggers the existing death penalty.

@@ -11,3 +11,5 @@ Public statistics omit owner/test and configured hidden accounts. Selected serve
 GitHub secret scanning and push protection remain enabled. Public release builds omit debug symbols to avoid embedding local build paths. Review new configs and images before sharing. Never upload the entire game or server directory.
 
 Existing downloads, clones, forks and GitHub caches cannot be erased by editing the repository. If a credential was published, revoke it immediately and contact GitHub Support if additional cache removal is needed.
+
+Account request metadata, temporary recovery codes and native account snapshots are private server files. Renames retain protected aliases on one UUID. Public statistics may read the identity-only display-name cache; they never read recovery grants or authentication records.

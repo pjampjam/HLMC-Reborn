@@ -1,5 +1,5 @@
 """Pack 1.8.3: verified full backup, existing countdown, changed-file rollback and health checks.
-Run as root from ~/hl-183; --check validates only. Client-only Auth UI stays out of the server.
+Run as root from ~/hl-182; --check validates only. Client-only Auth UI stays out of the server.
 """
 from pathlib import Path
 from importlib import util
@@ -9,7 +9,7 @@ spec=util.spec_from_file_location('previous','/home/ubuntu/hl-174/deploy-release
 previous=util.module_from_spec(spec);spec.loader.exec_module(previous)
 ROOT=Path('/opt/minecraft'); KIT=Path(__file__).resolve().parent
 MAINTENANCE=Path('/run/holylois-maintenance')
-HEADLINE='<#FFAD42>✦ New:</#FFAD42> <white>Saved skins, simpler parties!</white>'
+HEADLINE='<#FFAD42>✦ New:</#FFAD42> <white>Your name, your progress!</white>'
 MOTD=ROOT/'config/MiniMOTD/main.conf'
 MINIMUM=ROOT/'config/holylois-pack.json'
 HIDDEN=ROOT/'config/holylois-stats-hidden.json'
@@ -25,7 +25,7 @@ def main():
     manifest=json.loads((KIT/'pack.json').read_text());assert manifest['version']=='1.8.3'
     hashes=json.loads((KIT/'artifact-hashes.json').read_text())
     pairs=[]
-    for prefix in ('holylois-onboarding-',):
+    for prefix in ('holylois-extras-','holylois-onboarding-'):
         sources=list(KIT.glob(prefix+'*.jar')); olds=list((ROOT/'mods').glob(prefix+'*.jar'))
         assert len(sources)==len(olds)==1
         source=sources[0]; old=olds[0];assert source.name!=old.name,'Already deployed'
@@ -48,7 +48,7 @@ def main():
     if sys.argv[1:]==['--check']:
         print('All pre-checks passed; nothing changed.',flush=True);return
     original=previous.say
-    previous.say=lambda text:original(text.replace('land claims on the map, zone titles, /support','saved skins, simpler party commands and clearer controls'))
+    previous.say=lambda text:original(text.replace('land claims on the map, zone titles, /support','private account recovery and launcher setup fixes'))
     try:previous.countdown()
     finally:previous.say=original
     stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
@@ -89,7 +89,7 @@ def main():
         since=datetime.datetime.now(datetime.timezone.utc).isoformat()
         run('systemctl','start','minecraft-console.socket','minecraft.service')
         log=previous.wait_for_start(since)
-        for needle in ('holylois-extras 1.6.2','holylois-onboarding 1.8.3','Holy Lois claims: ready for OPAC','holylois_boombox'):
+        for needle in ('holylois-extras 1.6.3','holylois-onboarding 1.8.3','Holy Lois claims: ready for OPAC','holylois_boombox'):
             assert needle in log,'Missing startup marker: '+needle
         assert not any(needle in log for needle in ('Mixin apply failed','Registry loading errors','Failed to start','Encountered an unexpected exception'))
         previous.console('bossbar remove holylois:restart','gamerule send_command_feedback true')
