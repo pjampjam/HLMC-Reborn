@@ -1,5 +1,5 @@
 {
-  "version": "1.8.4",
+  "version": "1.9.0",
   "date": "2026-10-08",
   "locales": {
     "en": {
@@ -13,7 +13,9 @@
         "Rare catches get a personal card and chime. Use /catchcards off to silence them.",
         "Boomboxes work in water and stay on the same station after a meal. Six can be powered per chunk, with six audio streams across the server.",
         "Try optional 3D armor in launcher Settings. It starts off and keeps the same gameplay.",
-        "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts."
+        "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts.",
+        "Celebration fireworks from events, daily gifts and secret codes look and sound the same but never hurt anyone.",
+        "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first)."
       ]
     },
     "ru": {
@@ -27,7 +29,9 @@
         "Редкий улов показывает личную карточку и звук. /catchcards off отключает их.",
         "Бумбоксы работают в воде и не переключают станцию после еды. В чанке можно включить до шести, при шести одновременных потоках на сервере.",
         "Дополнительную 3D-броню можно попробовать в настройках лаунчера. По умолчанию она выключена и не меняет игровой процесс.",
-        "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее."
+        "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее.",
+        "Праздничные фейерверки событий, ежедневных подарков и секретных кодов выглядят и звучат как прежде, но никого не ранят.",
+        "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего)."
       ]
     },
     "lv": {
@@ -41,7 +45,9 @@
         "Rets loms parāda personīgu kartīti un skaņu. /catchcards off tās izslēdz.",
         "Boomboksi darbojas ūdenī un pēc maltītes nepārslēdz staciju. Vienā čunkā var ieslēgt sešus, serverī vienlaikus līdz sešām straumēm.",
         "Izmēģini izvēles 3D bruņas palaidēja iestatījumos. Sākumā tās ir izslēgtas un nemaina spēles noteikumus.",
-        "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki."
+        "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki.",
+        "Svētku uguņošana no notikumiem, dienas dāvanām un slepenajiem kodiem izskatās un skan kā agrāk, bet nevienu nesavaino.",
+        "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā)."
       ]
     }
   }
