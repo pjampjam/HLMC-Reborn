@@ -37,13 +37,21 @@ def hidden_names():
 
 def names():
     hidden = hidden_names()
+    profiles = read(WORLD / 'holylois' / 'account-profile-names.json', {})
+    canonical = profiles.get('names', {})
+    hidden_ids = {identity for alias, identity in profiles.get('aliases', {}).items() if alias.lower() in hidden}
     result, raw = {}, {}
     for entry in read(ROOT / 'usercache.json', []):
-        name = entry.get('name', '')
-        if not name or name.lower() in hidden: continue
+        original = entry.get('name', '')
+        identity = entry.get('uuid', '')
+        name = canonical.get(identity, original)
+        if not name or name.lower() in hidden or original.lower() in hidden or identity in hidden_ids: continue
+        if identity in result:
+            raw[original] = result[identity]
+            continue
         shown = mask(name) if SLURS.search(name) else name
         while shown in result.values(): shown += '*'
-        result[entry['uuid']] = shown; raw[name] = shown
+        result[identity] = shown; raw[original] = shown; raw[name] = shown
     return result, raw
 
 

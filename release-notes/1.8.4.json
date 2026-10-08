@@ -1,0 +1,48 @@
+{
+  "version": "1.8.4",
+  "date": "2026-10-08",
+  "locales": {
+    "en": {
+      "summary": "Homes, parties and a little more life in your gear.",
+      "teaser": "Your homes, your party",
+      "changes": [
+        "Open /homes to save, rename or visit your three starter homes.",
+        "Use /party or /group to manage your party and check health and food.",
+        "Click a rally card with chat open to request travel to its author. They choose whether to accept.",
+        "Relic lanterns, the travel staff and the wanderer's circlet now have useful bonuses.",
+        "Rare catches get a personal card and chime. Use /catchcards off to silence them.",
+        "Boomboxes work in water and stay on the same station after a meal. Six can be powered per chunk, with six audio streams across the server.",
+        "Try optional 3D armor in launcher Settings. It starts off and keeps the same gameplay.",
+        "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts."
+      ]
+    },
+    "ru": {
+      "summary": "Дома, группы и больше пользы от снаряжения.",
+      "teaser": "Ваши дома, ваша группа",
+      "changes": [
+        "Откройте /homes, чтобы сохранить, переименовать или посетить три начальных дома.",
+        "Управляйте группой через /party или /group и следите за здоровьем и едой.",
+        "Откройте чат и нажмите на точку сбора, чтобы запросить телепорт к её автору. Он решает, принять ли запрос.",
+        "Реликтовые фонари, посох путешественника и обруч странника получили полезные эффекты.",
+        "Редкий улов показывает личную карточку и звук. /catchcards off отключает их.",
+        "Бумбоксы работают в воде и не переключают станцию после еды. В чанке можно включить до шести, при шести одновременных потоках на сервере.",
+        "Дополнительную 3D-броню можно попробовать в настройках лаунчера. По умолчанию она выключена и не меняет игровой процесс.",
+        "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее."
+      ]
+    },
+    "lv": {
+      "summary": "Mājas, komanda un noderīgāks ekipējums.",
+      "teaser": "Tavas mājas, tava komanda",
+      "changes": [
+        "Atver /homes, lai saglabātu, pārdēvētu vai apmeklētu trīs sākuma mājas.",
+        "Ar /party vai /group pārvaldi komandu un apskati veselību un ēdienu.",
+        "Atver čatu un klikšķini pulcēšanās kartīti, lai pieprasītu ceļošanu pie tās autora. Viņš izvēlas, vai piekrist.",
+        "Relikviju laternām, ceļotāja spieķim un klejotāja galvas rotai tagad ir noderīgi efekti.",
+        "Rets loms parāda personīgu kartīti un skaņu. /catchcards off tās izslēdz.",
+        "Boomboksi darbojas ūdenī un pēc maltītes nepārslēdz staciju. Vienā čunkā var ieslēgt sešus, serverī vienlaikus līdz sešām straumēm.",
+        "Izmēģini izvēles 3D bruņas palaidēja iestatījumos. Sākumā tās ir izslēgtas un nemaina spēles noteikumus.",
+        "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki."
+      ]
+    }
+  }
+}

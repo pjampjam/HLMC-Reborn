@@ -1,39 +1,36 @@
 {
   "version": "1.8.3",
-  "date": "2026-10-07",
+  "date": "2026-10-08",
   "locales": {
     "en": {
-      "summary": "Saved skins and simpler party commands.",
-      "teaser": "Your skin, your party",
+      "summary": "Keep your name and progress, with private account recovery.",
       "changes": [
-        "Your saved skin returns when you rejoin.",
-        "Use /party or /group for the existing party commands.",
-        "BlueMap uses your selected server skin when it refreshes your marker.",
-        "Clearer guides explain the login form, item recipes and uses, and the body-view toggle.",
-        "Statistics heads have consistent square frames, and the server-address copy button is easier to read."
-      ]
+        "Quick start accepts valid player names without checking who owns them in Minecraft. Existing Holy Lois accounts still need their server password.",
+        "Reach every shortcut option during launcher setup, including while entering your name.",
+        "When an admin requests it, choose a new name while keeping your inventory, homes and progress. Previous names stay protected.",
+        "Recover your server password through a private form and an admin-issued recovery code."
+      ],
+      "teaser": "Your name, your progress"
     },
     "ru": {
-      "summary": "Сохранённые скины и более простые команды группы.",
-      "teaser": "Ваш скин, ваша группа",
+      "summary": "Сохраняй имя и прогресс с личным восстановлением аккаунта.",
       "changes": [
-        "Сохранённый скин восстанавливается при повторном входе.",
-        "Используйте /party или /group для существующих команд группы.",
-        "BlueMap использует выбранный серверный скин при обновлении вашей отметки.",
-        "Руководство объясняет форму входа, рецепты и применения предметов, переключение вида с телом.",
-        "Рамки голов в статистике стали одинаковыми; кнопку копирования адреса сервера легче читать."
-      ]
+        "Быстрый старт принимает допустимые имена без проверки владельца в Minecraft. Для существующего аккаунта Holy Lois нужен пароль сервера.",
+        "Все настройки ярлыков доступны при установке, в том числе во время ввода имени.",
+        "По запросу админа выбери новое имя, сохранив инвентарь, дома и прогресс. Старые имена останутся защищены.",
+        "Восстанови пароль сервера в личной форме с кодом от админа."
+      ],
+      "teaser": "Твоё имя, твой прогресс"
     },
     "lv": {
-      "summary": "Saglabāti izskati un vienkāršākas komandas grupai.",
-      "teaser": "Tavs izskats, tava komanda",
+      "summary": "Saglabā vārdu un progresu ar privātu konta atkopšanu.",
       "changes": [
-        "Saglabātais izskats atjaunojas, kad pieslēdzies atkārtoti.",
-        "Izmanto /party vai /group esošajām komandas darbībām.",
-        "BlueMap izmanto izvēlēto servera izskatu, kad atjauno tavu atzīmi.",
-        "Pamācība izskaidro pieteikšanās formu, receptes un priekšmetu lietojumus, ķermeņa skata pārslēgšanu.",
-        "Galvām statistikā ir vienādi kvadrātveida rāmji; servera adreses kopēšanas poga ir vieglāk lasāma."
-      ]
+        "Ātrais starts pieņem derīgus vārdus, nepārbaudot Minecraft īpašnieku. Esošam Holy Lois kontam vajadzīga servera parole.",
+        "Visas saīsņu izvēles instalācijā ir sasniedzamas arī vārda ievades laikā.",
+        "Pēc administratora pieprasījuma izvēlies jaunu vārdu, saglabājot inventāru, mājas un progresu. Iepriekšējie vārdi paliek aizsargāti.",
+        "Atjauno servera paroli privātā formā ar administratora izsniegtu kodu."
+      ],
+      "teaser": "Tavs vārds, tavs progress"
     }
   }
 }
