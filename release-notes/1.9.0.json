@@ -3,57 +3,81 @@
   "date": "2026-10-08",
   "locales": {
     "en": {
-      "summary": "Homes, parties and a little more life in your gear.",
+      "summary": "Homes, parties, trophy fish you can see and a fresh new look.",
       "teaser": "Your homes, your party",
       "changes": [
         "Open /homes to save, rename or visit your three starter homes.",
         "Use /party or /group to manage your party and check health and food.",
         "Click a rally card with chat open to request travel to its author. They choose whether to accept.",
         "Relic lanterns, the travel staff and the wanderer's circlet now have useful bonuses.",
+        "Trophy fish look as big as they weigh: in your hand, on the ground and on the cutting board, with a rarity glow and the weight right on the inventory icon.",
+        "New ultra-rare Mythic fish: a red name, far past the species' record weight, and the whole server hears about it.",
         "Rare catches get a personal card and chime. Use /catchcards off to silence them.",
         "Boomboxes work in water and stay on the same station after a meal. Six can be powered per chunk, with six audio streams across the server.",
         "Try optional 3D armor in launcher Settings. It starts off and keeps the same gameplay.",
         "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts.",
         "Celebration fireworks from events, daily gifts and secret codes look and sound the same but never hurt anyone.",
         "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first).",
-        "The world map no longer shows teleport options that only admins can use.",
-        "Your death marker on the map disappears by itself once all the items you dropped are picked up or gone."
+        "On the world map, right-click a player to send them a /tpa request; admin-only teleports stay hidden.",
+        "Your death marker on the map disappears by itself once all the items you dropped are picked up or gone.",
+        "Fillet trophy fish on the cutting board for more slices (Fish of Thieves fish too); Rare and better fish give a short boost when eaten.",
+        "Fresh boombox look, and its speakers pulse with the music.",
+        "Entering a structure (villages, dungeons, Ancient Cities) shows its name; zone titles are colour-coded and easier to read.",
+        "Login screen, party panel, catch and reward cards and menus share the Holy Lois look.",
+        "Chests no longer replay their closing animation when you look back at them.",
+        "Your party's marker through walls sits on their head, and elytra flight feels smoother."
       ]
     },
     "ru": {
-      "summary": "Дома, группы и больше пользы от снаряжения.",
+      "summary": "Дома, группы, трофейная рыба, которую видно, и новый облик.",
       "teaser": "Ваши дома, ваша группа",
       "changes": [
         "Откройте /homes, чтобы сохранить, переименовать или посетить три начальных дома.",
         "Управляйте группой через /party или /group и следите за здоровьем и едой.",
         "Откройте чат и нажмите на точку сбора, чтобы запросить телепорт к её автору. Он решает, принять ли запрос.",
         "Реликтовые фонари, посох путешественника и обруч странника получили полезные эффекты.",
+        "Трофейная рыба выглядит на свой вес: в руке, на земле и на разделочной доске, с подсветкой редкости и весом прямо на значке в инвентаре.",
+        "Новая сверхредкая мифическая рыба: красное имя, вес далеко за рекордом вида, и об этом узнаёт весь сервер.",
         "Редкий улов показывает личную карточку и звук. /catchcards off отключает их.",
         "Бумбоксы работают в воде и не переключают станцию после еды. В чанке можно включить до шести, при шести одновременных потоках на сервере.",
         "Дополнительную 3D-броню можно попробовать в настройках лаунчера. По умолчанию она выключена и не меняет игровой процесс.",
         "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее.",
         "Праздничные фейерверки событий, ежедневных подарков и секретных кодов выглядят и звучат как прежде, но никого не ранят.",
         "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего).",
-        "Карта мира больше не показывает варианты телепорта, доступные только администраторам.",
-        "Метка смерти на карте исчезает сама, когда все выпавшие предметы подобраны или пропали."
+        "На карте мира нажмите правой кнопкой на игрока, чтобы отправить ему запрос /tpa; телепорты только для администраторов скрыты.",
+        "Метка смерти на карте исчезает сама, когда все выпавшие предметы подобраны или пропали.",
+        "Разделывайте трофейную рыбу на разделочной доске, чтобы получить больше кусков (рыбу Fish of Thieves тоже); редкая и лучше рыба даёт короткий бонус при еде.",
+        "Новый вид бумбокса, его динамики пульсируют в такт музыке.",
+        "При входе в строение (деревни, подземелья, древние города) показывается его название; заголовки зон окрашены по типу и лучше читаются.",
+        "Экран входа, панель группы, карточки улова и наград и меню выполнены в стиле Holy Lois.",
+        "Сундуки больше не повторяют анимацию закрытия, когда вы снова смотрите на них.",
+        "Метка участника группы сквозь стены теперь у головы, а полёт на элитрах стал плавнее."
       ]
     },
     "lv": {
-      "summary": "Mājas, komanda un noderīgāks ekipējums.",
+      "summary": "Mājas, komanda, redzamas trofeju zivis un jauns izskats.",
       "teaser": "Tavas mājas, tava komanda",
       "changes": [
         "Atver /homes, lai saglabātu, pārdēvētu vai apmeklētu trīs sākuma mājas.",
         "Ar /party vai /group pārvaldi komandu un apskati veselību un ēdienu.",
         "Atver čatu un klikšķini pulcēšanās kartīti, lai pieprasītu ceļošanu pie tās autora. Viņš izvēlas, vai piekrist.",
         "Relikviju laternām, ceļotāja spieķim un klejotāja galvas rotai tagad ir noderīgi efekti.",
+        "Trofeju zivis izskatās tik lielas, cik sver: rokā, uz zemes un uz griešanas dēļa, ar retuma mirdzumu un svaru tieši uz inventāra ikonas.",
+        "Jauna ļoti reta mītiska zivs: sarkans nosaukums, svars tālu pāri sugas rekordam, un par to uzzina viss serveris.",
         "Rets loms parāda personīgu kartīti un skaņu. /catchcards off tās izslēdz.",
         "Boomboksi darbojas ūdenī un pēc maltītes nepārslēdz staciju. Vienā čunkā var ieslēgt sešus, serverī vienlaikus līdz sešām straumēm.",
         "Izmēģini izvēles 3D bruņas palaidēja iestatījumos. Sākumā tās ir izslēgtas un nemaina spēles noteikumus.",
         "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki.",
         "Svētku uguņošana no notikumiem, dienas dāvanām un slepenajiem kodiem izskatās un skan kā agrāk, bet nevienu nesavaino.",
         "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā).",
-        "Pasaules karte vairs nerāda teleportēšanās iespējas, kas pieejamas tikai administratoriem.",
-        "Nāves atzīme kartē pazūd pati, kad visas izkritušās lietas ir paceltas vai pazudušas."
+        "Pasaules kartē ar labo klikšķi uz spēlētāja nosūti /tpa pieprasījumu; tikai administratoru teleporti paliek paslēpti.",
+        "Nāves atzīme kartē pazūd pati, kad visas izkritušās lietas ir paceltas vai pazudušas.",
+        "Sadali trofeju zivis uz griešanas dēļa, lai iegūtu vairāk šķēļu (arī Fish of Thieves zivis); retas un labākas zivis apēdot dod īsu bonusu.",
+        "Jauns boomboksa izskats, un tā skaļruņi pulsē mūzikas ritmā.",
+        "Ieejot būvē (ciemos, pazemes cietokšņos, senajās pilsētās), parādās tās nosaukums; zonu virsraksti ir krāsoti pēc veida un vieglāk lasāmi.",
+        "Ielogošanās ekrāns, komandas panelis, loma un balvu kartītes un izvēlnes ir Holy Lois stilā.",
+        "Lādes vairs neatkārto aizvēršanas animāciju, kad uz tām paskaties atkal.",
+        "Komandas biedra atzīme cauri sienām tagad ir pie galvas, un lidojums ar elytrām ir plūdenāks."
       ]
     }
   }
