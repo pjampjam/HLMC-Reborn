@@ -15,7 +15,8 @@
         "Try optional 3D armor in launcher Settings. It starts off and keeps the same gameplay.",
         "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts.",
         "Celebration fireworks from events, daily gifts and secret codes look and sound the same but never hurt anyone.",
-        "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first)."
+        "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first).",
+        "The world map no longer shows teleport options that only admins can use."
       ]
     },
     "ru": {
@@ -31,7 +32,8 @@
         "Дополнительную 3D-броню можно попробовать в настройках лаунчера. По умолчанию она выключена и не меняет игровой процесс.",
         "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее.",
         "Праздничные фейерверки событий, ежедневных подарков и секретных кодов выглядят и звучат как прежде, но никого не ранят.",
-        "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего)."
+        "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего).",
+        "Карта мира больше не показывает варианты телепорта, доступные только администраторам."
       ]
     },
     "lv": {
@@ -47,7 +49,8 @@
         "Izmēģini izvēles 3D bruņas palaidēja iestatījumos. Sākumā tās ir izslēgtas un nemaina spēles noteikumus.",
         "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki.",
         "Svētku uguņošana no notikumiem, dienas dāvanām un slepenajiem kodiem izskatās un skan kā agrāk, bet nevienu nesavaino.",
-        "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā)."
+        "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā).",
+        "Pasaules karte vairs nerāda teleportēšanās iespējas, kas pieejamas tikai administratoriem."
       ]
     }
   }
