@@ -16,7 +16,7 @@
         "Fish weigh by rarity: Rare 1-2.99 kg, Epic 3-19.99 kg, Legendary 20-40 kg. About one trophy in 250 comes up Shiny, with stronger effects, its own jingle and extra sparkles.",
         "Rare catches get a personal card above the hotbar with a chime. Use /catchcards off to silence them.",
         "Boomboxes work in water and stay on the same station after a meal. Six can be powered per chunk, with six audio streams across the server.",
-        "Try optional 3D armor in launcher Settings. It starts off and keeps the same gameplay.",
+        "Armor now looks 3D on you and everyone else, dyes and trims included (3D Armor). Gameplay stays the same.",
         "Saved skins return on rejoin; maps and statistics use your selected skin with clearer guides and layouts.",
         "Celebration fireworks from events, daily gifts and secret codes look and sound the same but never hurt anyone.",
         "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first).",
@@ -33,7 +33,11 @@
         "Enter confirms login, register, home names and party invites; alt-tab no longer pauses the game.",
         "Joining shows the resource download on the loading bar with a short status line instead of a corner popup.",
         "Fish of Thieves tropical islands and fruit trees no longer appear in new land, so the world keeps its vanilla look.",
-        "Fishy Business counts Fish of Thieves fish too, and the illager camp achievement is now called Find an Illager Camp."
+        "Fishy Business counts Fish of Thieves fish too, and the illager camp achievement is now called Find an Illager Camp.",
+        "The way in is one smooth scene: our own panorama on the title screen, while connecting and behind the login form, then a soft fade into the world. The title screen has a Holy Lois: Reborn button that joins straight away.",
+        "Enter works in every form again, and Esc on the login screen asks whether to leave the server.",
+        "The day-7 Holy Lootbox is its own gold block with the Holy Lois logo, like the one on the website, and bursts open with gold sparks.",
+        "A boombox playing in your hand pumps its speakers and pops notes on the beat too, and lanterns in hand swing smoothly like the boombox."
       ]
     },
     "ru": {
@@ -50,7 +54,7 @@
         "Вес рыбы зависит от редкости: редкая 1-2,99 кг, эпическая 3-19,99 кг, легендарная 20-40 кг. Примерно один трофей из 250 попадается сияющим, с более сильными эффектами, своей мелодией и дополнительными искрами.",
         "Редкий улов показывает личную карточку над панелью быстрого доступа и звук. /catchcards off отключает их.",
         "Бумбоксы работают в воде и не переключают станцию после еды. В чанке можно включить до шести, при шести одновременных потоках на сервере.",
-        "Дополнительную 3D-броню можно попробовать в настройках лаунчера. По умолчанию она выключена и не меняет игровой процесс.",
+        "Броня теперь объёмная на вас и на всех остальных, вместе с красками и отделкой (3D Armor). Игровой процесс не меняется.",
         "Сохранённый скин возвращается при повторном входе; карта и статистика используют выбранный скин. Руководства и интерфейс стали понятнее.",
         "Праздничные фейерверки событий, ежедневных подарков и секретных кодов выглядят и звучат как прежде, но никого не ранят.",
         "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего).",
@@ -67,7 +71,11 @@
         "Enter подтверждает вход, регистрацию, имя дома и приглашение в группу; Alt+Tab больше не ставит игру на паузу.",
         "При входе загрузка ресурсов видна на полосе загрузки с короткой подписью вместо всплывающего окна в углу.",
         "Тропические острова и фруктовые деревья Fish of Thieves больше не появляются в новых землях, мир сохраняет ванильный вид.",
-        "Достижение за ловлю рыбы засчитывает и рыбу Fish of Thieves, а достижение лагеря теперь называется «Найдите лагерь разбойников»."
+        "Достижение за ловлю рыбы засчитывает и рыбу Fish of Thieves, а достижение лагеря теперь называется «Найдите лагерь разбойников».",
+        "Вход стал одной плавной сценой: наша панорама на титульном экране, при подключении и за формой входа, затем мягкий переход в мир. На титульном экране есть кнопка Holy Lois: Reborn для входа сразу на сервер.",
+        "Enter снова работает во всех формах, а Esc на экране входа спрашивает, покинуть ли сервер.",
+        "Holy Lootbox на 7-й день теперь собственный золотой блок с логотипом Holy Lois, как на сайте, и раскрывается золотыми искрами.",
+        "Бумбокс, играющий в руке, тоже качает динамиками и выпускает ноты в такт, а фонари в руке плавно качаются, как бумбокс."
       ]
     },
     "lv": {
@@ -84,7 +92,7 @@
         "Zivju svars atkarīgs no retuma: reta 1-2,99 kg, episka 3-19,99 kg, leģendāra 20-40 kg. Aptuveni viena trofeja no 250 ir mirdzoša, ar spēcīgākiem efektiem, savu melodiju un papildu dzirkstelēm.",
         "Rets loms parāda personīgu kartīti virs ātrās piekļuves joslas un skaņu. /catchcards off tās izslēdz.",
         "Boomboksi darbojas ūdenī un pēc maltītes nepārslēdz staciju. Vienā čunkā var ieslēgt sešus, serverī vienlaikus līdz sešām straumēm.",
-        "Izmēģini izvēles 3D bruņas palaidēja iestatījumos. Sākumā tās ir izslēgtas un nemaina spēles noteikumus.",
+        "Bruņas tagad ir 3D uz tevis un visiem citiem, ieskaitot krāsas un rotājumus (3D Armor). Spēles noteikumi nemainās.",
         "Saglabātais izskats atgriežas pēc atkārtotas pieslēgšanās; karte un statistika izmanto izvēlēto izskatu. Pamācības un izkārtojums ir skaidrāki.",
         "Svētku uguņošana no notikumiem, dienas dāvanām un slepenajiem kodiem izskatās un skan kā agrāk, bet nevienu nesavaino.",
         "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā).",
@@ -101,7 +109,11 @@
         "Enter apstiprina ielogošanos, reģistrāciju, mājas nosaukumu un komandas uzaicinājumu; Alt+Tab vairs neaptur spēli.",
         "Pievienojoties resursu lejupielāde redzama ielādes joslā ar īsu statusa rindu, nevis uznirstošā logā stūrī.",
         "Fish of Thieves tropiskās salas un augļu koki vairs neparādās jaunās zemēs, tāpēc pasaule saglabā vanilla izskatu.",
-        "Zvejas sasniegums ieskaita arī Fish of Thieves zivis, un nometnes sasniegums tagad saucas „Atrodi laupītāju nometni”."
+        "Zvejas sasniegums ieskaita arī Fish of Thieves zivis, un nometnes sasniegums tagad saucas „Atrodi laupītāju nometni”.",
+        "Ieeja tagad ir viena vienota aina: mūsu panorāma titulekrānā, savienojoties un aiz pieteikšanās formas, tad maiga pāreja pasaulē. Titulekrānā ir poga Holy Lois: Reborn, kas uzreiz pievieno serverim.",
+        "Enter atkal darbojas visās formās, un Esc pieteikšanās ekrānā jautā, vai atstāt serveri.",
+        "7. dienas Holy Lootbox tagad ir savs zelta bloks ar Holy Lois logo, tāds pats kā mājaslapā, un atveras ar zelta dzirkstelēm.",
+        "Boomboks, kas spēlē rokā, arī pumpē skaļruņus un laiž notis ritmā, un laternas rokā šūpojas vienmērīgi kā boomboks."
       ]
     }
   }
