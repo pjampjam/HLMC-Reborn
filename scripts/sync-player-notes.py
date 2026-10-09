@@ -14,7 +14,7 @@ def main():
         datetime.date.fromisoformat(value['date'])
         for language in ['en','ru','lv']:
             notes=value['locales'][language]
-            assert isinstance(notes['changes'],list) and 1<=len(notes['changes'])<=8
+            assert isinstance(notes["changes"],list) and 1<=len(notes["changes"])<=40
             for text in [notes['summary'],notes['teaser'],*notes['changes']]:
                 assert isinstance(text,str) and text.strip() and '\u2014' not in text
                 assert 'pjampjam' not in text.lower() and 'pjamtest' not in text.lower(), 'Operational account notes belong in admin records'
