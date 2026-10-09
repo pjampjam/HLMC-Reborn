@@ -120,7 +120,13 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
-## Prepared server candidate 1.8.3
+## Server release for pack 1.9.0
+
+Extras 1.7.0 and onboarding 1.9.0 are live with client Auth UI 1.1.0; launcher 1.3.2 is unchanged. `server/deploy-release-190.py` swaps 10 mod jars for 11 (Open Parties and Claims 0.32.8, Farmer's Delight 3.6.28, REI 26.3.824, Fabric API 0.162.0, ModernFix and library updates), turns off the Fish of Thieves tropical island biome (`config/fishofthieves.json`, new chunks only), sets `maxPlayingPerChunk` to 6, installs the Tab style from `server/styledplayerlist`, adds the 1.9.0 client mod ids to `config/holylois-mods.json` and raises the pack minimum to 1.9.0. Extras registers the Holy Lootbox item, so older clients cannot join.
+
+`server/test-190.py` boots the same change set on an isolated loopback copy with the live OPAC data first. OPAC 0.32.8 rewrites `config/openpartiesandclaims-server.toml` once in its new layout: every existing value stays, and only the new claiming-anchor keys are added (anchor claiming off). REI 26.3.824 logs harmless "Failed to fill display" errors for brewing recipes at start.
+
+## Server release for pack 1.8.3
 
 Onboarding 1.8.3 carries `/party` and `/group` redirects to native OPAC, installed after command registration and after successful datapack reloads. Existing command roots are preserved. Membership, permissions and claim access remain native; no migration.
 
@@ -128,7 +134,7 @@ The SkinsRestorer 15.12.6/Fabric 26.3 compatibility hook carries the returned sk
 
 BlueMap gets a selected-skin provider through its supported API. Skin URLs are vetted Mojang textures; downloads are bounded and redirects rejected. No signatures/authentication records are exported. Native skin fallback, icon factory, player visibility and marker refresh timing remain. Launcher head previews are not implemented. Native map render consumers remain disabled in the isolated probe; real marker appearance is an owner check.
 
-Published channels and live server remain 1.8.2 until a separately approved deployment. The launcher 1.3.2 candidate is local. Automatic custom scans failed with 0x80508023. The owner then completed a manual Defender scan with zero threats and reported VirusTotal 0/69 for the exact matching final EXE SHA-256. Record that as owner scan evidence, not an automatic scan pass or antivirus guarantee.
+Pack 1.8.3 and launcher 1.3.2 were published and deployed on 2026-10-08. Automatic custom scans failed with 0x80508023. The owner then completed a manual Defender scan with zero threats and reported VirusTotal 0/69 for the exact matching final EXE SHA-256. Record that as owner scan evidence, not an automatic scan pass or antivirus guarantee.
 
 ## Server release for pack 1.8.2
 
@@ -301,4 +307,4 @@ Renaming uses EasyAuth's native forced UUID. Inventory, homes and other UUID-bas
 
 Private server files under `world/holylois`: `account-requests.json`, `private-recovery/` and `private-account-backups/`. Keep these in protected backups, never in public archives. Exporters read only `account-profile-names.json` (display names and aliases), not requests or authentication records. Statistics retain exclusions across aliases and show one canonical row per profile.
 
-Account rename/password submissions and `/logout` wait for the existing combat cooldown in the 1.8.3 candidate. A denied submission retains its grant. Disconnecting during PvP still follows the existing death penalty. In server console, omit `/` from `account rename|password grant|status|revoke PLAYER`; online and offline registered accounts are supported.
+Account rename/password submissions and `/logout` wait for the existing combat cooldown (since 1.8.3). A denied submission retains its grant. Disconnecting during PvP still follows the existing death penalty. In server console, omit `/` from `account rename|password grant|status|revoke PLAYER`; online and offline registered accounts are supported.

@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-Guide for candidate pack 1.8.3 and launcher 1.3.2. Live remains pack 1.8.2 / launcher 1.3.1 until deployment. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+Guide for pack 1.9.0 and launcher 1.3.2. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
 
 Click **Play** in the Holy Lois launcher. With a player name, Minecraft opens straight from the launcher and joins Holy Lois by itself. With a bought Minecraft account, Minecraft Launcher opens: pick **Holy Lois: Reborn**, press Play, and the game joins by itself too. For singleplayer, turn off **Join Holy Lois on start** in Settings.
 
@@ -189,9 +189,7 @@ Other players' claim overlays appear only after the map has cached terrain there
 
 Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles remain planned. Account forms are described below.
 
-## Candidate 1.9.0: homes, parties and equipment
-
-This section describes the prepared update, not the current live 1.8.3 server.
+## Pack 1.9.0: homes, parties and equipment
 
 `/homes` opens your three starter home slots. Save your current spot, rename a home or confirm its deletion. Selecting a saved home uses the usual teleport checks. Slots you have not unlocked show greyed out. Existing extra homes are retained; no new purchase or play-time unlock is offered yet. Press Enter to confirm a name. Plain `/home` still goes to your only home or the one named `home`.
 

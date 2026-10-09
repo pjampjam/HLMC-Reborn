@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, explore dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.3.2 / pack 1.8.3 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.3.2 / pack 1.9.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -17,11 +17,9 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
-## Latest update: pack 1.8.3 and launcher 1.3.2
+## Latest update: pack 1.9.0
 
-Launcher setup keeps shortcut options reachable while entering your name. Quick start accepts valid player names without a Mojang ownership lookup; existing Holy Lois names still need their server password. Admin-requested private forms let players change names without losing progress or recover a forgotten server password.
-
-The larger homes, party-management, rally-travel and equipment batch is planned for 1.8.4. Live `/rally` still marks a meeting point without teleporting.
+Homes, parties, trophy fish you can see and a fresh new look. `/homes` manages your three starter homes, `/party` or `/group` manages your party with wide health bars, and a rally card can request travel to its author. Trophy fish look as big as they weigh, 10 kg and up are carried over your head, and the new Mythic fish is 40 kg and up. Joining is one smooth scene from our title panorama to the world, the day-7 Holy Lootbox is its own gold block, armor looks 3D, and Enter works in every form again. Launcher 1.3.2 is unchanged and installs the update. The [player guide](PLAYER-GUIDE.md#pack-190-homes-parties-and-equipment) has the details.
 
 ## Release history
 
