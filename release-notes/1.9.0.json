@@ -7,11 +7,12 @@
       "teaser": "Your homes, your party",
       "changes": [
         "Open /homes to save, rename or visit your three starter homes.",
-        "Use /party or /group to manage your party and check health and food.",
+        "Use /party or /group to manage your party and see your teammates' health.",
         "Click a rally card with chat open to request travel to its author. They choose whether to accept.",
         "Relic lanterns, the travel staff and the wanderer's circlet now have useful bonuses.",
-        "Trophy fish look as big as they weigh: in your hand, on the ground and on the cutting board, with a rarity glow and the weight right on the inventory icon.",
-        "New ultra-rare Mythic fish: a red name, far past the species' record weight, and the whole server hears about it.",
+        "Trophy fish look as big as they weigh and take on their rarity colour: in your hand, on the ground, in frames and on the cutting board, with a rarity glow and the weight right on the inventory icon.",
+        "New ultra-rare Mythic fish: 40 kg and up, a red name, and the whole server hears about it.",
+        "Fish weigh by rarity: Rare 1-2.99 kg, Epic 3-19.99 kg, Legendary 20-40 kg. About one trophy in 250 comes up Shiny, with stronger effects.",
         "Rare catches get a personal card and chime. Use /catchcards off to silence them.",
         "Boomboxes work in water and stay on the same station after a meal. Six can be powered per chunk, with six audio streams across the server.",
         "Try optional 3D armor in launcher Settings. It starts off and keeps the same gameplay.",
@@ -20,12 +21,15 @@
         "The secret code of the day changes at midnight Riga time and needs 20 minutes of active play that day (new players: 2 hours in total first).",
         "On the world map, right-click a player to send them a /tpa request; admin-only teleports stay hidden.",
         "Your death marker on the map disappears by itself once all the items you dropped are picked up or gone.",
-        "Fillet trophy fish on the cutting board for more slices (Fish of Thieves fish too); Rare and better fish give a short boost when eaten.",
-        "Fresh boombox look, and its speakers pulse with the music.",
+        "Each kind of trophy fish does its own thing: effects when eaten (some bite back) and bonuses while held, all listed in the tooltip. Cooking keeps the stats and makes effects last longer; fillet them on the cutting board for more slices.",
+        "Fresh boombox: a flat icon in your inventory, a 3D boombox you carry by the handle, and speakers that pulse with the music.",
         "Entering a structure (villages, dungeons, Ancient Cities) shows its name; zone titles are colour-coded and easier to read.",
         "Login screen, party panel, catch and reward cards and menus share the Holy Lois look.",
         "Chests no longer replay their closing animation when you look back at them.",
-        "Your party's marker through walls sits on their head, and elytra flight feels smoother."
+        "Your party's marker through walls sits on their head, and elytra flight feels smoother.",
+        "Enter confirms login, register, home names and party invites; alt-tab no longer pauses the game.",
+        "Fish of Thieves tropical islands and fruit trees no longer appear in new land, so the world keeps its vanilla look.",
+        "Fishy Business counts Fish of Thieves fish too, and the illager camp achievement is now called Find an Illager Camp."
       ]
     },
     "ru": {
@@ -33,11 +37,12 @@
       "teaser": "Ваши дома, ваша группа",
       "changes": [
         "Откройте /homes, чтобы сохранить, переименовать или посетить три начальных дома.",
-        "Управляйте группой через /party или /group и следите за здоровьем и едой.",
+        "Управляйте группой через /party или /group и следите за здоровьем участников.",
         "Откройте чат и нажмите на точку сбора, чтобы запросить телепорт к её автору. Он решает, принять ли запрос.",
         "Реликтовые фонари, посох путешественника и обруч странника получили полезные эффекты.",
-        "Трофейная рыба выглядит на свой вес: в руке, на земле и на разделочной доске, с подсветкой редкости и весом прямо на значке в инвентаре.",
-        "Новая сверхредкая мифическая рыба: красное имя, вес далеко за рекордом вида, и об этом узнаёт весь сервер.",
+        "Трофейная рыба выглядит на свой вес и окрашена в цвет редкости: в руке, на земле, в рамке и на разделочной доске, с подсветкой редкости и весом прямо на значке в инвентаре.",
+        "Новая сверхредкая мифическая рыба: от 40 кг, красное имя, и об этом узнаёт весь сервер.",
+        "Вес рыбы зависит от редкости: редкая 1-2,99 кг, эпическая 3-19,99 кг, легендарная 20-40 кг. Примерно один трофей из 250 попадается сияющим, с более сильными эффектами.",
         "Редкий улов показывает личную карточку и звук. /catchcards off отключает их.",
         "Бумбоксы работают в воде и не переключают станцию после еды. В чанке можно включить до шести, при шести одновременных потоках на сервере.",
         "Дополнительную 3D-броню можно попробовать в настройках лаунчера. По умолчанию она выключена и не меняет игровой процесс.",
@@ -46,12 +51,15 @@
         "Секретный код дня меняется в полночь по рижскому времени и требует 20 минут активной игры в этот день (новым игрокам сначала 2 часа всего).",
         "На карте мира нажмите правой кнопкой на игрока, чтобы отправить ему запрос /tpa; телепорты только для администраторов скрыты.",
         "Метка смерти на карте исчезает сама, когда все выпавшие предметы подобраны или пропали.",
-        "Разделывайте трофейную рыбу на разделочной доске, чтобы получить больше кусков (рыбу Fish of Thieves тоже); редкая и лучше рыба даёт короткий бонус при еде.",
-        "Новый вид бумбокса, его динамики пульсируют в такт музыке.",
+        "Каждый вид трофейной рыбы действует по-своему: эффекты при еде (некоторые вредят) и бонусы, пока рыба в руке, всё видно в подсказке. Приготовленная рыба сохраняет свойства, а эффекты длятся дольше; на разделочной доске она даёт больше кусков.",
+        "Новый бумбокс: плоский значок в инвентаре, 3D-бумбокс, который носят за ручку, и динамики, пульсирующие в такт музыке.",
         "При входе в строение (деревни, подземелья, древние города) показывается его название; заголовки зон окрашены по типу и лучше читаются.",
         "Экран входа, панель группы, карточки улова и наград и меню выполнены в стиле Holy Lois.",
         "Сундуки больше не повторяют анимацию закрытия, когда вы снова смотрите на них.",
-        "Метка участника группы сквозь стены теперь у головы, а полёт на элитрах стал плавнее."
+        "Метка участника группы сквозь стены теперь у головы, а полёт на элитрах стал плавнее.",
+        "Enter подтверждает вход, регистрацию, имя дома и приглашение в группу; Alt+Tab больше не ставит игру на паузу.",
+        "Тропические острова и фруктовые деревья Fish of Thieves больше не появляются в новых землях, мир сохраняет ванильный вид.",
+        "Достижение за ловлю рыбы засчитывает и рыбу Fish of Thieves, а достижение лагеря теперь называется «Найдите лагерь разбойников»."
       ]
     },
     "lv": {
@@ -59,11 +67,12 @@
       "teaser": "Tavas mājas, tava komanda",
       "changes": [
         "Atver /homes, lai saglabātu, pārdēvētu vai apmeklētu trīs sākuma mājas.",
-        "Ar /party vai /group pārvaldi komandu un apskati veselību un ēdienu.",
+        "Ar /party vai /group pārvaldi komandu un redzi biedru veselību.",
         "Atver čatu un klikšķini pulcēšanās kartīti, lai pieprasītu ceļošanu pie tās autora. Viņš izvēlas, vai piekrist.",
         "Relikviju laternām, ceļotāja spieķim un klejotāja galvas rotai tagad ir noderīgi efekti.",
-        "Trofeju zivis izskatās tik lielas, cik sver: rokā, uz zemes un uz griešanas dēļa, ar retuma mirdzumu un svaru tieši uz inventāra ikonas.",
-        "Jauna ļoti reta mītiska zivs: sarkans nosaukums, svars tālu pāri sugas rekordam, un par to uzzina viss serveris.",
+        "Trofeju zivis izskatās tik lielas, cik sver, un iekrāsojas retuma krāsā: rokā, uz zemes, rāmī un uz griešanas dēļa, ar retuma mirdzumu un svaru tieši uz inventāra ikonas.",
+        "Jauna ļoti reta mītiska zivs: no 40 kg, sarkans nosaukums, un par to uzzina viss serveris.",
+        "Zivju svars atkarīgs no retuma: reta 1-2,99 kg, episka 3-19,99 kg, leģendāra 20-40 kg. Aptuveni viena trofeja no 250 ir mirdzoša, ar spēcīgākiem efektiem.",
         "Rets loms parāda personīgu kartīti un skaņu. /catchcards off tās izslēdz.",
         "Boomboksi darbojas ūdenī un pēc maltītes nepārslēdz staciju. Vienā čunkā var ieslēgt sešus, serverī vienlaikus līdz sešām straumēm.",
         "Izmēģini izvēles 3D bruņas palaidēja iestatījumos. Sākumā tās ir izslēgtas un nemaina spēles noteikumus.",
@@ -72,12 +81,15 @@
         "Dienas slepenais kods mainās pusnaktī pēc Rīgas laika, un tam vajag 20 minūtes aktīvas spēles tajā dienā (jauniem spēlētājiem vispirms 2 stundas kopā).",
         "Pasaules kartē ar labo klikšķi uz spēlētāja nosūti /tpa pieprasījumu; tikai administratoru teleporti paliek paslēpti.",
         "Nāves atzīme kartē pazūd pati, kad visas izkritušās lietas ir paceltas vai pazudušas.",
-        "Sadali trofeju zivis uz griešanas dēļa, lai iegūtu vairāk šķēļu (arī Fish of Thieves zivis); retas un labākas zivis apēdot dod īsu bonusu.",
-        "Jauns boomboksa izskats, un tā skaļruņi pulsē mūzikas ritmā.",
+        "Katra trofeju zivju suga darbojas savādāk: efekti apēdot (dažas kaitē) un bonusi, kamēr zivs ir rokā, un to visu rāda apraksts. Pagatavota zivs saglabā īpašības un efekti ilgst ilgāk; uz griešanas dēļa tā dod vairāk šķēļu.",
+        "Jauns boomboks: plakana ikona inventārā, 3D boomboks, ko nes aiz roktura, un skaļruņi, kas pulsē mūzikas ritmā.",
         "Ieejot būvē (ciemos, pazemes cietokšņos, senajās pilsētās), parādās tās nosaukums; zonu virsraksti ir krāsoti pēc veida un vieglāk lasāmi.",
         "Ielogošanās ekrāns, komandas panelis, loma un balvu kartītes un izvēlnes ir Holy Lois stilā.",
         "Lādes vairs neatkārto aizvēršanas animāciju, kad uz tām paskaties atkal.",
-        "Komandas biedra atzīme cauri sienām tagad ir pie galvas, un lidojums ar elytrām ir plūdenāks."
+        "Komandas biedra atzīme cauri sienām tagad ir pie galvas, un lidojums ar elytrām ir plūdenāks.",
+        "Enter apstiprina ielogošanos, reģistrāciju, mājas nosaukumu un komandas uzaicinājumu; Alt+Tab vairs neaptur spēli.",
+        "Fish of Thieves tropiskās salas un augļu koki vairs neparādās jaunās zemēs, tāpēc pasaule saglabā vanilla izskatu.",
+        "Zvejas sasniegums ieskaita arī Fish of Thieves zivis, un nometnes sasniegums tagad saucas „Atrodi laupītāju nometni”."
       ]
     }
   }

@@ -100,9 +100,9 @@ The first time anyone walks into a big structure, the whole server sees who disc
 
 ## Fishing, legends and treasure
 
-**Fish of Thieves** adds ten kinds of fish in many colours; some live only in certain waters, at night or in storms. Every fish you catch has a size: **Common**, **Uncommon**, **Rare**, **Epic** or **Legendary**. Common fish stay plain and stack as always, Uncommon ones get a green name. Rare and better keep their weight in kg and your name and do not stack, so they work as trophies. A Legendary catch is announced to everyone. Very rarely (about one fish in 5,000) a Legendary turns **Mythic**: a red name, far heavier than the species' normal record, and the whole server hears it. Luck of the Sea makes big fish more likely.
+**Fish of Thieves** adds ten kinds of fish in many colours; some live only in certain waters, at night or in storms. Every fish you catch has a size: **Common**, **Uncommon**, **Rare**, **Epic** or **Legendary**. Common fish stay plain and stack as always, Uncommon ones get a green name. Rare and better keep their weight in kg and your name and do not stack, so they work as trophies. A Legendary catch is announced to everyone. Trophies weigh by rarity: Rare 1-2.99 kg, Epic 3-19.99 kg, Legendary 20-40 kg. Very rarely (about one fish in 5,000) a Legendary turns **Mythic**: a red name, 40 kg and up, and the whole server hears it. About one trophy in 250 comes up **Shiny**: a sparkle before its name, a glint and stronger effects. Luck of the Sea makes big fish more likely.
 
-Trophy fish look as big as they weigh: in hands, on the ground, in item frames and on the cutting board. In your inventory, chests and backpacks they have a glow in their rarity colour and their weight in kg in the top-left corner of the slot. Put one on a **cutting board** and slice it with a knife for more slices than a normal fish (all Fish of Thieves fish can be sliced too). Eating a Rare fish gives Speed for 30 seconds, Epic gives Dolphin's Grace for a minute, Legendary gives Luck and Water Breathing for 3 minutes, and a Mythic gives even more.
+Trophy fish look as big as they weigh and take on their rarity colour: in hands, on the ground, in item frames and on the cutting board. In your inventory, chests and backpacks they have a glow in their rarity colour and their weight in kg in the top-left corner of the slot. Put one on a **cutting board** and slice it with a knife for more slices than a normal fish (all Fish of Thieves fish can be sliced too). Each kind of trophy does its own thing, and the tooltip lists exactly what. Eaten: cod gives Haste, salmon and battlegill Strength, tropical fish Night Vision, splashtail Speed, pondie Regeneration, islehopper Jump Boost, ancientscale Resistance, plentifin Saturation, wildsplash Dolphin's Grace, stormfish Slow Falling and Speed, devilfish Fire Resistance with some Weakness, and pufferfish poisons you. A wrecker is a pure trophy with no effect. Held in your main hand: pufferfish and ancientscale add armor, splashtail speed, islehopper jump height, wildsplash swimming, battlegill attack damage and wrecker knockback resistance. Higher rarity, a bigger fish and Shiny make it last longer and hit harder. Cooking keeps the rarity, weight and effects, and the effects last half again as long.
 
 Now and then a loot crate comes up on the hook (**Fishing Loot Crates**). Fishing treasure can also be a **message in a bottle** or a **map to buried treasure**.
 
@@ -173,7 +173,7 @@ Create a party with `/party create`, invite a friend with `/party invite NAME`, 
 
 Party members are protected from player-attributed damage and harmful effects. Healing still works. This covers normal melee, attributed projectiles and harmful potion effects, not every environmental trap or effect from another mod. Leave the party before an agreed PvP duel.
 
-The optional party HUD shows member health, absorption and food, including offline/other-dimension status. `/partyhud on` and `/partyhud off` control your panel. `*` means another dimension. The panel shows a compact subset when space is short.
+The optional party HUD shows member health and absorption, including offline/other-dimension status. `/partyhud on` and `/partyhud off` control your panel. `*` means another dimension. The panel shows a compact subset when space is short.
 
 `/rally` deliberately shares your current position with authenticated party members for90seconds. It has a10second cooldown. `/rally clear` removes your mark; the party owner can also clear it. The HUD shows a direction arrow, distance and time remaining. Pings never teleport anyone or publish a point to website stats/BlueMap. Leaving/kicking the sender revokes the mark. `/partyhud pings off` hides notifications locally; it does not change membership or delivery to other party members.
 
@@ -189,13 +189,13 @@ Other players' claim overlays appear only after the map has cached terrain there
 
 Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles remain planned. Account forms are described below.
 
-## Candidate 1.8.4: homes, parties and equipment
+## Candidate 1.9.0: homes, parties and equipment
 
-This section describes the prepared update, not the current live 1.8.2 server.
+This section describes the prepared update, not the current live 1.8.3 server.
 
-`/homes` opens your three starter home slots. Save your current spot, rename a home or confirm its deletion. Selecting a saved home uses the usual teleport checks. Existing extra homes are retained; no new purchase or play-time unlock is offered yet. Plain `/home` still goes to your only home or the one named `home`.
+`/homes` opens your three starter home slots. Save your current spot, rename a home or confirm its deletion. Selecting a saved home uses the usual teleport checks. Slots you have not unlocked show greyed out. Existing extra homes are retained; no new purchase or play-time unlock is offered yet. Press Enter to confirm a name. Plain `/home` still goes to your only home or the one named `home`.
 
-`/party` or `/group` opens party management and the health/food roster. Create a party, invite a friend by name, accept an invitation using an online member's name, or leave with confirmation. The owner sees Disband party instead of Leave party; disbanding requires confirmation and ends shared party access. Membership and shared land access remain OPAC's; `/oparties` and the apostrophe menu still work.
+`/party` or `/group` opens party management and the health roster. Create a party, invite a friend by name, accept an invitation using an online member's name, or leave with confirmation. The owner sees Disband party instead of Leave party; disbanding requires confirmation and ends shared party access. Membership and shared land access remain OPAC's; `/oparties` and the apostrophe menu still work.
 
 Use `/rally` to share a point for 90 seconds. Open chat to click its card, request travel to the author, or collapse it. Click the compact card to reopen it, or use `/rally menu`. Travel uses the normal `/tpa` acceptance flow to the author's current location, with combat and destination checks. Clearing/expiry or the author leaving the party revokes the point.
 
@@ -206,6 +206,10 @@ Rare fish catches have a personal card and chime. `/catchcards off` disables bot
 Boomboxes support waterlogging. A held eating/drinking press cannot become an off-hand radio click after it finishes; release and press again to control the radio. Six placed boxes can be powered per chunk, while six streams remain the server-wide limit. Unheard placed boxes can wait for listeners; the current audio system does not share station decoders or select only the nearest three sources.
 
 Launcher Settings offers optional 3D armor, off by default. Close Minecraft before changing it. Gameplay and inventory icons stay the same; the preview changes worn models. Mob armor, saddles, 32x and Curios support advertised as planned by the project are not promises of this version.
+
+Enter confirms the login and register forms and a party invite. Alt-tab no longer opens the pause menu (F3+P turns pausing back on). Fish of Thieves tropical islands and fruit trees no longer appear in newly generated land, so the world keeps its vanilla look; their fish and items stay. Fishy Business counts Fish of Thieves fish too.
+
+In your inventory the boombox shows as a flat icon; in your hand it is a 3D boombox carried by its handle, speakers facing out.
 
 Your saved skin returns on rejoin, and BlueMap uses it when refreshing your marker. Skins, guide keys and statistics head layouts retain the earlier prepared fixes.
 
