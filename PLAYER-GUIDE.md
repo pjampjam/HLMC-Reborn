@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-Guide for candidate pack 1.8.3 and launcher 1.3.2. Live remains pack 1.8.2 / launcher 1.3.1 until deployment. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+Guide for pack 1.9.0 and launcher 1.3.2. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
 
 Click **Play** in the Holy Lois launcher. With a player name, Minecraft opens straight from the launcher and joins Holy Lois by itself. With a bought Minecraft account, Minecraft Launcher opens: pick **Holy Lois: Reborn**, press Play, and the game joins by itself too. For singleplayer, turn off **Join Holy Lois on start** in Settings.
 
@@ -96,11 +96,13 @@ Right-click a fully grown crop to harvest it and replant automatically. One play
 
 Newly explored land has **Dungeons and Taverns** (taverns, crypts, illager camps and manors, shrines, wells and more) and **Towns and Towers** (new village styles and towers). Their chests can roll Runeforged stones and gear: vaults and boss rooms give the best rewards. Areas you already explored stay as they are.
 
-The first time anyone walks into a big structure, the whole server sees who discovered it. Villages, wells, camps and small ruins stay quiet, but every underground dungeon (small, medium or large, in plains, ice and sand styles) and every lone obelisk is announced and earns achievements. Each dungeon is built from random rooms, so one may have a treasure room and the next none; the treasure rooms hold the best loot and Runeforged runes. Type `/structures` to see which structure you are standing in. Hold **Tab** to see the leaderboards; each time the page comes round it shows another one, from diamonds and ancient debris to playtime and fish caught.
+The first time anyone walks into a big structure, the whole server sees who discovered it. Villages, wells, camps and small ruins stay quiet, but every underground dungeon (small, medium or large, in plains, ice and sand styles) and every lone obelisk is announced and earns achievements. Each dungeon is built from random rooms, so one may have a treasure room and the next none; the treasure rooms hold the best loot and Runeforged runes. Type `/structures` to see which structure you are standing in. Walking into a structure also shows its name at the top of the screen: red for dungeons and other dangerous places, green for villages, blue for ruins and the rest. Biome names show in gold. Hold **Tab** to see the leaderboards; each time the page comes round it shows another one, from diamonds and ancient debris to playtime and fish caught.
 
 ## Fishing, legends and treasure
 
-**Fish of Thieves** adds ten kinds of fish in many colours; some live only in certain waters, at night or in storms. Every fish you catch has a size: **Common**, **Uncommon**, **Rare**, **Epic** or **Legendary**. Common fish stay plain and stack as always, Uncommon ones get a green name. Rare and better keep their weight in kg and your name and do not stack, so they work as trophies. A Legendary catch is announced to everyone. Luck of the Sea makes big fish more likely.
+**Fish of Thieves** adds ten kinds of fish in many colours; some live only in certain waters, at night or in storms. Every fish you catch has a size: **Common**, **Uncommon**, **Rare**, **Epic** or **Legendary**. Common fish stay plain and stack as always, Uncommon ones get a green name. Rare and better keep their weight in kg and your name and do not stack, so they work as trophies. A Legendary catch is announced to everyone. Trophies weigh by rarity: Rare 1-2.99 kg, Epic 3-19.99 kg, Legendary 20-40 kg. Very rarely (about one fish in 5,000) a Legendary turns **Mythic**: a red name, 40 kg and up, and the whole server hears it. Legendary and Mythic names shimmer wherever they show up: in chat, in tooltips and in the death message when someone finishes you off with one. About one trophy in 250 comes up **Shiny**: a sparkle before its name, a glint, extra sparkles, its own jingle and stronger effects. Luck of the Sea makes big fish more likely.
+
+Trophy fish look as big as they weigh (a 10 kg fish is clearly bigger than a 2 kg one) and take on their rarity colour: in hands, on the ground, in item frames and on the cutting board. Fish of 10 kg and more are carried over your head with both hands: nothing stays in your off hand meanwhile (it goes back into your inventory, or drops if the inventory is full), and such a fish cannot be put in the off hand. In your inventory, chests and backpacks they have a glow in their rarity colour and their weight in kg in the top-left corner of the slot. Put one on a **cutting board** and slice it with a knife (all Fish of Thieves fish can be sliced too). Heavier fish give more slices, about two plus one per 1.5 kg, at most four per cut, so a big fish takes several cuts and shows wear in between (the board tells you how many cuts are left); take it off the board and the wear stays, and a half-cut fish fills you up less. Every slice keeps the rarity colour, the Shiny star and a shorter, weaker share of the eaten effects, and matching slices stack. Bigger fish fill you up more when eaten. Each kind of trophy does its own thing, and the tooltip lists exactly what. Eaten: cod gives Haste, salmon and battlegill Strength, tropical fish Night Vision, splashtail Speed, pondie Regeneration, islehopper Jump Boost, ancientscale Resistance, plentifin Saturation, wildsplash Dolphin's Grace, stormfish Slow Falling and Speed, devilfish Fire Resistance with some Weakness, and pufferfish poisons you. A wrecker is a pure trophy with no effect. Held in your main hand: pufferfish and ancientscale add armor, splashtail speed, islehopper jump height, wildsplash swimming, battlegill attack damage and wrecker knockback resistance. Higher rarity, a bigger fish and Shiny make it last longer and hit harder. Cooking keeps the rarity, weight and effects, and the effects last half again as long.
 
 Now and then a loot crate comes up on the hook (**Fishing Loot Crates**). Fishing treasure can also be a **message in a bottle** or a **map to buried treasure**.
 
@@ -118,7 +120,7 @@ Only upload music you are allowed to share.
 
 ## Daily gifts and the Holy Lootbox
 
-Log in once a day (Riga time) for a small gift: food, ores, books or rockets. Every 7th day in a row you get a **Holy Lootbox**, a gold present; right-click it to open. Lootboxes hold diamonds, Runeforged stones, golden apples and more, and sometimes a named tool or weapon with your name on it. Each finished week raises the lootbox tier, up to tier 3. Missing a day starts the streak again. A **secret code** of the day hides somewhere on holylois.com: type `/redeem CODE` in game for one prize per player per day (coins, a lootbox, diamonds, a Runeforged find, and very rarely a legendary weapon). Holidays such as Christmas, New Year, Jāņi, Halloween and 18 November bring their own greeting and gift.
+Log in once a day (Riga time) for a small gift: food, ores, books or rockets. The gold block on holylois.com sometimes shows a **secret code of the day**: type `/redeem CODE` in game for a prize, once per day, after 20 minutes of active play that day (new players first need 2 hours of play). Everyone gets the same code, so ask around if someone found it. Every 7th day in a row you get a **Holy Lootbox**, a gold present; right-click it to open. Lootboxes hold diamonds, Runeforged stones, golden apples and more, and sometimes a named tool or weapon with your name on it. Each finished week raises the lootbox tier, up to tier 3. Missing a day starts the streak again. A **secret code** of the day hides somewhere on holylois.com: type `/redeem CODE` in game for one prize per player per day (coins, a lootbox, diamonds, a Runeforged find, and very rarely a legendary weapon). Holidays such as Christmas, New Year, Jāņi, Halloween and 18 November bring their own greeting and gift.
 
 ## Money and the auction house
 
@@ -131,9 +133,9 @@ Craft a boombox from string (top), iron ingot + jukebox + iron ingot (middle) an
 - **Carry it**: hold it in either hand and right-click the air to play internet radio. Everyone in earshot hears it through voice chat (16 blocks at volume 1, about 30 at the default 5, 48 at volume 10), and it follows you. Right-click again for the next station, sneak + right-click to stop. Sneak + scroll while holding it, or while looking at a placed one, sets its volume from 1 to 10; louder also reaches further. It stops when you drop it or put it away.
 - **Set it down**: right-click a block with it. Right-click the placed boombox to play or switch stations; sneak with an empty hand and right-click to turn it off. It keeps playing while anyone is nearby, even after a restart. Break it to pick it up again.
 
-Placed radio controls follow claim permissions. At most two placed boomboxes can play in one chunk; at most six streams play server-wide, including held radios.
+Placed radio controls follow claim permissions. At most six placed boomboxes can play in one chunk; at most six streams play server-wide, including held radios.
 
-The song title shows above your hotbar, music notes float from a playing boombox, and the game's own music pauses while a boombox plays near you. Your own Boombox volume slider is in the voice chat settings (press V, then the volume button). `/boombox stations` lists the stations.
+The song title shows above your hotbar, music notes pop from a playing boombox on the beat, a carried boombox hangs at your hip and swings as you walk and turn, and the game's own music pauses while a boombox plays near you. Your own Boombox volume slider is in the voice chat settings (press V, then the volume button). `/boombox stations` lists the stations.
 
 ## Achievements and recipes
 
@@ -171,7 +173,7 @@ Create a party with `/party create`, invite a friend with `/party invite NAME`, 
 
 Party members are protected from player-attributed damage and harmful effects. Healing still works. This covers normal melee, attributed projectiles and harmful potion effects, not every environmental trap or effect from another mod. Leave the party before an agreed PvP duel.
 
-The optional party HUD shows member health, absorption and food, including offline/other-dimension status. `/partyhud on` and `/partyhud off` control your panel. `*` means another dimension. The panel shows a compact subset when space is short.
+The optional party HUD shows member health and absorption, including offline/other-dimension status. `/partyhud on` and `/partyhud off` control your panel. `*` means another dimension. The panel shows a compact subset when space is short.
 
 `/rally` deliberately shares your current position with authenticated party members for90seconds. It has a10second cooldown. `/rally clear` removes your mark; the party owner can also clear it. The HUD shows a direction arrow, distance and time remaining. Pings never teleport anyone or publish a point to website stats/BlueMap. Leaving/kicking the sender revokes the mark. `/partyhud pings off` hides notifications locally; it does not change membership or delivery to other party members.
 
@@ -187,23 +189,27 @@ Other players' claim overlays appear only after the map has cached terrain there
 
 Your selected `/skin` or `/skins` skin is saved by SkinsRestorer and supplies your public statistics head. Personal privacy toggles remain planned. Account forms are described below.
 
-## Candidate 1.8.4: homes, parties and equipment
+## Pack 1.9.0: homes, parties and equipment
 
-This section describes the prepared update, not the current live 1.8.2 server.
+`/homes` opens your three starter home slots. Save your current spot, rename a home or confirm its deletion. Selecting a saved home uses the usual teleport checks. Slots you have not unlocked show greyed out. Existing extra homes are retained; no new purchase or play-time unlock is offered yet. Press Enter to confirm a name. Plain `/home` still goes to your only home or the one named `home`.
 
-`/homes` opens your three starter home slots. Save your current spot, rename a home or confirm its deletion. Selecting a saved home uses the usual teleport checks. Existing extra homes are retained; no new purchase or play-time unlock is offered yet. Plain `/home` still goes to your only home or the one named `home`.
-
-`/party` or `/group` opens party management and the health/food roster. Create a party, invite a friend by name, accept an invitation using an online member's name, or leave with confirmation. The owner sees Disband party instead of Leave party; disbanding requires confirmation and ends shared party access. Membership and shared land access remain OPAC's; `/oparties` and the apostrophe menu still work.
+`/party` or `/group` opens party management and the health roster. Create a party, invite a friend by name, accept an invitation using an online member's name, or leave with confirmation. The owner sees Disband party instead of Leave party; disbanding requires confirmation and ends shared party access. Membership and shared land access remain OPAC's; `/oparties` and the apostrophe menu still work.
 
 Use `/rally` to share a point for 90 seconds. Open chat to click its card, request travel to the author, or collapse it. Click the compact card to reopen it, or use `/rally menu`. Travel uses the normal `/tpa` acceptance flow to the author's current location, with combat and destination checks. Clearing/expiry or the author leaving the party revokes the point.
 
 Lois's Lantern gives +10% mining speed while held. Placed, it heals eligible nearby players by half a heart every five seconds within four blocks, with a clear path and outside combat. The Staff of Quiet Roads gives +8% movement speed while held. The Circlet of the Wanderer gives +1 luck on your head. Copies do not stack; the original items and metadata stay intact.
 
-Rare fish catches have a personal card and chime. `/catchcards off` disables both; `/catchcards on` restores them. Rarity and coin rewards are unchanged.
+Rare fish catches have a personal card above the hotbar and a chime. `/catchcards off` disables both; `/catchcards on` restores them. Rarity and coin rewards are unchanged.
 
 Boomboxes support waterlogging. A held eating/drinking press cannot become an off-hand radio click after it finishes; release and press again to control the radio. Six placed boxes can be powered per chunk, while six streams remain the server-wide limit. Unheard placed boxes can wait for listeners; the current audio system does not share station decoders or select only the nearest three sources.
 
-Launcher Settings offers optional 3D armor, off by default. Close Minecraft before changing it. Gameplay and inventory icons stay the same; the preview changes worn models. Mob armor, saddles, 32x and Curios support advertised as planned by the project are not promises of this version.
+Worn armor looks 3D for everyone (the 3D Armor mod, with dyes and trims). Gameplay and inventory icons stay the same. Mob armor, saddles, 32x and Curios support advertised as planned by that project are not promises of this version.
+
+Enter confirms every form (login, register, homes, party invites) and Esc on the login form asks whether to leave the server. Alt-tab no longer opens the pause menu (F3+P turns pausing back on). Fish of Thieves tropical islands and fruit trees no longer appear in newly generated land, so the world keeps its vanilla look; their fish and items stay. Fishy Business counts Fish of Thieves fish too.
+
+In your inventory the boombox shows as a flat icon; in your hand it is a 3D boombox carried by the middle of its handle, speakers facing out, pumping and popping notes on the beat while it plays.
+
+Maps are held up in front of you, food goes to your mouth while you eat and lanterns hang from your hand and swing as you move, in first and third person. The daily reward card fades in above the hotbar with the Holy Lootbox (a gold block with the Holy Lois logo; right-click to open it) in sight all week, menus fit their content, green buttons confirm and red ones cancel or delete, and party health bars are wider. The title screen shows our own panorama and a Holy Lois: Reborn button that joins the server; connecting, loading and the login form keep the same blurred panorama and fade into the world once you are in. When you join, the resource download shows on the loading bar instead of a popup. The AFK camera starts a few seconds after you cast a line or once you are marked AFK (15 minutes), not after 30 seconds of standing still; if you changed its timing yourself, your setting stays.
 
 Your saved skin returns on rejoin, and BlueMap uses it when refreshing your marker. Skins, guide keys and statistics head layouts retain the earlier prepared fixes.
 

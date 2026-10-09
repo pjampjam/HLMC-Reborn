@@ -2,6 +2,12 @@
 
 Historical player notes, retained from the README. Current setup and play instructions are in [README.md](README.md).
 
+## What's new in pack 1.8.3 and launcher 1.3.2
+
+- Launcher setup keeps shortcut options reachable while entering your name.
+- Quick start accepts valid player names without a Mojang ownership lookup; existing Holy Lois names still need their server password.
+- Admin-requested private forms let players change names without losing progress or recover a forgotten server password.
+
 ## What's new in pack 1.8.2
 
 - Party members are protected from friendly fire, with an optional health and food panel.
