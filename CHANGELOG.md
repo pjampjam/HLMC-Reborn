@@ -2,6 +2,11 @@
 
 Historical player notes, retained from the README. Current setup and play instructions are in [README.md](README.md).
 
+## What's new in launcher 1.4.1
+
+- Gold now marks only what matters most: the main button, your current state and the newest update. Keys, commands, land and gift tips use quiet text colors.
+- The built-in help no longer lists /spawn: Holy Lois is an open world without a spawn hub.
+
 ## What's new in launcher 1.4.0
 
 - One big button follows what you need: Install, Update, Repair or Play, with progress and status right under it.
