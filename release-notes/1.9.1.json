@@ -3,11 +3,12 @@
   "date": "2026-10-10",
   "locales": {
     "en": {
-      "summary": "Boombox music right in your ears and a smarter cinematic camera.",
+      "summary": "Boombox music right in your ears, your death loot back in its slots and a smarter cinematic camera.",
       "teaser": "Music up close",
       "changes": [
         "Stand next to a playing boombox or music disc and the music moves right into your ears, then fades back to normal as you walk away.",
-        "The boombox in your own hand now pulses and pops notes with the music, and it only sways side to side.",
+        "Pick your own death loot back up and every stack goes into the slot it came from, armor and off-hand too, as long as that slot is still free.",
+        "The boombox in your own hand now pulses with the music and only sways side to side. Notes hop out sideways, bigger when the music is louder, and stay out of your first-person view.",
         "The cinematic camera stays out of walls, films you instead of cave walls indoors and underground, and stays on you while you fish.",
         "Stand still for a minute while a boombox plays and the cinematic camera fades in.",
         "The idle cinematic now waits 15 minutes on a fresh install too, instead of 30 seconds.",
@@ -17,15 +18,18 @@
         "A boombox in your off hand is no longer set down by accident when you right-click a block.",
         "R on an empty slot sorts without showing a recipe, even when the sorted item lands there a moment later.",
         "Cancel buttons are grey now, so only the dangerous choice is red.",
-        "The Tab list is tidier, with lines of even width."
+        "The Tab list is tidier, with lines of even width.",
+        "Food now shrinks bite by bite while you eat it, Farmer's Delight meals included (two resource packs, on by default).",
+        "Respawning after a death no longer fades in through the panorama."
       ]
     },
     "ru": {
-      "summary": "Музыка бумбокса прямо в ушах и умная кинокамера.",
+      "summary": "Музыка бумбокса прямо в ушах, вещи после смерти по своим слотам и умная кинокамера.",
       "teaser": "Музыка вблизи",
       "changes": [
         "Встань рядом с играющим бумбоксом или пластинкой, и музыка зазвучит прямо в ушах, а когда отойдёшь, снова станет обычной.",
-        "Бумбокс в твоей руке теперь пульсирует и пускает ноты под музыку и качается только из стороны в сторону.",
+        "Подбери свои вещи после смерти, и каждый стак вернётся в свой слот, включая броню и вторую руку, если слот свободен.",
+        "Бумбокс в твоей руке теперь пульсирует под музыку и качается только из стороны в сторону. Ноты выпрыгивают в стороны, чем громче музыка, тем они больше, и не мешают виду от первого лица.",
         "Кинокамера больше не залезает в стены, в помещениях и под землёй снимает тебя, а не стены пещеры, и не уходит от тебя во время рыбалки.",
         "Постой минуту без дела рядом с играющим бумбоксом, и включится кинокамера.",
         "На новой установке кинокамера тоже ждёт 15 минут, а не 30 секунд.",
@@ -35,15 +39,18 @@
         "Бумбокс во второй руке больше не ставится случайно, когда ты кликаешь правой кнопкой по блоку.",
         "R на пустой ячейке сортирует и не показывает рецепт, даже если предмет попадает туда чуть позже.",
         "Кнопки отмены теперь серые, красной остаётся только опасная.",
-        "Список игроков по Tab стал аккуратнее, строки одной ширины."
+        "Список игроков по Tab стал аккуратнее, строки одной ширины.",
+        "Еда теперь уменьшается с каждым укусом, включая блюда Farmer's Delight (два ресурспака, включены по умолчанию).",
+        "Возрождение после смерти больше не проходит через затухающую панораму."
       ]
     },
     "lv": {
-      "summary": "Bumbokss tieši ausīs un gudrāka kinokamera.",
+      "summary": "Bumbokss tieši ausīs, lietas pēc nāves savās vietās un gudrāka kinokamera.",
       "teaser": "Mūzika tuvumā",
       "changes": [
         "Nostājies blakus skanošam bumboksam vai mūzikas diskam, un mūzika skanēs tieši ausīs, bet, attālinoties, atkal kļūs parasta.",
-        "Bumbokss tavā rokā tagad pulsē un laiž notis līdz ar mūziku un šūpojas tikai uz sāniem.",
+        "Paceļ savas lietas pēc nāves, un katra kaudze atgriežas savā vietā, arī bruņas un otrā roka, ja vieta vēl ir brīva.",
+        "Bumbokss tavā rokā tagad pulsē līdz ar mūziku un šūpojas tikai uz sāniem. Notis izlec uz sāniem, jo skaļāka mūzika, jo lielākas, un netraucē pirmās personas skatam.",
         "Kinokamera vairs nelien sienās, telpās un pazemē filmē tevi, nevis alas sienas, un makšķerējot paliek pie tevis.",
         "Pastāvi minūti dīkā pie skanoša bumboksa, un ieslēgsies kinokamera.",
         "Arī jaunā instalācijā kinokamera gaida 15 minūtes, nevis 30 sekundes.",
@@ -53,7 +60,9 @@
         "Bumbokss otrā rokā vairs netiek nejauši nolikts, kad ar labo klikšķi spied uz bloka.",
         "R uz tukšas šūnas kārto un nerāda recepti, pat ja priekšmets tur nonāk mirkli vēlāk.",
         "Atcelšanas pogas tagad ir pelēkas, sarkana paliek tikai bīstamā izvēle.",
-        "Tab spēlētāju saraksts ir glītāks, rindas vienā platumā."
+        "Tab spēlētāju saraksts ir glītāks, rindas vienā platumā.",
+        "Ēdiens tagad sarūk ar katru kodienu, arī Farmer's Delight ēdieni (divas resursu pakas, ieslēgtas pēc noklusējuma).",
+        "Atdzimstot pēc nāves, vairs nav panorāmas izbalēšanas."
       ]
     }
   }

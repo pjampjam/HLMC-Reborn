@@ -124,7 +124,7 @@ Log in once a day (Riga time) for a small gift: food, ores, books or rockets. Th
 
 ## Money and the auction house
 
-Everyone starts with 250 coins. `/sell` turns spare items into coins, `/ah` opens the auction house to buy and list items, `/orders` lets you ask for items at your price, `/pay NAME AMOUNT` sends coins and `/bal` shows your balance. `/daily` adds 100 coins each day; when you log in, the daily gift message has a **[Claim]** button for them.
+Everyone starts with 250 coins. `/sell` turns spare items into coins, `/ah` opens the auction house to buy and list items, `/orders` lets you ask for items at your price, `/pay NAME AMOUNT` sends coins and `/bal` shows your balance. 100 daily coins arrive by themselves with your first login each day; if they ever do not, the daily message shows a **[Claim]** button (`/daily` does the same).
 
 ## Boombox
 
@@ -143,7 +143,7 @@ Press **L**; the **Holy Lois** tab comes first. Time spent AFK does not count to
 
 ## After death
 
-Chat tells you where you died, and the minimap marks the spot until you reach it. Your dropped items stay for **30 minutes of loaded-world time**, and only you can pick them up for the first 5 minutes. Time does not advance while the area is unloaded. Recover them promptly: **fire, lava and the void can still destroy items**.
+Chat tells you where you died, and the minimap marks the spot until you reach it. Your dropped items stay for **30 minutes of loaded-world time**, and only you can pick them up for the first 5 minutes. When you pick them up, each stack goes back to the slot it came from (hotbar, armor and off-hand too) if that slot is still free; the rest is picked up as usual. Time does not advance while the area is unloaded. Recover them promptly: **fire, lava and the void can still destroy items**.
 
 ## Fights
 
@@ -209,7 +209,7 @@ Enter confirms every form (login, register, homes, party invites) and Esc on the
 
 In your inventory the boombox shows as a flat icon; in your hand it is a 3D boombox carried by the middle of its handle, speakers facing out, pumping and popping notes on the beat while it plays.
 
-Maps are held up in front of you, food goes to your mouth while you eat and lanterns hang from your hand and swing as you move, in first and third person. The daily reward card fades in above the hotbar with the Holy Lootbox (a gold block with the Holy Lois logo; right-click to open it) in sight all week, menus fit their content, green buttons confirm and red ones cancel or delete, and party health bars are wider. The title screen shows our own panorama and a Holy Lois: Reborn button that joins the server; connecting, loading and the login form keep the same blurred panorama and fade into the world once you are in. When you join, the resource download shows on the loading bar instead of a popup. The AFK camera starts a few seconds after you cast a line or once you are marked AFK (15 minutes), not after 30 seconds of standing still; if you changed its timing yourself, your setting stays.
+Maps are held up in front of you, food goes to your mouth and shrinks bite by bite while you eat (Eating Animation by ThatCuteOne, CC BY 4.0, plus its Farmer's Delight add-on) and lanterns hang from your hand and swing as you move, in first and third person. The daily reward card fades in above the hotbar with the Holy Lootbox (a gold block with the Holy Lois logo; right-click to open it) in sight all week, menus fit their content, green buttons confirm and red ones cancel or delete, and party health bars are wider. The title screen shows our own panorama and a Holy Lois: Reborn button that joins the server; connecting, loading and the login form keep the same blurred panorama and fade into the world once you are in. When you join, the resource download shows on the loading bar instead of a popup. The AFK camera starts a few seconds after you cast a line or once you are marked AFK (15 minutes), not after 30 seconds of standing still; if you changed its timing yourself, your setting stays.
 
 Your saved skin returns on rejoin, and BlueMap uses it when refreshing your marker. Skins, guide keys and statistics head layouts retain the earlier prepared fixes.
 
