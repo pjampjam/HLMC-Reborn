@@ -5,64 +5,85 @@
     "en": {
       "summary": "Boombox music right in your ears, your death loot back in its slots and a smarter cinematic camera.",
       "teaser": "Music up close",
-      "changes": [
-        "Stand next to a playing boombox or music disc and the music moves right into your ears, then fades back to normal as you walk away.",
-        "Pick your own death loot back up and every stack goes into the slot it came from, armor and off-hand too, as long as that slot is still free.",
-        "The boombox in your own hand now pulses with the music and only sways side to side. Notes hop out sideways, bigger when the music is louder, and stay out of your first-person view.",
-        "The cinematic camera stays out of walls, films you instead of cave walls indoors and underground, and stays on you while you fish.",
-        "Stand still for a minute while a boombox plays and the cinematic camera fades in.",
-        "The idle cinematic now waits 15 minutes on a fresh install too, instead of 30 seconds.",
+      "added": [
+        "Pick up your death loot and every stack goes back to its old slot, armor and off-hand too, if that slot is still free.",
+        "Food shrinks bite by bite while you eat, Farmer's Delight meals included.",
+        "Stand still for a minute while a boombox or music disc plays nearby and the cinematic camera fades in.",
+        "Standing right next to a playing boombox or music disc plays the music in your ears instead of from the speaker."
+      ],
+      "changed": [
+        "The boombox in your hand pulses with the music and only sways side to side. Notes hop out sideways, bigger when the music is louder, and never in your first-person view.",
+        "The cinematic camera stays out of walls, films you instead of cave walls, and stays on you while you fish.",
+        "The idle cinematic waits 15 minutes on a fresh install too, instead of 30 seconds.",
         "The Holy Lootbox tooltip is short: what it is and which key opens it.",
-        "Punching loot out of an invisible item frame in a dungeon no longer drops a spare item frame.",
+        "Cancel buttons are grey, so only the dangerous choice is red.",
+        "The Tab list is tidier, with lines of even width."
+      ],
+      "fixed": [
+        "Invisible item frames in dungeons no longer drop a spare frame when you punch the loot out.",
         "A chest you had open no longer looks open when you come back after a teleport.",
-        "A boombox in your off hand is no longer set down by accident when you right-click a block.",
-        "R on an empty slot sorts without showing a recipe, even when the sorted item lands there a moment later.",
-        "Cancel buttons are grey now, so only the dangerous choice is red.",
-        "The Tab list is tidier, with lines of even width.",
-        "Food now shrinks bite by bite while you eat it, Farmer's Delight meals included (two resource packs, on by default).",
-        "Respawning after a death no longer fades in through the panorama."
+        "A boombox in your off hand is no longer placed by accident.",
+        "R on an empty slot sorts without opening a recipe.",
+        "Respawning no longer fades in through the panorama."
+      ],
+      "removed": [
+        "/spawn: Holy Lois is an open world without a spawn hub."
       ]
     },
     "ru": {
       "summary": "Музыка бумбокса прямо в ушах, вещи после смерти по своим слотам и умная кинокамера.",
       "teaser": "Музыка вблизи",
-      "changes": [
-        "Встань рядом с играющим бумбоксом или пластинкой, и музыка зазвучит прямо в ушах, а когда отойдёшь, снова станет обычной.",
+      "added": [
         "Подбери свои вещи после смерти, и каждый стак вернётся в свой слот, включая броню и вторую руку, если слот свободен.",
-        "Бумбокс в твоей руке теперь пульсирует под музыку и качается только из стороны в сторону. Ноты выпрыгивают в стороны, чем громче музыка, тем они больше, и не мешают виду от первого лица.",
-        "Кинокамера больше не залезает в стены, в помещениях и под землёй снимает тебя, а не стены пещеры, и не уходит от тебя во время рыбалки.",
-        "Постой минуту без дела рядом с играющим бумбоксом, и включится кинокамера.",
-        "На новой установке кинокамера тоже ждёт 15 минут, а не 30 секунд.",
-        "Подсказка Holy Lootbox стала короткой: что это и какой клавишей открыть.",
-        "Если выбить добычу из невидимой рамки в подземелье, лишняя рамка больше не выпадает.",
-        "Сундук, открытый перед телепортом, больше не выглядит открытым, когда ты возвращаешься.",
-        "Бумбокс во второй руке больше не ставится случайно, когда ты кликаешь правой кнопкой по блоку.",
-        "R на пустой ячейке сортирует и не показывает рецепт, даже если предмет попадает туда чуть позже.",
-        "Кнопки отмены теперь серые, красной остаётся только опасная.",
-        "Список игроков по Tab стал аккуратнее, строки одной ширины.",
-        "Еда теперь уменьшается с каждым укусом, включая блюда Farmer's Delight (два ресурспака, включены по умолчанию).",
-        "Возрождение после смерти больше не проходит через затухающую панораму."
+        "Еда уменьшается с каждым укусом, включая блюда Farmer's Delight.",
+        "Постой минуту рядом с играющим бумбоксом или пластинкой, и включится кинокамера.",
+        "Рядом с играющим бумбоксом или пластинкой музыка звучит прямо в ушах, а не из колонки."
+      ],
+      "changed": [
+        "Бумбокс в руке пульсирует под музыку и качается только из стороны в сторону. Ноты выпрыгивают в стороны, чем громче, тем больше, и никогда не мешают виду от первого лица.",
+        "Кинокамера не заходит в стены, снимает тебя, а не стены пещер, и не отходит от тебя во время рыбалки.",
+        "Кинокамера и на новой установке ждёт 15 минут, а не 30 секунд.",
+        "Подсказка Holy Lootbox короткая: что это и какой клавишей открыть.",
+        "Кнопки «Отмена» серые, красной осталась только опасная кнопка.",
+        "Список Tab аккуратнее, строки одной ширины."
+      ],
+      "fixed": [
+        "Невидимые рамки в подземельях больше не выпадают лишней рамкой, когда выбиваешь добычу.",
+        "Открытый сундук больше не выглядит открытым, когда возвращаешься после телепорта.",
+        "Бумбокс во второй руке больше не ставится случайно.",
+        "R на пустом слоте сортирует, не открывая рецепт.",
+        "Возрождение больше не проходит через затухающую панораму."
+      ],
+      "removed": [
+        "/spawn: Holy Lois открытый мир без спавн-хаба."
       ]
     },
     "lv": {
       "summary": "Bumbokss tieši ausīs, lietas pēc nāves savās vietās un gudrāka kinokamera.",
       "teaser": "Mūzika tuvumā",
-      "changes": [
-        "Nostājies blakus skanošam bumboksam vai mūzikas diskam, un mūzika skanēs tieši ausīs, bet, attālinoties, atkal kļūs parasta.",
+      "added": [
         "Paceļ savas lietas pēc nāves, un katra kaudze atgriežas savā vietā, arī bruņas un otrā roka, ja vieta vēl ir brīva.",
-        "Bumbokss tavā rokā tagad pulsē līdz ar mūziku un šūpojas tikai uz sāniem. Notis izlec uz sāniem, jo skaļāka mūzika, jo lielākas, un netraucē pirmās personas skatam.",
-        "Kinokamera vairs nelien sienās, telpās un pazemē filmē tevi, nevis alas sienas, un makšķerējot paliek pie tevis.",
-        "Pastāvi minūti dīkā pie skanoša bumboksa, un ieslēgsies kinokamera.",
-        "Arī jaunā instalācijā kinokamera gaida 15 minūtes, nevis 30 sekundes.",
-        "Holy Lootbox apraksts ir īss: kas tas ir un ar kuru taustiņu to atvērt.",
-        "Izsitot laupījumu no neredzama priekšmetu rāmja cietoksnī, lieks rāmis vairs neizkrīt.",
-        "Lāde, kas bija atvērta pirms teleporta, vairs neizskatās atvērta, kad atgriezies.",
-        "Bumbokss otrā rokā vairs netiek nejauši nolikts, kad ar labo klikšķi spied uz bloka.",
-        "R uz tukšas šūnas kārto un nerāda recepti, pat ja priekšmets tur nonāk mirkli vēlāk.",
-        "Atcelšanas pogas tagad ir pelēkas, sarkana paliek tikai bīstamā izvēle.",
-        "Tab spēlētāju saraksts ir glītāks, rindas vienā platumā.",
-        "Ēdiens tagad sarūk ar katru kodienu, arī Farmer's Delight ēdieni (divas resursu pakas, ieslēgtas pēc noklusējuma).",
-        "Atdzimstot pēc nāves, vairs nav panorāmas izbalēšanas."
+        "Ēdiens sarūk ar katru kodienu, arī Farmer's Delight ēdieni.",
+        "Pastāvi minūti blakus skanošam bumboksam vai platei, un ieslēdzas kinokamera.",
+        "Blakus skanošam bumboksam vai platei mūzika skan tieši ausīs, nevis no skaļruņa."
+      ],
+      "changed": [
+        "Bumbokss rokā pulsē līdz ar mūziku un šūpojas tikai uz sāniem. Notis izlec uz sāniem, jo skaļāk, jo lielākas, un nekad netraucē pirmās personas skatam.",
+        "Kinokamera neiet sienās, filmē tevi, nevis alu sienas, un makšķerējot paliek pie tevis.",
+        "Kinokamera arī jaunā instalācijā gaida 15 minūtes, nevis 30 sekundes.",
+        "Holy Lootbox padoms ir īss: kas tas ir un ar kuru taustiņu to atvērt.",
+        "Atcelšanas pogas ir pelēkas, sarkana paliek tikai bīstamā izvēle.",
+        "Tab saraksts ir kārtīgāks, rindas vienā platumā."
+      ],
+      "fixed": [
+        "Neredzami rāmji cietokšņos vairs neizmet lieku rāmi, kad izsit laupījumu.",
+        "Atvērta lāde vairs neizskatās atvērta, kad atgriezies pēc teleporta.",
+        "Bumbokss otrā rokā vairs netiek nejauši nolikts.",
+        "R uz tukšas vietas sakārto, neatverot recepti.",
+        "Atdzimstot vairs nav panorāmas izbalēšanas."
+      ],
+      "removed": [
+        "/spawn: Holy Lois ir atvērta pasaule bez spawn centra."
       ]
     }
   }

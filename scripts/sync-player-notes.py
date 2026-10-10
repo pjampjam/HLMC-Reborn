@@ -2,6 +2,8 @@
 from pathlib import Path
 import argparse,datetime,json
 
+SECTIONS=('added','changed','fixed','removed')
+
 def main():
     root=Path(__file__).resolve().parents[1]
     parser=argparse.ArgumentParser(description=__doc__)
@@ -14,8 +16,12 @@ def main():
         datetime.date.fromisoformat(value['date'])
         for language in ['en','ru','lv']:
             notes=value['locales'][language]
-            assert isinstance(notes["changes"],list) and 1<=len(notes["changes"])<=40
-            for text in [notes['summary'],notes['teaser'],*notes['changes']]:
+            # Sections (Added / Changed / Fixed / Removed) from 1.9.1 on; older records keep one flat "changes" list.
+            groups=[key for key in SECTIONS if key in notes]
+            assert ('changes' in notes)!=bool(groups), version+' '+language+': use either sections or changes'
+            lines=[line for key in (groups or ['changes']) for line in notes[key]]
+            assert all(isinstance(notes[key],list) and notes[key] for key in groups) and 1<=len(lines)<=40
+            for text in [notes['summary'],notes['teaser'],*lines]:
                 assert isinstance(text,str) and text.strip() and '\u2014' not in text
                 assert 'pjampjam' not in text.lower() and 'pjamtest' not in text.lower(), 'Operational account notes belong in admin records'
         records[version]=value

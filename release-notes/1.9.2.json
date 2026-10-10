@@ -1,0 +1,27 @@
+{
+  "version": "1.9.2",
+  "date": "2026-10-10",
+  "locales": {
+    "en": {
+      "summary": "Boombox music now plays in your ears during the cinematic camera.",
+      "teaser": "Music in the cinematic",
+      "changed": [
+        "With a boombox or music disc playing nearby, stand still for a minute: the cinematic camera fades in and the music moves into your ears, then back to the speaker when you move. Just standing close no longer does it."
+      ]
+    },
+    "ru": {
+      "summary": "Музыка бумбокса теперь звучит в ушах во время кинокамеры.",
+      "teaser": "Музыка в кино",
+      "changed": [
+        "Рядом с играющим бумбоксом или пластинкой постой минуту: включится кинокамера, и музыка переместится тебе в уши, а когда двинешься, вернётся к колонке. Просто стоять рядом для этого больше не нужно."
+      ]
+    },
+    "lv": {
+      "summary": "Bumboksa mūzika tagad skan ausīs kinokameras laikā.",
+      "teaser": "Mūzika kino",
+      "changed": [
+        "Blakus skanošam bumboksam vai platei pastāvi minūti: ieslēdzas kinokamera un mūzika pārceļas tev ausīs, bet, kad pakusties, atgriežas pie skaļruņa. Vienkārši stāvēt blakus vairs nepietiek."
+      ]
+    }
+  }
+}

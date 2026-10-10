@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, explore dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.4.1 / pack 1.9.0 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.4.2 / pack 1.9.2 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -17,9 +17,17 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
-## Latest update: pack 1.9.0
+## Latest update: pack 1.9.2 and launcher 1.4.2
 
-Homes, parties, trophy fish you can see and a fresh new look. `/homes` manages your three starter homes, `/party` or `/group` manages your party with wide health bars, and a rally card can request travel to its author. Trophy fish look as big as they weigh, 10 kg and up are carried over your head, and the new Mythic fish is 40 kg and up. Joining is one smooth scene from our title panorama to the world, the day-7 Holy Lootbox is its own gold block, armor looks 3D, and Enter works in every form again. Launcher 1.3.2 is unchanged and installs the update. The [player guide](PLAYER-GUIDE.md#pack-190-homes-parties-and-equipment) has the details.
+Boombox music now plays in your ears during the cinematic camera.
+
+**Changed**
+
+- With a boombox or music disc playing nearby, stand still for a minute: the cinematic camera fades in and the music moves into your ears, then back to the speaker when you move. Just standing close no longer does it.
+
+Launcher 1.4.2: updating no longer asks you to close Minecraft when only another Java program is open, and What changed now sorts every release into Added, Changed, Fixed and Removed.
+
+Pack 1.9.1 came out the same day: boombox music right in your ears, your death loot back in its slots and a smarter cinematic camera. See [CHANGELOG.md](CHANGELOG.md) for its full list.
 
 ## Release history
 

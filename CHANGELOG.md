@@ -2,6 +2,55 @@
 
 Historical player notes, retained from the README. Current setup and play instructions are in [README.md](README.md).
 
+## What's new in pack 1.9.2 and launcher 1.4.2
+
+Boombox music now plays in your ears during the cinematic camera.
+
+**Changed**
+
+- With a boombox or music disc playing nearby, stand still for a minute: the cinematic camera fades in and the music moves into your ears, then back to the speaker when you move. Just standing close no longer does it.
+
+**Launcher 1.4.2**
+
+- Fixed: updating no longer asks you to close Minecraft when only another Java program is open, and no longer gets stuck waiting for it.
+- Changed: What changed now sorts every release into Added, Changed, Fixed and Removed.
+
+## What's new in pack 1.9.1
+
+Boombox music right in your ears, your death loot back in its slots and a smarter cinematic camera.
+
+**Added**
+
+- Pick up your death loot and every stack goes back to its old slot, armor and off-hand too, if that slot is still free.
+- Food shrinks bite by bite while you eat, Farmer's Delight meals included.
+- Stand still for a minute while a boombox or music disc plays nearby and the cinematic camera fades in.
+- Standing right next to a playing boombox or music disc plays the music in your ears instead of from the speaker.
+
+**Changed**
+
+- The boombox in your hand pulses with the music and only sways side to side. Notes hop out sideways, bigger when the music is louder, and never in your first-person view.
+- The cinematic camera stays out of walls, films you instead of cave walls, and stays on you while you fish.
+- The idle cinematic waits 15 minutes on a fresh install too, instead of 30 seconds.
+- The Holy Lootbox tooltip is short: what it is and which key opens it.
+- Cancel buttons are grey, so only the dangerous choice is red.
+- The Tab list is tidier, with lines of even width.
+
+**Fixed**
+
+- Invisible item frames in dungeons no longer drop a spare frame when you punch the loot out.
+- A chest you had open no longer looks open when you come back after a teleport.
+- A boombox in your off hand is no longer placed by accident.
+- R on an empty slot sorts without opening a recipe.
+- Respawning no longer fades in through the panorama.
+
+**Removed**
+
+- /spawn: Holy Lois is an open world without a spawn hub.
+
+## What's new in pack 1.9.0
+
+Homes, parties, trophy fish you can see and a fresh new look. `/homes` manages your three starter homes, `/party` or `/group` manages your party with wide health bars, and a rally card can request travel to its author. Trophy fish look as big as they weigh, 10 kg and up are carried over your head, and the new Mythic fish is 40 kg and up. Joining is one smooth scene from our title panorama to the world, the day-7 Holy Lootbox is its own gold block, armor looks 3D, and Enter works in every form again. Launcher 1.3.2 is unchanged and installs the update. The [player guide](PLAYER-GUIDE.md#pack-190-homes-parties-and-equipment) has the details.
+
 ## What's new in launcher 1.4.1
 
 - Gold now marks only what matters most: the main button, your current state and the newest update. Keys, commands, land and gift tips use quiet text colors.
