@@ -1,4 +1,4 @@
-"""Post Holy Lois server down/up alerts to a Discord webhook.
+"""Post Holy Lois server down/up alerts to #server-status (through the Holy Lois bot; the webhook is only the fallback).
 
   discord-alert.py check     every 2 minutes (timer): alerts after two failed status checks, and on recovery
   discord-alert.py failure   OnFailure= hook of minecraft.service: immediate crash report
@@ -6,13 +6,16 @@
   discord-alert.py message TEXT
 Every restart, planned or not, is announced once with the group's restart call: "Maaarek nahhul!".
 
-The webhook URL lives only in /etc/holylois/discord-webhook (root, mode 600), written by the owner.
-Without it every mode exits quietly. /run/holylois-maintenance silences alerts during planned work.
+Players read #server-status, so alerts go there through the bot (token /etc/holylois/discord-bot-token, root 600). The old
+webhook in /etc/holylois/discord-webhook points at a staff channel and is used only when the bot cannot post.
+Without either, every mode exits quietly. /run/holylois-maintenance silences alerts during planned work.
 """
 import glob, json, os, shutil, socket, struct, subprocess, sys, time, urllib.request
 from pathlib import Path
 
 WEBHOOK = Path("/etc/holylois/discord-webhook")
+BOT_TOKEN = Path("/etc/holylois/discord-bot-token")
+STATUS_CHANNEL = "server-status"
 STATE = Path("/var/lib/holylois/discord-alert.json")
 MAINTENANCE = Path("/run/holylois-maintenance")
 ROOT = Path("/opt/minecraft")
@@ -20,7 +23,29 @@ GOLD, RED, GREEN = 0xF4C542, 0xC2362F, 0x34D27B
 MEME = "**Maaarek nahhul!**"
 
 
+def bot_api(path, body=None):
+    request = urllib.request.Request("https://discord.com/api/v10" + path, data=None if body is None else json.dumps(body).encode(),
+        headers={"Authorization": "Bot " + BOT_TOKEN.read_text().strip(), "User-Agent": "HolyLoisMonitor/1.1", "Content-Type": "application/json"},
+        method="GET" if body is None else "POST")
+    return json.load(urllib.request.urlopen(request, timeout=15))
+
+
+def status_channel():
+    """The id of #server-status in the bot's guild."""
+    guild = bot_api("/users/@me/guilds")[0]
+    return next(c["id"] for c in bot_api(f"/guilds/{guild['id']}/channels") if c["name"] == STATUS_CHANNEL)
+
+
 def post(title, description, color, fields=()):
+    embed = {"title": title, "description": description[:3900], "color": color,
+             "fields": [{"name": n, "value": v[:1000] or "-", "inline": False} for n, v in fields],
+             "footer": {"text": "Holy Lois: Reborn server monitor"}}
+    if BOT_TOKEN.exists():
+        try:
+            bot_api(f"/channels/{status_channel()}/messages", {"embeds": [embed], "allowed_mentions": {"parse": []}})
+            return
+        except Exception as error:
+            print("Bot post failed (" + type(error).__name__ + "); using the webhook.")
     if not WEBHOOK.exists():
         print("No Discord webhook configured; nothing sent.")
         return
@@ -28,9 +53,6 @@ def post(title, description, color, fields=()):
     if not url.startswith("https://discord.com/api/webhooks/") and not url.startswith("https://discordapp.com/api/webhooks/"):
         print("The webhook file does not contain a Discord webhook URL.")
         return
-    embed = {"title": title, "description": description[:3900], "color": color,
-             "fields": [{"name": n, "value": v[:1000] or "-", "inline": False} for n, v in fields],
-             "footer": {"text": "Holy Lois: Reborn server monitor"}}
     body = json.dumps({"username": "Holy Lois Server", "avatar_url": "https://holylois.com/apple-touch-icon.png", "embeds": [embed]}).encode()
     request = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "User-Agent": "HolyLoisMonitor/1.0"})
     urllib.request.urlopen(request, timeout=15).read()

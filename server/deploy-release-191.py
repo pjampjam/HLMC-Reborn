@@ -56,7 +56,7 @@ def start_and_check():
         for _ in range(480):
             time.sleep(1)
             log = base.journal(since)
-            if 'Done (' in log and 'Holy Lois claims: ready for OPAC' in log and 'command audit' in log: break
+            if 'Done (' in log and 'Holy Lois claims: ready for OPAC' in log: break  # 'command audit' only prints on test servers
             if any(needle in log for needle in FATAL): break
         if 'Failed to load datapacks' in log and attempt == 1:
             print('Startup hit the known datapack race; trying once more.', flush=True)
