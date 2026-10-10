@@ -120,6 +120,10 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Launcher 1.4.1
+
+Published 2026-10-10 as `v1.4.1` (signed pack 1.9.0 built in); `app-stable` `app-release.txt` and `app-release.catalog` point to it. Visual only: gold kept for the main action and state, Help without /spawn. No server change.
+
 ## Launcher 1.4.0
 
 Published 2026-10-10 as `v1.4.0` with the signed pack 1.9.0 built in; `app-stable` now points to it in both `app-release.txt` (the file launchers read) and `app-release.catalog`. Until then `app-release.txt` had still pointed to 1.3.1, so 1.3.1 installs update straight to 1.4.0. No server change. The skin head reads the public `stats.holylois.com/stats.json` and Mojang textures; the website privacy page says so.
