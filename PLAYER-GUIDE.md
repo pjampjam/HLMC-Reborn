@@ -147,7 +147,7 @@ Chat tells you where you died, and the minimap marks the spot until you reach it
 
 ## Fights
 
-Hitting another player, or being hit by one, puts you both **in combat for 20 seconds** (a red counter above the hotbar). While in combat, `/rtp`, `/home`, `/tpa`, `/spawn` and `/back` do not work, and **logging out kills you**. A PvP death drops your loot unlocked for the winner, with no coordinates in chat and no minimap marker. Getting hit by a monster only blocks teleports for 5 seconds. PvP still needs both players' consent (rule 5).
+Hitting another player, or being hit by one, puts you both **in combat for 20 seconds** (a red counter above the hotbar). While in combat, `/rtp`, `/home`, `/tpa` and `/back` do not work, and **logging out kills you**. A PvP death drops your loot unlocked for the winner, with no coordinates in chat and no minimap marker. Getting hit by a monster only blocks teleports for 5 seconds. PvP still needs both players' consent (rule 5).
 
 ## Help, reports and donations
 

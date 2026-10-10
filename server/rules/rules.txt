@@ -9,4 +9,3 @@
 <yellow>8.</yellow> One account per person. Never share your password.
 <gray>Breaking rules: warning, temporary ban or permanent ban. pjampjam has the final say.</gray>
 <gray>Full rules and privacy: holylois.com/rules</gray>
-<gray>Public stats omit owner/test and hidden accounts; selected server skins supply head images. Game progress is kept.</gray>
