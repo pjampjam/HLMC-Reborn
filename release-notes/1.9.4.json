@@ -1,0 +1,39 @@
+{
+  "version": "1.9.4",
+  "date": "2026-10-11",
+  "locales": {
+    "en": {
+      "summary": "A fishing cinematic with real camera work, and boombox music without anything playing over it.",
+      "teaser": "Fishing cinematic fixed",
+      "changed": [
+        "Minecraft's background music pauses while boombox or music disc music reaches you, like it does for a jukebox."
+      ],
+      "fixed": [
+        "While fishing, the cinematic no longer repeats one shot on a loop: every shot is a new angle on you and your bobber until a fish bites, then it stays on the catch until you reel it in or it gets away, and changes angle 3 seconds after you reel in.",
+        "The cinematic no longer starts its own soundtrack over a playing boombox or music disc, so that music plays clearly in your ears."
+      ]
+    },
+    "ru": {
+      "summary": "Кинокамера на рыбалке снимает как надо, а музыке бумбокса больше ничего не мешает.",
+      "teaser": "Рыбалка в кино исправлена",
+      "changed": [
+        "Фоновая музыка Minecraft замолкает, пока до тебя доносится музыка бумбокса или пластинки, как с проигрывателем."
+      ],
+      "fixed": [
+        "На рыбалке кинокамера больше не повторяет один кадр по кругу: каждый кадр показывает тебя и поплавок с нового ракурса, пока не клюнет, потом держит улов, пока не вытащишь или рыба не сорвётся, и меняет ракурс через 3 секунды после того, как вытащишь.",
+        "Кинокамера больше не включает свою музыку поверх играющего бумбокса или пластинки, и их музыка звучит в ушах чисто."
+      ]
+    },
+    "lv": {
+      "summary": "Makšķerēšanas kinokamera filmē kā nākas, un bumboksa mūzikai vairs nekas netraucē.",
+      "teaser": "Makšķerēšanas kino labots",
+      "changed": [
+        "Minecraft fona mūzika apklust, kamēr līdz tev nāk bumboksa vai plates mūzika, tāpat kā ar mūzikas atskaņotāju."
+      ],
+      "fixed": [
+        "Makšķerējot kinokamera vairs neatkārto vienu kadru pa riņķi: katrs kadrs rāda tevi un pludiņu no jauna leņķa, līdz paķer zivs, tad tur lomu, līdz izvelc vai zivs aizbēg, un maina leņķi 3 sekundes pēc izvilkšanas.",
+        "Kinokamera vairs nesāk savu mūziku pāri skanošam bumboksam vai platei, tāpēc tā mūzika skan ausīs tīri."
+      ]
+    }
+  }
+}

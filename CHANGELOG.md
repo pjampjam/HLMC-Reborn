@@ -2,6 +2,19 @@
 
 Historical player notes, retained from the README. Current setup and play instructions are in [README.md](README.md).
 
+## What's new in pack 1.9.4
+
+A fishing cinematic with real camera work, and boombox music without anything playing over it.
+
+**Changed**
+
+- Minecraft's background music pauses while boombox or music disc music reaches you, like it does for a jukebox.
+
+**Fixed**
+
+- While fishing, the cinematic no longer repeats one shot on a loop: every shot is a new angle on you and your bobber until a fish bites, then it stays on the catch until you reel it in or it gets away, and changes angle 3 seconds after you reel in.
+- The cinematic no longer starts its own soundtrack over a playing boombox or music disc, so that music plays clearly in your ears.
+
 ## What's new in pack 1.9.3
 
 The carried boombox swings the right way and its notes come out of the speakers.

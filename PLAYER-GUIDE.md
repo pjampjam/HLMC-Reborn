@@ -1,6 +1,6 @@
 # Playing Holy Lois: Reborn
 
-Guide for pack 1.9.3 and launcher 1.4.2. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+Guide for pack 1.9.4 and launcher 1.4.2. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
 
 Click **Play** in the Holy Lois launcher. With a player name, Minecraft opens straight from the launcher and joins Holy Lois by itself. With a bought Minecraft account, Minecraft Launcher opens: pick **Holy Lois: Reborn**, press Play, and the game joins by itself too. For singleplayer, turn off **Join Holy Lois on start** in Settings.
 
@@ -133,7 +133,7 @@ Craft a boombox from string (top), iron ingot + jukebox + iron ingot (middle) an
 - **Carry it**: hold it in either hand and right-click the air to play internet radio. Everyone in earshot hears it through voice chat (16 blocks at volume 1, about 30 at the default 5, 48 at volume 10), and it follows you. Right-click again for the next station, sneak + right-click to stop. Sneak + scroll while holding it, or while looking at a placed one, sets its volume from 1 to 10; louder also reaches further. It stops when you drop it or put it away.
 - **Set it down**: right-click a block with it. Right-click the placed boombox to play or switch stations; sneak with an empty hand and right-click to turn it off. It keeps playing while anyone is nearby, even after a restart. Break it to pick it up again.
 
-Stand still for a minute near a playing boombox or music disc and the cinematic camera fades in; while it runs, the music plays right in your ears, and it goes back to the speaker when you move.
+Stand still for a minute near a playing boombox or music disc and the cinematic camera fades in; while it runs, the music plays right in your ears, and it goes back to the speaker when you move. Minecraft's background music and the cinematic's own soundtrack stay quiet while boombox or disc music reaches you. While fishing, the cinematic keeps changing angles on you and your bobber and stays on a catch until you reel it in.
 
 Placed radio controls follow claim permissions. At most six placed boomboxes can play in one chunk; at most six streams play server-wide, including held radios.
 

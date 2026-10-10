@@ -120,6 +120,10 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Pack 1.9.4
+
+Published 2026-10-11, client only (Extras 1.7.4). Fishing cinematic: while waiting for a bite, each shot is Ji's FishingShot with the next of its five presets (CinematicManagerMixin + CinematicShotsMixin drive evaluateFrame on our own clock); on a bite the mod's own focus holds until the catch or escape; 3 s after reeling in the normal shots return. Ji's CinematicMusicManager and vanilla MusicManager stay silent while BoomboxPulse.musicNearby(). Server unchanged (Extras 1.7.1).
+
 ## Pack 1.9.3
 
 Published 2026-10-10, client only (Extras 1.7.3): the carried boombox swings about the holder's forward axis in world space (out from the body and back in) instead of a model axis that the arm pose turned diagonal, and held notes start at the speaker cones (positions recorded while the boombox is drawn). Server unchanged (Extras 1.7.1); sync at the next server deploy.
