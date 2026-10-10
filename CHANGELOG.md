@@ -2,6 +2,18 @@
 
 Historical player notes, retained from the README. Current setup and play instructions are in [README.md](README.md).
 
+## What's new in pack 1.9.3
+
+The carried boombox swings the right way and its notes come out of the speakers.
+
+**Changed**
+
+- Notes from a carried boombox now pop out of its speakers, low at your hand, instead of floating up by your hip.
+
+**Fixed**
+
+- A carried boombox swings out from your body and back in, like a real weight on a handle, instead of forward and out.
+
 ## What's new in pack 1.9.2 and launcher 1.4.2
 
 Boombox music now plays in your ears during the cinematic camera.

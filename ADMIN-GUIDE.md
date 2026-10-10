@@ -120,6 +120,10 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
 
+## Pack 1.9.3
+
+Published 2026-10-10, client only (Extras 1.7.3): the carried boombox swings about the holder's forward axis in world space (out from the body and back in) instead of a model axis that the arm pose turned diagonal, and held notes start at the speaker cones (positions recorded while the boombox is drawn). Server unchanged (Extras 1.7.1); sync at the next server deploy.
+
 ## Pack 1.9.2 and launcher 1.4.2
 
 Published 2026-10-10. Pack 1.9.2 changes only Holy Lois Extras on the client (1.7.2: boombox and music disc music moves into your ears while the Ji AFK cinematic runs, instead of by distance). The server keeps Extras 1.7.1 until the next server deploy; nothing in 1.7.2 talks to the server, and the pack minimum stays 1.9.1. Launcher 1.4.2: only Java processes that are Minecraft (a Minecraft/Holy Lois window or LWJGL loaded) block an update, so build tools or other Java apps no longer make "Close Minecraft to update" hang; What changed shows Added / Changed / Fixed / Removed. Pack history may carry "fixed" only once launchers older than 1.4.2 are gone (they reject unknown manifest fields).

@@ -1,0 +1,36 @@
+{
+  "version": "1.9.3",
+  "date": "2026-10-10",
+  "locales": {
+    "en": {
+      "summary": "The carried boombox swings the right way and its notes come out of the speakers.",
+      "teaser": "Boombox swing fixed",
+      "changed": [
+        "Notes from a carried boombox now pop out of its speakers, low at your hand, instead of floating up by your hip."
+      ],
+      "fixed": [
+        "A carried boombox swings out from your body and back in, like a real weight on a handle, instead of forward and out."
+      ]
+    },
+    "ru": {
+      "summary": "Бумбокс в руке качается правильно, а ноты вылетают из колонок.",
+      "teaser": "Качание бумбокса исправлено",
+      "changed": [
+        "Ноты бумбокса в руке теперь вылетают из его колонок, внизу у руки, а не всплывают у бедра."
+      ],
+      "fixed": [
+        "Бумбокс в руке качается от тела и обратно, как настоящий груз на ручке, а не вперёд и в сторону."
+      ]
+    },
+    "lv": {
+      "summary": "Bumbokss rokā šūpojas pareizi, un notis nāk no skaļruņiem.",
+      "teaser": "Bumboksa šūpošanās labota",
+      "changed": [
+        "Notis no bumboksa rokā tagad izlec no tā skaļruņiem, zemu pie rokas, nevis uzpeld pie gurna."
+      ],
+      "fixed": [
+        "Bumbokss rokā šūpojas prom no ķermeņa un atpakaļ kā īsts svars uz roktura, nevis uz priekšu un sāniem."
+      ]
+    }
+  }
+}

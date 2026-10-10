@@ -2,7 +2,7 @@
 
 A cozy modded Minecraft survival server for friends: claim land on the map, explore dungeons, earn achievements and Runeforged runes, trade in the auction house and play radio with a boombox. A Windows launcher installs the pack and keeps it updated.
 
-**Launcher 1.4.2 / pack 1.9.2 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
+**Launcher 1.4.2 / pack 1.9.3 / Minecraft 26.3 / Fabric 0.19.5 / Java 25**
 
 ## Download and play
 
@@ -17,17 +17,19 @@ SKlauncher is no longer needed. Players who already use it keep their name, worl
 
 See the [player guide](PLAYER-GUIDE.md) for joining, voice chat, maps, cooking, furniture, homes, teleporting, claims and shops.
 
-## Latest update: pack 1.9.2 and launcher 1.4.2
+## Latest update: pack 1.9.3
 
-Boombox music now plays in your ears during the cinematic camera.
+The carried boombox swings the right way and its notes come out of the speakers.
 
 **Changed**
 
-- With a boombox or music disc playing nearby, stand still for a minute: the cinematic camera fades in and the music moves into your ears, then back to the speaker when you move. Just standing close no longer does it.
+- Notes from a carried boombox now pop out of its speakers, low at your hand, instead of floating up by your hip.
 
-Launcher 1.4.2: updating no longer asks you to close Minecraft when only another Java program is open, and What changed now sorts every release into Added, Changed, Fixed and Removed.
+**Fixed**
 
-Pack 1.9.1 came out the same day: boombox music right in your ears, your death loot back in its slots and a smarter cinematic camera. See [CHANGELOG.md](CHANGELOG.md) for its full list.
+- A carried boombox swings out from your body and back in, like a real weight on a handle, instead of forward and out.
+
+Earlier the same day: pack 1.9.2 (boombox music in your ears during the cinematic camera), launcher 1.4.2 and pack 1.9.1. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Release history
 
