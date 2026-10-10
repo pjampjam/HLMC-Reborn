@@ -2,6 +2,13 @@
 
 Historical player notes, retained from the README. Current setup and play instructions are in [README.md](README.md).
 
+## What's new in launcher 1.4.0
+
+- One big button follows what you need: Install, Update, Repair or Play, with progress and status right under it.
+- The two ways to play are now called **I own Minecraft** and **Play with a name**. Your account card shows your name and, once you have played, your skin head.
+- The main screen shows the latest update with a picture and the most used keys and commands.
+- New players get a short three-step setup with real server screenshots. Settings are grouped, the built-in help is current, and the old 3D armor switch is gone.
+
 ## What's new in pack 1.8.3 and launcher 1.3.2
 
 - Launcher setup keeps shortcut options reachable while entering your name.

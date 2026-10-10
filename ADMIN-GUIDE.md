@@ -97,7 +97,7 @@ Closing SSH does not stop the server. `/rtp`, `/tpa NAME` and other player comma
 
 Close Minecraft and SKlauncher, then reopen Holy Lois so it updates to launcher 1.0.3 or newer.
 
-1. Choose **SKlauncher** and click **Install Holy Lois** or **Repair / check files**.
+1. Choose **SKlauncher** and click **Install** (or **Check files** under the button).
 2. Click **Play** in Holy Lois. Open **Library > Holy Lois: Reborn** in SKlauncher.
 3. If SKlauncher shows **Install**, click it once to prepare Minecraft and Java, then **Play**.
 
@@ -119,6 +119,10 @@ Backups live on Google Drive (`Holy Lois Backups`), not on the VM disk (owner de
 - **Restore**: `sudo rclone copy "gdrive:Holy Lois Backups/maintenance/NAME" /opt/restore/NAME`, then restore with the server stopped. The archives include private server data, so never send them to friends.
 
 Check `df -h /` now and then; the world and BlueMap tiles are what grows.
+
+## Launcher 1.4.0
+
+Published 2026-10-10 as `v1.4.0` with the signed pack 1.9.0 built in; `app-stable` now points to it in both `app-release.txt` (the file launchers read) and `app-release.catalog`. Until then `app-release.txt` had still pointed to 1.3.1, so 1.3.1 installs update straight to 1.4.0. No server change. The skin head reads the public `stats.holylois.com/stats.json` and Mojang textures; the website privacy page says so.
 
 ## Server release for pack 1.9.0
 

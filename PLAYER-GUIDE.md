@@ -1,10 +1,10 @@
 # Playing Holy Lois: Reborn
 
-Guide for pack 1.9.0 and launcher 1.3.2. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
+Guide for pack 1.9.0 and launcher 1.4.0. Start with the [download and setup steps](README.md#download-and-play). The server is already saved in Multiplayer (**play.holylois.com**, **mc.holylois.com** is an alias).
 
 Click **Play** in the Holy Lois launcher. With a player name, Minecraft opens straight from the launcher and joins Holy Lois by itself. With a bought Minecraft account, Minecraft Launcher opens: pick **Holy Lois: Reborn**, press Play, and the game joins by itself too. For singleplayer, turn off **Join Holy Lois on start** in Settings.
 
-If the game does not start or crashes, the launcher shows what happened. **Settings > Help and reports** copies a report (your Windows user name, login details and IP addresses are removed) to send to pjampjam on Discord.
+If the game does not start or crashes, the launcher shows what happened. **Settings > Help and diagnostics** copies a report (your Windows user name, login details and IP addresses are removed) to send to pjampjam on Discord.
 
 ## Joining
 
