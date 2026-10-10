@@ -3,7 +3,7 @@
   "date": "2026-10-10",
   "locales": {
     "en": {
-      "summary": "Boombox music right in your ears, your death loot back in its slots and a smarter cinematic camera.",
+      "summary": "Your death loot back in its slots, food that shrinks as you eat and a smarter cinematic camera.",
       "teaser": "Music up close",
       "added": [
         "Pick up your death loot and every stack goes back to its old slot, armor and off-hand too, if that slot is still free.",
@@ -31,7 +31,7 @@
       ]
     },
     "ru": {
-      "summary": "Музыка бумбокса прямо в ушах, вещи после смерти по своим слотам и умная кинокамера.",
+      "summary": "Вещи после смерти возвращаются в свои слоты, еда уменьшается при еде, а кинокамера стала умнее.",
       "teaser": "Музыка вблизи",
       "added": [
         "Подбери свои вещи после смерти, и каждый стак вернётся в свой слот, включая броню и вторую руку, если слот свободен.",
@@ -59,7 +59,7 @@
       ]
     },
     "lv": {
-      "summary": "Bumbokss tieši ausīs, lietas pēc nāves savās vietās un gudrāka kinokamera.",
+      "summary": "Lietas pēc nāves atgriežas savās vietās, ēdiens sarūk, to ēdot, un kinokamera ir gudrāka.",
       "teaser": "Mūzika tuvumā",
       "added": [
         "Paceļ savas lietas pēc nāves, un katra kaudze atgriežas savā vietā, arī bruņas un otrā roka, ja vieta vēl ir brīva.",
